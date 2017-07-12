@@ -23,49 +23,6 @@
 <link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-pre, code { background-color: #f8f8f8; }
-code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
-code > span.dt { color: #204a87; } /* DataType */
-code > span.dv { color: #0000cf; } /* DecVal */
-code > span.bn { color: #0000cf; } /* BaseN */
-code > span.fl { color: #0000cf; } /* Float */
-code > span.ch { color: #4e9a06; } /* Char */
-code > span.st { color: #4e9a06; } /* String */
-code > span.co { color: #8f5902; font-style: italic; } /* Comment */
-code > span.ot { color: #8f5902; } /* Other */
-code > span.al { color: #ef2929; } /* Alert */
-code > span.fu { color: #000000; } /* Function */
-code > span.er { color: #a40000; font-weight: bold; } /* Error */
-code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #000000; } /* Constant */
-code > span.sc { color: #000000; } /* SpecialChar */
-code > span.vs { color: #4e9a06; } /* VerbatimString */
-code > span.ss { color: #4e9a06; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #000000; } /* Variable */
-code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
-code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
-code > span.ex { } /* Extension */
-code > span.at { color: #c4a000; } /* Attribute */
-code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
-code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
-</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 
 
 <style type="text/css">
@@ -205,7 +162,7 @@ $(document).ready(function () {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">Overview</a>
+  <a href="index.html">Syllabus</a>
 </li>
 <li>
   <a href="notes.html">Learning Materials</a>
@@ -245,63 +202,114 @@ $(document).ready(function () {
 </div>
 
 
-<div id="description" class="section level1">
-<h1>Description</h1>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2+2</span></code></pre></div>
-<pre><code>## [1] 4</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cat</span>(<span class="st">&quot;this is a string&quot;</span>)</code></pre></div>
-<pre><code>## this is a string</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(<span class="kw">lm</span>(dist~speed, <span class="dt">data=</span>cars))</code></pre></div>
-<pre><code>## 
-## Call:
-## lm(formula = dist ~ speed, data = cars)
-## 
-## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -29.069  -9.525  -2.272   9.215  43.201 
-## 
-## Coefficients:
-##             Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept) -17.5791     6.7584  -2.601   0.0123 *  
-## speed         3.9324     0.4155   9.464 1.49e-12 ***
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Residual standard error: 15.38 on 48 degrees of freedom
-## Multiple R-squared:  0.6511, Adjusted R-squared:  0.6438 
-## F-statistic: 89.57 on 1 and 48 DF,  p-value: 1.49e-12</code></pre>
-<p>this is <code>r</code> code</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
-<span class="kw">ggplot</span>(cars, <span class="kw">aes</span>(<span class="dt">x=</span>speed, <span class="dt">y=</span>dist)) +<span class="st"> </span><span class="kw">geom_point</span>()</code></pre></div>
-<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<div id="course-description" class="section level1">
+<h1>Course Description</h1>
+<p>This course is designed as a primer to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R in an environment that emphasizes reproducible research and literate programming. The target audience is anyone who wants to do their own data analysis. The course will cumulate with an peer-evaluated exploratory data analysis on either a pre-specified data set or your data set of choice.</p>
+<div id="learning-outcomes" class="section level2">
+<h2>Learning Outcomes</h2>
+<p>By the end of the course, students will be able to</p>
+<ul>
+<li>Import external data into R.</li>
+<li>Calculate summary statistics.</li>
+<li>Create informative data visualizations and tables.</li>
+<li>Perform data management techniques such as subsetting, aggregating data, and creating new variables.</li>
+<li>Create a reproducible research document.</li>
+<li>Conduct an exploratory data analysis in a reproducible manner.</li>
+</ul>
+</div>
 </div>
 <div id="logistics" class="section level1">
 <h1>Logistics</h1>
-<h2>
-Emphasis classes
-</h2>
-<p class="text-muted">
-Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.
-</p>
-<p class="text-primary">
-Nullam id dolor id nibh ultricies vehicula ut id elit.
-</p>
-<p class="text-warning">
-Etiam porta sem malesuada magna mollis euismod.
-</p>
+<p><strong>Instructor:</strong> Dr. Robin Donatello<br />
+<strong>Office Location:</strong> Holt 202<br />
+<strong>Phone Number:</strong> 898-5767<br />
+<strong>E-mail:</strong> <a href="mailto:rdonatello@csuchico.edu">rdonatello@csuchico.edu</a><br />
+<strong>Prerequisites:</strong> Basic computer literacy. <strong>Meeting Days and Times</strong> Tuesday 2-3:50, MLIB 442</p>
+<div id="required-materials" class="section level2">
+<h2>Required Materials</h2>
+<ul>
+<li>A reliable laptop that you can install programs onto. Contact me for alternatives.
+<ul>
+<li>Mac / Windows are easy. Linux/Unix installs are more difficult, but not impossible.</li>
+</ul></li>
+<li>Reliable internet connection while on and off campus.</li>
+<li>A free <a href="www.datacamp.com">Data Camp</a> account.</li>
+<li>Join the <a href="https://groups.google.com/forum/#!forum/chico-rug">Chico R Users Google Group</a> - This is our discussion forum to ask (and answer) questions outside of class.
+<ul>
+<li>There is also a <a href="https://www.meetup.com/Chico-R-Users-Group/">Meetup group</a> - optional but useful if you want to stay connected to the community and learn about upcoming events.</li>
+</ul></li>
+<li>Free programming software. Instructions and links to download, install and setup these programs can be found at <a href="http://www.norcalbiostat.com/Software/software_overview.html#/" class="uri">http://www.norcalbiostat.com/Software/software_overview.html#/</a>
 <p class="text-danger">
-Donec ullamcorper nulla non metus auctor fringilla.
+(Update this link)
 </p>
-<p class="text-success">
-Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-</p>
-<p class="text-info">
-Maecenas sed diam eget risus varius blandit sit amet non magna.
-</p>
+<ul>
+<li><a href="https://cran.r-project.org/">R</a></li>
+<li><a href="https://www.rstudio.com/">R Studio</a></li>
+<li><a href="https://www.latex-project.org/">LaTeX</a>: optional but very nice for producing professional quality PDF reports.</li>
+</ul></li>
+</ul>
 </div>
-<div id="syllabus" class="section level1">
-<h1>Syllabus</h1>
-<p><a href="#" class="btn btn-default">Default</a> <a href="#" class="btn btn-primary">Primary</a> <a href="#" class="btn btn-success">Success</a> <a href="#" class="btn btn-info">Info</a> <a href="#" class="btn btn-warning">Warning</a> <a href="#" class="btn btn-danger">Danger</a> <a href="#" class="btn btn-link">Link</a></p>
+<div id="grading" class="section level2">
+<h2>Grading</h2>
+<p>Credit / No Credit. You must earn 70% of available points to receive credit for the course.</p>
+<ul>
+<li>Attendance (20%)</li>
+<li>Assignments (50%)</li>
+<li>Project (30%)</li>
+</ul>
+</div>
+<div id="schedule-of-topics" class="section level2">
+<h2>Schedule of Topics</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Week</th>
+<th align="center">Date</th>
+<th align="left">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">8/22</td>
+<td align="left">Introduction to the R Studio suite of awesomeness. Basics of the R language.</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">8/29</td>
+<td align="left">Getting data into R. Generating tables and summary statistics.</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">9/5</td>
+<td align="left">Data visualization with <code>ggplot2</code>.</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">9/12</td>
+<td align="left">Data manipulation and aggregation with <code>dplyr</code>.</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">9/19</td>
+<td align="left">Analyze data! (No statistics experience necessary)</td>
+</tr>
+</tbody>
+</table>
+<p>Attendance after week 65 is optional. This room is reserved for the entire semester at this day/time and may be used for short talks and additional workshops on various R topics. Primarily this time will be devoted to drop in R help time for the entire campus. You are welcome and encouraged to come and use this time and resources to develop and practice your ability to analyze data with R.</p>
+</div>
+<div id="adding-and-dropping-the-course" class="section level2">
+<h2>Adding and Dropping the course</h2>
+<p>The course is open enrollment. You may add at any time but you will not be able to get credit for this class if you miss more than a day few days. All materials are posted on the course website. If you add the class late you are responsible for getting caught up. this workshop-style class is only offered for 4 days. It would be very difficult to get caught up if you miss more than the first day.</p>
+</div>
+<div id="americans-with-disabilities-act" class="section level2">
+<h2>Americans with Disabilities Act</h2>
+<p>If you need course adaptations or accommodations because of a disability or chronic illness, or if you need to make special arrangements in case the building must be evacuated, please make an appointment with me as soon as possible, or see me during office hours. Please also contact Accessibility Resource Center (ARC) as they are the designated department responsible for approving and coordinating reasonable accommodations and services for students with disabilities. ARC will help you understand your rights and responsibilities under the Americans with Disabilities Act and provide you further assistance with requesting and arranging accommodations.</p>
+<p>Accessibility Resource Center<br />
+530-898-5959<br />
+Student Services Center 170<br />
+<a href="mailto:arcdept@csuchico.edu">arcdept@csuchico.edu</a></p>
+</div>
 </div>
 
 

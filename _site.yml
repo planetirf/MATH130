@@ -3,7 +3,7 @@ output_dir: "."
 navbar:
   title: "INTRO TO R (MATH 130)"
   left:
-    - text: "Overview"
+    - text: "Syllabus"
       href: index.html
     - text: "Learning Materials"
       href: notes.html
