@@ -1,10 +1,36 @@
 
 # Description
 
+```{r}
+2+2
+cat("this is a string")
+summary(lm(dist~speed, data=cars))
+```
+
+this is `r` code
+
+```{r}
+library(ggplot2)
+ggplot(cars, aes(x=speed, y=dist)) + geom_point()
+```
 
 # Logistics
 
+<h2>Emphasis classes</h2>
+<p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+<p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+<p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
+<p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
+<p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+<p class="text-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
 
 # Syllabus
 
 
+<a href="#" class="btn btn-default">Default</a>
+<a href="#" class="btn btn-primary">Primary</a>
+<a href="#" class="btn btn-success">Success</a>
+<a href="#" class="btn btn-info">Info</a>
+<a href="#" class="btn btn-warning">Warning</a>
+<a href="#" class="btn btn-danger">Danger</a>
+<a href="#" class="btn btn-link">Link</a>

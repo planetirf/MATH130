@@ -20,6 +20,6 @@ navbar:
         href: https://github.com/norcalbiostat
 output:
   html_document:
-    theme: cosmo
-    highlight: textmate
-    css: styles.css
+    theme: readable
+    highlight: tango
+ 
