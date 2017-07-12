@@ -1,0 +1,25 @@
+name: "Robin Donatello"
+output_dir: "."
+navbar:
+  title: "INTRO TO R (MATH 130)"
+  left:
+    - text: "Overview"
+      href: index.html
+    - text: "Learning Materials"
+      href: notes.html
+    - text: "Assignments"
+      href: assignments.html
+    - text: "Project"
+      href: project.html
+  right:
+      - text: ""
+        icon: fa-envelope-o
+        href: mailto:rdonatello@csuchico.edu
+      - text: ""
+        icon: fa-github-alt
+        href: https://github.com/norcalbiostat
+output:
+  html_document:
+    theme: cosmo
+    highlight: textmate
+    css: styles.css
