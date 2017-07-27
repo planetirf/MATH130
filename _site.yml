@@ -3,21 +3,25 @@ output_dir: "."
 navbar:
   title: "INTRO TO R (MATH 130)"
   left:
-    - text: "Syllabus"
-      href: index.html
-    - text: "Learning Materials"
-      href: notes.html
-    - text: "Assignments"
-      href: assignments.html
-    - text: "Project"
-      href: project.html
+    - text: "Schedule & Materials"
+      icon: fa-book
+      href: schedule.html
+  
+      
   right:
-      - text: ""
-        icon: fa-envelope-o
-        href: mailto:rdonatello@csuchico.edu
-      - text: ""
-        icon: fa-github-alt
-        href: https://github.com/norcalbiostat
+    - text: "Syllabus"
+      icon: fa-info-circle
+      href: syllabus.html
+    - text: "Help/FAQ"
+      icon: fa-question
+      href: help.html
+    - text: "Contact"
+      icon: fa-envelope-o
+      href: mailto:rdonatello@csuchico.edu
+    - text: "NorCalBiostat"
+      icon: fa-paw
+      href: http://www.norcalbiostat.com
+      
 output:
   html_document:
     theme: readable
