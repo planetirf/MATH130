@@ -1,3 +1,7 @@
+---
+title: 'Schedule of Events'
+date: 'Last Updated: `r Sys.time()`'
+---
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(dplyr);library(readxl); library(kableExtra)

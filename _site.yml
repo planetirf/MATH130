@@ -6,6 +6,12 @@ navbar:
     - text: "Schedule & Materials"
       icon: fa-book
       href: schedule.html
+    - text: "Due Dates"
+      icon: fa-calendar-check-o
+      href: calendar.html
+    - text: "Projects"
+      icon: fa-bar-chart
+      href: project.html
   
       
   right:
@@ -18,7 +24,7 @@ navbar:
     - text: "Contact"
       icon: fa-envelope-o
       href: mailto:rdonatello@csuchico.edu
-    - text: "NorCalBiostat"
+    - text: ""
       icon: fa-paw
       href: http://www.norcalbiostat.com
       
