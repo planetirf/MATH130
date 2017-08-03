@@ -1,12 +1,15 @@
 
 This is the landing page for <span style="color:blue">**Introduction to Data Analysis using R**</span> course taught by [Dr. Robin Donatello](www.norcalbiostat.com). This page is used for posting of regular announcements and information for students of the class. 
 
+## Logistics
+
+* Meeting day/time: TR 2-3:50 pm MLIB 442
+* 4 weeks lecture, 1 week project
+* Open enrollment (MATH 199 #5765) - auditors/faculty/staff/external partners welcome!
 
 # Announcements
  
 
-
-### 7/26/17
-- Get this site started. 
-- Finalize and post schedule
-
+## Week 1
+### Tuesday 8/22/17
+* Let's get this party started! Check out the [Schedule and materials](schedule/) for details
