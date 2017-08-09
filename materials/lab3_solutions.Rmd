@@ -1,0 +1,166 @@
+---
+title: "Lab 3: Data Visualization"
+author: "Solutions"
+date: "DATE GOES HERE"
+output: 
+  html_document: 
+    highlight: pygments
+    theme: cerulean
+---
+
+# Introduction
+This assignment folllows along with the Data Viz Tutorial. 
+
+Follow along with the tutorial and reproduce each plot. At the end of 
+each section come to this document to synthesize what you just saw in
+the tutorial, to a new data set. 
+
+Using the `survey` data set that is built into the `MASS` package
+in `R`, create the following plots. You can use any plotting method you
+choose. Note, there is some missing data in this data set, so you might see
+a few warning messages fly by. 
+
+# Load up the data.
+Assign the `survey` data to the object `survey` so you can actually see
+that it's ready for your use. We'll use `na.omit()` to drop any row that has
+any missing data in it, just for the purpose of this lab. 
+```{r, warning=FALSE, message=FALSE}
+library(ggplot2)
+library(MASS)
+library(knitr)
+
+survey <- na.omit(survey)
+opts_chunk$set(warning=FALSE, message=FALSE, fig.height=4, fig.width=5, fig.align='center') 
+```
+
+Your answers can be for your eyes only (exploratory). They do not have to be pretty. 
+
+
+# Univariate
+
+## One categorical variable
+
+1.  A barchart of how often the student exercises. 
+
+```{r}
+ggplot(survey, aes(x=Exer)) + geom_bar()
+```
+
+2. A pie chart of smoking status. 
+
+```{r}
+pie(table(survey$Exer))
+```
+
+## One continuous variable. 
+
+3. A histogram of age
+    a.  With an overlaid density plot in a different color.
+```{r, fig.height=4, fig.width=4}
+ggplot(survey, aes(x=Age)) + geom_density(col="blue") + 
+  geom_histogram(aes(y=..density..), colour="black", fill=NA)
+```
+    
+4. A boxplot of pulse rate
+
+```{r}
+boxplot(survey$Pulse)
+```
+
+
+# Bivariate
+
+## Two categorical variables. 
+
+5. Frequency table of exercise frequency against smoking status. 
+
+```{r}
+table(survey$Exer, survey$Smoke)
+```
+
+6. Proportion table of exercise frequency _within_ smoking status. Round to 3 digits. 
+
+```{r}
+round(prop.table(table(survey$Exer, survey$Smoke), margin=2),3)
+```
+
+7. Grouped barchart of exercise frequency _within_ smoking status. 
+
+```{r}
+ggplot(survey, aes(x=Smoke, fill=Exer)) + geom_bar(position="dodge")
+```
+
+
+## Two numeric variables. 
+
+8. A scatterplot of the span of the writing hand (x) against span
+   of non-writing hand (y). 
+    a. Add a best fit line in purple.
+    b. Add a lowess or smoother line in brown. 
+    
+```{r}
+ggplot(survey, aes(x=Wr.Hnd, y=NW.Hnd)) + geom_point() + 
+  geom_smooth(se=FALSE, method="lm", color="blue") + 
+  geom_smooth(se=FALSE, color="red")
+```
+
+# One categorical and one numeric
+
+9. Grouped boxplots of pulse by smoking status 
+    - with an overlaid violin plot in a different transparency. 
+    - fill by smoking status
+
+```{r}
+ggplot(survey, aes(x=Smoke, y=Pulse, fill=Smoke)) + 
+        geom_boxplot(alpha=.6) + geom_violin(alpha=.2)
+```
+
+10. Overlaid density plots of height by gender. No fill, color only.  
+
+```{r}
+ggplot(survey, aes(x=Height, col=Sex)) + geom_density()
+```
+
+11. Histogram of writing hand span paneled by gender
+     a. where the panels are horizontal (1 row 2 columns)
+     b. where the panels are vertical (2 rows 1 column)
+
+```{r}
+ggplot(survey, aes(x=Wr.Hnd)) + geom_histogram() + facet_wrap(~Sex, ncol=2)
+ggplot(survey, aes(x=Wr.Hnd)) + geom_histogram() + facet_wrap(~Sex, ncol=1)
+```
+
+# Multivariate
+
+## Two numerical and one categorical
+
+12. A scatterplot of height (y) against age (x)
+    a. grouped by gender (you can choose grouping by shape or color)
+    b. With a lowess line per gender
+    
+```{r}
+ggplot(survey, aes(y=Height, x=Age, col=Sex)) + geom_point() + geom_smooth(se=FALSE)
+```
+    
+13. A scatterplot of height against age
+    a. paneled (faceted) by exercise regimine
+
+```{r}
+ggplot(survey, aes(y=Height, x=Age, col=Exer)) + geom_point() + facet_wrap(~Exer)
+```
+
+## One numerical and two categorical
+
+14. Grouped boxplots of pulse by exercise & gender. Put one categorical on the x, fill the box color by the other. 
+  
+```{r}
+ggplot(survey, aes(x=Exer, y=Pulse, fill=Sex)) + geom_boxplot()
+```    
+
+15. Same plot as above, but now panel by smoking status category. Create a 2x2 grid. 
+
+```{r}
+ggplot(survey, aes(x=Exer, y=Pulse, fill=Sex)) + geom_boxplot() + facet_wrap(~Smoke, ncol=2)
+```    
+
+

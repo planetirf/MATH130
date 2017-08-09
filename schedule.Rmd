@@ -1,8 +1,9 @@
 ---
-title: 'Schedule of Events'
+title: 'Schedule and materials'
 date: 'Last Updated: `r Sys.time()`'
 ---
 
+All files submitted for grading must be uploaded to Blackboard learn by the due date. 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(dplyr);library(readxl); library(kableExtra)
 options(knitr.table.format = "html", knitr.kable.NA = '') 
@@ -36,8 +37,8 @@ out <- select(cdat, Week, Date, Topics, Preparation, Evaluation)
 knitr::kable(out, align="l", escape=FALSE) %>% 
   kable_styling(bootstrap_options = c("hover", "striped", "responsive", "bordered")) %>% 
   column_spec(1, width="1%") %>% column_spec(2, width="1%") %>%
-  column_spec(3, width="20%") %>% column_spec(4, width="30%") %>%
-  column_spec(5, width="30%")
+  column_spec(3, width="30%") %>% column_spec(4, width="30%") %>%
+  column_spec(5, width="20%")
 ```
 
 

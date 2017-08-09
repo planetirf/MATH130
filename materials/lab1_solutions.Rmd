@@ -1,0 +1,133 @@
+---
+title: "Lab1"
+author: "Solutions"
+draft: true
+---
+
+Here's your chance to demonstrate that you can integrate the topics and skills you learned through the Data Camp course into a literate report. Each section asks you to perform a few tasks based on each of the chapters in the Introduction to R course. 
+
+When the question asks you to perform a coding task, tnsert a code chunk after each question where you will
+write the code to answer that question. Knitting after each completed code chunk will help you to ensure your 
+final product works as intended! That way if it breaks, you know exactly where the error lies. 
+It's like saving after every answer!
+
+The first question is done for you as an example. 
+
+## Basic building blocks
+
+0. Calculate 3 + 4. Put the answer below and knit the document. 
+```{r}
+3+4
+```
+
+
+1. Calculate $\frac{1}{\sqrt{2}}$, then knit the document. 
+```{r}
+1/sqrt(2)
+```
+
+2. Assign a numeric value to the variable `my_apples`, assign a different numeric value to the variable `my_oranges`. Add these two together and assign the result to the variable `my_fruit`. Print the result of `my_fruit` to the report. 
+```{r}
+my_apples <- 1
+my_oranges <- 2
+my_fruit <- my_apples + my_oranges
+my_fruit
+```
+
+**3. Consider the following code: `a <- "green"` What type of data is `a`?**
+
+a character, or a string. 
+
+**4. What are the values that _logical_ data types can hold (_Hint: There are only two_)**
+
+TRUE and FALSE
+
+
+5. Knit this document. 
+
+## Vectors
+
+Data Camp took you through a tour of Vegas data. Let's recreate and play around with a weeek at the tables. 
+
+**1. Create three vectors (`weekday`, `poker`, `roulette`) to describe the following outcome.** 
+
+* `weekday`: The 5 weekdays.
+* `poker`: 
+    - On Monday you won $140
+    - Tuesday you lost $50
+    - Wednesday you won $20
+    - Thursday you lost $120
+    - Friday you won $240
+* `roulette`:
+    - On Monday you lost $24
+    - Tuesday you lost $50
+    - Wednesday you won $100
+    - Thursday you lost $350
+    - Friday you won $10
+
+```{r}
+weekday <- c("Mon", "Tue", "Wed", "Thu", "Fri")
+poker  <- c(140, -50, 20, -120, 240)
+roulette <- c(-24, -50, 100, -350, 10)
+```
+
+**2. How much money did you gain/loose overall? What game did you do better on?**
+
+```{r}
+sum(poker)
+sum(roulette)
+sum(poker) + sum(roulette)
+```
+
+I did better in poker because i came out with +$230 this week. 
+
+## Data Frames
+In the section above, all that data was contained in separate vectors.
+Let's combine them into a `data.frame` and explore. Data frames are a
+more common way of storing data in R. 
+
+Use the following code to create a data frame out of the vegas data. The code
+chunk has already been written for you, you just need to remove the `eval=FALSE`
+portion so that it will evaluate. 
+```{r}
+vegas <- data.frame(day = weekday, poker = poker, roulette = roulette)
+```
+
+**1. Print out the `vegas` data set in it's entirety**
+```{r}
+vegas
+```
+
+**2. Print out the records for just Tuesday and Thursday using bracket notation
+and indicies `[,]`.**
+```{r}
+vegas[c(2,4),]
+```
+
+**3. Use dollar sign notation to print just the poker variable: (`vegas$poker`).**
+```{r}
+vegas$poker
+```
+
+
+**3. Print out the records for Wednesday only, using a logical statement such
+as `day == "Wed"` to identify the row of interest.**
+```{r}
+vegas[vegas$day=="Wed",]
+```
+
+
+**4. Create a new variable called `total` that adds the daily totals for each
+game together. Print the full data set again.**
+```{r}
+vegas$total <- vegas$poker + vegas$roulette
+vegas
+```
+
+**5. Use this new total vector to subset the data frame now to only include days
+where there was a positive total. Store this result as a new object called 
+`win_days`, and print this new object to the screen.**
+```{r}
+win_days <- subset(vegas, total>0)
+win_days
+```

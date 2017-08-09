@@ -1,15 +1,56 @@
 
 This is the landing page for <span style="color:blue">**Introduction to Data Analysis using R**</span> course taught by [Dr. Robin Donatello](www.norcalbiostat.com). This page is used for posting of regular announcements and information for students of the class. 
 
-## Logistics
+# Target Audience
+Anyone who wants to do their own data analysis! This is a primer to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R. Topics include: R programming basics, importing data, properties of tidy data, visualizing data, reproducible research with Markdown and basic data wrangling. Designed to get you up and running with basic knowledge of `R` and Markdown ASAP. This course is designed as a pre-requisite for most upper division Statisics, and all Data Science courses which use R heavily.
 
-* Meeting day/time: TR 2-3:50 pm MLIB 442
-* 4 weeks lecture, 1 week project
-* Open enrollment (MATH 199 #5765) - auditors/faculty/staff/external partners welcome!
+# Logistics
 
-# Announcements
- 
+* **Meeting Times and Locations** TR 2-4pm; MLIB 442;  8/22 - 9/14 (4 weeks)
+    - Content is fully online using the links below.  
+    - After week 4 attendance is optional. This room is reserved for the entire semester for rop in R help time, short talks and additional workshops on general Data Science topics. (a.k.a "Meet and analyze data")
+* **Open enrollment (MATH 199 #5765)** auditors/faculty/staff/external partners welcome!
+* **Accounts** We use several online tools for learning and communication
+    - [Chico R Users Google Group](https://groups.google.com/forum/#!forum/chico-rug). This is our discussion forum to ask (and answer) questions outside of class. 
+    - There is also a [R Users Meetup group](https://www.meetup.com/Chico-R-Users-Group/) that is optional but useful if you want to stay connected to the community and learn about upcoming events. 
+    - We will use Data Camp as an online tool to learn R. Use [this link](https://www.datacamp.com/groups/5d949a122590b9e89266b74e5438f13cac5ddb12/invite) to create an account to join the class. Be sure to use your real name for credit.
 
-## Week 1
-### Tuesday 8/22/17
-* Let's get this party started! Check out the [Schedule and materials](schedule/) for details
+
+
+--------------------------------
+
+# Schedule
+
+_Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
+
+All assigned material should be uploaded through Blackboard Learn. The due dates can be found on the class calendar using the link at the top. 
+
+### Week 1
+* Tue 8/21: Day 1 - [Introduction to the class and R](materials/day1-intro.html)
+    - Data Camp: Intro to R - Basic Building Blocks module due by end of class
+* Thu 8/23: Day 2 - [Reproducible Research using R Studio](materials/day2-rstudio.html)
+    - Lab 1 & Rest of Data Camp Module due Mon 8/28
+
+### Week 2
+* [Importing data, functions and factors](materials/day3-import-and-factors.html)
+    - Lab 2 Due Mon 9/4
+
+### Week 3
+* [Data Visualizations](materials/day56-data-viz.html) using `ggplot2`.
+    - Lab 3 Due Mon 9/11
+
+### Week 4
+* [Data manipulation](materials/day78-data-manipulation.html) using `dplyr`.
+    - Lab 4 Due Mon 9/18
+
+### Putting it all together (_links to be added_)
+* Exploratory Data Analysis Project
+    - Instructions
+        - Project due Saturday 9/23
+    - Peer Review Instructions
+        - Peer Review due Wed 9/27
+    
+
+
+
+

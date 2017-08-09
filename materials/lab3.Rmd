@@ -1,0 +1,118 @@
+---
+title: "Lab 3: Data Visualization"
+author: "NAME"
+date: "DATE GOES HERE"
+output: 
+  html_document: 
+    highlight: pygments
+    theme: cerulean
+---
+
+# Introduction
+This assignment folllows along with the Data Viz Tutorial. 
+
+Follow along with the tutorial and reproduce each plot. At the end of 
+each section come to this document to synthesize what you just saw in
+the tutorial, to a new data set. 
+
+Using the `survey` data set that is built into the `MASS` package
+in `R`, create the following plots. You can use any plotting method you
+choose. Note, there is some missing data in this data set, so you might see
+a few warning messages fly by. 
+
+# Load up the data.
+Assign the `survey` data to the object `survey` so you can actually see
+that it's ready for your use. We'll use `na.omit()` to drop any row that has
+any missing data in it, just for the purpose of this lab. 
+```{r, warning=FALSE, message=FALSE}
+library(ggplot2)
+library(MASS)
+library(knitr)
+
+survey <- na.omit(survey)
+opts_chunk$set(warning=FALSE, message=FALSE, fig.height=4, fig.width=5, fig.align='center') 
+```
+
+Your answers can be for your eyes only (exploratory). They do not have to be pretty. 
+
+
+# Univariate
+
+## One categorical variable
+
+1.  A barchart of how often the student exercises. 
+
+
+
+2. A pie chart of smoking status. 
+
+
+## One continuous variable. 
+
+3. A histogram of age
+    a.  With an overlaid density plot in a different color.
+
+4. A boxplot of pulse rate
+
+
+
+# Bivariate
+
+## Two categorical variables. 
+
+5. Frequency table of exercise frequency against smoking status. 
+
+
+
+6. Proportion table of exercise frequency _within_ smoking status. Round to 3 digits. 
+
+
+7. Grouped barchart of exercise frequency _within_ smoking status. 
+
+
+
+## Two numeric variables. 
+
+8. A scatterplot of the span of the writing hand (x) against span
+   of non-writing hand (y). 
+    a. Add a best fit line in purple.
+    b. Add a lowess or smoother line in brown. 
+    
+
+# One categorical and one numeric
+
+9. Grouped boxplots of pulse by smoking status 
+    - with an overlaid violin plot in a different transparency. 
+    - fill by smoking status
+
+
+
+10. Overlaid density plots of height by gender. No fill, color only.  
+
+
+11. Histogram of writing hand span paneled by gender
+     a. where the panels are horizontal (1 row 2 columns)
+     b. where the panels are vertical (2 rows 1 column)
+
+# Multivariate
+
+## Two numerical and one categorical
+
+12. A scatterplot of height (y) against age (x)
+    a. grouped by gender (you can choose grouping by shape or color)
+    b. With a lowess line per gender
+    
+
+13. A scatterplot of height against age
+    a. paneled (faceted) by exercise regimine
+
+
+## One numerical and two categorical
+
+14. Grouped boxplots of pulse by exercise & gender. Put one categorical on the x, fill the box color by the other. 
+  
+
+15. Same plot as above, but now panel by smoking status category. Create a 2x2 grid. 
+
+
+
