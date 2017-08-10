@@ -21,12 +21,12 @@ navbar:
     - text: "Contact"
       icon: fa-envelope-o
       href: mailto:rdonatello@csuchico.edu
-    - text: ""
+    - text: "Dr. D's Website"
       icon: fa-paw
       href: http://www.norcalbiostat.com
       
 output:
   html_document:
-    theme: united
+    theme: yeti
     highlight: tango
  

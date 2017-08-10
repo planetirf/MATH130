@@ -1,15 +1,19 @@
 
+<br><br>
+
 This is the landing page for <span style="color:blue">**Introduction to Data Analysis using R**</span> course taught by [Dr. Robin Donatello](www.norcalbiostat.com). This page is used for posting of regular announcements and information for students of the class. 
 
 # Target Audience
 Anyone who wants to do their own data analysis! This is a primer to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R. Topics include: R programming basics, importing data, properties of tidy data, visualizing data, reproducible research with Markdown and basic data wrangling. Designed to get you up and running with basic knowledge of `R` and Markdown ASAP. This course is designed as a pre-requisite for most upper division Statisics, and all Data Science courses which use R heavily.
+
+[Advertisment Flyer](Ad_flyer_F17.pdf)
 
 # Logistics
 
 * **Meeting Times and Locations** TR 2-4pm; MLIB 442;  8/22 - 9/14 (4 weeks)
     - Content is fully online using the links below.  
     - After week 4 attendance is optional. This room is reserved for the entire semester for rop in R help time, short talks and additional workshops on general Data Science topics. (a.k.a "Meet and analyze data")
-* **Open enrollment (MATH 199 #5765)** auditors/faculty/staff/external partners welcome!
+* **Open enrollment (MATH 130 #5961)** auditors/faculty/staff/external partners welcome!
 * **Accounts** We use several online tools for learning and communication
     - [Chico R Users Google Group](https://groups.google.com/forum/#!forum/chico-rug). This is our discussion forum to ask (and answer) questions outside of class. 
     - There is also a [R Users Meetup group](https://www.meetup.com/Chico-R-Users-Group/) that is optional but useful if you want to stay connected to the community and learn about upcoming events. 
