@@ -307,19 +307,19 @@ table(email$spam, email$spam_labeled)</code></pre>
 <pre class="r"><code>y &lt;- sample(1:100, 20)
 y[sample(1:length(y),5)] &lt;- NA
 y</code></pre>
-<pre><code>##  [1] 92 77 22 33 63 NA NA 65 57 51 36 95 48  1 35 61 NA NA 24 NA</code></pre>
+<pre><code>##  [1]  5 22 23 NA NA 10 NA 20 NA 75 21 36 12 25  1 91 31 58 NA 62</code></pre>
 <p>Now, let’s calculate the mean.</p>
 <pre class="r"><code>mean(y)</code></pre>
 <pre><code>## [1] NA</code></pre>
 <p>Oops, forgot about the missing values. We need to tell R to <em>remove</em> the <code>NA</code>’s from the data prior to calculating the mean.</p>
 <pre class="r"><code>mean(y, na.rm=TRUE)</code></pre>
-<pre><code>## [1] 50.66667</code></pre>
+<pre><code>## [1] 32.8</code></pre>
 <p>It worked fine because I named the argument to remove missing values. What if I didn’t state what that argument was?</p>
 <pre class="r"><code>mean(y, TRUE)</code></pre>
 <pre><code>## Error in mean.default(y, TRUE): 'trim' must be numeric of length one</code></pre>
 <p>R is expecting a value for trim as the second argument and doesn’t know what to do with the value <code>TRUE</code>. If you name the arguments, then the order is irrelevant.</p>
 <pre class="r"><code>mean(na.rm=TRUE, x=y, trim=.1)</code></pre>
-<pre><code>## [1] 51.07692</code></pre>
+<pre><code>## [1] 30.76923</code></pre>
 <p>But let’s not get that crazy.</p>
 <p>We’ll be getting into heavy function use, specifically with the <code>ggplot</code> function in the next lab.</p>
 </div>
@@ -337,7 +337,7 @@ y</code></pre>
 <div id="on-your-own" class="section level1">
 <h1>On Your Own</h1>
 <ol style="list-style-type: decimal">
-<li>Right click this link <a href="../_labs/_Lab2.Rmd">Lab 2.Rmd</a> link and <strong>Save As</strong> (or Save Link As) to download the RMarkdown file.
+<li>Right click this link <a href="lab2.Rmd">Lab 2.Rmd</a> link and <strong>Save As</strong> (or Save Link As) to download the RMarkdown file.
 <ul>
 <li>Save this in your class folder.</li>
 <li>Rename this file to remove the underscore in the file name.</li>

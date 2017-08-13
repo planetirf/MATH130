@@ -9,7 +9,7 @@ draft: true
 
 Here's your chance to demonstrate that you can integrate the topics and skills you learned through the Data Camp course into a literate report. Each section asks you to perform a few tasks based on each of the chapters in the Introduction to R course. 
 
-When the question asks you to perform a coding task, tnsert a code chunk after each question where you will write the code to answer that question. Knitting after each completed code chunk will help you to ensure your final product works as intended! That way if it breaks, you know exactly where the error lies. It's like saving after every answer!
+When the question asks you to perform a coding task, insert a code chunk after each question where you will write the code to answer that question. Knitting after each completed code chunk will help you to ensure your final product works as intended! That way if it breaks, you know exactly where the error lies. It's like saving after every answer!
 
 The first question is done for you as an example. 
 
@@ -41,7 +41,7 @@ The first question is done for you as an example.
 
 ## Vectors
 
-Data Camp took you through a tour of Vegas data. Let's recreate and play around with a weeek at the tables. 
+Data Camp took you through a tour of Vegas data. Let's recreate and play around with a week at the tables. 
 
 1. Create three vectors (`weekday`, `poker`, `roulette`) to describe the following outcome. 
 
@@ -83,7 +83,7 @@ vegas <- data.frame(day = weekday, poker = poker, roulette = roulette)
 ```
 
 2. Print out the records for just Tuesday and Thursday using bracket notation
-and indicies `[,]`. 
+and indices `[,]`. 
 ```{r}
 
 ```

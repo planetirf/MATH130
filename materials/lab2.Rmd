@@ -50,7 +50,7 @@ data set in the code chunk below.
    `NCbirths$miss_fage <- ifelse(is.na(NCbirths$fage), 1, 0)`. What data type is this new variable?
    
    
-7. Convert `miss_fage` to a factor variabale, where the lables are "Yes" when `miss_fage`=1 and 
+7. Convert `miss_fage` to a factor variable, where the labels are "Yes" when `miss_fage`=1 and 
    "No" when `miss_fage` = 0. Create a `table()` of this new variable to show that your labeling 
    worked. 
    

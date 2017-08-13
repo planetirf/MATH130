@@ -15,7 +15,7 @@ The dplyr package makes each of these steps as fast and easy as possible by:
    options are helpfully constrained when thinking about how to tackle a problem.
 2. Providing simple functions that correspond to the most common data 
    manipulation verbs, so that you can easily translate your thoughts into code.
-3. Using efficient data storage backends, so that you spend as little time 
+3. Using efficient data storage back ends, so that you spend as little time 
    waiting for the computer as possible.
 
 The goal of this lesson is to introduce you to the basic tools that dplyr provides, and show how you to apply them to data frames. You must have the `dplyr`,  `nycflights13` and `hflights` packages installed before you can proceed.  Install them now if you have not done so yet. 
@@ -31,13 +31,13 @@ library(dplyr); library(nycflights13)
 The `nycflights13` package contains several data sets that can be used to help understand what causes delays. 
 
 * `flights`: information about all flights that departed from NYC (e.g. EWR, JFK and LGA) in 2013. 
-* `weather`: hourly meterological data for each airport
+* `weather`: hourly meteorological data for each airport
 * `planes`: construction information about each plane
 * `airports`: airport names and locations
 * `airlines`: translation between two letter carrier codes and names
 
 **Special notice** These data sets, and any data set created with `dplyr`
-has a specific data type called a `tibble`. These are not as furry and prolific as their cousins the `tribbles`. `tibbles` behaves for all intents and purposes as a `data.frame`, just gets displayed differently. For example, the `flights` data set contains data on 19 characteristics (variables) from 336,776 flights. There's no way I would want to print out a data set that large. But i'm gonna....  
+has a specific data type called a `tibble`. These are not as furry and prolific as their cousins the `tribbles`. `tibbles` behaves for all intents and purposes as a `data.frame`, just gets displayed differently. For example, the `flights` data set contains data on 19 characteristics (variables) from 336,776 flights. There's no way I would want to print out a data set that large. But I'm gonna....  
 
 ```{r}
 flights
@@ -89,7 +89,7 @@ arrange(flights, desc(arr_delay))
 ```
 
 ## Select
-Often you work with large datasets with many columns where only a few are actually of interest to you. `select()` allows you to rapidly zoom in on a useful subset using operations that usually only work on numeric variable positions.
+Often you work with large data sets with many columns where only a few are actually of interest to you. `select()` allows you to rapidly zoom in on a useful subset using operations that usually only work on numeric variable positions.
 ```{r}
 select(flights, month, day, year)
 ```
@@ -221,12 +221,12 @@ Go do Lab 4 - Practice on Chaining Operations.
 
 
 # Joining data from multiple tables
-Alright, so we can finangle and mess around with one table pretty easily. Great. But oh so often you want to combine a piece of information in one data set, say demographic characteristics on a person with information contained in a second data set, such as grades or salary. In comes table joins. 
+Alright, so we can finagle and mess around with one table pretty easily. Great. But oh so often you want to combine a piece of information in one data set, say demographic characteristics on a person with information contained in a second data set, such as grades or salary. In comes table joins. 
 
 Important note - SQL is the powerhouse language of database management. `dplyr` can be used in a similar manner, but obviously only works in R whereas SQL is nearly universal and can be written by itself, and in a number of other statistics and data analysis software packages. 
 
 
-This part of the tutorial comes directly from a combination of Jenny Bryan at Unversity of British Columbia's STAT 545 course.  http://stat545.com/bit001_dplyr-cheatsheet.html (She has a sheer magnitude of amazing stuff), with a modification of how the data is created by Nate Byers(https://rpubs.com/NateByers/Merging). 
+This part of the tutorial comes directly from a combination of Jenny Bryan at University of British Columbia's STAT 545 course.  http://stat545.com/bit001_dplyr-cheatsheet.html (She has a sheer magnitude of amazing stuff), with a modification of how the data is created by Nate Byers(https://rpubs.com/NateByers/Merging). 
 
 Let's create some data to play with
 
@@ -313,7 +313,7 @@ Yes! Here we're adding superhero information to the publisher information. Each 
 full_join(superheroes, publishers)
 ```
 
-We get all rows of `superheroes` plus a new row from `publishers`, containing the publisher Image. We get all variables from both data sets, varibles without matches in the other data set simply get an NA. 
+We get all rows of `superheroes` plus a new row from `publishers`, containing the publisher Image. We get all variables from both data sets, variables without matches in the other data set simply get an NA. 
 
 
 ## Practice

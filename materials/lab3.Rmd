@@ -9,7 +9,7 @@ output:
 ---
 
 # Introduction
-This assignment folllows along with the Data Viz Tutorial. 
+This assignment follows along with the Data Viz Tutorial. 
 
 Follow along with the tutorial and reproduce each plot. At the end of 
 each section come to this document to synthesize what you just saw in
@@ -104,7 +104,7 @@ Your answers can be for your eyes only (exploratory). They do not have to be pre
     
 
 13. A scatterplot of height against age
-    a. paneled (faceted) by exercise regimine
+    a. paneled (faceted) by exercise regimen
 
 
 ## One numerical and two categorical

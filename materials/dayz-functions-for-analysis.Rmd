@@ -29,7 +29,7 @@ After completing this lesson students will be able to identify a handful of func
 
 ## About the Data 
 
-The data comes from the Center for Disease Control (CDC), which has been conducting the Behavioral Risk Ractor Surveillance System (BRFSS) since 1984. BRFSS is the nation's premier system of health-related telephone surveys that collect state data about U.S. residents regarding their health-related risk behaviors, chronic health conditions, and use of preventive services. The data we are using comes from a random sample of 20,000 participants from this survey. More information on the survey and data can be found at https://www.cdc.gov/brfss/ 
+The data comes from the Center for Disease Control (CDC), which has been conducting the Behavioral Risk Factor Surveillance System (BRFSS) since 1984. BRFSS is the nation's premier system of health-related telephone surveys that collect state data about U.S. residents regarding their health-related risk behaviors, chronic health conditions, and use of preventive services. The data we are using comes from a random sample of 20,000 participants from this survey. More information on the survey and data can be found at https://www.cdc.gov/brfss/ 
 
 ----- 
 
@@ -253,7 +253,7 @@ summary(lm(wtdesire ~ weight + gender, data=lt250))
 
 Note the coefficient for gender: `genderm`. R appends the factor level that it is modeling to the end of the variable name, so `gender**m**` means the effect of being male on the relationship between actual and desired weight compared to the reference group (females). 
 
-What about an interaction? Does gender _change_ the relationship between acutal and desired weight?  Interaction terms are added using a `*`. 
+What about an interaction? Does gender _change_ the relationship between actual and desired weight?  Interaction terms are added using a `*`. 
 
 ```{r}
 summary(lm(wtdesire ~ weight + gender + weight*gender, data=lt250))

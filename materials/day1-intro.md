@@ -12,7 +12,7 @@ slug: day-1-intro
 * Primer to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R. 
 * Topics include: R programming basics, importing data, properties of tidy data, visualizing data, reproducible research with Markdown and basic data wrangling. 
 * Designed to get you up and running with basic knowledge of `R` and Markdown ASAP.
-* Most upper division Statisics, and all Data Science courses use R heavily. This course is designed as a pre-requisite. 
+* Most upper division Statistics, and all Data Science courses use R heavily. This course is designed as a pre-requisite. 
 
 
 ## Logistics
@@ -27,7 +27,7 @@ slug: day-1-intro
 * Content is fully online on the course website.  
 * Class time is spent walking through labs and on the spot debugging / expanding on ideas and concepts. 
 * After week 4 attendance is optional. 
-    - This room is reserved for the entire semester for rop in R help time, short talks and additional workshops on general Data Science topics. 
+    - This room is reserved for the entire semester for drop in R help time, short talks and additional workshops on general Data Science topics. 
     - a.k.a "Meet and analyze data"
 
 ## Time Committment & Frustration
