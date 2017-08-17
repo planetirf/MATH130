@@ -16,11 +16,12 @@ slug: day-1-intro
 
 
 ## Logistics
-* **Meeting Times and Locations** TR 2-4pm; MLIB 442;  8/22 - 9/14 (4 weeks)
+* **Meeting Times and Locations** TR 2-4pm; MLIB 226;  8/22 - 9/14 (4 weeks) **--NOTE ROOM CHANGE--**
 * **Course Website:** https://norcalbiostat.github.io/MATH130/
 * **[Chico R Users Google Group](https://groups.google.com/forum/#!forum/chico-rug)**. This is our discussion forum to ask (and answer) questions outside of class. 
     - There is also a [R Users Meetup group](https://www.meetup.com/Chico-R-Users-Group/) that is optional but useful if you want to stay connected to the community and learn about upcoming events. 
-* **Data Camp:** Online tool to learn R. Use [this link](https://www.datacamp.com/groups/5d949a122590b9e89266b74e5438f13cac5ddb12/invite) to create an account to join the class. Be sure to use your real name. 
+* **Data Camp:** Online tool to learn R. A link will be emailed to you that will allow you to create an account to join the online classroom class. Be sure to use your real name for credit.  
+
 
 ## Structure of this class
 
