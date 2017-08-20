@@ -40,7 +40,7 @@ Use dplyr functions and the pipe operator (` %>% `) to transform the following E
 5. Store the result in the variable `p`.
 6. Print `p` to the screen. 
 
-# Table Joins
+# Table Joins: How much does rain delay take off? 
 
 1. Identify rainy days (days with more than 1 inch of rain) from the `weather` data set.
 
@@ -73,4 +73,5 @@ Use dplyr functions and the pipe operator (` %>% `) to transform the following E
 
 
 7. Recreate your plot using the data without missing values and answer the original question
+
 

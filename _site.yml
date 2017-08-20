@@ -23,7 +23,7 @@ navbar:
       href: mailto:rdonatello@csuchico.edu
     - text: "Dr. D's Website"
       icon: fa-paw
-      href: http://www.norcalbiostat.com
+      href: http://www.norcalbiostat.com/
       
 output:
   html_document:

@@ -79,8 +79,7 @@ However it looks promising since
 
 ## Getting Started
 
-* Log into to your [Data Camp](https://www.datacamp.com/) classroom. 
-    - Use [this](https://www.datacamp.com/groups/5d949a122590b9e89266b74e5438f13cac5ddb12/invite) link if you have not already created an account and joined our group. 
+* Log into to your Data Camp classroom. 
 * You should see a course called "Introduction to R"
 * Complete the first module - Building Blocks by the end of class today. 
 * Follow the [Software Overview](https://norcalbiostat.netlify.com/post/software-overview/) post to get your computer up and running with the R studio suite of awesomeness by Thursday. 

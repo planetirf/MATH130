@@ -32,7 +32,7 @@ Here are some examples and articles that demonstrate why reproducible research i
 * [Simply Statistics](http://simplystatistics.org/2014/06/06/the-real-reason-reproducible-research-is-important/) - The real reason reproducible research is important.
 * Special articles in [Nature](http://www.nature.com/news/reproducibility-1.17552) that talk about the need to share code and reproducibility in the sciences. 
 * The spreadsheet error and austerity - as seen through [The Colbert Report](http://thecolbertreport.cc.com/videos/kbgnf0/austerity-s-spreadsheet-error---thomas-herndon)'s eyes. Moral of this story: ask for the data and question results that look too good to be true. Even graduate students can find serious errors!
-
+* Others on my list of "must reads" http://www.norcalbiostat.com/articles/articles 
 
 ----- 
 

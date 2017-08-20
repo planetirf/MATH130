@@ -32,7 +32,7 @@ There are two main types of delimiters we will consider in this class; comma and
 
 
 ### Data to download
-* Go to the cleaned data section of the [datasets page](../../data/) and download the following data sets: `NCBirths`, `email`, and `parHIV`. 
+* Go to the cleaned data section of the [datasets page](http://www.norcalbiostat.com/data/) and download the following data sets: `NCBirths`, `email`, and `parHIV`. 
 * **DO NOT RENAME ANYTHING** If you download multiple copies of the data, do not keep the versions that have a (1) or some number in the name. 
 * Put all downloaded data files into your MATH130 folder. 
 

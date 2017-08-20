@@ -31,7 +31,7 @@ All assigned material should be uploaded through Blackboard Learn. The due dates
 * Tue 8/22: Day 1 - [Introduction to the class and R](materials/day1-intro.html)
     - Data Camp: Intro to R - Basic Building Blocks module due by end of class
 * Thu 8/24: Day 2 - [Reproducible Research using R Studio](materials/day2-rstudio.html)
-    - Lab 1 & Rest of Data Camp Module due Mon 8/28
+    - [Lab 1](materials/lab1.Rmd) & Rest of Data Camp Module due Mon 8/28
     
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 rmarkdown::render("materials/day1-intro.md", quiet=TRUE)
@@ -43,15 +43,15 @@ rmarkdown::render("materials/day1-intro.md", quiet=TRUE)
 
 ### Week 2
 * [Importing data, functions and factors](materials/day3-import-and-factors.html)
-    - Lab 2 Due Mon 9/4
+    - [Lab 2](materials/lab2.Rmd) Due Mon 9/4
     
 ### Week 3
 * [Data Visualizations](materials/day56-data-viz.html) using `ggplot2`.
-    - Lab 3 Due Mon 9/11
+    - [Lab 3](materials/lab3.Rmd) Due Mon 9/11
 
 ### Week 4
 * [Data manipulation](materials/day78-data-manipulation.html) using `dplyr`.
-    - Lab 4 Due Mon 9/18
+    - [Lab 4](materials/lab4.Rmd) Due Mon 9/18
 
 ### Putting it all together (_links to be added_)
 * Exploratory Data Analysis Project
