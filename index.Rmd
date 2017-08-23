@@ -10,9 +10,10 @@ Anyone who wants to do their own data analysis! This is a primer to get the comp
 
 # Logistics
 
-* **Meeting Times and Locations** TR 2-3:50pm; MLIB 226;  8/22 - 9/14 (4 weeks) **--NOTE ROOM CHANGE--**
+* **Meeting Times and Locations** TR 2-3:50pm; BUTTE 211;  8/22 - 9/14 (4 weeks) **--NOTE ROOM CHANGE--**
     - Content is fully online using the links below.  
-    - After week 4 attendance is optional. This room is reserved for the entire semester for drop in R help time, short talks and additional workshops on general Data Science topics. (a.k.a "Meet and analyze data")
+    - After week 4 attendance is optional. 
+    - This room is reserved on Tuesday until 10/17 for drop in R help time. 
 * **Open enrollment (MATH 130 #5961)** auditors/faculty/staff/external partners welcome! Just send me an email with your intent and i'll put you on the email list. 
 * **Accounts** We use several online tools for learning and communication
     - [Chico R Users Google Group](https://groups.google.com/forum/#!forum/chico-rug). This is our discussion forum to ask (and answer) questions outside of class. 
