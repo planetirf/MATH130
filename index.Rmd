@@ -33,6 +33,7 @@ All assigned material should be uploaded through Blackboard Learn. The due dates
     - Data Camp: Intro to R - Basic Building Blocks module due by end of class
 * Thu 8/24: Day 2 - [Reproducible Research using R Studio](materials/day2-rstudio.html)
     - [Lab 1](materials/lab1.Rmd) & Rest of Data Camp Module due Mon 8/28
+    - [In Class notes on Lab 1](materials/lab1_inclass.html)
     
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 rmarkdown::render("materials/day1-intro.md", quiet=TRUE)
