@@ -34,15 +34,7 @@ All assigned material should be uploaded through Blackboard Learn. The due dates
 * Thu 8/24: Day 2 - [Reproducible Research using R Studio](materials/day2-rstudio.html)
     - [Lab 1](materials/lab1.Rmd) & Rest of Data Camp Module due Mon 8/28
     - [In Class notes on Lab 1](materials/lab1_inclass.html)
-    
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
-rmarkdown::render("materials/day1-intro.md", quiet=TRUE)
-#rmarkdown::render("materials/day2-rstudio.md", quiet=TRUE)
-#rmarkdown::render("materials/day3-import-and-factors.Rmd", quiet=TRUE)
-#rmarkdown::render("materials/day56-data-viz.Rmd", quiet=TRUE)
-#rmarkdown::render("materials/day78-data-manipulation.Rmd", quiet=TRUE)
-```
-
+  
 ### Week 2
 * [Importing data, functions and factors](materials/day3-import-and-factors.html)
     - [Lab 2](materials/lab2.Rmd) Due Mon 9/4
@@ -55,12 +47,18 @@ rmarkdown::render("materials/day1-intro.md", quiet=TRUE)
 * [Data manipulation](materials/day78-data-manipulation.html) using `dplyr`.
     - [Lab 4](materials/lab4.Rmd) Due Mon 9/18
 
-### Putting it all together (_links to be added_)
-* Exploratory Data Analysis Project
-    - Instructions
-        - Project due Saturday 9/23
-    - Peer Review Instructions
-        - Peer Review due Wed 9/27
+----
+
+# Project
+
+Now it's time to put your skillz to the test in an Exploratory Data Analysis Project
+
+* [Instructions](EDA/EDA_instructinos.html) on the assignment and how to do the peer review. 
+    - Project due Saturday 9/23
+        - Upload your HTML file [here](https://www.dropbox.com/request/S3KxRFTY7ZcHhZSRHaYT)
+    - Peer Review due Wed 9/27 
+        - Submissions ready for peer review [[here]]()
+        - Peer review [[submission link]](https://goo.gl/forms/7I4zsYpSsiZpgKyH3)
     
 
 
