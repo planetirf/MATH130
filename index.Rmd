@@ -53,11 +53,12 @@ All assigned material should be uploaded through Blackboard Learn. The due dates
 
 Now it's time to put your skillz to the test in an Exploratory Data Analysis Project
 
-* [Instructions](EDA/EDA_instructinos.html) on the assignment and how to do the peer review. 
-    - Project due Saturday 9/23
-        - Upload your HTML file [here](https://www.dropbox.com/request/S3KxRFTY7ZcHhZSRHaYT)
-    - Peer Review due Wed 9/27 
-        - Submissions ready for peer review [[here]]()
+* [Instructions](EDA/EDA_instructions.html) on the assignment and how to do the peer review. 
+    - Project due Sunday 9/24
+        - Name your file "EDA_name" (with your name of course). CSUC user names are best (i.e. _EDA_rdonatello.html_)
+        - Upload your HTML file [[here]](https://www.dropbox.com/request/S3KxRFTY7ZcHhZSRHaYT)
+    - Peer Review due Sunday 10/1
+        - Submissions ready for peer review [[here]](https://norcalbiostat.github.io/peer_review/math130_eda.html)
         - Peer review [[submission link]](https://goo.gl/forms/7I4zsYpSsiZpgKyH3)
     
 

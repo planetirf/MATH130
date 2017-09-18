@@ -43,17 +43,21 @@ Any other data sets require instructor approval.
 
 ## Submission
 
-To allow for adequate time for peer grading the submission deadline is a strict cutoff. Really late assignments won't be accepted. Knit your file to HTML, then upload to [here](https://www.dropbox.com/request/S3KxRFTY7ZcHhZSRHaYT) by the due date. 
+* To allow for adequate time for peer grading the submission deadline is a strict cutoff. Really late assignments won't be accepted. 
+* Knit your file to HTML, then upload to [here](https://www.dropbox.com/request/S3KxRFTY7ZcHhZSRHaYT) by the due date. 
+
+> You must name your file "EDA_name" for proper processing. 
 
 
 ## Peer Review 
 
 After the submission deadline, your analysis projects will be randomly assigned to two of your classmates for peer grading. This means you will score and provide feedback on 2 of your classmates reports. I will also score all projects.
 
-All submissions will be posted to the course website, go here and download the report to your computer. Either by using the comment and editing feature in Adobe, or by turning on track changes in WORD, provide comments directly into the document itself. 
+* All submissions will be posted to a [peer review](https://norcalbiostat.github.io/peer_review/math130_eda.html) website.
+* Go here and click on your assigned reviewee's name 
+* Record your scores in a [Google Form](https://goo.gl/forms/7I4zsYpSsiZpgKyH3).
 
-### Submitting the review
-Upload your review to BBLearn by the due date. Then go record your scores in a [Google Form](https://goo.gl/forms/7I4zsYpSsiZpgKyH3).  This data will be downloaded, cleaned and processed (all using R of course) by the instructor to generate your project grade. 
+This data will be downloaded, cleaned and processed (all using R of course) by the instructor to generate your project grade. 
 
 
 ## Guidelines
