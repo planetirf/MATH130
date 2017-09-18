@@ -1,0 +1,50 @@
+---
+title: "Frequently Asked Questions"
+date: "Last Updated `r Sys.time()`"
+output: html_document
+---
+
+# Where can I get help using R outside of class time? 
+
+### Online
+* Chico [R User Group](https://groups.google.com/forum/#!forum/chico-rug)
+* UCLA IDRE https://stats.idre.ucla.edu/r/ 
+* Cookbook for R http://www.cookbook-r.com/
+* R Examples repository http://dwoll.de/rexrepos/index.html 
+
+
+### In Person: 
+
+* **Robin Donatello** - Stat professor. Holt 202
+    - MWF 3-4pm, Holt 155 (most weeks I won't be avb either M or W)
+    - TR 10-11am, Holt 155
+    - T 9/19 2-4pm, BUTTE 211
+* **Edward Roualdes** - Stat professor. Holt 204
+    - MW 10-11am, 1-2pm
+    - R 1-2pm
+    - T 9/26 - 10/17, 2-4pm, BUTTE 211
+* **Eduardo Gomez** - peer mentor
+    - MW 3-4pm, Holt 155
+    - Occasionally during 10am class
+* **Ricardo Aguilar** - peer mentor
+    - Occasionally during 12pm class
+    - possibly available for personal tutoring
+* **Mariby Cruz** - peer mentor
+    - Occasionally during both 10 and 12 pm classes 
+    - TLC hours: Mon 10am-1pm, R 10-11am
+    - available for personal tutoring, including weekends
+* **Math Learning Lab (MLIB 4th floor)** [[Tutor Schedule]](https://docs.google.com/spreadsheets/d/1xNQMfxpnIiS5bUCS9jB2_EE1Sc4C06JRaw6jyEO3nVE/edit#gid=0)
+    - Mariby Cruz, Mitch Borgert, Matt Sterkel, Jerry Tucay
+
+
+# What other computers on campus have R? 
+
+* The three reserve computers in the first floor library. You have to ask to use these. (Confirmed 8/25/17)
+* Butte 211 has an open computer lab. 
+
+    
+    
+
+
+    
+    
