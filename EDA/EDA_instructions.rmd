@@ -28,7 +28,7 @@ Use the grading rubric at the end of this document for guidance as to what you s
 
 You have a choice here. If you are currently working on some data that you would like to explore, talk with me to get your data set approved. 
 
-If you do not have your own data, you can choose from one of the following data sets, all of which can be downloaded from the [Data](../../data/Datasets.html) page of the course website. Here are some viable choices: 
+If you do not have your own data, you can choose from one of the following data sets, all of which can be downloaded from the [Data](https://norcalbiostat.netlify.com/data/cleaned_data/) page of my teaching course website. Here are some viable choices: 
 
 
 * **NCbirths**: Information on births recorded in North Carolina in 2004 and health behaviors of their mothers. 
@@ -44,7 +44,7 @@ Any other data sets require instructor approval.
 ## Submission
 
 * To allow for adequate time for peer grading the submission deadline is a strict cutoff. Really late assignments won't be accepted. 
-* Knit your file to HTML, then upload to [here](https://www.dropbox.com/request/S3KxRFTY7ZcHhZSRHaYT) by the due date. 
+* Knit your file to WORD or PDF, then upload to [here](https://www.dropbox.com/request/S3KxRFTY7ZcHhZSRHaYT) by the due date. 
 
 > You must name your file "EDA_name" for proper processing. 
 
@@ -53,8 +53,8 @@ Any other data sets require instructor approval.
 
 After the submission deadline, your analysis projects will be randomly assigned to two of your classmates for peer grading. This means you will score and provide feedback on 2 of your classmates reports. I will also score all projects.
 
-* All submissions will be posted to a [peer review](https://norcalbiostat.github.io/peer_review/math130_eda.html) website.
-* Go here and click on your assigned reviewee's name 
+* All submissions will be posted to a [peer review](https://norcalbiostat.github.io/peer_review/math130_eda.html) website. 
+* Your assignments will be emailed to you by me shortly after the submission deadline. 
 * Record your scores in a [Google Form](https://goo.gl/forms/7I4zsYpSsiZpgKyH3).
 
 This data will be downloaded, cleaned and processed (all using R of course) by the instructor to generate your project grade. 
