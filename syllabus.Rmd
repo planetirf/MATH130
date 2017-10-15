@@ -1,3 +1,9 @@
+---
+output:
+  word_document: default
+  html_document: default
+---
+
 # Course Description
 This course is designed as a primer to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R in an environment that emphasizes reproducible research and literate programming. The target audience is anyone who wants to do their own data analysis. The course will cumulate with an peer-evaluated exploratory data analysis on either a pre-specified data set or your data set of choice. 
 
