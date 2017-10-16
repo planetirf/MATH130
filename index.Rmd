@@ -3,6 +3,15 @@
 
 This is the landing page for <span style="color:blue">**Introduction to Data Analysis using R**</span> course taught by [Dr. Robin Donatello](www.norcalbiostat.com). This page is used for posting of regular announcements and information for students of the class. 
 
+----
+
+# The Fall 17 run of this course is now over. 
+## MATH 130 will be offered again during Spring 2018 semester
+## TR 11-12:15, 1/23 - 2/22
+## [[Advertisement Flyer]](Ad_flyer_S18.pdf)
+
+----
+
 # Target Audience
 Anyone who wants to do their own data analysis! This is a primer to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R. Topics include: R programming basics, importing data, properties of tidy data, visualizing data, reproducible research with Markdown and basic data wrangling. Designed to get you up and running with basic knowledge of `R` and Markdown ASAP. This course is designed as a pre-requisite for most upper division Statistics, and all Data Science courses which use R heavily.
 
