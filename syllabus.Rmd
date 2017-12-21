@@ -1,32 +1,30 @@
 ---
 output:
-  word_document: default
+  pdf_document: default
   html_document: default
 ---
+
+# Math 130: Introduction to R - Spring 18 
 
 # Course Description
 This course is designed as a primer to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R in an environment that emphasizes reproducible research and literate programming. The target audience is anyone who wants to do their own data analysis. The course will cumulate with an peer-evaluated exploratory data analysis on either a pre-specified data set or your data set of choice. 
 
 
-## Learning Outcomes
-By the end of the course, students will be able to
-
-* Import external data into R.
-* Calculate summary statistics.
-* Create informative data visualizations and tables.
-* Perform data management techniques such as subsetting, aggregating data, and creating new variables. 
-* Create a reproducible research document.
-* Conduct an exploratory data analysis in a reproducible manner.
-
-
 # Logistics
-**Instructor:** Dr. Robin Donatello  
-**Office Location:** Holt 202  
-**Phone Number:** 898-5767  
-**E-mail:** rdonatello@csuchico.edu   
-**Prerequisites:** Basic computer literacy  
-**Meeting Days and Times** TR 2-3:50, MLIB 226   
-**Course Website** https://norcalbiostat.github.io/MATH130/ 
+
+* **Course Website** https://norcalbiostat.github.io/MATH130/ 
+* **Prerequisites:** Basic computer literacy  
+* **Workshop style:** This workshop style class runs for the first 5 weeks of the semester only (1/22-2/22). There will be one lab assigned per week. What is not finished in class is considered homework. 
+
+|                        |        Section 01       |       Section 02       |
+|:-----------------------|:-----------------------:|:----------------------:|
+| **Meeting Days/Times** | TR 11-12:15             | MW 3-4:45              |
+| **Meeting Location**   | Butte 207               | Holt 155               |
+| **Instructor**         | Robin Donatello         | Edward Roualdes        |
+| **Office Location**    | Holt 202                | Holt 204               |
+| **Office Phone**       | 898-5767                | 898-5807               |
+| **E-mail**             | rdonatello@csuchico.edu | eroualdes@csuchico.edu |
+
 
 ## Required Materials
 
@@ -51,14 +49,28 @@ Credit / No Credit. You must earn 70% of available points to receive credit for 
 * Project (40%)
 
 
+
+## Learning Outcomes
+By the end of the course, students will be able to
+
+* Import external data into R.
+* Calculate summary statistics.
+* Create new variables using different data types. 
+* Create informative data visualizations and tables.
+* Perform data management techniques such as subsetting, grouping, summarizing. 
+* Create a reproducible research document.
+* Conduct an exploratory data analysis in a reproducible manner.
+
+
 ## Schedule of Topics
 The general outline of topics is listed below. A detailed most up to date schedule can be found on the course website. 
 
 * Intro to the R language and it's packages
 * R Studio suite of awesomeness
 * Reproducible Research with R Markdown
-* Importing data into R
 * Functions
+* Getting data into R
+* Managing the spreadsheet-like data frame
 * Data Visualization
 * Data Manipulation and Aggregation
 * Exploratory Data Analysis
