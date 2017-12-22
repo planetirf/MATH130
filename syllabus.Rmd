@@ -6,13 +6,15 @@ output:
 
 # Math 130: Introduction to R - Spring 18 
 
+[[Download this syllabus as a PDF]](syllabus.pdf)
+
 # Course Description
-This course is designed as a primer to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R in an environment that emphasizes reproducible research and literate programming. The target audience is anyone who wants to do their own data analysis. The course will cumulate with an peer-evaluated exploratory data analysis on either a pre-specified data set or your data set of choice. 
+This course is designed as a primer to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R in an environment that emphasizes reproducible research and literate programming for data analysis. The target audience is anyone who wants to do their own data analysis. The course will cumulate with an peer-evaluated exploratory data analysis on either a pre-specified data set or your data set of choice. 
 
 
 # Logistics
 
-* **Course Website** https://norcalbiostat.github.io/MATH130/ 
+* **Course Website:** https://norcalbiostat.github.io/MATH130/ 
 * **Prerequisites:** Basic computer literacy  
 * **Workshop style:** This workshop style class runs for the first 5 weeks of the semester only (1/22-2/22). There will be one lab assigned per week. What is not finished in class is considered homework. 
 
@@ -48,7 +50,10 @@ Credit / No Credit. You must earn 70% of available points to receive credit for 
 * Assignments (50%)
 * Project (40%)
 
-
+## Assignments
+ 
+* All assignment and data files are posted on the course website. 
+* Assignment file due dates and submission instructions are up to the individual instructor. 
 
 ## Learning Outcomes
 By the end of the course, students will be able to
@@ -77,7 +82,7 @@ The general outline of topics is listed below. A detailed most up to date schedu
 
 
 ## Adding and Dropping the course
-The course is open enrollment. You may add at any time. All materials are posted on this course website. It would be very difficult to get caught up if you miss more than the first day, however you can work in the class at your own pace, you just won't be able to participate in the project peer evaluation. 
+This course only runs for a few weeks and all materials are available on the course website. It will be difficult to get caught up if you add the class after the first week. The last day to add or drop classes without special permission by the instructor is 2/2/18. No adds or dropps are allowed after 2/16/18 without a serious and compelling reason approved by the instructor, department chair, and college dean.
 
 
 ## Americans with Disabilities Act

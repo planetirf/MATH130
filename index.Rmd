@@ -8,19 +8,7 @@ This is the landing page for <span style="color:blue">**Introduction to Data Ana
 # Target Audience
 Anyone who wants to do their own data analysis! This is a primer to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R. Topics include: R programming basics, importing data, properties of tidy data, visualizing data, reproducible research with Markdown and basic data wrangling. Designed to get you up and running with basic knowledge of `R` and Markdown ASAP. This course is designed as a pre-requisite for most upper division Statistics, and all Data Science courses which use R heavily.
 
-[Advertisment Flyer](Ad_flyer_S18.pdf)
-
-# Logistics
-
-* **Meeting Times and Locations** TR 2-3:50pm; BUTTE 211;  8/22 - 9/14 (4 weeks) **--NOTE ROOM CHANGE--**
-    - Content is fully online using the links below.  
-    - After week 4 attendance is optional. 
-    - This room is reserved on Tuesday until 10/17 for drop in R help time. 
-* **Open enrollment** Auditors/faculty/staff/external partners welcome as long as there is room! Just email your request to the instructor. 
-* **Accounts** We use several online tools for learning and communication
-    - [Chico R Users Google Group](https://groups.google.com/forum/#!forum/chico-rug). This is our discussion forum to ask (and answer) questions outside of class. 
-    - There is also a [R Users Meetup group](https://www.meetup.com/Chico-R-Users-Group/) that is optional but useful if you want to stay connected to the community and learn about upcoming events. 
-    - We will use Data Camp as an online tool to learn R. A link will be emailed to you that will allow you to create an account to join the online classroom class. Be sure to use your real name for credit.  
+See the [syllabus](syllabus.html) for details about the current class offerings.   
 
 --------------------------------
 
@@ -28,26 +16,34 @@ Anyone who wants to do their own data analysis! This is a primer to get the comp
 
 _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
 
-All assigned material should be uploaded through Blackboard Learn. The due dates can be found on the class calendar using the link at the top. 
+### Week 1: Getting started with R and R Studio
 
-### Week 1
-* Tue 8/22: Day 1 - [Introduction to the class and R](materials/day1-intro.html)
-    - Data Camp: Intro to R - Basic Building Blocks module due by end of class
-* Thu 8/24: Day 2 - [Reproducible Research using R Studio](materials/day2-rstudio.html)
-    - [Lab 1](materials/lab1.Rmd) & Rest of Data Camp Module due Mon 8/28
-    - [In Class notes on Lab 1](materials/lab1_inclass.html)
+* Day 1: Introduction to the class and
+    - [Notes](materials/day1-intro.html)
+    - Make a Data Camp account and get connected to the data camp classroom. 
+    - Complete Data Camp: Introduction to R - Chapter 1 (Basic Building Blocks)
+* Day 2: Reproducible Research using R Studio
+    - [Notes](materials/day2-rstudio.html)
+* [Lab 1](materials/lab1.Rmd) 
+* Additional Homework: Finish Data Camp - Introduction to R (Chapter 1-5)
   
-### Week 2
-* [Importing data, functions and factors](materials/day3-import-and-factors.html)
-    - [Lab 2](materials/lab2.Rmd) Due Mon 9/4
-    
-### Week 3
-* [Data Visualizations](materials/day56-data-viz.html) using `ggplot2`.
-    - [Lab 3](materials/lab3.Rmd) Due Mon 9/11
+### Week 2: Functions to importing data
+* [Notes](materials/day3-import-and-factors.html)
+* [In class code]()
+* [Lab 2](materials/lab2.Rmd)
 
-### Week 4
-* [Data manipulation](materials/day78-data-manipulation.html) using `dplyr`.
-    - [Lab 4](materials/lab4.Rmd) Due Mon 9/18
+### Week 3: Missing data, recoding values, owning your factors
+
+### Week 4: Data Visualization
+* [Notes](materials/day56-data-viz.html)
+* [In class code]()
+* [Lab 3](materials/lab3.Rmd)
+
+### Week 5: Data manipulation
+* [Notes](materials/day78-data-manipulation.html)
+* [In class code]()
+* [Lab 4](materials/lab4.Rmd)
+
 
 ----
 
@@ -56,12 +52,12 @@ All assigned material should be uploaded through Blackboard Learn. The due dates
 Now it's time to put your skillz to the test in an Exploratory Data Analysis Project
 
 * [Instructions](EDA/EDA_instructions.html) on the assignment and how to do the peer review. 
-    - Project due Sunday 9/24
+    - Project due Sunday XX/XX
         - Name your file "EDA_name" (with your name of course). CSUC user names are best (i.e. _EDA_rdonatello.html_)
-        - Upload your final WORD or PDF file [[here]](https://www.dropbox.com/request/S3KxRFTY7ZcHhZSRHaYT)
-    - Peer Review due Sunday 10/1
+        - Upload your final WORD or PDF file [[here]]()
+    - Peer Review due Sunday XX/XX
         - Submissions ready for peer review [[here]](https://norcalbiostat.github.io/peer_review/math130_eda.html)
-        - Peer review [[submission link]](https://goo.gl/forms/7I4zsYpSsiZpgKyH3)
+        - Peer review [[submission link]]()
     
 
 
