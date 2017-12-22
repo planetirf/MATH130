@@ -15,6 +15,11 @@ output: html_document
 
 ### In Person: (Office Hours for S18 TBD)
 
+* **Math Learning Lab (MLIB 4th floor)** [[Tutor Schedule]](https://docs.google.com/spreadsheets/d/1xNQMfxpnIiS5bUCS9jB2_EE1Sc4C06JRaw6jyEO3nVE/edit#gid=0)
+    - Mariby Cruz, Mitch Borgert, Matt Sterkel, Jerry Tucay
+
+* **Community Coding Hour** - TBD
+
 * **Robin Donatello** - Stat professor. Holt 202
     
 * **Edward Roualdes** - Stat professor. Holt 204
@@ -25,8 +30,6 @@ output: html_document
 
 * **Mariby Cruz** - peer mentor
 
-* **Math Learning Lab (MLIB 4th floor)** [[Tutor Schedule]](https://docs.google.com/spreadsheets/d/1xNQMfxpnIiS5bUCS9jB2_EE1Sc4C06JRaw6jyEO3nVE/edit#gid=0)
-    - Mariby Cruz, Mitch Borgert, Matt Sterkel, Jerry Tucay
 
 
 # What other computers on campus have R? 

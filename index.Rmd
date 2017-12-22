@@ -6,7 +6,7 @@ This is the landing page for <span style="color:blue">**Introduction to Data Ana
 ----
 
 # Target Audience
-Anyone who wants to do their own data analysis! This is a primer to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R. Topics include: R programming basics, importing data, properties of tidy data, visualizing data, reproducible research with Markdown and basic data wrangling. Designed to get you up and running with basic knowledge of `R` and Markdown ASAP. This course is designed as a pre-requisite for most upper division Statistics, and all Data Science courses which use R heavily.
+Anyone who wants to do their own data analysis! This is a primer to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R for data analysis. Topics include: R programming basics, importing data, properties of tidy data, visualizing data, reproducible research with Markdown and basic data wrangling. Designed to get you up and running with basic knowledge of `R` and Markdown ASAP. This course is designed as a pre-requisite for most upper division Statistics, and all Data Science courses which use R heavily.
 
 See the [syllabus](syllabus.html) for details about the current class offerings.   
 
@@ -16,48 +16,47 @@ See the [syllabus](syllabus.html) for details about the current class offerings.
 
 _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
 
-### Week 1: Getting started with R and R Studio
+### Week 1 (1/22 - 1/25): Getting started with R and R Studio
 
-* Day 1: Introduction to the class and
-    - [Notes](materials/day1-intro.html)
-    - Make a Data Camp account and get connected to the data camp classroom. 
-    - Complete Data Camp: Introduction to R - Chapter 1 (Basic Building Blocks)
-* Day 2: Reproducible Research using R Studio
-    - [Notes](materials/day2-rstudio.html)
-* [Lab 1](materials/lab1.Rmd) 
-* Additional Homework: Finish Data Camp - Introduction to R (Chapter 1-5)
+* Day 1: Introduction to the class and R. [[Notes]](materials/01_intro.html)
+* Assignments **Due before Day 2**
+    - Make a Data Camp account and get connected to our classroom group. <span style="color:red">**please use your @mail.csuchico.edu email for this**</span>
+    - Data Camp: Introduction to R - Chapter 1 (Intro to Basics)
+* Day 2: Reproducible Research using R Studio [[Notes]](materials/02_rstudio.html)
+* Assignments
+    - [[Lab 1]](materials/lab1.Rmd) 
+    - Data Camp - Introduction to R: Chapter 2-5 (Vectors, Matrices, Factors, and Data Frames)
   
-### Week 2: Functions to importing data
-* [Notes](materials/day3-import-and-factors.html)
-* [In class code]()
-* [Lab 2](materials/lab2.Rmd)
+### Week 2 (1/29 - 2/1): Importing, exploring, managing data using functions. 
+* Getting data into R and exploring [[Notes]](materials/03_import.html) [[code]](materials/03_import_helper.Rmd)
+* Using functions to summarize and manage data [[Notes]](materials/04_functions_recode.html) [[code]](materials/04_functions_recode_helper.Rmd)
+* In class code [[RAD]] [[ER]]
+* Assignment: [[Lab 2]](materials/lab2.Rmd)
 
-### Week 3: Missing data, recoding values, owning your factors
-
-### Week 4: Data Visualization
-* [Notes](materials/day56-data-viz.html)
-* [In class code]()
-* [Lab 3](materials/lab3.Rmd)
-
-### Week 5: Data manipulation
-* [Notes](materials/day78-data-manipulation.html)
-* [In class code]()
-* [Lab 4](materials/lab4.Rmd)
+### Week 3 (2/5 - 2/8): Factors and grouped summaries.
+* Wrangling factors [[Notes]](materials/05_factors.html) [[code]](materials/05_factors_helper.Rmd)
+* Aggregating data by groups [[Notes]](materials/06_aggregate.html) [[code]](materials/06_aggregate_helper.Rmd)
+* In class code [[RAD]] [[ER]]
+* Assignment: [[Lab 3]](materials/lab3.Rmd)
 
 
-----
+### Week 4 (2/12 - 2/15): Data Visualization
+* Making pretty pictures to win friends and influence people. [[Notes]](materials/07_graphs.html) [[code]](materials/07_graphs_helper.Rmd)
+* In class code [[RAD]] [[ER]]
+* Assignment: [[Lab 4]](materials/lab4.Rmd)
 
-# Project
 
+### Week 5 (2/19 - 2/22): Exploratory Data Analysis Project
 Now it's time to put your skillz to the test in an Exploratory Data Analysis Project
 
 * [Instructions](EDA/EDA_instructions.html) on the assignment and how to do the peer review. 
-    - Project due Sunday XX/XX
-        - Name your file "EDA_name" (with your name of course). CSUC user names are best (i.e. _EDA_rdonatello.html_)
+* Previous class projects can be seen  [[here]](https://norcalbiostat.github.io/peer_review/math130_eda.html). 
+    - Project due Friday 2/23 (end of day)
+        - Name your file "EDA_username" using your Chico State user id (i.e. _EDA_rdonatello.pdf_)
         - Upload your final WORD or PDF file [[here]]()
-    - Peer Review due Sunday XX/XX
+    - Peer Review due Sunday 2/25 (end of day)
         - Submissions ready for peer review [[here]](https://norcalbiostat.github.io/peer_review/math130_eda.html)
-        - Peer review [[submission link]]()
+        - Peer review [[submission link]](). <span style="color:red">**You must log into your @mail.csuchico.edu gmail account to access this form.**</span>
     
 
 

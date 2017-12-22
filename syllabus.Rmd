@@ -44,11 +44,18 @@ This course is designed as a primer to get the complete novice up and running wi
         - Mac: You only have one choice. 
 
 ## Grading
-Credit / No Credit. You must earn 70% of available points to receive credit for the course. 
+Credit / No Credit. There are 100 points available in this course. You must earn 70 points to receive credit for the course. 
 
-* Attendance (10%)
-* Assignments (50%)
-* Project (40%)
+* Attendance: 2 pts per day (20 pts)
+* Assignments:
+    - Data Camp (10 pts)
+    - Lab 1 (10 pts)
+    - Lab 2 (10 pts)
+    - Lab 3 (10 pts)
+    - Lab 4 (10 pts)
+* Project
+    - Project (20 pts)
+    - Peer Review (10 pts)
 
 ## Assignments
  
