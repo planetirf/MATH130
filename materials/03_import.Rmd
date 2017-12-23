@@ -222,3 +222,5 @@ There are several other Data Camp courses that all have the first chapter free t
 3. Submit the **HTML** or **WORD** file via BBLearn before the due date.
 
 
+
+# [Back to Class Home page](../index.html)

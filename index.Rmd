@@ -22,6 +22,7 @@ _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
 * Assignments **Due before Day 2**
     - Make a Data Camp account and get connected to our classroom group. <span style="color:red">**please use your @mail.csuchico.edu email for this**</span>
     - Data Camp: Introduction to R - Chapter 1 (Intro to Basics)
+    - Watch 1 minute video: "[What is R Markdown?](http://rmarkdown.rstudio.com/lesson-1.html)"
 * Day 2: Reproducible Research using R Studio [[Notes]](materials/02_rstudio.html)
 * Assignments
     - [[Lab 1]](materials/lab1.Rmd) 

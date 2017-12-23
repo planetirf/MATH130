@@ -1,47 +1,41 @@
 ---
-title: "Day 1 - Introduction to the class and R"
-author: ''
-date: '2017-08-22'
-slug: day-1-intro
+title: "Introduction to the class and R"
+output:
+  html_document:
+    highlight: tango
+    theme: yeti
+    toc: yes
+    toc_float: yes
 ---
 
 
-## Introduction to the class
+## Purpose
 
-* Target audience: Anyone who wants to do their own data analysis!
-* Primer to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R. 
-* Topics include: R programming basics, importing data, properties of tidy data, visualizing data, reproducible research with Markdown and basic data wrangling. 
-* Designed to get you up and running with basic knowledge of `R` and Markdown ASAP.
-* Most upper division Statistics, and all Data Science courses use R heavily. This course is designed as a pre-requisite. 
-
+* Get you up and running with basic ability to use `R` and Markdown.
 
 ## Logistics
-* **Meeting Times and Locations** TR 2-4pm; MLIB 226;  8/22 - 9/14 (4 weeks) **--NOTE ROOM CHANGE--**
 * **Course Website:** https://norcalbiostat.github.io/MATH130/
-* **[Chico R Users Google Group](https://groups.google.com/forum/#!forum/chico-rug)**. This is our discussion forum to ask (and answer) questions outside of class. 
-    - There is also a [R Users Meetup group](https://www.meetup.com/Chico-R-Users-Group/) that is optional but useful if you want to stay connected to the community and learn about upcoming events. 
-* **Data Camp:** Online tool to learn R. A link will be emailed to you that will allow you to create an account to join the online classroom class. Be sure to use your real name for credit.  
+* **Data Camp:** Online tool to learn R. 
+    - A link has been emailed to you that will allow you to create an account to join the online classroom class. 
+    - Use your real name or Chico State userid to ensure you get credit for this work. 
+* Need to use R outside of this class? Keep your eye on the FAQ page.   
 
 
 ## Structure of this class
 
 * Content is fully online on the course website.  
-* Class time is spent walking through labs and on the spot debugging / expanding on ideas and concepts. 
-* After week 4 attendance is optional. 
-    - This room is reserved for the entire semester for drop in R help time, short talks and additional workshops on general Data Science topics. 
-    - a.k.a "Meet and analyze data"
+* Class time is spent walking through labs and on the spot debugging / expanding on ideas and concepts.
+* Credit / No Credit, get 70% of the points and you pass.
+    - All assignments and points are laid out explicitly in the syllabus. 
+
 
 ## Time Committment & Frustration
-
-* Fast paced 1 unit course conducted over 8 days
+* Fast paced, we're hitting the ground running and only have 5 weeks. 
 * Not designed to teach you everything about R, just enough to make you dangerous. 
+* Daily practice will pay off.  
+* But can be very rewarding
 
-![](hard.jpg)
-
-
-## Why are you learning R? 
-
-I have my reasons for why R is awesomesauce, but what brings you here? 
+![Hitting the first wall. Your success is proportional to your effort.](hard.jpg)
 
 
 ## Why use R Studio?
@@ -53,33 +47,48 @@ I have my reasons for why R is awesomesauce, but what brings you here?
 - Tab completion for functions. Forget the syntax or a variable name? Popup helpers are available. 
 - Free training videos available from the developers directly.
 - Built in version control 
-- One button publishing of reproducible documents such as reports, interactive visualizations ([Shiny Gallery](https://shiny.rstudio.com/gallery/)), presentations, websites (like this one!)
+- One button publishing of reproducible documents such as reports, interactive visualizations, presentations, websites (like this one!)
 
 
-## Why no point and click GUI?
+## Programming is scary! Why can i just learn how to read output? 
 
-Because it's not reproducible. 
+![h/t @rogierK](https://pbs.twimg.com/media/CiSMsEpXEAATXry.jpg)
 
-The only possible exception to this is through the use of the [R Commander](http://socserv.mcmaster.ca/jfox/Misc/Rcmdr/). 
+* Learning to program has other benefits
+    - Improves your logical skills and critical problem solving
+    - Increases your attention to detail
+    - Increases your self reliance and empowers you to control your own research.
+    - Your PI will love your awesome graphics and reports. 
+    - Some people think what you do is magic. 
+    - Thinking graduate school? [[expect to learn this on your own]](http://www.nature.com/nature/journal/v541/n7638/full/nj7638-563a.html)
+    - [[A few]](https://skillcrush.com/2015/01/28/laurence-bradford-10-reasons/) [[other lists]](https://careerfoundry.com/en/blog/web-development/7-benefits-of-learning-to-code/) [[of reasons]](https://skillcrush.com/2017/01/30/learn-to-code-benefits/) 
 
-_Disclaimer:_ As of this date I have not spent more than 10 minutes playing with it. 
 
-However it looks promising since 
+## Why no point and click?
 
-1. It provides you the code that you pointed and clicked to get, 
-2. You can create markdown files from it. 
+Because it's not reproducible.
 
-## Getting Help
+* Which boxes did you click last time? 
+* New data? Gotta do it all over.
+* Need to expand your model? Gotta do it all over. 
+* Made a mistake in the data coding? Gotta do it all over...
 
-* Your first resource is each other. Your second resource is Google. 
-* Post your question on the Google Group so others can learn from the solution.
-* Contribute your own solutions and advice as you can. 
-* Prepare a [minimal working example](http://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example) of your problem on the forum, it may be helpful to include a screenshot of the problem. 
+## Getting Help 
+
+* Your first resource is each other. 
+    - Googling R code is a separate skill you will learn over time. 
+* Many on and off campus resources - listed in the [Help/FAQ page](../faq.html). 
 
 
 ## Getting Started
 
 * Log into to your Data Camp classroom. 
 * You should see a course called "Introduction to R"
-* Complete the first module - Building Blocks by the end of class today. 
-* Follow the [Software Overview](https://norcalbiostat.netlify.com/post/software-overview/) post to get your computer up and running with the R studio suite of awesomeness by Thursday. 
+* Complete the first chapter - **Intro to Basics** by the next class. 
+
+## Install R and R Studio on your personal computer. 
+Because lab computers are not always available. 
+
+* Follow the [Software Overview](https://norcalbiostat.netlify.com/post/software-overview/) post to get your computer up and running with the R studio suite of awesomeness.  
+
+# [Back to Class Home page](../index.html)
