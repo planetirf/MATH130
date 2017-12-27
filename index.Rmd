@@ -12,12 +12,13 @@ See the [syllabus](syllabus.html) for details about the current class offerings.
 
 --------------------------------
 
-# Schedule for S18
+# Schedule (Spring 18)
 
 _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
 
-### Week 1 (1/22 - 1/25): Getting started with R and R Studio
+### <a href="#week1" data-toggle="collapse">Week 1 (1/22 - 1/25) Getting started with R and R Studio</a>
 
+<div id="week1" class="collapse">
 * Day 1: Introduction to the class and R. [[Notes]](01_intro.html)
 * Assignments **Due before Day 2**
     - Make a Data Camp account and get connected to our classroom group. <span style="color:red">**please use your @mail.csuchico.edu email for this**</span>
@@ -29,27 +30,45 @@ _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
     - [[Lab 1]](lab1.Rmd) (Right click and choose `save as`. Put into your MATH130 folder)
     - Data Camp - Introduction to R: Chapter 2-5 (Vectors, Matrices, Factors, and Data Frames)
   
-### Week 2 (1/29 - 2/1): Importing, exploring, managing data using functions. 
+</div>
+
+
+### <a href="#week2" data-toggle="collapse">Week 2 (1/29 - 2/1): Importing, exploring, managing data using functions. </a>
+
+<div id="week2" class="collapse">
+
 * Getting data into R and exploring [[Notes]](03_import.html) 
     - **Before class** Go to the [datasets page](https://norcalbiostat.netlify.com/data/cleaned_data/) and download the following data sets: `Police Shootings`, `email`, and `NCBirths`. Put these in your `MATH130` folder. 
 * Using functions to summarize and manage data [[Notes]](04_functions_recode.html)
 * In class code [[RAD]] [[ER]]
 * Assignment: [[Lab 2]](lab2.Rmd)
 
-### Week 3 (2/5 - 2/8): Factors and grouped summaries.
+</div>
+
+### <a href="#week3" data-toggle="collapse">Week 3 (2/5 - 2/8): Factors and grouped summaries.</a>
+
+<div id="week3" class="collapse">
+
 * Wrangling factors [[Notes]](05_factors.html) 
 * Aggregating data by groups [[Notes]](06_aggregate.html) 
 * In class code [[RAD]] [[ER]]
 * Assignment: [[Lab 3]](lab3.Rmd)
 
+</div>
 
-### Week 4 (2/12 - 2/15): Data Visualization
+### <a href="#week4" data-toggle="collapse">Week 4 (2/12 - 2/15): Data Visualization</a>
+
+<div id="week4" class="collapse">
+
 * Making pretty pictures to win friends and influence people. [[Notes]](07_graphs.html)
 * In class code [[RAD]] [[ER]]
 * Assignment: [[Lab 4]](lab4.Rmd)
+</div>
 
+### <a href="#week5" data-toggle="collapse">Week 5 (2/19 - 2/22): Exploratory Data Analysis Project</a>
 
-### Week 5 (2/19 - 2/22): Exploratory Data Analysis Project
+<div id="week5" class="collapse">
+
 Now it's time to put your skillz to the test in an Exploratory Data Analysis Project
 
 * [Instructions](EDA/EDA_instructions.html) on the assignment and how to do the peer review. 
@@ -62,5 +81,5 @@ Now it's time to put your skillz to the test in an Exploratory Data Analysis Pro
         - Peer review [[submission link]](). <span style="color:red">**You must log into your @mail.csuchico.edu gmail account to access this form.**</span>
     
 
-
+</div>
 

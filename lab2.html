@@ -12,7 +12,7 @@
 <meta name="author" content="NAME" />
 
 
-<title>Lab 2: Data import, functions and factors</title>
+<title>Lab 2: Importing, exploring, managing data using functions</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -212,6 +212,13 @@ $(document).ready(function () {
     Data
   </a>
 </li>
+<li>
+  <a href="faq.html">
+    <span class="fa fa-question"></span>
+     
+    Help/FAQ
+  </a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -219,13 +226,6 @@ $(document).ready(function () {
     <span class="fa fa-info-circle"></span>
      
     Syllabus
-  </a>
-</li>
-<li>
-  <a href="faq.html">
-    <span class="fa fa-question"></span>
-     
-    Help/FAQ
   </a>
 </li>
 <li>
@@ -251,21 +251,16 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Lab 2: Data import, functions and factors</h1>
+<h1 class="title toc-ignore">Lab 2: Importing, exploring, managing data using functions</h1>
 <h4 class="author"><em>NAME</em></h4>
 <h4 class="date"><em>DATE</em></h4>
 
 </div>
 
 
-<p>Answer the questions in this lab and submit the compiled HTML or PDF by the deadline.</p>
-<ol style="list-style-type: decimal">
-<li>What error did I make in the second example of converting the gender variable to a factor using the code: <code>parHIV$gf2 &lt;- factor(parHIV$GENDER, labels=c(&quot;M&quot;, &quot;F&quot;))</code>?</li>
-</ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">parHIV<span class="op">$</span>gf2 &lt;-<span class="st"> </span><span class="kw">factor</span>(parHIV<span class="op">$</span>GENDER, <span class="dt">labels=</span><span class="kw">c</span>(<span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>))
-<span class="kw">table</span>(parHIV<span class="op">$</span>gf2, parHIV<span class="op">$</span>GENDER)</code></pre></div>
-<pre><code>- How was this problem detected? 
-- How would you fix it? </code></pre>
+<p>Answer the questions in this lab and submit the compiled WORD or PDF by the deadline.</p>
+<div id="importing-data" class="section level2">
+<h2>Importing Data</h2>
 <ol start="2" style="list-style-type: decimal">
 <li>When reading in the <code>parHIV</code> Excel data set, what do the arguments <code>sheet=1</code> and <code>col_names=TRUE</code> mean?</li>
 </ol>
@@ -281,6 +276,7 @@ $(document).ready(function () {
 <li><p>Convert <code>miss_fage</code> to a factor variable, where the labels are “Yes” when <code>miss_fage</code>=1 and “No” when <code>miss_fage</code> = 0. Create a <code>table()</code> of this new variable to show that your labeling worked.</p></li>
 <li><p>What proportion of fathers ages are missing?</p></li>
 </ol>
+</div>
 
 
 
