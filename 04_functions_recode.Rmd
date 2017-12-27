@@ -1,0 +1,220 @@
+---
+title: 'Data management using functions'
+output:
+  html_document:
+    highlight: tango
+    theme: yeti
+    toc: yes
+    toc_float: yes
+---
+
+----- 
+
+# Introduction
+In this lesson we will introduce how to use functions to summarize data in a data frame, and to do basic data management tasks such as removing missing values. 
+
+
+### Student Learning Objectives
+After completing this lesson students will be able to
+
+* Work with variables inside a data frame
+* Summarize data in the presence of missing data elements in a data table. 
+* Make new variables inside a data frame. 
+* Selectively edit (and recode) data elements. 
+
+We'll use the data set on births in North Carolina for this lecture. I read it into R here. 
+
+```{r}
+NCbirths <- read.csv("data/NCbirths.csv", header=TRUE)
+```
+
+----- 
+
+
+# What's a function? 
+
+Functions take inputs, called **arguments** and provide outputs, or results. A few functions you have already used are `head()`, `table()` and `subset()`. Let's look at the `mean` function again by typing ?mean. 
+
+The **Usage** section of the documentation includes two versions of the mean() function; What's the difference? The first function 
+```{r, eval=FALSE}
+mean(x,...)
+```
+
+is the most general definition of the mean function. This section also shows you what the default values for each argument are. This is a very important piece to pay attention. Sometimes the default behaviors are not what you want to happen. 
+```{r, eval=FALSE}
+mean(x, trim = 0, na.rm = FALSE, ...)
+```
+In the **Arguments** section the help file defines what each argument does.
+
+* `x` is the object that you want to take the mean of
+* `trim` is a number from 0 to 0.5 that defines the fraction of observations 
+  to be excluded from each side before the mean is calculated. 
+* `na.rm` is a logical value (`TRUE`/`FALSE`) that tells `R` whether NA values 
+  should be stripped before the computation proceeds.
+* `...` is called the ellipsis, and it is a way for R to pass arguments to or 
+  from other methods without the function having to name them explicitly. 
+
+### Argument ordering
+A function's arguments can be named, or can be referred to by position. As an example, let's look at the variable on the `NCbirths` data set that contains data on the fathers age: `NCbirths$fage`. 
+  
+If we were to calculate the mean, we'd get NA. 
+```{r}
+mean(NCbirths$fage)
+```
+
+We need to tell R to _remove_ the `NA`'s from the data prior to calculating the mean. 
+```{r}
+mean(NCbirths$fage, na.rm=TRUE)
+```
+
+It worked fine because I named the argument to remove missing values. What if I didn't state what that argument was? 
+```{r, error=TRUE}
+mean(NCbirths$fage, TRUE)
+```
+
+R is expecting a value for trim as the second argument and doesn't know what to do with the value `TRUE`. If you name the arguments, then the order is irrelevant. 
+
+```{r}
+mean(na.rm=TRUE, x=NCbirths$fage, trim=.1)
+```
+
+But let's not get that crazy. 
+
+R, at its heart, is a functional programming language [cite: Adv. R by Wickham](http://adv-r.had.co.nz/Functional-programming.html). We interact with the program, and data, using functions. 
+
+-----
+
+# Summarizing data
+
+There are two main methods to summarize data. Both were introduced in the last lesson: `table()` for categorical factor variables, and `summary()` for numeric variables. 
+
+**Frequency Tables for categorical data**
+Let's look at the variable for whether or not the baby was born underweight. R acknowledges it is a factor variable already. 
+```{r}
+class(NCbirths$lowbirthweight)
+```
+
+You can create a frequency table by using the `table()` function. The `useNA="always"` argument tells `R` to always include an entry for missing values `<NA>`, even if there are none. 
+
+```{r}
+table(NCbirths$lowbirthweight, useNA="always")
+```
+
+**Summary statistics for numerical data**
+Numerical variables can be summarized using statistics such as the min, max, mean and median. The function `summary()` prints out the five number summary, and includes the mean. 
+
+```{r}
+summary(NCbirths$visits)
+```
+
+Mothers included in this data set visited the doctor on average 12.1 times during their pregnancy. 
+
+-----
+
+# Recoding data
+
+Sometimes we have a need to edit, or change data. We can change values of existing data by using logical statements
+
+To choose all observations (rows) of a `data` set, where a `variable` is equal to some `value`, you would type
+```{r, eval=FALSE}
+data[data$variable==value]
+```
+
+
+Let's look at the numerical distribution of birthweight of the baby. 
+
+```{r}
+summary(NCbirths$weight)
+```
+
+The value of 1 lb seems very low. The researchers you are working with decide that is a mistake and should be excluded from the data. We would then set all records where `weight=1` to missing. 
+
+```{r}
+NCbirths$weight[NCbirths$weight==1] <- NA
+```
+
+But what about other weights that aren't quite as low as 1, but still unusually low? 
+
+```{r}
+boxplot(NCbirths$weight)
+```
+
+We could also set all birthweights less than a certain value to missing as well. 
+
+```{r}
+NCbirths$weight[NCbirths$weight < 4] <- NA
+```
+
+We'll confirm that this recode worked by plotting the data again, and noticing that there are no values below 4 now. 
+```{r}
+boxplot(NCbirths$weight)
+```
+
+
+-----
+
+# Creating new variables
+
+New variables should be added to the data frame. This can be done using `$` sign notation. 
+
+The new variable you want to create goes on the left side of the assignment operator `<-`, and how you want to create that new variable goes on the right side. 
+```{r, eval=FALSE}
+data$new_variable <- creation statement
+```
+
+**Example: underage mothers**
+
+Let's add a variable to identify if a mother in the North Carolina births data set was underage at the time of birth. 
+
+* We will define this as if the mothers age `mage` is under 18. 
+* We will create a new factor varible with two values: `underage` and `adult`. 
+* We will use the `ifelse()` function. 
+    - It's set of arguments are: `ifelse(logical, value if TRUE, value if FALSE)`
+    - The `logical` argument is a statement that resolves as a `boolean` variable, as either TRUE or FALSE.
+    - The second argument is what you want the resulting varible to contain if the logical argument is `TRUE`
+    - The last argument is what you want the resulting varible to contain if the logical argument is `FALSE`
+
+Make a new variable `underage` on the `NCbirths` data set. If `mage` is under 18, then the value of this new variable is `underage`, else it is labeled as `adult`. 
+
+```{r}
+NCbirths$underage <- ifelse(NCbirths$mage <= 18, "underage", "adult")
+```
+
+You should always make sure your code works as intended.
+
+* First let's look at the frequency table of `underage` and see if records exist with the new categories, and if there are any missing values. 
+```{r}
+table(NCbirths$underage, useNA="always")
+```
+* Next let's check it against the value of `mage` itself. Let's look at a row where `mage=18` and `mage=19`, and columns 
+
+```{r}
+head(NCbirths[NCbirths$mage==18,c('mage', 'underage')])
+head(NCbirths[NCbirths$mage==19,c('mage', 'underage')])
+```
+
+
+
+
+
+
+How does underage compare to maturity status? 
+```{r}
+table(NCbirths$underage, NCbirths$mature)
+```
+
+No underage mature mothers, that's good. 
+
+ 
+
+-----
+
+# Additional References
+
+There are several other Data Camp courses that all have the first chapter free that you can use to get a start on learning more about how to import and clean up data. Here are a few. 
+
+* [Cleaning Data in R](https://www.datacamp.com/courses/cleaning-data-in-r)
+* Tidy Data - The [Journal](http://vita.had.co.nz/papers/tidy-data.pdf), and the 
+  [tutorial](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html)
+
+

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Data management using functions</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 45px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+
+.section h2 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h3 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h4 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h5 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h6 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">INTRO TO R (MATH 130)</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="http://www.norcalbiostat.com/data/">
+    <span class="fa fa-database"></span>
+     
+    Data
+  </a>
+</li>
+<li>
+  <a href="faq.html">
+    <span class="fa fa-question"></span>
+     
+    Help/FAQ
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="syllabus.html">
+    <span class="fa fa-info-circle"></span>
+     
+    Syllabus
+  </a>
+</li>
+<li>
+  <a href="mailto:rdonatello@csuchico.edu">
+    <span class="fa fa-envelope-o"></span>
+     
+    Contact
+  </a>
+</li>
+<li>
+  <a href="http://www.norcalbiostat.com/">
+    <span class="fa fa-paw"></span>
+     
+    Dr. D's Website
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Data management using functions</h1>
+
+</div>
+
+
+<hr />
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>In this lesson we will introduce how to use functions to summarize data in a data frame, and to do basic data management tasks such as removing missing values.</p>
+<div id="student-learning-objectives" class="section level3">
+<h3>Student Learning Objectives</h3>
+<p>After completing this lesson students will be able to</p>
+<ul>
+<li>Work with variables inside a data frame</li>
+<li>Summarize data in the presence of missing data elements in a data table.</li>
+<li>Make new variables inside a data frame.</li>
+<li>Selectively edit (and recode) data elements.</li>
+</ul>
+<p>We’ll use the data set on births in North Carolina for this lecture. I read it into R here.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">NCbirths &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/NCbirths.csv&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</code></pre></div>
+<hr />
+</div>
+</div>
+<div id="whats-a-function" class="section level1">
+<h1>What’s a function?</h1>
+<p>Functions take inputs, called <strong>arguments</strong> and provide outputs, or results. A few functions you have already used are <code>head()</code>, <code>table()</code> and <code>subset()</code>. Let’s look at the <code>mean</code> function again by typing ?mean.</p>
+<p>The <strong>Usage</strong> section of the documentation includes two versions of the mean() function; What’s the difference? The first function</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(x,...)</code></pre></div>
+<p>is the most general definition of the mean function. This section also shows you what the default values for each argument are. This is a very important piece to pay attention. Sometimes the default behaviors are not what you want to happen.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(x, <span class="dt">trim =</span> <span class="dv">0</span>, <span class="dt">na.rm =</span> <span class="ot">FALSE</span>, ...)</code></pre></div>
+<p>In the <strong>Arguments</strong> section the help file defines what each argument does.</p>
+<ul>
+<li><code>x</code> is the object that you want to take the mean of</li>
+<li><code>trim</code> is a number from 0 to 0.5 that defines the fraction of observations to be excluded from each side before the mean is calculated.</li>
+<li><code>na.rm</code> is a logical value (<code>TRUE</code>/<code>FALSE</code>) that tells <code>R</code> whether NA values should be stripped before the computation proceeds.</li>
+<li><code>...</code> is called the ellipsis, and it is a way for R to pass arguments to or from other methods without the function having to name them explicitly.</li>
+</ul>
+<div id="argument-ordering" class="section level3">
+<h3>Argument ordering</h3>
+<p>A function’s arguments can be named, or can be referred to by position. As an example, let’s look at the variable on the <code>NCbirths</code> data set that contains data on the fathers age: <code>NCbirths$fage</code>.</p>
+<p>If we were to calculate the mean, we’d get NA.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(NCbirths<span class="op">$</span>fage)</code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<p>We need to tell R to <em>remove</em> the <code>NA</code>’s from the data prior to calculating the mean.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(NCbirths<span class="op">$</span>fage, <span class="dt">na.rm=</span><span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## [1] 30.25573</code></pre>
+<p>It worked fine because I named the argument to remove missing values. What if I didn’t state what that argument was?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(NCbirths<span class="op">$</span>fage, <span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## Error in mean.default(NCbirths$fage, TRUE): &#39;trim&#39; must be numeric of length one</code></pre>
+<p>R is expecting a value for trim as the second argument and doesn’t know what to do with the value <code>TRUE</code>. If you name the arguments, then the order is irrelevant.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(<span class="dt">na.rm=</span><span class="ot">TRUE</span>, <span class="dt">x=</span>NCbirths<span class="op">$</span>fage, <span class="dt">trim=</span>.<span class="dv">1</span>)</code></pre></div>
+<pre><code>## [1] 30.01053</code></pre>
+<p>But let’s not get that crazy.</p>
+<p>R, at its heart, is a functional programming language <a href="http://adv-r.had.co.nz/Functional-programming.html">cite: Adv. R by Wickham</a>. We interact with the program, and data, using functions.</p>
+<hr />
+</div>
+</div>
+<div id="summarizing-data" class="section level1">
+<h1>Summarizing data</h1>
+<p>There are two main methods to summarize data. Both were introduced in the last lesson: <code>table()</code> for categorical factor variables, and <code>summary()</code> for numeric variables.</p>
+<p><strong>Frequency Tables for categorical data</strong> Let’s look at the variable for whether or not the baby was born underweight. R acknowledges it is a factor variable already.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(NCbirths<span class="op">$</span>lowbirthweight)</code></pre></div>
+<pre><code>## [1] &quot;factor&quot;</code></pre>
+<p>You can create a frequency table by using the <code>table()</code> function. The <code>useNA=&quot;always&quot;</code> argument tells <code>R</code> to always include an entry for missing values <code>&lt;NA&gt;</code>, even if there are none.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(NCbirths<span class="op">$</span>lowbirthweight, <span class="dt">useNA=</span><span class="st">&quot;always&quot;</span>)</code></pre></div>
+<pre><code>## 
+##     low not low    &lt;NA&gt; 
+##     111     889       0</code></pre>
+<p><strong>Summary statistics for numerical data</strong> Numerical variables can be summarized using statistics such as the min, max, mean and median. The function <code>summary()</code> prints out the five number summary, and includes the mean.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(NCbirths<span class="op">$</span>visits)</code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##     0.0    10.0    12.0    12.1    15.0    30.0       9</code></pre>
+<p>Mothers included in this data set visited the doctor on average 12.1 times during their pregnancy.</p>
+<hr />
+</div>
+<div id="recoding-data" class="section level1">
+<h1>Recoding data</h1>
+<p>Sometimes we have a need to edit, or change data. We can change values of existing data by using logical statements</p>
+<p>To choose all observations (rows) of a <code>data</code> set, where a <code>variable</code> is equal to some <code>value</code>, you would type</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">data[data<span class="op">$</span>variable<span class="op">==</span>value]</code></pre></div>
+<p>Let’s look at the numerical distribution of birthweight of the baby.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(NCbirths<span class="op">$</span>weight)</code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   1.000   6.380   7.310   7.101   8.060  11.750</code></pre>
+<p>The value of 1 lb seems very low. The researchers you are working with decide that is a mistake and should be excluded from the data. We would then set all records where <code>weight=1</code> to missing.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">NCbirths<span class="op">$</span>weight[NCbirths<span class="op">$</span>weight<span class="op">==</span><span class="dv">1</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></code></pre></div>
+<p>But what about other weights that aren’t quite as low as 1, but still unusually low?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(NCbirths<span class="op">$</span>weight)</code></pre></div>
+<p><img src="04_functions_recode_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>We could also set all birthweights less than a certain value to missing as well.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">NCbirths<span class="op">$</span>weight[NCbirths<span class="op">$</span>weight <span class="op">&lt;</span><span class="st"> </span><span class="dv">4</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></code></pre></div>
+<p>We’ll confirm that this recode worked by plotting the data again, and noticing that there are no values below 4 now.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(NCbirths<span class="op">$</span>weight)</code></pre></div>
+<p><img src="04_functions_recode_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="creating-new-variables" class="section level1">
+<h1>Creating new variables</h1>
+<p>New variables should be added to the data frame. This can be done using <code>$</code> sign notation.</p>
+<p>The new variable you want to create goes on the left side of the assignment operator <code>&lt;-</code>, and how you want to create that new variable goes on the right side.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">data<span class="op">$</span>new_variable &lt;-<span class="st"> </span>creation statement</code></pre></div>
+<p><strong>Example: underage mothers</strong></p>
+<p>Let’s add a variable to identify if a mother in the North Carolina births data set was underage at the time of birth.</p>
+<ul>
+<li>We will define this as if the mothers age <code>mage</code> is under 18.</li>
+<li>We will create a new factor varible with two values: <code>underage</code> and <code>adult</code>.</li>
+<li>We will use the <code>ifelse()</code> function.
+<ul>
+<li>It’s set of arguments are: <code>ifelse(logical, value if TRUE, value if FALSE)</code></li>
+<li>The <code>logical</code> argument is a statement that resolves as a <code>boolean</code> variable, as either TRUE or FALSE.</li>
+<li>The second argument is what you want the resulting varible to contain if the logical argument is <code>TRUE</code></li>
+<li>The last argument is what you want the resulting varible to contain if the logical argument is <code>FALSE</code></li>
+</ul></li>
+</ul>
+<p>Make a new variable <code>underage</code> on the <code>NCbirths</code> data set. If <code>mage</code> is under 18, then the value of this new variable is <code>underage</code>, else it is labeled as <code>adult</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">NCbirths<span class="op">$</span>underage &lt;-<span class="st"> </span><span class="kw">ifelse</span>(NCbirths<span class="op">$</span>mage <span class="op">&lt;=</span><span class="st"> </span><span class="dv">18</span>, <span class="st">&quot;underage&quot;</span>, <span class="st">&quot;adult&quot;</span>)</code></pre></div>
+<p>You should always make sure your code works as intended.</p>
+<ul>
+<li>First let’s look at the frequency table of <code>underage</code> and see if records exist with the new categories, and if there are any missing values.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(NCbirths<span class="op">$</span>underage, <span class="dt">useNA=</span><span class="st">&quot;always&quot;</span>)</code></pre></div>
+<pre><code>## 
+##    adult underage     &lt;NA&gt; 
+##      925       75        0</code></pre>
+<ul>
+<li>Next let’s check it against the value of <code>mage</code> itself. Let’s look at a row where <code>mage=18</code> and <code>mage=19</code>, and columns</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(NCbirths[NCbirths<span class="op">$</span>mage<span class="op">==</span><span class="dv">18</span>,<span class="kw">c</span>(<span class="st">&#39;mage&#39;</span>, <span class="st">&#39;underage&#39;</span>)])</code></pre></div>
+<pre><code>##    mage underage
+## 38   18 underage
+## 39   18 underage
+## 40   18 underage
+## 41   18 underage
+## 42   18 underage
+## 43   18 underage</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(NCbirths[NCbirths<span class="op">$</span>mage<span class="op">==</span><span class="dv">19</span>,<span class="kw">c</span>(<span class="st">&#39;mage&#39;</span>, <span class="st">&#39;underage&#39;</span>)])</code></pre></div>
+<pre><code>##    mage underage
+## 76   19    adult
+## 77   19    adult
+## 78   19    adult
+## 79   19    adult
+## 80   19    adult
+## 81   19    adult</code></pre>
+<p>How does underage compare to maturity status?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(NCbirths<span class="op">$</span>underage, NCbirths<span class="op">$</span>mature)</code></pre></div>
+<pre><code>##           
+##            mature mom younger mom
+##   adult           133         792
+##   underage          0          75</code></pre>
+<p>No underage mature mothers, that’s good.</p>
+<hr />
+</div>
+<div id="additional-references" class="section level1">
+<h1>Additional References</h1>
+<p>There are several other Data Camp courses that all have the first chapter free that you can use to get a start on learning more about how to import and clean up data. Here are a few.</p>
+<ul>
+<li><a href="https://www.datacamp.com/courses/cleaning-data-in-r">Cleaning Data in R</a></li>
+<li>Tidy Data - The <a href="http://vita.had.co.nz/papers/tidy-data.pdf">Journal</a>, and the <a href="https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html">tutorial</a></li>
+</ul>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

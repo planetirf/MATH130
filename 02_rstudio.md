@@ -1,6 +1,14 @@
 ---
 title: "Reproducible Research using R Studio"
+output:
+  html_document:
+    highlight: tango
+    theme: yeti
+    toc: yes
+    toc_float: yes
 ---
+
+----- 
 
 # Introduction
 In this lab you will learn to write a document using R markdown, integrate live R code into a literate statistical program, compile R markdown documents using `knitr` and related tools, and organize a data analysis so that it is reproducible and accessible to others.
@@ -52,5 +60,3 @@ From the Coursera [Reproducible research](https://www.coursera.org/course/repdat
 * The spreadsheet error and austerity - as seen through [The Colbert Report](http://thecolbertreport.cc.com/videos/kbgnf0/austerity-s-spreadsheet-error---thomas-herndon)'s eyes. Moral of this story: ask for the data and question results that look too good to be true. Even graduate students can find serious errors!
 * Others on my list of "must reads" http://www.norcalbiostat.com/articles/articles 
 
-
-# [Back to Class Home page](../index.html)

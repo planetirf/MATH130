@@ -4,7 +4,6 @@ author: "STUDENT NAME"
 date: "DATE"
 output: html_document
 linkcolor: blue
-draft: true
 ---
 
 Here's your chance to demonstrate that you can integrate the topics and skills you learned through the Data Camp course into a literate report. Each section asks you to perform a few tasks based on each of the chapters in the Introduction to R course. 
@@ -13,15 +12,15 @@ When the question asks you to perform a coding task, insert a code chunk after e
 
 The first question is done for you as an example. 
 
-## Basic building blocks
+## Intro to basics
 
-0. Calculate 3 + 4. Put the answer below and knit the document. 
+0. Calculate 3 + 4. Put the answer in the grey area below and knit the document. 
 ```{r}
-
+3+4
 ```
 
 
-1. Calculate $\frac{1}{\sqrt{2}}$, then knit the document. 
+1. Calculate $2^5$, then knit the document. 
 ```{r}
 
 ```
@@ -31,10 +30,13 @@ The first question is done for you as an example.
 
 ```
 
-3. Consider the following code: `a <- "green"` What type of data is `a`?
+3. Consider the following code below. What type of data is `a`? That is, what is it's `class`? 
+```{r}
+a <- "green"
+```
 
 
-4. What are the values that **logical** data types can hold (_Hint: There are only two_)
+4. A variable that classified as `logical` can hold only what two values? These are also called Boolean variables. 
 
 
 5. Knit this document. 
@@ -68,6 +70,42 @@ Data Camp took you through a tour of Vegas data. Let's recreate and play around 
 
 ```
 
+## Matrix
+
+Click the green play button in the top right corner of this code chunk to run all code in that chunk. This will create a matrix containing the box ofice numbers for all current Star Wars movies. 
+
+```{r}
+domestic <- c(474.544, 310.676, 380.270, 460.998, 290.271, 309.205, 936.662, 321.282)
+worldwide <- c(1027.044, 656.695, 848.998, 786.598, 534.171, 572.705, 2058.662, 635.282)
+star_wars_matrix <- matrix(c(domestic, worldwide), ncol=2, byrow=FALSE)
+rownames(star_wars_matrix) <- c("phantom_menace", "attack_clones", "reveng_sith", "new_hope", "empire_strikes", "return_jedi", "force_awakens", "last_jedi")
+colnames(star_wars_matrix) <- c("US", "non-US")
+```
+
+1. Print out this matrix and take a look at it. 
+```{r}
+
+```
+
+
+2. Select the rows for the second trilogy released (Episodes I-III). This is also referred to as subsetting.
+```{r}
+
+```
+
+3. Use `colSums()` on your selection above to find out how much this trilogy made in total. 
+
+```{r}
+
+```
+
+4. Do the same calculation for the first trilogy (Episodes IV-VI), and 2 released so far of the most recent trilogy (Episodes VII & VIII) 
+
+```{r}
+
+```
+
+
 
 ## Data Frames
 In the section above, all that data was contained in separate vectors. Let's combine them into a `data.frame` and explore. Data frames are a more common way of storing data in R. 
@@ -81,6 +119,10 @@ vegas <- data.frame(day = weekday, poker = poker, roulette = roulette)
 ```{r}
 
 ```
+
+> Knit now. Did the vegas data set show up in your output? 
+> If not, did you remove `eval=FALSE` from your code chunk options? 
+
 
 2. Print out the records for just Tuesday and Thursday using bracket notation
 and indices `[,]`. 

@@ -8,6 +8,7 @@ output:
     toc_float: yes
 ---
 
+----- 
 
 ## Purpose
 
@@ -85,10 +86,10 @@ Because it's not reproducible.
 * Log into to your Data Camp classroom. 
 * You should see a course called "Introduction to R"
 * Complete the first chapter - **Intro to Basics** by the next class. 
+* There is a progress bar at the bottom of this page. You can track your progress through each chapter here. 
 
 ## Install R and R Studio on your personal computer. 
 Because lab computers are not always available. 
 
 * Follow the [Software Overview](https://norcalbiostat.netlify.com/post/software-overview/) post to get your computer up and running with the R studio suite of awesomeness.  
 
-# [Back to Class Home page](../index.html)

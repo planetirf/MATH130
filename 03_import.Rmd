@@ -1,0 +1,170 @@
+---
+title: 'Getting data into R'
+output:
+  html_document:
+    highlight: tango
+    theme: yeti
+    toc: yes
+    toc_float: yes
+---
+
+----- 
+
+# Introduction
+In this lab we will introduce ways to get data into R, and how to start exploring the data. 
+
+
+### Student Learning Objectives
+After completing this lesson students will be able to
+
+* Import data that is stored in an external Excel, CSV or tab-delimited text file into R.
+* Identify missing data elements in a data table. 
+* Identify data types for each variable in a data frame. 
+
+### What's a delimiter? 
+Before we go much further, let's talk about the word **_delimiter_**. This is the character, or symbol, that separates columns of data from each other when stored in an external file. This file could be a simple `.txt` text file or an `.xlsx` Excel file. Recall back to the Data Camp exercises on data frames and matrices. Each column in the matrix represented data on a specific variable. Something had to tell R how to distinguish which values went with which variable. 
+
+There are two main types of delimiters we will consider in this class; comma and tab. That does not mean that data can't be stored in other ways, these are just the two most common. 
+
+
+### Data to download
+* Go to the cleaned data section of the [datasets page](http://www.norcalbiostat.com/data/) and download the following data sets: `NCBirths`, `email`, and `parHIV`. 
+* **DO NOT RENAME ANYTHING** If you download multiple copies of the data, do not keep the versions that have a (1) or some number in the name. 
+* Put all downloaded data files into your MATH130 folder. 
+
+In all the examples below, the path shown (`data/`) is the path on **MY** computer.You will have to update this path to **YOUR** path on **YOUR** machine that points to your MATH130 folder. 
+
+
+----- 
+
+# Importing Data
+
+In this lesson we are only going to explore reading flat files that exist on your computer into R from three most commonly used data sources: A tab-delimited text file, A CSV file and an Excel file. Ideally each row represents data on a single observation and each column contains data on a single variable, or characteristic, of the observation. This is called `tidy data`. We will start to learn some tools to look at the data, and for getting data from an external file into R for analysis. 
+
+#### Look at your data!!
+
+The first thing you should always do is look at your data and ask yourself the folliwng things: 
+
+1. Were the variable names read in correctly? 
+2. Is there the expected number of rows and columns? 
+3. Are the data types for each variable as expected? 
+
+There are many ways this can be done, here are three
+
+1. `str()` to show you the structure of the data frame. 
+2. `head()` to show you the top 6 rows
+3. `data[1:x, 1:x]` - when the data frame is too large for the above two to work well, we can use matrix notation to view only the first X columns, and first X rows. 
+
+
+### Text files
+Text files are very simple files that have a `.txt` file extension. Common delimiters include a space, a comma (,) or a tab. Uncommon delimiters could include a % or even a semi-colon. Follow along with these examples and make sure you can read in the data correctly and that it matches what is shown below. 
+
+We will use the `read.table()` function that is in base R to read in any type of delimited file. A tab-delimited text file can be read in using `"\t"` as the deliminator character. In this class you **ALWAYS** want to include `header=TRUE` to signify that the data in the first row contains our column names. 
+```{r}
+email <- read.table("data/email.txt", header=TRUE, sep="\t")
+```
+
+
+```{r}
+str(email)
+```
+
+* The `email` data set has 3921 observations, and 21 variables. 
+* The variable names were read in correctly, as evidenced by the words in the far right corner after the `$`. 
+* Most variables are treated as numeric integers, except a few are factors. Including `time`. If we wanted to examine a time trend, we would need to convert the class into a `datetime` 
+
+
+### Excel files
+The best method I have found so far to read in Excel files is from the [`readxl` package](http://readxl.tidyverse.org/) by [Hadley Wickham](http://hadley.nz/). This package need to be installed first, and then can be simply loaded each time you start an `R` session where you will be reading in this type of data. Go ahead and install it now.  
+
+The `read_excel()` function is what we are going to use. Note the use of the underscore `_` instead of a period `.` between read and the file type.  
+
+```{r}
+library(readxl)
+police  <- read_excel("data/WashPost Police Shootings 2015.xlsx", sheet=1, col_names=TRUE)
+police[1:10,1:5]
+```
+
+* The variable `date` is a `dttm` or _date-time_ variable. This means `R` recognizes it directly as a date, not some string of numbers. 
+* Categorial variables such as `manner_of_death` and `city` are read in as `character` instead of factor. We may or may not want to change that later.
+* Numeric varibles such as `age` are of type `dbl` (double). This is similar to `integer` or `numeric`, so we are fine. 
+
+
+### CSV: Comma Separated Values
+CSV is a fancy way of saying a text file with comma-separated values (i.e. CSV). This file type can also open in Excel, the icons even look similar. 
+
+We could use `read.table()` to import this data file, but `read.csv()` is optimized to read in CSV files. 
+
+```{r}
+NCbirths <- read.csv("data/NCbirths.csv", header=TRUE)
+head(NCbirths)
+```
+
+* The `NCbirths` data set has 1000 rows and 13 columns. 
+* Variable names are read in OK. 
+* Most the data is beign read in as factors and integers. 
+* There are some `NA` values for the variable `fage` (fathers age). 
+
+----- 
+
+# Missing Data
+
+* R puts a `NA` as a placeholder when the value for that piece of data is missing. 
+* Missing data can be a result of many things: skip patterns in a survey (i.e. non-smokers don't get asked how many packs per week they smoke), errors in data reads from a machine, etc. 
+
+
+**Problem 1** 
+`R` can't do arithmetic on missing data. So `5 + NA = NA`, and if you were to try to calculate the `mean()` of a variable, you'd also get `NA`. 
+
+```{r}
+mean(NCbirths$fage)
+```
+
+**Problem 2**
+Some plots will show `NA` as it's own category, which is undesirable. 
+
+```{r, echo=FALSE}
+library(ggplot2)
+ggplot(NCbirths, aes(premie))+geom_bar()
+```
+
+
+**How to identify if your data has missing values**
+
+1. Look at the raw data using `head()` or `str()`
+2. Look at data summaries using `table()` for categorical data and `summary()` for numerical data. 
+
+```{r}
+table(NCbirths$habit, useNA="always")
+summary(NCbirths$fage)
+```
+
+Later labs will discuss how to work around these missing values.
+
+----- 
+
+# On Your Own
+
+1. Right click this link [Lab 2.Rmd](lab2.Rmd) link and **Save As** (or Save Link As) to download the RMarkdown file. 
+    - Save this in your class folder. 
+    - Rename this file using your username `lab2_username`. 
+2. This is another homework template for you to use to write your assignment. Write your answers directly into this document. 
+    - Don't forget to knit your document early and often!
+3. Submit the compiled **PDF** or **WORD** file by the due date.
+
+
+----- 
+
+# Additional resources
+
+### Importing Data
+
+* https://www.datacamp.com/courses/importing-data-into-r
+
+### Missing Data
+
+* http://www.statmethods.net/input/missingdata.html
+* https://stats.idre.ucla.edu/r/faq/how-does-r-handle-missing-values/
+* http://faculty.nps.edu/sebuttre/home/R/missings.html
+
+

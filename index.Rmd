@@ -12,39 +12,41 @@ See the [syllabus](syllabus.html) for details about the current class offerings.
 
 --------------------------------
 
-# Schedule
+# Schedule for S18
 
 _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
 
 ### Week 1 (1/22 - 1/25): Getting started with R and R Studio
 
-* Day 1: Introduction to the class and R. [[Notes]](materials/01_intro.html)
+* Day 1: Introduction to the class and R. [[Notes]](01_intro.html)
 * Assignments **Due before Day 2**
     - Make a Data Camp account and get connected to our classroom group. <span style="color:red">**please use your @mail.csuchico.edu email for this**</span>
     - Data Camp: Introduction to R - Chapter 1 (Intro to Basics)
     - Watch 1 minute video: "[What is R Markdown?](http://rmarkdown.rstudio.com/lesson-1.html)"
-* Day 2: Reproducible Research using R Studio [[Notes]](materials/02_rstudio.html)
+    - Make a folder titled `MATH130` on your computer in an easy to find place. 
+* Day 2: Reproducible Research using R Studio [[Notes]](02_rstudio.html)
 * Assignments
-    - [[Lab 1]](materials/lab1.Rmd) 
+    - [[Lab 1]](lab1.Rmd) (Right click and choose `save as`. Put into your MATH130 folder)
     - Data Camp - Introduction to R: Chapter 2-5 (Vectors, Matrices, Factors, and Data Frames)
   
 ### Week 2 (1/29 - 2/1): Importing, exploring, managing data using functions. 
-* Getting data into R and exploring [[Notes]](materials/03_import.html) [[code]](materials/03_import_helper.Rmd)
-* Using functions to summarize and manage data [[Notes]](materials/04_functions_recode.html) [[code]](materials/04_functions_recode_helper.Rmd)
+* Getting data into R and exploring [[Notes]](03_import.html) 
+    - **Before class** Go to the [datasets page](https://norcalbiostat.netlify.com/data/cleaned_data/) and download the following data sets: `Police Shootings`, `email`, and `NCBirths`. Put these in your `MATH130` folder. 
+* Using functions to summarize and manage data [[Notes]](04_functions_recode.html)
 * In class code [[RAD]] [[ER]]
-* Assignment: [[Lab 2]](materials/lab2.Rmd)
+* Assignment: [[Lab 2]](lab2.Rmd)
 
 ### Week 3 (2/5 - 2/8): Factors and grouped summaries.
-* Wrangling factors [[Notes]](materials/05_factors.html) [[code]](materials/05_factors_helper.Rmd)
-* Aggregating data by groups [[Notes]](materials/06_aggregate.html) [[code]](materials/06_aggregate_helper.Rmd)
+* Wrangling factors [[Notes]](05_factors.html) 
+* Aggregating data by groups [[Notes]](06_aggregate.html) 
 * In class code [[RAD]] [[ER]]
-* Assignment: [[Lab 3]](materials/lab3.Rmd)
+* Assignment: [[Lab 3]](lab3.Rmd)
 
 
 ### Week 4 (2/12 - 2/15): Data Visualization
-* Making pretty pictures to win friends and influence people. [[Notes]](materials/07_graphs.html) [[code]](materials/07_graphs_helper.Rmd)
+* Making pretty pictures to win friends and influence people. [[Notes]](07_graphs.html)
 * In class code [[RAD]] [[ER]]
-* Assignment: [[Lab 4]](materials/lab4.Rmd)
+* Assignment: [[Lab 4]](lab4.Rmd)
 
 
 ### Week 5 (2/19 - 2/22): Exploratory Data Analysis Project
