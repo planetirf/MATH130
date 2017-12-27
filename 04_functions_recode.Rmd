@@ -22,7 +22,7 @@ After completing this lesson students will be able to
 * Make new variables inside a data frame. 
 * Selectively edit (and recode) data elements. 
 
-We'll use the data set on births in North Carolina for this lecture. I read it into R here. 
+We'll use the data set on births in North Carolina for this lecture. 
 
 ```{r}
 NCbirths <- read.csv("data/NCbirths.csv", header=TRUE)
@@ -80,7 +80,7 @@ mean(na.rm=TRUE, x=NCbirths$fage, trim=.1)
 
 But let's not get that crazy. 
 
-R, at its heart, is a functional programming language [cite: Adv. R by Wickham](http://adv-r.had.co.nz/Functional-programming.html). We interact with the program, and data, using functions. 
+R, at its heart, is a functional programming language [(cite: Adv. R by Wickham)](http://adv-r.had.co.nz/Functional-programming.html). We interact with the program, and data, using functions. 
 
 -----
 
@@ -113,13 +113,17 @@ Mothers included in this data set visited the doctor on average 12.1 times durin
 
 # Recoding data
 
-Sometimes we have a need to edit, or change data. We can change values of existing data by using logical statements
+Sometimes we have a need to edit, or change data. We can change values of existing data by using logical statements.
 
-To choose all observations (rows) of a `data` set, where a `variable` is equal to some `value`, you would type
+Recall the Data Camp lesson on Matricies. To choose all observations (rows) of a `data` set, where a `variable` is equal to some `value`, you would type
 ```{r, eval=FALSE}
 data[data$variable==value]
 ```
 
+We can use this method of selecting rows, to change data in those specific rows. 
+
+
+**Example 1: Too low birthweight**
 
 Let's look at the numerical distribution of birthweight of the baby. 
 
@@ -133,19 +137,21 @@ The value of 1 lb seems very low. The researchers you are working with decide th
 NCbirths$weight[NCbirths$weight==1] <- NA
 ```
 
-But what about other weights that aren't quite as low as 1, but still unusually low? 
+The specific variable `NCbirths$weight` is on the far left, outside the `[]`. So just the variable `weight` is being changed. 
+
+But what about other weights that aren't quite as low as 1, but still unusually low? The boxplot below shows outlying values as dots on the low end of birthweight. 
 
 ```{r}
 boxplot(NCbirths$weight)
 ```
 
-We could also set all birthweights less than a certain value to missing as well. 
+Let's set all birthweights less than 4 lbs to missing. 
 
 ```{r}
 NCbirths$weight[NCbirths$weight < 4] <- NA
 ```
 
-We'll confirm that this recode worked by plotting the data again, and noticing that there are no values below 4 now. 
+It is important to plott the data again, to make sure that there are no values below 4 now. 
 ```{r}
 boxplot(NCbirths$weight)
 ```
@@ -162,7 +168,24 @@ The new variable you want to create goes on the left side of the assignment oper
 data$new_variable <- creation statement
 ```
 
-**Example: underage mothers**
+#### **Example: basic arithmetic on existing variables**
+
+As a pregnancy progresses, both the mother and the baby gain weight. The variable `gained` is the total amount of weight the mother gained in her pregnancy. The variable `weight` is how much the baby weighed at birth.
+
+The following code creates a new variable `wtgain_mom` the weight gained by the mother, that is not due to the baby by subtracting `weight` from `gained`.
+```{r}
+NCbirths$wtgain_mom <- NCbirths$gained - NCbirths$weight
+```
+
+To confirm this variable was created correctly, we look at the data contained in three variables in question. 
+
+```{r}
+head(NCbirths[,c('gained', 'weight', 'wtgain_mom')])
+```
+
+
+
+#### **Example: Using `ifelse()` to create a binary variable**
 
 Let's add a variable to identify if a mother in the North Carolina births data set was underage at the time of birth. 
 
@@ -186,26 +209,11 @@ You should always make sure your code works as intended.
 ```{r}
 table(NCbirths$underage, useNA="always")
 ```
-* Next let's check it against the value of `mage` itself. Let's look at a row where `mage=18` and `mage=19`, and columns 
+* Next let's check it against the value of `mage` itself. Let's look at all rows where mothers age is either 18 or 19 `mage %in% c(18,19)`, and only the columns of interest. 
 
 ```{r}
-head(NCbirths[NCbirths$mage==18,c('mage', 'underage')])
-head(NCbirths[NCbirths$mage==19,c('mage', 'underage')])
+NCbirths[NCbirths$mage %in% c(18,19),c('mage', 'underage')]
 ```
-
-
-
-
-
-
-How does underage compare to maturity status? 
-```{r}
-table(NCbirths$underage, NCbirths$mature)
-```
-
-No underage mature mothers, that's good. 
-
- 
 
 -----
 

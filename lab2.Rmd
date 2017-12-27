@@ -8,46 +8,68 @@ Answer the questions in this lab and submit the compiled WORD or PDF by the dead
 
 ## Importing Data
 
-2. When reading in the `parHIV` Excel data set, what do the arguments `sheet=1` and `col_names=TRUE` mean? 
+1. When reading in the `Police Shootings` Excel data set, what do the arguments `sheet=1` and `col_names=TRUE` mean? 
 
 
-Use the `NCbirths` data set to answer the next set of questions. Read in the
-data set in the code chunk below. 
+Use the `NCbirths` data set to answer the next set of questions. Read in the data set in the code chunk below. 
 
 ```{r}
 # Read in the NC Births data set here, then delete this comment
 ```
 
 
-1. How many observations and variables are contained in this data set? 
+2. How many observations and variables are contained in this data set? 
 
 
-2. Calculate the mean age of the mothers (`mage`) in the sample.
+3. Calculate the mean age of the mothers (`mage`) in the sample.
+```{r}
+
+```
 
 
-3. Calculate the trimmed mean mothers age after eliminating the outer 10% of ages
+4. Pregnancies last on average 38 weeks. Edit the `weeks` variable to change all records where `weeks` is greater than 38, to equal 38. That is, for all record where `weeks>38`, change the value of `weeks` to `<- 38`. 
+
+```{r}
+
+```
 
 
-4. Use the `summary` function to calculate summary statistics on the fathers age (`fage`). 
+5. Use the `summary` function to calculate summary statistics on the fathers age (`fage`). 
    Round to 3 digits using the `digits=` argument. Don't forget that you can look at the 
    bottom of the help for summary (`?summary`) file for examples on how to use this function.  
+```{r}
+
+```
+
    
-   
-5. What is the distribution of smoking habit (`habit`) amongst the mothers in the sample? 
+6. What is the distribution of smoking habit (`habit`) amongst the mothers in the sample? 
    i.e. How many are smokers and how many are non-smokers?  _Hint: Use the `table()`_ function. 
+```{r}
+
+```
    
    
-6. Use the following code to create a new indicator variable for if the fathers age is missing: 
-   `NCbirths$miss_fage <- ifelse(is.na(NCbirths$fage), 1, 0)`. What data type is this new variable?
+7. Use the `ifelse()` function to create a new variable called `missing_fage` to identify if the fathers age is missing. The **logical statement** to identify if something is missing looks like this: `is.na(variable)`. 
+    * Set this new variable equal to `'MISSING'` if `fage` is missing (the logical statement is TRUE)
+    * set this new variable equal to `'OBSERVED'` if `fage` is not missing (the logical statement is FALSE)
+
+```{r}
+
+```
+
+
+
+8. What class of data is this new variable? 
+```{r}
+
+```
    
+ 
+ 
    
-7. Convert `miss_fage` to a factor variable, where the labels are "Yes" when `miss_fage`=1 and 
-   "No" when `miss_fage` = 0. Create a `table()` of this new variable to show that your labeling 
-   worked. 
-   
-   
-   
-8. What proportion of fathers ages are missing?  
+9. What percent of records are missing the fathers age? 
+
+
 
 
 

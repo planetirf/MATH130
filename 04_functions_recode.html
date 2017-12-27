@@ -366,7 +366,7 @@ div.tocify {
 <li>Make new variables inside a data frame.</li>
 <li>Selectively edit (and recode) data elements.</li>
 </ul>
-<p>We’ll use the data set on births in North Carolina for this lecture. I read it into R here.</p>
+<p>We’ll use the data set on births in North Carolina for this lecture.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">NCbirths &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/NCbirths.csv&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</code></pre></div>
 <hr />
 </div>
@@ -401,7 +401,7 @@ div.tocify {
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(<span class="dt">na.rm=</span><span class="ot">TRUE</span>, <span class="dt">x=</span>NCbirths<span class="op">$</span>fage, <span class="dt">trim=</span>.<span class="dv">1</span>)</code></pre></div>
 <pre><code>## [1] 30.01053</code></pre>
 <p>But let’s not get that crazy.</p>
-<p>R, at its heart, is a functional programming language <a href="http://adv-r.had.co.nz/Functional-programming.html">cite: Adv. R by Wickham</a>. We interact with the program, and data, using functions.</p>
+<p>R, at its heart, is a functional programming language <a href="http://adv-r.had.co.nz/Functional-programming.html">(cite: Adv. R by Wickham)</a>. We interact with the program, and data, using functions.</p>
 <hr />
 </div>
 </div>
@@ -425,21 +425,24 @@ div.tocify {
 </div>
 <div id="recoding-data" class="section level1">
 <h1>Recoding data</h1>
-<p>Sometimes we have a need to edit, or change data. We can change values of existing data by using logical statements</p>
-<p>To choose all observations (rows) of a <code>data</code> set, where a <code>variable</code> is equal to some <code>value</code>, you would type</p>
+<p>Sometimes we have a need to edit, or change data. We can change values of existing data by using logical statements.</p>
+<p>Recall the Data Camp lesson on Matricies. To choose all observations (rows) of a <code>data</code> set, where a <code>variable</code> is equal to some <code>value</code>, you would type</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">data[data<span class="op">$</span>variable<span class="op">==</span>value]</code></pre></div>
+<p>We can use this method of selecting rows, to change data in those specific rows.</p>
+<p><strong>Example 1: Too low birthweight</strong></p>
 <p>Let’s look at the numerical distribution of birthweight of the baby.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(NCbirths<span class="op">$</span>weight)</code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##   1.000   6.380   7.310   7.101   8.060  11.750</code></pre>
 <p>The value of 1 lb seems very low. The researchers you are working with decide that is a mistake and should be excluded from the data. We would then set all records where <code>weight=1</code> to missing.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">NCbirths<span class="op">$</span>weight[NCbirths<span class="op">$</span>weight<span class="op">==</span><span class="dv">1</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></code></pre></div>
-<p>But what about other weights that aren’t quite as low as 1, but still unusually low?</p>
+<p>The specific variable <code>NCbirths$weight</code> is on the far left, outside the <code>[]</code>. So just the variable <code>weight</code> is being changed.</p>
+<p>But what about other weights that aren’t quite as low as 1, but still unusually low? The boxplot below shows outlying values as dots on the low end of birthweight.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(NCbirths<span class="op">$</span>weight)</code></pre></div>
 <p><img src="04_functions_recode_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
-<p>We could also set all birthweights less than a certain value to missing as well.</p>
+<p>Let’s set all birthweights less than 4 lbs to missing.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">NCbirths<span class="op">$</span>weight[NCbirths<span class="op">$</span>weight <span class="op">&lt;</span><span class="st"> </span><span class="dv">4</span>] &lt;-<span class="st"> </span><span class="ot">NA</span></code></pre></div>
-<p>We’ll confirm that this recode worked by plotting the data again, and noticing that there are no values below 4 now.</p>
+<p>It is important to plott the data again, to make sure that there are no values below 4 now.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(NCbirths<span class="op">$</span>weight)</code></pre></div>
 <p><img src="04_functions_recode_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <hr />
@@ -449,7 +452,23 @@ div.tocify {
 <p>New variables should be added to the data frame. This can be done using <code>$</code> sign notation.</p>
 <p>The new variable you want to create goes on the left side of the assignment operator <code>&lt;-</code>, and how you want to create that new variable goes on the right side.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">data<span class="op">$</span>new_variable &lt;-<span class="st"> </span>creation statement</code></pre></div>
-<p><strong>Example: underage mothers</strong></p>
+<div id="example-basic-arithmetic-on-existing-variables" class="section level4">
+<h4><strong>Example: basic arithmetic on existing variables</strong></h4>
+<p>As a pregnancy progresses, both the mother and the baby gain weight. The variable <code>gained</code> is the total amount of weight the mother gained in her pregnancy. The variable <code>weight</code> is how much the baby weighed at birth.</p>
+<p>The following code creates a new variable <code>wtgain_mom</code> the weight gained by the mother, that is not due to the baby by subtracting <code>weight</code> from <code>gained</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">NCbirths<span class="op">$</span>wtgain_mom &lt;-<span class="st"> </span>NCbirths<span class="op">$</span>gained <span class="op">-</span><span class="st"> </span>NCbirths<span class="op">$</span>weight</code></pre></div>
+<p>To confirm this variable was created correctly, we look at the data contained in three variables in question.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(NCbirths[,<span class="kw">c</span>(<span class="st">&#39;gained&#39;</span>, <span class="st">&#39;weight&#39;</span>, <span class="st">&#39;wtgain_mom&#39;</span>)])</code></pre></div>
+<pre><code>##   gained weight wtgain_mom
+## 1     38   7.63      30.37
+## 2     20   7.88      12.12
+## 3     38   6.63      31.37
+## 4     34   8.00      26.00
+## 5     27   6.38      20.62
+## 6     22   5.38      16.62</code></pre>
+</div>
+<div id="example-using-ifelse-to-create-a-binary-variable" class="section level4">
+<h4><strong>Example: Using <code>ifelse()</code> to create a binary variable</strong></h4>
 <p>Let’s add a variable to identify if a mother in the North Carolina births data set was underage at the time of birth.</p>
 <ul>
 <li>We will define this as if the mothers age <code>mage</code> is under 18.</li>
@@ -473,32 +492,85 @@ div.tocify {
 ##    adult underage     &lt;NA&gt; 
 ##      925       75        0</code></pre>
 <ul>
-<li>Next let’s check it against the value of <code>mage</code> itself. Let’s look at a row where <code>mage=18</code> and <code>mage=19</code>, and columns</li>
+<li>Next let’s check it against the value of <code>mage</code> itself. Let’s look at all rows where mothers age is either 18 or 19 <code>mage %in% c(18,19)</code>, and only the columns of interest.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(NCbirths[NCbirths<span class="op">$</span>mage<span class="op">==</span><span class="dv">18</span>,<span class="kw">c</span>(<span class="st">&#39;mage&#39;</span>, <span class="st">&#39;underage&#39;</span>)])</code></pre></div>
-<pre><code>##    mage underage
-## 38   18 underage
-## 39   18 underage
-## 40   18 underage
-## 41   18 underage
-## 42   18 underage
-## 43   18 underage</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(NCbirths[NCbirths<span class="op">$</span>mage<span class="op">==</span><span class="dv">19</span>,<span class="kw">c</span>(<span class="st">&#39;mage&#39;</span>, <span class="st">&#39;underage&#39;</span>)])</code></pre></div>
-<pre><code>##    mage underage
-## 76   19    adult
-## 77   19    adult
-## 78   19    adult
-## 79   19    adult
-## 80   19    adult
-## 81   19    adult</code></pre>
-<p>How does underage compare to maturity status?</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(NCbirths<span class="op">$</span>underage, NCbirths<span class="op">$</span>mature)</code></pre></div>
-<pre><code>##           
-##            mature mom younger mom
-##   adult           133         792
-##   underage          0          75</code></pre>
-<p>No underage mature mothers, that’s good.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">NCbirths[NCbirths<span class="op">$</span>mage <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">18</span>,<span class="dv">19</span>),<span class="kw">c</span>(<span class="st">&#39;mage&#39;</span>, <span class="st">&#39;underage&#39;</span>)]</code></pre></div>
+<pre><code>##     mage underage
+## 38    18 underage
+## 39    18 underage
+## 40    18 underage
+## 41    18 underage
+## 42    18 underage
+## 43    18 underage
+## 44    18 underage
+## 45    18 underage
+## 46    18 underage
+## 47    18 underage
+## 48    18 underage
+## 49    18 underage
+## 50    18 underage
+## 51    18 underage
+## 52    18 underage
+## 53    18 underage
+## 54    18 underage
+## 55    18 underage
+## 56    18 underage
+## 57    18 underage
+## 58    18 underage
+## 59    18 underage
+## 60    18 underage
+## 61    18 underage
+## 62    18 underage
+## 63    18 underage
+## 64    18 underage
+## 65    18 underage
+## 66    18 underage
+## 67    18 underage
+## 68    18 underage
+## 69    18 underage
+## 70    18 underage
+## 71    18 underage
+## 72    18 underage
+## 73    18 underage
+## 74    18 underage
+## 75    18 underage
+## 76    19    adult
+## 77    19    adult
+## 78    19    adult
+## 79    19    adult
+## 80    19    adult
+## 81    19    adult
+## 82    19    adult
+## 83    19    adult
+## 84    19    adult
+## 85    19    adult
+## 86    19    adult
+## 87    19    adult
+## 88    19    adult
+## 89    19    adult
+## 90    19    adult
+## 91    19    adult
+## 92    19    adult
+## 93    19    adult
+## 94    19    adult
+## 95    19    adult
+## 96    19    adult
+## 97    19    adult
+## 98    19    adult
+## 99    19    adult
+## 100   19    adult
+## 101   19    adult
+## 102   19    adult
+## 103   19    adult
+## 104   19    adult
+## 105   19    adult
+## 106   19    adult
+## 107   19    adult
+## 108   19    adult
+## 109   19    adult
+## 110   19    adult</code></pre>
 <hr />
+</div>
 </div>
 <div id="additional-references" class="section level1">
 <h1>Additional References</h1>

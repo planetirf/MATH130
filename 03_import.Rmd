@@ -27,12 +27,18 @@ Before we go much further, let's talk about the word **_delimiter_**. This is th
 There are two main types of delimiters we will consider in this class; comma and tab. That does not mean that data can't be stored in other ways, these are just the two most common. 
 
 
-### Data to download
-* Go to the cleaned data section of the [datasets page](http://www.norcalbiostat.com/data/) and download the following data sets: `NCBirths`, `email`, and `parHIV`. 
-* **DO NOT RENAME ANYTHING** If you download multiple copies of the data, do not keep the versions that have a (1) or some number in the name. 
-* Put all downloaded data files into your MATH130 folder. 
+### What's a path? 
+
+The _path_ is a programmatic way to direct your computer to the location of a file. It's like the file's address, or, where it lives on your computer. 
 
 In all the examples below, the path shown (`data/`) is the path on **MY** computer.You will have to update this path to **YOUR** path on **YOUR** machine that points to your MATH130 folder. 
+
+Revisit the [Software Overview](https://norcalbiostat.netlify.com/post/software-overview/) blog post from Dr. Donatello's website on how to find your path. 
+
+### Download data
+* From the [Data](https://norcalbiostat.netlify.com/data/cleaned_data/) page download the following data sets **into your MATH130 folder**: `NCBirths`, `email`, and `Police Shootings`. 
+* **DO NOT RENAME ANYTHING** If you download multiple copies of the data, do not keep the versions that have a (1) or some number in the name. 
+
 
 
 ----- 
