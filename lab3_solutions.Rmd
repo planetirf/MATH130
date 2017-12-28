@@ -1,0 +1,102 @@
+---
+title: "Lab 3: More data management and grouping using factors"
+author: "NAME"
+date: "DATE"
+---
+
+Answer the questions in this lab and submit the compiled HTML or PDF by the deadline. Don't forget to change your name and date in the above header. 
+
+This lab uses the `dplyr` and `nycflights13` packages. It is good habit to load all packages in the first code chunk. 
+
+```{r, warning=FALSE, message=FALSE}
+library(dplyr)
+library(nycflights13)
+```
+
+
+# Basic verbs
+You will use the `flights` data set for the next few exercises.  Let's load that into our working environment so we can look at it.
+```{r}
+flights <- flights
+```
+
+* At each step use the assignment operator `<-` to store the results into a new data table and use that data in the next step. 
+* At each step, print out the resulting data frame so you can see the results. 
+
+1. Use `select()` to extract the following variables: `origin`, `distance`, and `air_time`, `dest`. 
+
+```{r}
+f1 <- flights %>% select(origin, distance, air_time, dest)
+f1
+```
+
+2. Use `filter()` to select only the flights whose destination (`dest`) is Atlanta (ATL)
+
+```{r}
+f2 <- f1 %>% filter(dest == 'ATL')
+f2
+```
+
+3. Use `mutate()` to create a new variable `speed` that calculates speed of the plane as `distance/air_time*60.
+
+```{r}
+f3 <- f2 %>% mutate(speed = distance/air_time*60)
+f3
+```
+
+
+# How many passengers can a plane hold before needing another engine? 
+This question uses the `planes` data set. Let's load that into our working environment so we can look at it.
+```{r}
+planes <- planes
+```
+
+
+1. Examine the variable `engines` using `table()` and `class`. What is it's data type? 
+
+
+```{r}
+table(planes$engines)
+class(planes$engines)
+```
+
+The number of engines is an integer variable with values between 1 and 4. 
+
+2. There are too few planes with more than 2 engines. Recode all records with 4 engines to a value of 3. _Hint: Revisit lesson 04_. Create a `table` of this variable again to ensure that all 4's are now 3's. 
+
+```{r}
+planes$engines[planes$engines==4] <- 3
+table(planes$engines)
+```
+
+
+3. Create a new factor variable `num_engines` from `engines` with labels "one", "two", "three+". 
+
+```{r}
+planes$num_engines <- factor(planes$engines, labels=c("one", "two", "three+"))
+```
+
+
+4. Create a two-way `table` of `engines` against `new_engines` to confirm that this new factor variable was created correctly. 
+
+```{r}
+table(planes$num_engines, planes$engines)
+```
+
+
+5. Use `dplyr` chaining magic to...
+
+* take the planes data set _and then_...
+* `group_by`the `num_engines` _and then_...
+* use `summarise` to create three new variables: 
+    - `ave_seats` as the `mean()` number of `seats`
+    - `min_seats` as the `min()` number of `seats`
+    - `max_seats` as the `max()` number of `seats`
+
+
+```{r}
+planes %>% group_by(num_engines) %>% summarise(ave_seats = mean(seats), 
+                                               min_seats = min(seats), 
+                                               max_seats = max(seats))
+```
+

@@ -19,6 +19,8 @@ After completing this lesson students will be able to
 * Create a reproducible R Markdown document that integrates written text and R code. 
 * Explain the concept of reproducible research and how RMarkdown helps to achieves this goal. 
 
+## Necessary packages
+The following packages must be installed at this point: `rmarkdown` and `knitr`. 
 
 # Motivation
 

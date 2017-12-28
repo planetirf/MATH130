@@ -147,17 +147,6 @@ summary(NCbirths$fage)
 
 Later labs will discuss how to work around these missing values.
 
------ 
-
-# On Your Own
-
-1. Right click this link [Lab 2.Rmd](lab2.Rmd) link and **Save As** (or Save Link As) to download the RMarkdown file. 
-    - Save this in your class folder. 
-    - Rename this file using your username `lab2_username`. 
-2. This is another homework template for you to use to write your assignment. Write your answers directly into this document. 
-    - Don't forget to knit your document early and often!
-3. Submit the compiled **PDF** or **WORD** file by the due date.
-
 
 ----- 
 

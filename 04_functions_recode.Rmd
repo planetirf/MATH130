@@ -22,7 +22,7 @@ After completing this lesson students will be able to
 * Make new variables inside a data frame. 
 * Selectively edit (and recode) data elements. 
 
-We'll use the data set on births in North Carolina for this lecture. 
+We'll use the data set on births in North Carolina for this lesson. 
 
 ```{r}
 NCbirths <- read.csv("data/NCbirths.csv", header=TRUE)
@@ -218,6 +218,11 @@ NCbirths[NCbirths$mage %in% c(18,19),c('mage', 'underage')]
 -----
 
 # Additional References
+
+This lesson was an introduction to typical basic data management tasks. In lesson 06 you will learn how to use functions in the `dplyr` package to perform the same, and more different data management tasks, in a more streamline manner. Both levels of techniques are equally usefull depending on the task. 
+
+There are always many ways to approach a problem in R. Our goal in this class is to provide you with a few ways to think of a problem. You will find what fits best for your coding style as you progress. 
+
 
 There are several other Data Camp courses that all have the first chapter free that you can use to get a start on learning more about how to import and clean up data. Here are a few. 
 

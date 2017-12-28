@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="STUDENT NAME" />
+
+
+<title>Lab1</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 45px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+
+.section h2 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h3 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h4 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h5 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h6 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">INTRO TO R (MATH 130)</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="http://www.norcalbiostat.com/data/">
+    <span class="fa fa-database"></span>
+     
+    Data
+  </a>
+</li>
+<li>
+  <a href="faq.html">
+    <span class="fa fa-question"></span>
+     
+    Help/FAQ
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="syllabus.html">
+    <span class="fa fa-info-circle"></span>
+     
+    Syllabus
+  </a>
+</li>
+<li>
+  <a href="mailto:rdonatello@csuchico.edu">
+    <span class="fa fa-envelope-o"></span>
+     
+    Contact
+  </a>
+</li>
+<li>
+  <a href="http://www.norcalbiostat.com/">
+    <span class="fa fa-paw"></span>
+     
+    Dr. D's Website
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Lab1</h1>
+<h4 class="author"><em>STUDENT NAME</em></h4>
+<h4 class="date"><em>DATE</em></h4>
+
+</div>
+
+
+<p>Here’s your chance to demonstrate that you can integrate the topics and skills you learned through the Data Camp course into a literate report. Each section asks you to perform a few tasks based on each of the chapters in the Introduction to R course.</p>
+<p>When the question asks you to perform a coding task, insert a code chunk after each question where you will write the code to answer that question. Knitting after each completed code chunk will help you to ensure your final product works as intended! That way if it breaks, you know exactly where the error lies. It’s like saving after every answer!</p>
+<p>The first question is done for you as an example.</p>
+<div id="intro-to-basics" class="section level2">
+<h2>Intro to basics</h2>
+<ol start="0" style="list-style-type: decimal">
+<li>Calculate 3 + 4. Put the answer in the grey area below and knit the document.</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">3</span><span class="op">+</span><span class="dv">4</span></code></pre></div>
+<pre><code>## [1] 7</code></pre>
+<ol style="list-style-type: decimal">
+<li><p>Calculate <span class="math inline">\(2^5\)</span>, then knit the document.</p></li>
+<li><p>Assign a numeric value to the variable <code>my_apples</code>, assign a different numeric value to the variable <code>my_oranges</code>. Add these two together and assign the result to the variable <code>my_fruit</code>. Print the result of <code>my_fruit</code> to the report.</p></li>
+<li><p>Consider the following code below. What type of data is <code>a</code>? That is, what is it’s <code>class</code>?</p></li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> &quot;green&quot;</span></code></pre></div>
+<ol start="4" style="list-style-type: decimal">
+<li><p>A variable that classified as <code>logical</code> can hold only what two values? These are also called Boolean variables.</p></li>
+<li><p>Knit this document.</p></li>
+</ol>
+</div>
+<div id="vectors" class="section level2">
+<h2>Vectors</h2>
+<p>Data Camp took you through a tour of Vegas data. Let’s recreate and play around with a week at the tables.</p>
+<ol style="list-style-type: decimal">
+<li>Create three vectors (<code>weekday</code>, <code>poker</code>, <code>roulette</code>) to describe the following outcome.</li>
+</ol>
+<ul>
+<li><code>weekday</code>: The 5 weekdays.</li>
+<li><code>poker</code>:
+<ul>
+<li>On Monday you won $140</li>
+<li>Tuesday you lost $50</li>
+<li>Wednesday you won $20</li>
+<li>Thursday you lost $120</li>
+<li>Friday you won $240</li>
+</ul></li>
+<li><code>roulette</code>:
+<ul>
+<li>On Monday you lost $24</li>
+<li>Tuesday you lost $50</li>
+<li>Wednesday you won $100</li>
+<li>Thursday you lost $350</li>
+<li>Friday you won $10</li>
+</ul></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>How much money did you gain/loose overall? What game did you do better on?</li>
+</ol>
+</div>
+<div id="matrix" class="section level2">
+<h2>Matrix</h2>
+<p>Click the green play button in the top right corner of this code chunk to run all code in that chunk. This will create a matrix containing the box ofice numbers for all current Star Wars movies.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">domestic &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">474.544</span>, <span class="fl">310.676</span>, <span class="fl">380.270</span>, <span class="fl">460.998</span>, <span class="fl">290.271</span>, <span class="fl">309.205</span>, <span class="fl">936.662</span>, <span class="fl">321.282</span>)
+worldwide &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">1027.044</span>, <span class="fl">656.695</span>, <span class="fl">848.998</span>, <span class="fl">786.598</span>, <span class="fl">534.171</span>, <span class="fl">572.705</span>, <span class="fl">2058.662</span>, <span class="fl">635.282</span>)
+star_wars_matrix &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(domestic, worldwide), <span class="dt">ncol=</span><span class="dv">2</span>, <span class="dt">byrow=</span><span class="ot">FALSE</span>)
+<span class="kw">rownames</span>(star_wars_matrix) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;phantom_menace&quot;</span>, <span class="st">&quot;attack_clones&quot;</span>, <span class="st">&quot;reveng_sith&quot;</span>, <span class="st">&quot;new_hope&quot;</span>, <span class="st">&quot;empire_strikes&quot;</span>, <span class="st">&quot;return_jedi&quot;</span>, <span class="st">&quot;force_awakens&quot;</span>, <span class="st">&quot;last_jedi&quot;</span>)
+<span class="kw">colnames</span>(star_wars_matrix) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;US&quot;</span>, <span class="st">&quot;non-US&quot;</span>)</code></pre></div>
+<ol style="list-style-type: decimal">
+<li><p>Print out this matrix and take a look at it.</p></li>
+<li><p>Select the rows for the second trilogy released (Episodes I-III). This is also referred to as subsetting.</p></li>
+<li><p>Use <code>colSums()</code> on your selection above to find out how much this trilogy made in total.</p></li>
+<li><p>Do the same calculation for the first trilogy (Episodes IV-VI), and 2 released so far of the most recent trilogy (Episodes VII &amp; VIII)</p></li>
+</ol>
+</div>
+<div id="data-frames" class="section level2">
+<h2>Data Frames</h2>
+<p>In the section above, all that data was contained in separate vectors. Let’s combine them into a <code>data.frame</code> and explore. Data frames are a more common way of storing data in R.</p>
+<p>Use the following code to create a data frame out of the vegas data. The code chunk has already been written for you, you just need to remove the <code>eval=FALSE</code> portion so that it will evaluate.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vegas &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">day =</span> weekday, <span class="dt">poker =</span> poker, <span class="dt">roulette =</span> roulette)</code></pre></div>
+<ol style="list-style-type: decimal">
+<li>Print out the <code>vegas</code> data set in it’s entirety</li>
+</ol>
+<blockquote>
+<p>Knit now. Did the vegas data set show up in your output? If not, did you remove <code>eval=FALSE</code> from your code chunk options?</p>
+</blockquote>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Print out the records for just Tuesday and Thursday using bracket notation and indices <code>[,]</code>.</p></li>
+<li><p>Use dollar sign notation to print just the poker variable: (<code>vegas$poker</code>).</p></li>
+<li><p>Print out the records for Wednesday only, using a logical statement such as <code>day == &quot;Wed&quot;</code> to identify the row of interest.</p></li>
+<li><p>Create a new variable called <code>total</code> that adds the daily totals for each game together. Print the full data set again.</p></li>
+<li><p>Use this new total vector to subset the data frame now to only include days where there was a positive total. Store this result as a new object called <code>win_days</code>, and print this new object to the screen.</p></li>
+</ol>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

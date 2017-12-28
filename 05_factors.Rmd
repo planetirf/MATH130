@@ -1,0 +1,107 @@
+---
+title: 'Controlling your factors'
+output:
+  html_document:
+    highlight: tango
+    theme: yeti
+    toc: yes
+    toc_float: yes
+---
+
+----- 
+
+# Introduction
+In this lesson we will discuss ways to organize and deal with categorical data, also known as factor data types. 
+
+
+### Student Learning Objectives
+After completing this lesson students will be able to
+
+* Create and control the labeling and ordering of categorical variables (factors).
+
+We'll use the data set on emails for this lesson. 
+
+```{r}
+email <- read.table("data/email.txt", header=TRUE, sep="\t")
+```
+
+----- 
+
+# What is a factor?
+The term factor refers to a statistical data type used to store categorical variables. The difference between a categorical variable and a continuous variable is that a categorical variable corresponds to a limited number of categories, while a continuous variable can correspond to an infinite number of values.
+
+An example of a categorical variable is the `number` variable in the `email` data set. This variable contains data on whether there was no number, a small number (under 1 million), or a big number in the content of the email. 
+
+```{r}
+table(email$number)
+class(email$number)
+```
+
+We can see that `R` recognizes this variable as a factor variable, and that it has the three levels: `big`, `none`, and `small`. 
+
+```{r}
+levels(email$number)
+```
+
+# Creating factor variables
+
+Typically data are entered into the computer using numeric codes such as 0 and 1. These codes stand for categories, such as "no" and "yes". Sometimes we want to analyze these binary variables in two ways: 
+
+* For statistical analyses, the data must be numeric 0/1.
+* For many graphics, the data must be a factor, "no/yes".
+
+**Example: Is the email flagged as spam?**
+The `spam` variable is recorded as an integer variable with values 0 and 1. 
+```{r}
+table(email$spam)
+class(email$spam)
+```
+
+We use the function `factor()` to convert the numeric variable `spam` to a factor, applying `lables` to convert 0 to "no" and 1 to "yes". 
+
+```{r}
+email$spam_fac <- factor(email$spam, labels=c("no", "yes"))
+```
+
+The ordering of the `labels` argument _must_ be in the same order (left to right) as the factor levels themselves. Look back at the order of columns in the `table` - it goes 0 then 1. Thus our labels need to go "no" then "yes". 
+
+**Always confirm your recode** 
+
+Here we confirm that the new variable was created corectly by creating a two-way contingency table by calling the `table(old variable, new variable)` function on both the old and new variables. 
+
+```{r}
+table(email$spam, email$spam_fac, useNA="always")
+```
+
+Here we see that all the 0's were recoded to 'no's, and all the 1's recoded to "yes"'s, and there are no new missing values. Success!
+
+
+
+# Ordering of Factors
+Let's revisit the variable `number`, that contains the size of the number in the email. 
+
+```{r}
+table(email$number)
+```
+
+Specifically the ordering from left to right of the factors. Seem odd? This is ordinal data, in that `none` is inherently "smaller" than `small`, which is smaller than `big`. But the ordering goes `big` - `none` - `small`, which is in Alphabetical order!
+
+Gee thanks R. Exactly how I want my factors ordered (NOT!)
+
+We need to take control of these factors! We can do that by specifying the `levels` of the factor.
+
+```{r}
+levels(email$number) <- c("none", "small", "big")
+table(email$number)
+```
+
+There we go. Now it's in a readable, left to right in increasing size order. This will be important for graphing. 
+
+
+----- 
+
+# Additional resources
+
+* STAT 133 UC Berkeley https://www.stat.berkeley.edu/classes/s133/factors.html
+* Be the boss of your factors using `dplyr` and `forcats`  http://stat545.com/block029_factors.html
+
