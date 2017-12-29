@@ -1,9 +1,11 @@
 ---
-title: "Data Visualization Tutorial"
+title: "Full Data Visualization tutorial"
 author: "Robin Donatello"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
+slug: graphics-galore
 output:
   html_document:
+    css: custom.css
     toc: yes
     toc_float: yes
 ---
@@ -23,12 +25,12 @@ There are two audiences in mind when creating data visualizations:
 
 You will see, and slowly learn, how to add these annotations and how to clean up your graphics to make them sharable. `ggplot2` already does a lot of this work for you. 
 
-We will also use the two most common methods used to create plots. 1) Base graphics, 2) the `ggplot2` package. Each have their own advantages and disadvantges. If you have not done so already, go ahead and install the `ggplot2` package now. 
+We will also use the two most common methods used to create plots. 1) Base graphics, 2) the `ggplot2` package. Each have their own advantages and disadvantages. If you have not done so already, go ahead and install the `ggplot2` package now. 
 
 For **almost** every plot discussed we will create two types of plots
 
 1. FYEO - using base graphics. (Base == Comes with R) Very powerful, but can be technical. 
-2. FYEO - using `ggplot2`. Each have their own advantages and disadvantges. 
+2. FYEO - using `ggplot2`. Each have their own advantages and disadvantages. 
 
 As time permits I will update each section with a third type of plot - 
 
@@ -47,7 +49,7 @@ ggplot(data, aes(x=x, y=y, col=col, fill=fill, group=group)) +  geom_THING()
 ### Required arguments
 
 * `data`: What data set is this plot using? This is ALWAYS the first argument.
-* `aes()`: This is the _aestetics_ of the plot. What's varible is on the x, what is on 
+* `aes()`: This is the _aestetics_ of the plot. What's variable is on the x, what is on 
    the y? Do you want to color by another variable, perhaps fill some box by the value
    of another variable, or group by a variable. 
 * `geom_THING()`: Every plot has to have a geometry. What is the shape of the thing you 
@@ -78,18 +80,6 @@ dsmall <- diamonds[sample(nrow(diamonds), 1000), ]
 
 
 # Univariate (Single Variable)
-
-## Plot
-The most basic plotting function is simply `plot()`. This function gives you a plot suitable for the data type you give it. Here `depth` is a continuous variable, so `plot()` returns a dotplot of the value of depth against the row number (index).
-```{r}
-plot(dsmall$depth)
-```
-
-Where here, `plot()` returns a barchart when I provide a categorical variable `carat` as the variable to plot. 
-```{r}
-plot(dsmall$carat)
-```
-
 
 ## Categorical variables
 Both Nominal and Ordinal data types can be visualized using the same methods: tables, barcharts and pie charts. 
@@ -138,7 +128,7 @@ ggplot(cut.props, aes(x=Var1, y=Freq)) + geom_col() +
 ```
 
 ### Cleveland Dot Plots
-Another way to visualize categorical data that takes up less ink than bars is a cleveland dot plot. Here again we are plotting summary data instead of the raw data. This uses a new `geom_segment` that draws the lines from x=0 to the dot, and that it should be placed on the y-axis at the value of `Freq`. 
+Another way to visualize categorical data that takes up less ink than bars is a Cleveland dot plot. Here again we are plotting summary data instead of the raw data. This uses a new `geom_segment` that draws the lines from x=0 to the dot, and that it should be placed on the y-axis at the value of `Freq`. 
 
 ```{r}
 ggplot(cut.props, aes(x=Freq, y=Freq)) +  
@@ -148,7 +138,8 @@ ggplot(cut.props, aes(x=Freq, y=Freq)) +
 ```
 
 ### Pie Chart
-Pie charts are my _least_ favorite plotting type. Human eyeballs can't distinguish between angles as well as we can with heights. Just like `barplot()`, `pie()` takes a table object as it's argument. 
+
+Just like `barplot()`, `pie()` takes a table object as it's argument. 
 
 #### base
 ```{r}
@@ -156,10 +147,17 @@ dc <- table(dsmall$cut)
 pie(dc)
 ```
 
-There are ways to make a nice one using ggplot, but i'm more familiar with base graphics here. So that's whatcha get. The primary piece needed is to add the percentages of each wedge. 
+Pie charts are my _least_ favorite plotting type. Human eyeballs can't distinguish between angles as well as we can with heights. A mandatory piece needed to make the wedges readable is to add the percentages of each wedge. 
 ```{r}
 pie(dc, labels = paste0(names(dc), ' (', prop.table(dc)*100, "%)"))
 ```
+
+#### ggplot
+
+And here I thought pie charts couldn't get worse... i'm not a fan at all of the ggplot version. So i'm not even going to show it. Here's a link to another great tutorial that does show you how to make one. 
+
+http://www.sthda.com/english/wiki/ggplot2-pie-chart-quick-start-guide-r-software-and-data-visualization
+
 
 
 ### Waffle Chart 
@@ -237,7 +235,7 @@ ggplot(dsmall, aes(x=depth)) + geom_density()
 ```
 
 ### Histograms + density 
-Often is is more helpful to have the density (or kernal density) plot _on top of_ a histogram plot. 
+Often is is more helpful to have the density (or kernel density) plot _on top of_ a histogram plot. 
 
 #### Base
 Since the height of the bars in a histogram default to showing the frequency of records in the data set within that bin, we need to 1) scale the height so that it's a _relative frequency_, and then use the `lines()` function to add a `density()` line on top. 
@@ -248,7 +246,7 @@ lines(density(dsmall$depth), col="blue")
 ```
 
 #### ggplot
-The syntax starts the same, we'll add a new geom, `geom_density` and color the line blue. Then we add the histogram geom using `geom_histogram` but must specify that the y axis should be on the density, not frequency, scale. Note that this has to go inside the aestetic statement `aes()`. I'm also going to get rid of the fill by using `NA` so it doesn't plot over the density line. 
+The syntax starts the same, we'll add a new geom, `geom_density` and color the line blue. Then we add the histogram geom using `geom_histogram` but must specify that the y axis should be on the density, not frequency, scale. Note that this has to go inside the aesthetic statement `aes()`. I'm also going to get rid of the fill by using `NA` so it doesn't plot over the density line. 
 ```{r}
 ggplot(dsmall, aes(x=depth)) + geom_density(col="blue") + 
   geom_histogram(aes(y=..density..), colour="black", fill=NA)
@@ -326,7 +324,7 @@ qqline(z, col="blue")
 ```
 
 #### ggplot
-qq (or qnorm) plots specifically plot the data against a theoretical distribution. That means in the `aes()` aestetic argument we don't specify either x or y, but instead the `sample=` is the variable we want to plot. 
+qq (or qnorm) plots specifically plot the data against a theoretical distribution. That means in the `aes()` aesthetic argument we don't specify either x or y, but instead the `sample=` is the variable we want to plot. 
 ```{r}
 ggplot(dsmall, aes(sample=price)) + stat_qq()
 ```
@@ -373,7 +371,7 @@ round(prop.table(table(dsmall$cut, dsmall$color), margin=2),3)
 
 
 ### Grouped bar charts
-To compare proprtions of one categorical variable within the same level of another, is to use grouped barcharts. 
+To compare proportions of one categorical variable within the same level of another, is to use grouped barcharts. 
 
 #### base
 As before, the object to be plotted needs to be the result of a table. 
@@ -382,7 +380,7 @@ cc <- table(dsmall$cut, dsmall$color)
 barplot(cc)
 ```
 
-Stacked bars can be difficult to interpret, and very difficult to compare values between groups. A side by side barchart is preferrable. 
+Stacked bars can be difficult to interpret, and very difficult to compare values between groups. A side by side barchart is preferable. 
 The `beside=TRUE` is what controls the placement of the bars. 
 ```{r}
 barplot(cc, main="quick side by side barchart using base graphics", beside=TRUE)
@@ -422,19 +420,19 @@ But what if you want to know how two categorical variables are related and you d
 table(dsmall$cut, dsmall$color)
 ```
 
-The syntax for a mosiac plot uses _model notation_, which is basically y ~ x where the ~ is read as "twiddle" or "tilde". It's to the left of your **1** key.
+The syntax for a mosaic plot uses _model notation_, which is basically y ~ x where the ~ is read as "twiddle" or "tilde". It's to the left of your **1** key.
 ```{r}
 mosaicplot(cut~color, data=dsmall)
 ```
 
-Helpful, ish. Here are two very useful options. In reverse obviousness, `color` applies shades of gray to one of the factor levels, and `shade` applies a color gradient scale to the cells in order of what is less than expected (red) to what is more than expected (blue) if these two factors were compltely independent. 
+Helpful, ish. Here are two very useful options. In reverse obviousness, `color` applies shades of gray to one of the factor levels, and `shade` applies a color gradient scale to the cells in order of what is less than expected (red) to what is more than expected (blue) if these two factors were completely independent. 
 ```{r, fig.width=10}
 par(mfrow=c(1,2)) # display the plots in 1 row and 2 columns
 mosaicplot(cut~color, data=dsmall, color=TRUE)
 mosaicplot(cut~color, data=dsmall, shade=TRUE)
 ```
 
-For example, there are fewer 'Very Good' cut diamonds that are color 'G', and fewer 'Premium' cut diamons that are color 'H'. As you can see, knowing what your data means when trying to interpret what the plots are telling you is essential. 
+For example, there are fewer 'Very Good' cut diamonds that are color 'G', and fewer 'Premium' cut diamonds that are color 'H'. As you can see, knowing what your data means when trying to interpret what the plots are telling you is essential. 
 
 That's about all the ways you can plot categorical variables. 
 If you are wondering why there was no 3D barcharts demonstrated see  
@@ -463,7 +461,7 @@ ggplot(dsmall, aes(x=carat, y=price)) + geom_point()
 ```
 
 ## Scatterplot matrix
-A scatterplot matrix allows you to look at the bivariate comparison of multiple pairs of variables simultaneously. First we need to trim down the data set to only include the variables we want to plot, then we use teh `pairs()` function.
+A scatterplot matrix allows you to look at the bivariate comparison of multiple pairs of variables simultaneously. First we need to trim down the data set to only include the variables we want to plot, then we use the `pairs()` function.
 
 ```{r}
 c.vars <- dsmall[,c('carat', 'depth', 'price', 'x', 'y', 'z')]
@@ -528,7 +526,7 @@ ggplot(price.per.carat, aes(x=carat, y=mean)) + geom_line()
 ```
 
 How does this relationship change with cut of the diamond? First lets 
-get the average price per combiation of carat and cut. 
+get the average price per combination of carat and cut. 
 
 ```{r}
 ppc2 <- dsmall %>% group_by(cut, carat) %>% summarise(mean = mean(price))
@@ -536,7 +534,7 @@ ppc2 <- dsmall %>% group_by(cut, carat) %>% summarise(mean = mean(price))
 
 #### base
 This plot can be created in base graphics, but it takes an advanced 
-knowledge of the grahpics system to do so. So I do not show it here. 
+knowledge of the graphics system to do so. So I do not show it here. 
 
 #### ggplot
 This is where ggplot starts to excel in it's ease of creating more
@@ -566,7 +564,7 @@ stripchart(carat ~ cut, data=dsmall)
 Doesn't look to pretty, but kinda gets the point across. Few fair quality diamonds in the data set, pretty spread out across the carat range except one high end outlier. 
 
 #### ggplot
-We can reproduce the same thing by plotting one continous variable against one categorical variable, and adding a layer of points. I'd argue that horizontal looks better due to the axis-labels. 
+We can reproduce the same thing by plotting one continuous variable against one categorical variable, and adding a layer of points. I'd argue that horizontal looks better due to the axis-labels. 
 ```{r}
 a <- ggplot(dsmall, aes(y=carat, x=cut)) + geom_point()
 b <- ggplot(dsmall, aes(y=cut, x=carat)) + geom_point()
@@ -607,8 +605,8 @@ There is no easy way to create grouped histograms in base graphics we will skip 
 #### ggplot
 By default ggplot wants to overlay all plots on the same grid. This doesn't look to good with histograms. Instead you can overlay density plots
 ```{r, fig.width=10}
-a <- qplot(x=carat, data=dsmall, geom="histogram", fill=color) 
-b <- qplot(x=carat, data=dsmall, geom="density", fill=color) 
+a <- ggplot(dsmall, aes(x=carat, fill=color)) + geom_histogram()
+b <- ggplot(dsmall, aes(x=carat, fill=color)) + geom_density() 
 grid.arrange(a,b, ncol=2)
 ```
 
@@ -619,8 +617,11 @@ d <- ggplot(dsmall, aes(x=carat, col=color)) + geom_density()
 grid.arrange(c,d, ncol=2)
 ```
 
-# Joy plots
-Hot off the press, gaining instant popularity this summer. They are a combination of a Cleveland dot plot and a density plot. 
+# Joy plots (in progress)
+Hot off the press, gaining instant popularity this summer (2017). They are a combination of a Cleveland dot plot and a density plot. 
+
+
+See this blog post by Revolution Analytics in the meantime: http://blog.revolutionanalytics.com/2017/07/joyplots.html 
 
 
 # Faceting / paneling 
@@ -638,7 +639,7 @@ The grid placement can be semi-controlled by using the `ncol` argument in the `f
 ggplot(dsmall, aes(x=carat, fill=color)) + geom_density() + facet_wrap(~color, ncol=4)
 ```
 
-It is important to compare distriubtions across groups on the same scale, and our eyes can compare items vertically better than horizontally. So let's force `ncol=1`. 
+It is important to compare distributions across groups on the same scale, and our eyes can compare items vertically better than horizontally. So let's force `ncol=1`. 
 
 ```{r, fig.height=6}
 ggplot(dsmall, aes(x=carat, fill=color)) + geom_density() + facet_wrap(~color, ncol=1)
@@ -713,7 +714,7 @@ ggplot(dsmall, aes(x=carat, y=price)) + geom_point() + facet_wrap(~cut)
 ```
 
 ## Paneling on two variables
-Who says we're stuck with only faceting on one variable? A varient on `facet_wrap` is `facet_grid`. Here we can specify multiple variables to panel on. 
+Who says we're stuck with only faceting on one variable? A variant on `facet_wrap` is `facet_grid`. Here we can specify multiple variables to panel on. 
 
 ```{r, fig.width=10, fig.height=5}
 ggplot(dsmall, aes(x=carat, fill=color)) + geom_density() + facet_grid(cut~color)
@@ -740,9 +741,9 @@ We could change the color by clarity, and shape by cut.
 ggplot(dsmall, aes(x=carat, y=price, color=clarity, shape=cut)) + geom_point() 
 ```
 
-That's pretty hard to read. So note that just because you **can** change an aestetic, doesn't mean you should. And just because you can plot things on the same axis, doesn't mean you have to. 
+That's pretty hard to read. So note that just because you **can** change an aesthetic, doesn't mean you should. And just because you can plot things on the same axis, doesn't mean you have to. 
 
-Before you share your plot with any other eyes, always take a step back and try to expain what it is telling you. If you have to take more than a minute to get to the point then it may be too complex and simpler graphics are likely warranted. 
+Before you share your plot with any other eyes, always take a step back and try to explain what it is telling you. If you have to take more than a minute to get to the point then it may be too complex and simpler graphics are likely warranted. 
 
 # But what about...
 * Legend adjustment: remove it, move it to another side, rename it

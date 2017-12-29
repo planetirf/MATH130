@@ -9,9 +9,10 @@
 <meta name="generator" content="pandoc" />
 
 
+<meta name="author" content="Robin Donatello" />
 
 
-<title>Controlling your factors</title>
+<title>Lesson 05 - Controlling your factors</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -348,7 +349,9 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Controlling your factors</h1>
+<h1 class="title toc-ignore">Lesson 05 - Controlling your factors</h1>
+<h4 class="author"><em>Robin Donatello</em></h4>
+<h4 class="date"><em>Last Updated 12-28-2017</em></h4>
 
 </div>
 
@@ -418,12 +421,12 @@ div.tocify {
 ##   545   549  2827</code></pre>
 <p>Specifically the ordering from left to right of the factors. Seem odd? This is ordinal data, in that <code>none</code> is inherently “smaller” than <code>small</code>, which is smaller than <code>big</code>. But the ordering goes <code>big</code> - <code>none</code> - <code>small</code>, which is in Alphabetical order!</p>
 <p>Gee thanks R. Exactly how I want my factors ordered (NOT!)</p>
-<p>We need to take control of these factors! We can do that by specifying the <code>levels</code> of the factor.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">levels</span>(email<span class="op">$</span>number) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;none&quot;</span>, <span class="st">&quot;small&quot;</span>, <span class="st">&quot;big&quot;</span>)
+<p>We need to take control of these factors! We can do that by re-factoring the existing factor variable, but this time specifying the <code>levels</code> of the factor (since it already has labels).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">email<span class="op">$</span>number &lt;-<span class="st"> </span><span class="kw">factor</span>(email<span class="op">$</span>number, <span class="dt">levels=</span><span class="kw">c</span>(<span class="st">&quot;none&quot;</span>, <span class="st">&quot;small&quot;</span>, <span class="st">&quot;big&quot;</span>))
 <span class="kw">table</span>(email<span class="op">$</span>number)</code></pre></div>
 <pre><code>## 
 ##  none small   big 
-##   545   549  2827</code></pre>
+##   549  2827   545</code></pre>
 <p>There we go. Now it’s in a readable, left to right in increasing size order. This will be important for graphing.</p>
 <hr />
 </div>

@@ -1,5 +1,5 @@
 ---
-title: "Introduction to the class and R"
+title: "Lesson 01 - Introduction to the class and R"
 output:
   html_document:
     highlight: tango

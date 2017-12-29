@@ -30,7 +30,8 @@ _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
 * Assignments
     - [[Lab 1]](lab1.Rmd) (Right click and choose `save link as`. Put into your MATH130 folder)
         - _Code files won't work properly if you run them from your downloads folder._
-    - Data Camp - Introduction to R: Chapter 2-5 (Vectors, Matrices, Factors, and Data Frames)
+    - Data Camp - Introduction to R: Chapter 2 (Vectors), Chapter 4 (Factors), and Chapter 5 (Data Frames). 
+        - You can swap between chapter using the _Course Outline_ navigation toolbar at the top middle of the page. 
   
 </div>
 
@@ -64,6 +65,7 @@ _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
 <div id="week4" class="collapse">
 * **New packages:** `ggplot2`
 * Making pretty pictures to win friends and influence people. [[Notes]](07_graphs.html)
+* Graphics galore - [[the full data viz tutorial]](full_data_viz_tutorial.html) (optional)
 * In class code [[RAD]] [[ER]]
 * Assignment: [[Lab 4]](lab4.Rmd)
 </div>
@@ -74,7 +76,7 @@ _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
 
 Now it's time to put your new 1337 skillz to the test in an Exploratory Data Analysis Project
 
-* [Instructions](EDA/EDA_instructions.html) on the assignment and how to do the peer review. 
+* [Instructions](EDA_instructions.html) on the assignment and how to do the peer review. 
 * Previous class projects can be seen  [[here]](https://norcalbiostat.github.io/peer_review/math130_eda.html). 
     - Project due Friday 2/23 (end of day)
         - Name your file "EDA_username" using your Chico State user id (i.e. _EDA_rdonatello.pdf_)

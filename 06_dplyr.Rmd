@@ -1,5 +1,7 @@
 ---
-title: 'Streamlined data management using `dplyr`'
+title: "Lesson 06 - Streamlined data management using `dplyr`"
+author: "Robin Donatello"
+date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
   html_document:
     highlight: tango

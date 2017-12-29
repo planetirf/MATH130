@@ -1,5 +1,7 @@
 ---
-title: 'Controlling your factors'
+title: 'Lesson 05 - Controlling your factors'
+author: "Robin Donatello"
+date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
   html_document:
     highlight: tango
@@ -88,10 +90,10 @@ Specifically the ordering from left to right of the factors. Seem odd? This is o
 
 Gee thanks R. Exactly how I want my factors ordered (NOT!)
 
-We need to take control of these factors! We can do that by specifying the `levels` of the factor.
+We need to take control of these factors! We can do that by re-factoring the existing factor variable, but this time specifying the `levels` of the factor (since it already has labels).
 
 ```{r}
-levels(email$number) <- c("none", "small", "big")
+email$number <- factor(email$number, levels=c("none", "small", "big"))
 table(email$number)
 ```
 

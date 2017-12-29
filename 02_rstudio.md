@@ -1,5 +1,5 @@
 ---
-title: "Reproducible Research using R Studio"
+title: "Lesson 02 - Reproducible Research using R Studio"
 output:
   html_document:
     highlight: tango
