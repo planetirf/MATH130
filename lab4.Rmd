@@ -1,0 +1,88 @@
+---
+title: "Lab 4"
+author: "NAME"
+date: "DATE"
+output: html_document
+---
+
+# Introduction
+
+This lab uses the `NCbirths` data set. Use the following code chunk to read the data into R. Need help? Look at lesson 03 - importing data.
+
+```{r}
+
+```
+
+You will use a combination of base and `ggplot2` graphics for this lab. Your answers can be for your eyes only (exploratory). They do not have to be pretty.  
+
+The code chunk below loads the `ggplot2` package for you, and also sets some code chunk options (using `opts_chunk` from the `knitr` package) to make your knitted report output more readable. I encourage you to play around with these options to learn how they work. 
+
+```{r, warning=FALSE, message=FALSE}
+library(ggplot2)
+library(knitr)
+opts_chunk$set(warning=FALSE, message=FALSE, fig.height=4, fig.width=5, fig.align='center') 
+```
+
+# Univariate
+
+1. A table of marital status (`marital`)
+
+
+2.  A barchart of maritial status
+
+
+3. A histogram of mothers age (`mage`)
+
+    a.  Now add an overlaid density plot in a different color. Don't forget to adjust the `aes` on the histogram.
+
+4. A horizontal boxplot of weight of the baby (`weight`)
+
+
+
+# Bivariate
+
+5. Create a two-way frequency table of maturity status (`mature`) against smoking `habit`
+
+
+6. Create a proportion table of smoking habit _within_ maturity status. Round to 3 digits. 
+
+
+7. Create a grouped barchart that reflects the proportions you calculated above. Think carefully which variable goes on the `x` axis, and which one is used for the `fill`
+
+
+8. A scatterplot of length of pregnancy in `weeks` and the babies `weight`. 
+    a. Include a smoother line in brown, and a best fit linear model line in purple
+    
+
+9. Grouped boxplots of baby `weight` by mothers smoking `habit`. Make sure you `fill` the boxes by `habit` as well. 
+
+
+10. Replicate the same plot as above, but overlay a violin plot and change the transparency of both violin and boxplot layers. 
+
+
+11. Overlaid density plots of weight `gained` by babies `gender`. No fill, color only.  
+
+
+
+# Bonus optional questions. 
+Looking for more? Want to start learning how to clean up your plots to make them professional looking? Go check out the [full data viz tutorial](https://norcalbiostat.github.io/MATH130/full_data_viz_tutorial.html) and try the following problems. 
+
+1. A scatterplot of length of pregnancy in `weeks` and the babies `weight`, color the points and lowess lines by `gender`. 
+
+
+2. Use `facet_wrap` to create side by side boxplots with overlaid violins (using good trasparency options) of `weight` by `mature`, paneled by `whitemom`. 
+
+3. Remove the NA group from the previous plot and recreate the plot. 
+
+
+
+4. Now add points for the means to the above plot. 
+
+
+5. Use `coord_flip()` to make the boxes horizontal
+
+
+
+6. Go to the [R Cookbook](http://www.cookbook-r.com/Graphs/) and learn how to remove that legend. 
+
+7. Apply a `theme_minimal()` or `theme_bw()` layer to remove the grey background from the plot. 

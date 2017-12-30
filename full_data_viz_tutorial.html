@@ -352,7 +352,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Full Data Visualization tutorial</h1>
 <h4 class="author"><em>Robin Donatello</em></h4>
-<h4 class="date"><em>Last Updated 12-28-2017</em></h4>
+<h4 class="date"><em>Last Updated 12-30-2017</em></h4>
 
 </div>
 
@@ -998,7 +998,41 @@ d &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dsmall, <span cla
 <p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-79-1.png" width="672" /></p>
 <p>That’s pretty hard to read. So note that just because you <strong>can</strong> change an aesthetic, doesn’t mean you should. And just because you can plot things on the same axis, doesn’t mean you have to.</p>
 <p>Before you share your plot with any other eyes, always take a step back and try to explain what it is telling you. If you have to take more than a minute to get to the point then it may be too complex and simpler graphics are likely warranted.</p>
+<hr />
 </div>
+</div>
+<div id="troubleshooting" class="section level1">
+<h1>Troubleshooting</h1>
+<p><strong>Problem:</strong> Missing data showing up as a category in ggplot?</p>
+<p>Get rid of that far right bar!</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(NCbirths, <span class="kw">aes</span>(<span class="dt">x=</span>marital)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>()</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-81-1.png" width="672" /></p>
+<p><strong>Solution:</strong> Use <code>dplyr</code> to select only the variables you are going to plot, then pipe in the <code>na.omit()</code> at the end. It will create a temporary data frame (e.g) <code>plot.data</code> that you then provide to <code>ggplot()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">plot.data &lt;-<span class="st"> </span>NCbirths <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(marital) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">na.omit</span>()
+<span class="kw">ggplot</span>(plot.data, <span class="kw">aes</span>(<span class="dt">x=</span>marital)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>()</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-82-1.png" width="672" /></p>
+<p><strong>Problem:</strong> Got numerical binary 0/1 data but want to plot it as categorical? &gt; Other related error messages: &gt; * Continuous x aesthetic – did you forget aes(group=…)?</p>
+<p>Consider a continuous variable for the number of characters in an email <code>num_char</code>, and a 0/1 binary variable <code>spam</code>.</p>
+<p><strong>Solution:</strong> Create a second variable <code>var_factor</code> for plotting and keep the binary <code>var</code> as 0/1 for analysis.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">email<span class="op">$</span>spam_cat &lt;-<span class="st"> </span><span class="kw">factor</span>(email<span class="op">$</span>spam, <span class="dt">labels=</span><span class="kw">c</span>(<span class="st">&quot;Ham&quot;</span>, <span class="st">&quot;Spam&quot;</span>))
+<span class="kw">ggplot</span>(email, <span class="kw">aes</span>(<span class="dt">y=</span>num_char, <span class="dt">x=</span>spam_cat)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>()</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-83-1.png" width="672" /></p>
+<p><strong>Problem:</strong> You want to change the legend title for a <code>fill</code> or <code>color</code> scale.</p>
+<p><strong>Solution:</strong> Add the <code>name=</code> argument to whatever layer you added that created the legend. Here I speciefied a <code>fill</code>, and it was a <code>discrete</code> variable. So I use the <code>scale_fill_discrete()</code> layer.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(email, <span class="kw">aes</span>(<span class="dt">y=</span>num_char, <span class="dt">x=</span>spam_cat, <span class="dt">fill=</span>spam_cat)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">scale_fill_discrete</span>(<span class="dt">name=</span><span class="st">&quot;Ya like Spam?&quot;</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-84-1.png" width="672" /></p>
+<p>Here, I <code>col</code>ored the points by a discrete variable, so the layer is <code>scale_color_discrete()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(email, <span class="kw">aes</span>(<span class="dt">x=</span>num_char, <span class="dt">y=</span>line_breaks, <span class="dt">col=</span>spam_cat)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_color_discrete</span>(<span class="dt">name=</span><span class="st">&quot;Ya like Spam?&quot;</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-85-1.png" width="672" /></p>
+<p><strong>Problem:</strong> You want to add means to boxplots. Boxplots are great. Even better with violin overlays. Know what makes them even better than butter? Adding a point for the mean. <code>stat_summary</code> is the layer you want to add. Check out <a href="https://stackoverflow.com/questions/23942959/ggplot2-show-separate-mean-values-in-box-plot-for-grouped-data">this stack overflow post</a> for more context.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(email, <span class="kw">aes</span>(<span class="dt">x=</span>spam_cat, <span class="dt">y=</span>num_char, <span class="dt">fill=</span>spam_cat)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_boxplot</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">fun.y=</span><span class="st">&quot;mean&quot;</span>, <span class="dt">geom=</span><span class="st">&quot;point&quot;</span>, <span class="dt">size=</span><span class="dv">3</span>, <span class="dt">pch=</span><span class="dv">17</span>,<span class="dt">color=</span><span class="st">&quot;blue&quot;</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-86-1.png" width="672" /></p>
+<p>I suggest playing around with <code>size</code> and plotting character <code>pch</code> to get a feel for how these work. You can also look at <code>?pch</code> (and scroll down in the help file) to see the 25 default plotting characters.</p>
+<hr />
 </div>
 <div id="but-what-about" class="section level1">
 <h1>But what about…</h1>

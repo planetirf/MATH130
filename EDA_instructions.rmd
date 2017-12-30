@@ -1,21 +1,24 @@
 ---
 title: 'Exploratory Data Analysis Project'
-output: 
-  prettydoc::html_pretty:
-    theme: tactile
-    highlight: github
+output:
+  html_document:
+    toc: yes
+    toc_float: yes
 ---
 
 Time to put everything you learned in this class into action. In an exploratory data analysis (EDA) you are just looking at (exploring) the data and learning about the data and possible relationships between variables. This is not a formal statistical analysis, you cannot make any claims about groups being statistically different. This is just descriptive. You are allowed and encouraged to hypothesize why you observe certain relationships or data characteristics, just be sure not to draw any conclusions from the data. 
  
 # Instructions
-Using your data set of choice, describe the relationship between two variables. 
-This should include
+Using your data set of choice, describe the relationship between 2-3 variables. 
+Use markdown headers to make the following sections
 
-1. A description of the data
+1. A short introduction/description of the data. 
+    - Specifically mention the 2-3 variables you are going to explore. 
 2. A _Univariate_ description of each of the variables under consideration. 
-3. A _Bivariate_ comparison between the two variables of interest. 
-4. A short summary of implications.  
+    - This means calculate some summary statistics (N(%) or mean(sd)) and make a graphic
+3. A _Bivariate_ comparison between two variables of interest. 
+    - Calculate grouped summary statistics as appropriate. 
+    
 
 All descriptions (univariate and bivariate) must be done using graphics, summary statistics, and words. 
 
@@ -39,28 +42,32 @@ If you do not have your own data, you can choose from one of the following data 
 * **Email Spam**: Characteristics of emails used to predict if the email is spam or not. 
 * **HIV**: Data on adolescent children living with HIV positive parents. 
 
-Any other data sets require instructor approval. 
+Any other data sets require instructor approval. Data sets such as the 'plants' or 'arm strength' data sets are insufficiently complex for this project. 
 
-## Submission
+# How to submit
 
 * To allow for adequate time for peer grading the submission deadline is a strict cutoff. Really late assignments won't be accepted. 
-* Knit your file to WORD or PDF, then upload to [here](https://www.dropbox.com/request/S3KxRFTY7ZcHhZSRHaYT) by the due date. 
-
-> You must name your file "EDA_name" for proper processing. 
-
-
-## Peer Review 
-
-After the submission deadline, your analysis projects will be randomly assigned to two of your classmates for peer grading. This means you will score and provide feedback on 2 of your classmates reports. I will also score all projects.
-
-* All submissions will be posted to a [peer review](https://norcalbiostat.github.io/peer_review/math130_eda.html) website. 
-* Your assignments will be emailed to you by me shortly after the submission deadline. 
-* Record your scores in a [Google Form](https://goo.gl/forms/7I4zsYpSsiZpgKyH3).
-
-This data will be downloaded, cleaned and processed (all using R of course) by the instructor to generate your project grade. 
+* Knit your file to WORD or PDF, then upload to [[this link]](https://www.dropbox.com/request/CQ0LYIV7tABQAoZRJOZG) by the due date. 
+* <span style="color:red">**You must name your file "EDA_name" for proper processing.**</span>
 
 
-## Guidelines
+# Peer Review 
+
+After the submission deadline, your analysis projects will be randomly assigned to two other projects to peer review and score. Projects from all sections will be pooled together. This means you will score and provide feedback on 2 reports. The instructors will also score all projects for their class sections.  
+
+* All submissions will be processed and posted to a [peer review](https://norcalbiostat.github.io/peer_review/math130_eda.html) website. 
+* Your assignments will be posted on this [spreadsheet](https://docs.google.com/spreadsheets/d/1GItQRInVYfLgIT25RqNMQI9L1_lwqz19EkcClVrdrGk/edit?usp=sharing)
+    - If one or both of the people you are assigned to review do not submit a project, pick another person to review. You do not have to notify your instructor if this happens. 
+* Download your assigned projects to review to your computer. 
+    - Using the commenting features of either WORD or a PDF reader, provide 4 comments for each project. 
+        - Two positive: What specific features did they include that you liked or found helpful? 
+        - Two negative: What can they do different or better next time? Did you find a bug in their code? 
+* Score each project using this [Google Form](https://goo.gl/forms/7I4zsYpSsiZpgKyH3). 
+    - This data entry form follows the scoring rubric printed below in this document. 
+    - You will upload the project you reviewed to this form as well. 
+
+
+# Guidelines
 
 * Knit early and often. As often as every time you include a new R code chunk. 
 * Spell check your report prior to submission using RStudio. 
@@ -71,20 +78,19 @@ This data will be downloaded, cleaned and processed (all using R of course) by t
 
 
 # Grading 
-Your final project grade will be a weighted between the average of 30%
-peer reviews ($\bar{PR}$) and 70% instructor review ($IR$): $(.3*\bar{PR} + .7*IR)$. 
-Your submission is worth 30 points, the peer review is 5 pts. 
+* Your final project grade will be a weighted average of 30% peer reviews ($\bar{PR}$) and 70% instructor review ($IR$): $(.3*\bar{PR} + .7*IR)$. 
+* Your submission is worth 20 points, the peer review is 10 pts. 
 
 
 ## Scoring Rubric
-The criteria below is what you will be graded on. Below each criteria is an example of the points awarded for the level of competency. 
+The criteria below is what you will be graded on. Below each criteria is an example of the points awarded for the level of competency. Use this criteria when you score your peers reports. 
 
 
 1. **Reproducibility**: Was the report created in R, using Markdown, in a
    reproducible manner? 
     - (Novice) The report appears to have been written in another program and R
           output and/or figures look to have been copied/pasted into the document. 
-    - (Competent)  The analysis report was written in RMarkdown, but vital pieces of
+    - (Competent)  The analysis report was written in R, but vital pieces of
           information such as the code to create the plots or to read in the data are missing. 
     - (Proficient) This analysis is fully reproducible. It is clear where the data came
            from, and how it is used at each step. This code could be downloaded
@@ -110,27 +116,19 @@ The criteria below is what you will be graded on. Below each criteria is an exam
     - (Competent) The variables were compared using appropriate graphical methods and
              grouped summary statistics were created, but nothing was discussed. 
     - (Proficient) The variables were compared using appropriate graphical methods and
-             a paragraph textual explanation of what the summaries showed. 
+             a short textual explanation of what the summaries showed. 
 
-5. **Implications**: Briefly summarize or describe how these findings can inform policy, 
-              further research, or the general public. 
-    - (Novice) There is no summary. 
-    - (Competent) The summary makes statements or claims that are not supported by 
-             evidence in the report. 
-    - (Proficient) The conclusion is clear and concise, the statements are supported
-             by evidence shown in this report. 
-
-6. **Organization / Grammer**: 
+5. **Organization / Grammer**: How well does the report read? How well organized is it? Was it checked for grammar and spelling mistakes? 
     - (Novice) Only R code, output is present. There is no discussion of results. 
              Tons of extra R code that is not relevant to the discussion is present. 
+             Markdown headers were not used. 
     - (Competent)  An attempt was made to discuss the results, but the explanations are 
              not in a report format or there are some large grammar and/or spelling
              problems. Some R code that is not relevant to the analysis question at
-             hand is being displayed. 
+             hand is being displayed. Markdown headers were used to create sections. 
     - (Proficient) The report was spell written in well edited, full English sentences, and
              spell checked prior to submission. The report flowed well and followed 
-             the required order of discussion topics: overall information about the
-             data, univariate descriptions, then bivariate descriptions. 
+             the required order of discussion topics with markdown headers used successfully. 
  
 
 
