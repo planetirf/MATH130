@@ -3,6 +3,7 @@
 
 This is the landing page for <span style="color:blue">**Introduction to Data Analysis using R**</span>. This page is used for posting of regular announcements and information for students of the class. 
 
+
 ----
 
 # Target Audience
