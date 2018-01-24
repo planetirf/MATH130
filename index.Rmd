@@ -31,7 +31,8 @@ _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
 * Assignments
     - [[Lab 1]](lab1.Rmd) (Right click and choose `save link as`. Put into your MATH130 folder)
         - _Code files won't work properly if you run them from your downloads folder._
-    - Data Camp - Introduction to R: Chapter 2 (Vectors), Chapter 4 (Factors), and Chapter 5 (Data Frames). 
+        - You will submit the **.RMD file** for this assignment to Blackboard learn by the due date. 
+    - Data Camp - Introduction to R: Chapter 2 (Vectors), Chapter 3 (Matricies), Chapter 4 (Factors), and Chapter 5 (Data Frames). 
         - You can swap between chapter using the _Course Outline_ navigation toolbar at the top middle of the page. 
   
 </div>
@@ -46,7 +47,7 @@ _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
     
 * Using functions to summarize and manage data [[04_functions_recode]](04_functions_recode.html)
 * In class code [[RAD]] [[ER]]
-* Assignment: [[Lab 2]](lab2.Rmd)
+* Assignment: [[Lab 2]](lab2.Rmd). Check with your instructor for submission details. 
 
 </div>
 
@@ -57,7 +58,7 @@ _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
 * Wrangling factors. [[05_factors]](05_factors.html) 
 * More data management and creating grouped summaries using `dplyr`. [[06_dplyr]](06_dplyr.html) 
 * In class code [[RAD]] [[ER]]
-* Assignment: [[Lab 3]](lab3.Rmd)
+* Assignment: [[Lab 3]](lab3.Rmd) Check with your instructor for submission details. 
 
 </div>
 
@@ -68,7 +69,7 @@ _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
 * Making pretty pictures to win friends and influence people. [[07_graphs]](07_graphs.html)
 * Graphics galore - [[the full data viz tutorial]](full_data_viz_tutorial.html) (optional)
 * In class code [[RAD]] [[ER]]
-* Assignment: [[Lab 4]](lab4.Rmd)
+* Assignment: [[Lab 4]](lab4.Rmd) Check with your instructor for submission details. 
 </div>
 
 ### <a href="#week5" data-toggle="collapse">Week 5 (2/19 - 2/22): Exploratory Data Analysis Project</a>
