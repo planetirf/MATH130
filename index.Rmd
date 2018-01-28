@@ -13,6 +13,16 @@ See the [syllabus](syllabus.html) for details about the current class offerings.
 
 --------------------------------
 
+# Announcements
+
+* Don't forget that you are to submit the `.Rmd` file for `Lab 1`. Not a WORD or PDF. Your instructor will download the code file, run it on their own computer, and grade what comes out. Make sure you test it out before you submit!
+* The best way to get help honestly _isn't_ through email. You're only asking one person, and then you're stuck waiting for them to respond (over the weekend). 
+    - Your best bet is to join the Chico R Users group Email List-serv. https://groups.google.com/d/forum/chico-rug Post your question there, be sure to include relevant information such as an error message or minimal working example so that others can help you in possibly a more timely manner. 
+* Week 2 will go a lot faster than week 1. Be sure to have those data sets downloaded to your `MATH130` folder before class. 
+
+
+--------------------------------
+
 # Schedule (Spring 18)
 
 _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
