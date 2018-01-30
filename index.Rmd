@@ -51,8 +51,8 @@ _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
 ### <a href="#week2" data-toggle="collapse">Week 2 (1/29 - 2/1): Importing, exploring, managing data using functions. </a>
 
 <div id="week2" class="collapse">
-* **New packages:** `readxl`
-* **Before class** Go to the [Data](https://norcalbiostat.netlify.com/data/cleaned_data/) and download the following data sets: `Police Shootings`, `email`, and `NCBirths`. Put these in your `MATH130` folder. 
+* **New packages:** `readxl` (as in _read excell_)
+* **Before class** Go to the [Data](https://norcalbiostat.netlify.com/data/cleaned_data/) page and download the following data sets: `Police Shootings`, `email`, and `NCBirths`. Put these in your `MATH130` folder. 
 * Getting data into R and exploring [[03_import]](03_import.html) 
     
 * Using functions to summarize and manage data [[04_functions_recode]](04_functions_recode.html)
