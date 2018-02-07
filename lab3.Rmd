@@ -14,7 +14,48 @@ library(nycflights13)
 ```
 
 
-# Basic verbs
+# Factors
+
+## How many passengers can a plane hold before needing another engine? 
+This question uses the `planes` data set. Let's load that into our working environment so we can look at it.
+```{r}
+planes <- planes
+```
+
+
+1. Examine the variable `engines` using `table()` and `class`. What is it's data type? 
+
+```{r}
+
+```
+
+The number of engines is an integer variable with values between 1 and 4. 
+
+2. There are too few planes with more than 2 engines. Recode all records with 4 engines to a value of 3. _Hint: Revisit lesson 04_. Create a `table` of this variable again to ensure that all 4's are now 3's. 
+
+```{r}
+
+```
+
+
+3. Create a new factor variable `num_engines` from `engines` with labels "one", "two", "three+". 
+Make sure you create this new variable as part of the `planes` data set. (i.e. `planes$num_engines <-` )
+
+```{r}
+
+```
+
+
+4. Create a two-way `table` of `engines` against `num_engines` to confirm that this new factor variable was created correctly. 
+
+```{r}
+
+```
+
+
+# dplyr
+
+## Basic verbs
 You will use the `flights` data set for the next few exercises.  Let's load that into our working environment so we can look at it.
 ```{r}
 flights <- flights
@@ -46,45 +87,10 @@ f3
 ```
 
 
-# How many passengers can a plane hold before needing another engine? 
-This question uses the `planes` data set. Let's load that into our working environment so we can look at it.
-```{r}
-planes <- planes
-```
-
-
-1. Examine the variable `engines` using `table()` and `class`. What is it's data type? 
-
-```{r}
-
-```
-
-The number of engines is an integer variable with values between 1 and 4. 
-
-2. There are too few planes with more than 2 engines. Recode all records with 4 engines to a value of 3. _Hint: Revisit lesson 04_. Create a `table` of this variable again to ensure that all 4's are now 3's. 
-
-```{r}
-
-```
-
-
-3. Create a new factor variable `num_engines` from `engines` with labels "one", "two", "three+". 
-
-```{r}
-
-```
-
-
-4. Create a two-way `table` of `engines` against `new_engines` to confirm that this new factor variable was created correctly. 
-
-```{r}
-
-```
-
 
 5. Use `dplyr` chaining magic to...
 
-* take the planes data set _and then_...
+* take the planes data set that you created earlier _and then_...
 * `group_by`the `num_engines` _and then_...
 * use `summarise` to create three new variables: 
     - `ave_seats` as the `mean()` number of `seats`
