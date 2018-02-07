@@ -67,7 +67,7 @@ _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
 * **New packages:** `dplyr`, `nycflights13`
 * Wrangling factors. [[05_factors]](05_factors.html) 
 * More data management and creating grouped summaries using `dplyr`. [[06_dplyr]](06_dplyr.html) 
-* In class code [[RAD]] [[ER]]
+* In class notes [[RAD - Factors]](notes/factor_notes_rad.html) [[RAD - dplyr]](notes/dplyr_notes_rad.html) 
 * Assignment: [[Lab 3]](lab3.Rmd) Check with your instructor for submission details. 
 
 </div>
@@ -78,7 +78,7 @@ _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
 * **New packages:** `ggplot2`
 * Making pretty pictures to win friends and influence people. [[07_graphs]](07_graphs.html)
 * Graphics galore - [[the full data viz tutorial]](full_data_viz_tutorial.html) (optional)
-* In class code [[RAD]] [[ER]]
+* In class notes [[RAD]] [[ER]]
 * Assignment: [[Lab 4]](lab4.Rmd) Check with your instructor for submission details. 
 </div>
 
