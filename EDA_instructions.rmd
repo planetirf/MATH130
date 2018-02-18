@@ -36,7 +36,6 @@ If you do not have your own data, you can choose from one of the following data 
 
 * **NCbirths**: Information on births recorded in North Carolina in 2004 and health behaviors of their mothers. 
 * **Depression**: Level of depression (`cesd`), health care, and demographic characteristics. 
-* **Arm Strength**: Strength of the bones within the dominant, and non-dominant arm for baseball players and normal people. 
 * **High School and Beyond**: Educational, vocational, and personal development of elementary and high school students. 
 * **Police Shootings**: Characteristics of individuals killed by police in 2015. 
 * **Email Spam**: Characteristics of emails used to predict if the email is spam or not. 
@@ -48,7 +47,7 @@ Any other data sets require instructor approval. Data sets such as the 'plants' 
 
 * To allow for adequate time for peer grading the submission deadline is a strict cutoff. Really late assignments won't be accepted. 
 * Knit your file to WORD or PDF, then upload to [[this link]](https://www.dropbox.com/request/CQ0LYIV7tABQAoZRJOZG) by the due date. 
-* <span style="color:red">**You must name your file "EDA_name" for proper processing.**</span>
+* <span style="color:red">**You must name your file** _"EDA_MW_name"_ **or** _"EDA_TR_name"_ **for proper processing.**</span>. 
 
 
 # Peer Review 
