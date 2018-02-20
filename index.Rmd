@@ -91,7 +91,7 @@ Now it's time to put your new 1337 skillz to the test in an Exploratory Data Ana
 * [Instructions](EDA_instructions.html) on the assignment and how to do the peer review. 
 * Previous class projects can be seen  [[here]](https://norcalbiostat.github.io/peer_review/math130_eda.html). 
 * Project due Friday 2/23 (end of day)
-    - Name your file "EDA_username" using your Chico State user id (i.e. _EDA_rdonatello.pdf_)
+    - See instructions for required naming conventions. 
     - Upload your final WORD or PDF file [[here]](https://www.dropbox.com/request/CQ0LYIV7tABQAoZRJOZG). 
 * Peer Review due Sunday 2/25 (end of day)
     - Your assigned projects to review are [[listed here]](https://docs.google.com/spreadsheets/d/1GItQRInVYfLgIT25RqNMQI9L1_lwqz19EkcClVrdrGk/edit?usp=sharing)
