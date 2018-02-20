@@ -78,7 +78,7 @@ _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
 * **New packages:** `ggplot2`
 * Making pretty pictures to win friends and influence people. [[07_graphs]](07_graphs.html)
 * Graphics galore - [[the full data viz tutorial]](full_data_viz_tutorial.html) (optional)
-* In class notes [[RAD]] [[ER]]
+* In class notes [[RAD-ggplot]](notes/ggplot2_notes_rad.html)
 * Assignment: [[Lab 4]](lab4.Rmd) Check with your instructor for submission details. 
 </div>
 
