@@ -276,18 +276,18 @@ $(document).ready(function () {
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">f1 &lt;-<span class="st"> </span>flights <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(origin, distance, air_time, dest)
 f1</code></pre></div>
 <pre><code>## # A tibble: 336,776 x 4
-##    origin distance air_time  dest
-##     &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;
-##  1    EWR     1400      227   IAH
-##  2    LGA     1416      227   IAH
-##  3    JFK     1089      160   MIA
-##  4    JFK     1576      183   BQN
-##  5    LGA      762      116   ATL
-##  6    EWR      719      150   ORD
-##  7    EWR     1065      158   FLL
-##  8    LGA      229       53   IAD
-##  9    JFK      944      140   MCO
-## 10    LGA      733      138   ORD
+##    origin distance air_time dest 
+##    &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;
+##  1 EWR        1400      227 IAH  
+##  2 LGA        1416      227 IAH  
+##  3 JFK        1089      160 MIA  
+##  4 JFK        1576      183 BQN  
+##  5 LGA         762      116 ATL  
+##  6 EWR         719      150 ORD  
+##  7 EWR        1065      158 FLL  
+##  8 LGA         229       53 IAD  
+##  9 JFK         944      140 MCO  
+## 10 LGA         733      138 ORD  
 ## # ... with 336,766 more rows</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Use <code>filter()</code> to select only the flights whose destination (<code>dest</code>) is Atlanta (ATL)</li>
@@ -295,18 +295,18 @@ f1</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">f2 &lt;-<span class="st"> </span>f1 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(dest <span class="op">==</span><span class="st"> &#39;ATL&#39;</span>)
 f2</code></pre></div>
 <pre><code>## # A tibble: 17,215 x 4
-##    origin distance air_time  dest
-##     &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;
-##  1    LGA      762      116   ATL
-##  2    LGA      762      134   ATL
-##  3    JFK      760      128   ATL
-##  4    EWR      746      120   ATL
-##  5    LGA      762      126   ATL
-##  6    LGA      762      126   ATL
-##  7    JFK      760      126   ATL
-##  8    LGA      762      132   ATL
-##  9    LGA      762      123   ATL
-## 10    LGA      762      129   ATL
+##    origin distance air_time dest 
+##    &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;
+##  1 LGA         762      116 ATL  
+##  2 LGA         762      134 ATL  
+##  3 JFK         760      128 ATL  
+##  4 EWR         746      120 ATL  
+##  5 LGA         762      126 ATL  
+##  6 LGA         762      126 ATL  
+##  7 JFK         760      126 ATL  
+##  8 LGA         762      132 ATL  
+##  9 LGA         762      123 ATL  
+## 10 LGA         762      129 ATL  
 ## # ... with 17,205 more rows</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Use <code>mutate()</code> to create a new variable <code>speed</code> that calculates speed of the plane as `distance/air_time*60.</li>
@@ -314,18 +314,18 @@ f2</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">f3 &lt;-<span class="st"> </span>f2 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">speed =</span> distance<span class="op">/</span>air_time<span class="op">*</span><span class="dv">60</span>)
 f3</code></pre></div>
 <pre><code>## # A tibble: 17,215 x 5
-##    origin distance air_time  dest    speed
-##     &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;
-##  1    LGA      762      116   ATL 394.1379
-##  2    LGA      762      134   ATL 341.1940
-##  3    JFK      760      128   ATL 356.2500
-##  4    EWR      746      120   ATL 373.0000
-##  5    LGA      762      126   ATL 362.8571
-##  6    LGA      762      126   ATL 362.8571
-##  7    JFK      760      126   ATL 361.9048
-##  8    LGA      762      132   ATL 346.3636
-##  9    LGA      762      123   ATL 371.7073
-## 10    LGA      762      129   ATL 354.4186
+##    origin distance air_time dest  speed
+##    &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;
+##  1 LGA         762      116 ATL    394.
+##  2 LGA         762      134 ATL    341.
+##  3 JFK         760      128 ATL    356.
+##  4 EWR         746      120 ATL    373 
+##  5 LGA         762      126 ATL    363.
+##  6 LGA         762      126 ATL    363.
+##  7 JFK         760      126 ATL    362.
+##  8 LGA         762      132 ATL    346.
+##  9 LGA         762      123 ATL    372.
+## 10 LGA         762      129 ATL    354.
 ## # ... with 17,205 more rows</code></pre>
 </div>
 <div id="how-many-passengers-can-a-plane-hold-before-needing-another-engine" class="section level1">
@@ -380,11 +380,11 @@ f3</code></pre></div>
                                                <span class="dt">min_seats =</span> <span class="kw">min</span>(seats), 
                                                <span class="dt">max_seats =</span> <span class="kw">max</span>(seats))</code></pre></div>
 <pre><code>## # A tibble: 3 x 4
-##   num_engines  ave_seats min_seats max_seats
-##        &lt;fctr&gt;      &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
-## 1         one   3.777778         2        16
-## 2         two 155.364355         6       400
-## 3      three+ 242.714286         2       450</code></pre>
+##   num_engines ave_seats min_seats max_seats
+##   &lt;fct&gt;           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+## 1 one              3.78         2        16
+## 2 two            155.           6       400
+## 3 three+         243.           2       450</code></pre>
 </div>
 
 

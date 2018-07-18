@@ -15,88 +15,73 @@ See the [syllabus](syllabus.html) for details about the current class offerings.
 
 # Announcements
 
-* Don't forget that you are to submit the `.Rmd` file for `Lab 1`. Not a WORD or PDF. Your instructor will download the code file, run it on their own computer, and grade what comes out. Make sure you test it out before you submit!
-* The best way to get help honestly _isn't_ through email. You're only asking one person, and then you're stuck waiting for them to respond (over the weekend). 
-    - Your best bet is to join the Chico R Users group Email List-serv. https://groups.google.com/d/forum/chico-rug Post your question there, be sure to include relevant information such as an error message or minimal working example so that others can help you in possibly a more timely manner. 
-* Week 2 will go a lot faster than week 1. Be sure to have those data sets downloaded to your `MATH130` folder before class. 
-
+_This site is in the process of being updated. Many links will not work_
 
 --------------------------------
 
-# Schedule (Spring 18)
+# Schedule (Fall 18)
 
 _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
 
-### <a href="#week1" data-toggle="collapse">Week 1 (1/22 - 1/25) Getting started with R and R Studio</a>
+### <a href="#week1" data-toggle="collapse">Week 1: Getting started with R and R Studio</a>
 
 <div id="week1" class="collapse">
 * Day 1: Introduction to the class and R. [[01_intro]](01_intro.html)
 * Assignments **Due before Day 2**
-    - Make a Data Camp account and get connected to our classroom group. <span style="color:red">**please use your @mail.csuchico.edu email for this**</span>
-    - Data Camp: Introduction to R - Chapter 1 (Intro to Basics)
+    - Complete Data Camp: Introduction to R - Chapter 1 (Intro to Basics)
     - Watch 1 minute video: "[What is R Markdown?](http://rmarkdown.rstudio.com/lesson-1.html)"
-    - Make a folder titled `MATH130` on your computer in an easy to find place. 
 * Day 2: Reproducible Research using R Studio [[02_rstudio]](02_rstudio.html)
-* **New packages:** `rmarkdown`, `knitr`
-* Assignments
-    - [[Lab 1]](lab1.Rmd) (Right click and choose `save link as`. Put into your MATH130 folder)
-        - _Code files won't work properly if you run them from your downloads folder._
-        - You will submit the **.RMD file** for this assignment to Blackboard learn by the due date. 
-    - Data Camp - Introduction to R: Chapter 2 (Vectors), Chapter 3 (Matricies), Chapter 4 (Factors), and Chapter 5 (Data Frames). 
-        - You can swap between chapter using the _Course Outline_ navigation toolbar at the top middle of the page. 
+* Assignments: [[Lab 1]](lab1.Rmd) 
+    - Directly based on Data Camp - Introduction to R. 
+    - You will submit the **.RMD file** for this assignment to Blackboard learn by the due date. 
+    
   
 </div>
 
 
-### <a href="#week2" data-toggle="collapse">Week 2 (1/29 - 2/1): Importing, exploring, managing data using functions. </a>
+### <a href="#week2" data-toggle="collapse">Week 2: Importing, exploring, managing data using functions. </a>
 
 <div id="week2" class="collapse">
-* **New packages:** `readxl` (as in _read excell_)
-* **Before class** Go to the [Data](https://norcalbiostat.netlify.com/data/cleaned_data/) page and download the following data sets: `Police Shootings`, `email`, and `NCBirths`. Put these in your `MATH130` folder. 
+
 * Getting data into R and exploring [[03_import]](03_import.html) 
-    
 * Using functions to summarize and manage data [[04_functions_recode]](04_functions_recode.html)
-* In class code [[RAD]] [[ER]]
-* Assignment: [[Lab 2]](lab2.Rmd). Check with your instructor for submission details. 
+* In class [[notes]]()
+* Assignment: [[Lab 2]](lab2.Rmd). 
 
 </div>
 
-### <a href="#week3" data-toggle="collapse">Week 3 (2/5 - 2/8): Factors, more data management and grouped summaries.</a>
+### <a href="#week3" data-toggle="collapse">Week 3: Factors, more data management and grouped summaries.</a>
 
 <div id="week3" class="collapse">
-* **New packages:** `dplyr`, `nycflights13`
 * Wrangling factors. [[05_factors]](05_factors.html) 
 * More data management and creating grouped summaries using `dplyr`. [[06_dplyr]](06_dplyr.html) 
-* In class notes [[RAD - Factors]](notes/factor_notes_rad.html) [[RAD - dplyr]](notes/dplyr_notes_rad.html) 
-* Assignment: [[Lab 3]](lab3.Rmd) Check with your instructor for submission details. 
+* In class [[notes]]()
+* Assignment: [[Lab 3]](lab3.Rmd) 
 
 </div>
 
-### <a href="#week4" data-toggle="collapse">Week 4 (2/12 - 2/15): Data Visualization</a>
+### <a href="#week4" data-toggle="collapse">Week 4: Making pretty pictures to win friends and influence people.</a>
 
 <div id="week4" class="collapse">
-* **New packages:** `ggplot2`
-* Making pretty pictures to win friends and influence people. [[07_graphs]](07_graphs.html)
+* Statistical Data Visualization [[07_graphs]](07_graphs.html)
 * Graphics galore - [[the full data viz tutorial]](full_data_viz_tutorial.html) (optional)
-* In class notes [[RAD-ggplot]](notes/ggplot2_notes_rad.html)
-* Assignment: [[Lab 4]](lab4.Rmd) Check with your instructor for submission details. 
+* In class [[notes]]()
+* Assignment: [[Lab 4]](lab4.Rmd)  
 </div>
 
-### <a href="#week5" data-toggle="collapse">Week 5 (2/19 - 2/22): Exploratory Data Analysis Project</a>
+### <a href="#week5" data-toggle="collapse">Week 5: Installing R locally, Exploratory Project</a>
 
 <div id="week5" class="collapse">
 
-Now it's time to put your new 1337 skillz to the test in an Exploratory Data Analysis Project
+* Install R and R Studio on your personal computer.     
+    - Because cloud computers and lab computers are not always available. 
+    - Follow the [Software Overview](https://norcalbiostat.netlify.com/post/software-overview/) post to get your computer up and running with the R studio suite of awesomeness.  
+* Exploratory Data Analysis Project
+    - Now it's time to put your new 1337 skillz to the test!
+    - [Instructions](EDA_instructions.html) on the assignment and how to do the peer review. 
+    - Previous class projects can be seen  [[here]](https://norcalbiostat.github.io/peer_review/math130_eda.html). 
 
-* [Instructions](EDA_instructions.html) on the assignment and how to do the peer review. 
-* Previous class projects can be seen  [[here]](https://norcalbiostat.github.io/peer_review/math130_eda.html). 
-* Project due Friday 2/23 (end of day)
-    - See instructions for required naming conventions. 
-    - Upload your final WORD or PDF file [[here]](https://www.dropbox.com/request/CQ0LYIV7tABQAoZRJOZG). 
-* Peer Review due Sunday 2/25 (end of day)
-    - Your assigned projects to review are [[listed here]](https://docs.google.com/spreadsheets/d/1GItQRInVYfLgIT25RqNMQI9L1_lwqz19EkcClVrdrGk/edit?usp=sharing)
-    - Submissions ready for peer review [[here]](https://norcalbiostat.github.io/peer_review/math130_eda.html)
-* Score and upload your assigned review [[here]](https://goo.gl/forms/7I4zsYpSsiZpgKyH3). <span style="color:red">**You must log into your @mail.csuchico.edu gmail account to access this form.**</span>
+</span>
     
 
 </div>

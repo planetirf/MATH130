@@ -262,8 +262,27 @@ $(document).ready(function () {
 <p>This lab uses the <code>dplyr</code> and <code>nycflights13</code> packages. It is good habit to load all packages in the first code chunk.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
 <span class="kw">library</span>(nycflights13)</code></pre></div>
-<div id="basic-verbs" class="section level1">
-<h1>Basic verbs</h1>
+<div id="factors" class="section level1">
+<h1>Factors</h1>
+<div id="how-many-passengers-can-a-plane-hold-before-needing-another-engine" class="section level2">
+<h2>How many passengers can a plane hold before needing another engine?</h2>
+<p>This question uses the <code>planes</code> data set. Let’s load that into our working environment so we can look at it.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">planes &lt;-<span class="st"> </span>planes</code></pre></div>
+<ol style="list-style-type: decimal">
+<li>Examine the variable <code>engines</code> using <code>table()</code> and <code>class</code>. What is it’s data type?</li>
+</ol>
+<p>The number of engines is an integer variable with values between 1 and 4.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>There are too few planes with more than 2 engines. Recode all records with 4 engines to a value of 3. <em>Hint: Revisit lesson 04</em>. Create a <code>table</code> of this variable again to ensure that all 4’s are now 3’s.</p></li>
+<li><p>Create a new factor variable <code>num_engines</code> from <code>engines</code> with labels “one”, “two”, “three+”. Make sure you create this new variable as part of the <code>planes</code> data set. (i.e. <code>planes$num_engines &lt;-</code> )</p></li>
+<li><p>Create a two-way <code>table</code> of <code>engines</code> against <code>num_engines</code> to confirm that this new factor variable was created correctly.</p></li>
+</ol>
+</div>
+</div>
+<div id="dplyr" class="section level1">
+<h1>dplyr</h1>
+<div id="basic-verbs" class="section level2">
+<h2>Basic verbs</h2>
 <p>You will use the <code>flights</code> data set for the next few exercises. Let’s load that into our working environment so we can look at it.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">flights &lt;-<span class="st"> </span>flights</code></pre></div>
 <ul>
@@ -286,23 +305,11 @@ f2</code></pre></div>
 </ol>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">f3 &lt;-<span class="st"> </span>f1 <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>()
 f3</code></pre></div>
-</div>
-<div id="how-many-passengers-can-a-plane-hold-before-needing-another-engine" class="section level1">
-<h1>How many passengers can a plane hold before needing another engine?</h1>
-<p>This question uses the <code>planes</code> data set. Let’s load that into our working environment so we can look at it.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">planes &lt;-<span class="st"> </span>planes</code></pre></div>
-<ol style="list-style-type: decimal">
-<li>Examine the variable <code>engines</code> using <code>table()</code> and <code>class</code>. What is it’s data type?</li>
-</ol>
-<p>The number of engines is an integer variable with values between 1 and 4.</p>
-<ol start="2" style="list-style-type: decimal">
-<li><p>There are too few planes with more than 2 engines. Recode all records with 4 engines to a value of 3. <em>Hint: Revisit lesson 04</em>. Create a <code>table</code> of this variable again to ensure that all 4’s are now 3’s.</p></li>
-<li><p>Create a new factor variable <code>num_engines</code> from <code>engines</code> with labels “one”, “two”, “three+”.</p></li>
-<li><p>Create a two-way <code>table</code> of <code>engines</code> against <code>new_engines</code> to confirm that this new factor variable was created correctly.</p></li>
-<li><p>Use <code>dplyr</code> chaining magic to…</p></li>
+<ol start="5" style="list-style-type: decimal">
+<li>Use <code>dplyr</code> chaining magic to…</li>
 </ol>
 <ul>
-<li>take the planes data set <em>and then</em>…</li>
+<li>take the planes data set that you created earlier <em>and then</em>…</li>
 <li><code>group_by</code>the <code>num_engines</code> <em>and then</em>…</li>
 <li>use <code>summarise</code> to create three new variables:
 <ul>
@@ -311,6 +318,7 @@ f3</code></pre></div>
 <li><code>max_seats</code> as the <code>max()</code> number of <code>seats</code></li>
 </ul></li>
 </ul>
+</div>
 </div>
 
 

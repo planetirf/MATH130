@@ -16,11 +16,8 @@ output:
 
 ## Logistics
 * **Course Website:** https://norcalbiostat.github.io/MATH130/
-* **Data Camp:** Online tool to learn R. 
-    - A link has been emailed to you that will allow you to create an account to join the online classroom class. 
-    - Use your real name or Chico State userid to ensure you get credit for this work. 
-* Need to use R outside of this class? Keep your eye on the FAQ page.   
-
+* **Data Camp:** Free online tool to learn R. 
+  
 
 ## Structure of this class
 
@@ -83,13 +80,9 @@ Because it's not reproducible.
 
 ## Getting Started
 
-* Log into to your Data Camp classroom. 
-* You should see a course called "Introduction to R"
+* Make a Data Camp account at www.datacamp.com 
+* Enroll in the free "Introduction to R" course. 
 * Complete the first chapter - **Intro to Basics** by the next class. 
 * There is a progress bar at the bottom of this page. You can track your progress through each chapter here. 
 
-## Install R and R Studio on your personal computer. 
-Because lab computers are not always available. 
-
-* Follow the [Software Overview](https://norcalbiostat.netlify.com/post/software-overview/) post to get your computer up and running with the R studio suite of awesomeness.  
 

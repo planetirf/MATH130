@@ -351,7 +351,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Lesson 03 - Getting data into R</h1>
 <h4 class="author"><em>Robin Donatello</em></h4>
-<h4 class="date"><em>Last Updated 12-30-2017</em></h4>
+<h4 class="date"><em>Last Updated 07-18-2018</em></h4>
 
 </div>
 
@@ -445,23 +445,22 @@ div.tocify {
 <h3>Excel files</h3>
 <p>The best method I have found so far to read in Excel files is from the <a href="http://readxl.tidyverse.org/"><code>readxl</code> package</a> by <a href="http://hadley.nz/">Hadley Wickham</a>. This package need to be installed first, and then can be simply loaded each time you start an <code>R</code> session where you will be reading in this type of data. Go ahead and install it now.</p>
 <p>The <code>read_excel()</code> function is what we are going to use. Note the use of the underscore <code>_</code> instead of a period <code>.</code> between read and the file type.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readxl)</code></pre></div>
-<pre><code>## Warning: package &#39;readxl&#39; was built under R version 3.3.3</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">police  &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;data/WashPost Police Shootings 2015.xlsx&quot;</span>, <span class="dt">sheet=</span><span class="dv">1</span>, <span class="dt">col_names=</span><span class="ot">TRUE</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readxl)
+police  &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;data/WashPost Police Shootings 2015.xlsx&quot;</span>, <span class="dt">sheet=</span><span class="dv">1</span>, <span class="dt">col_names=</span><span class="ot">TRUE</span>)
 police[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]</code></pre></div>
 <pre><code>## # A tibble: 10 x 5
-##       id                name       date  manner_of_death      armed
-##    &lt;dbl&gt;               &lt;chr&gt;     &lt;dttm&gt;            &lt;chr&gt;      &lt;chr&gt;
-##  1     3          Tim Elliot 2015-01-02             shot        gun
-##  2     4    Lewis Lee Lembke 2015-01-02             shot        gun
-##  3     5  John Paul Quintero 2015-01-03 shot and Tasered    unarmed
-##  4     8     Matthew Hoffman 2015-01-04             shot toy weapon
-##  5     9   Michael Rodriguez 2015-01-04             shot   nail gun
-##  6    11   Kenneth Joe Brown 2015-01-04             shot        gun
-##  7    13 Kenneth Arnold Buck 2015-01-05             shot        gun
-##  8    15       Brock Nichols 2015-01-06             shot        gun
-##  9    16       Autumn Steele 2015-01-06             shot    unarmed
-## 10    17     Leslie Sapp III 2015-01-06             shot toy weapon</code></pre>
+##       id name                date                manner_of_death  armed   
+##    &lt;dbl&gt; &lt;chr&gt;               &lt;dttm&gt;              &lt;chr&gt;            &lt;chr&gt;   
+##  1     3 Tim Elliot          2015-01-02 00:00:00 shot             gun     
+##  2     4 Lewis Lee Lembke    2015-01-02 00:00:00 shot             gun     
+##  3     5 John Paul Quintero  2015-01-03 00:00:00 shot and Tasered unarmed 
+##  4     8 Matthew Hoffman     2015-01-04 00:00:00 shot             toy wea…
+##  5     9 Michael Rodriguez   2015-01-04 00:00:00 shot             nail gun
+##  6    11 Kenneth Joe Brown   2015-01-04 00:00:00 shot             gun     
+##  7    13 Kenneth Arnold Buck 2015-01-05 00:00:00 shot             gun     
+##  8    15 Brock Nichols       2015-01-06 00:00:00 shot             gun     
+##  9    16 Autumn Steele       2015-01-06 00:00:00 shot             unarmed 
+## 10    17 Leslie Sapp III     2015-01-06 00:00:00 shot             toy wea…</code></pre>
 <ul>
 <li>The variable <code>date</code> is a <code>dttm</code> or <em>date-time</em> variable. This means <code>R</code> recognizes it directly as a date, not some string of numbers.</li>
 <li>Categorial variables such as <code>manner_of_death</code> and <code>city</code> are read in as <code>character</code> instead of factor. We may or may not want to change that later.</li>
