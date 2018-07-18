@@ -20,18 +20,18 @@ output: html_document
 
 * [**Math Learning Lab**](http://www.csuchico.edu/math/Tutoring.shtml)
     - MLIB 4th floor
-    - Mariby Cruz, Mitch Borgert, Matt Sterkel, Jerry Tucay 
+    - Mariby Cruz, Mitch Borgert, Ricardo Aguilar, Jerry Tucay 
 
-* **Community Coding Sessions** - TR 2-4pm MLIB 442
+* **Community Coding Sessions** - TBD for Fall 18
 
 > _Come code with us! Bring your Data Science and coding questions, data, and projects. We aim to provide a helpful and friendly working environment where you can work, ask questions or discuss ideas related to R, Python, Data Science, or more generally data visualization and analysis._
 
 * **Robin Donatello** - Stat professor. Holt 202. rdonatello@csuchico.edu 
-    - MW 11-12 Holt 155
+    - OH TBD
     - Most community coding sessions. 
 * **Edward Roualdes** - Stat professor. Holt 204. eroualdes@csuchico.edu
-    - TR 1-2pm
-    - Community Coding T 2-4 and R 3-4
+    - OH TBD
+    - Most community coding sessions. 
 * **Eduardo Gomez** - peer mentor. egomez42@mail.csuchico.edu
 * **Ricardo Aguilar** - peer mentor. raguilar11@mail.csuchico.edu
 * **Mariby Cruz** - peer mentor.  mcruz27@mail.csuchico.edu

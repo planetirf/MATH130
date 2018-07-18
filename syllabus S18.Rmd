@@ -4,7 +4,7 @@ output:
   html_document: default
 ---
 
-# Math 130: Introduction to R - Fall 18 
+# Math 130: Introduction to R - Spring 18 
 
 [[Download this syllabus as a PDF]](syllabus.pdf)
 
@@ -14,45 +14,48 @@ This course is designed as a primer to get the complete novice up and running wi
 
 # Logistics
 
-* **Instructor**: Robin Donatello
-* **Office Location**: Holt 202
-* **Office Phone**: 898-5767
-* **E-mail**: rdonatello@csuchico.edu
 * **Course Website:** https://norcalbiostat.github.io/MATH130/ 
 * **Prerequisites:** Basic computer literacy  
-* **Workshop style:** This workshop style class runs for the first 5 weeks of the semester only. There will be one lab assigned per week. What is not finished in class is considered homework. 
-
+* **Workshop style:** This workshop style class runs for the first 5 weeks of the semester only (1/22-2/22). There will be one lab assigned per week. What is not finished in class is considered homework. 
 
 |                        |        Section 01       |       Section 02       |
 |:-----------------------|:-----------------------:|:----------------------:|
-| **Meeting Days/Times** | TR 2-3:15               | MW 12:30-1:45          |
-| **Meeting Location**   | Holt 155                | Holt 155               |
-<!---
+| **Meeting Days/Times** | TR 11-12:15             | MW 3-4:45              |
+| **Meeting Location**   | Butte 207               | Holt 155               |
 | **Instructor**         | Robin Donatello         | Edward Roualdes        |
 | **Office Location**    | Holt 202                | Holt 204               |
 | **Office Phone**       | 898-5767                | 898-5807               |
 | **E-mail**             | rdonatello@csuchico.edu | eroualdes@csuchico.edu |
---->
 
-##  Materials
 
-* A reliable laptop, chromebook, tablet that can use a browser to access the internet.  
+## Required Materials
+
+* A reliable laptop that you can install programs onto. Contact me for alternatives.
+    - Mac / Windows are easy. Linux/Unix installs are more difficult, but not impossible. 
 * Reliable internet connection while on and off campus.
-* A Data Camp account. This is an free online tool to learn R.
+* A Data Camp account. This is an online tool to learn R. A link will be emailed to you that will allow you to create an account to join the online classroom class. Be sure to use your real name for credit.  
 * Join the [Chico R Users Google Group](https://groups.google.com/forum/#!forum/chico-rug) - This is our discussion forum to ask (and answer) questions outside of class. 
     - There is also a [Meetup group](https://www.meetup.com/Chico-R-Users-Group/) - optional but useful if you want to stay connected to the community and learn about upcoming events. 
+* Free programming software. Instructions and links to download, install and setup these programs can be found at https://norcalbiostat.netlify.com/post/software-overview/ 
+    - [R](https://cran.r-project.org/)
+    - [R Studio](https://www.rstudio.com/)
+    - [LaTeX](https://www.latex-project.org/): optional but very nice for producing professional quality PDF reports. 
+        - Windows: Get the proTex distribution
+        - Mac: You only have one choice. 
 
 ## Grading
 Credit / No Credit. There are 100 points available in this course. You must earn 70 points to receive credit for the course. 
 
 * Attendance: 2 pts per day (20 pts)
 * Assignments:
-    - Lab 1 (15 pts)
-    - Lab 2 (15 pts)
-    - Lab 3 (15 pts)
-    - Lab 4 (15 pts)
+    - Data Camp (10 pts)
+    - Lab 1 (10 pts)
+    - Lab 2 (10 pts)
+    - Lab 3 (10 pts)
+    - Lab 4 (10 pts)
 * Project
     - Project (20 pts)
+    - Peer Review (10 pts)
 
 ## Assignments
  
@@ -86,7 +89,7 @@ The general outline of topics is listed below. A detailed most up to date schedu
 
 
 ## Adding and Dropping the course
-This course only runs for a few weeks and all materials are available on the course website. It will be difficult to get caught up if you add the class after the first week. The last day to add or drop classes without special permission by the instructor is X/X/18. No adds or dropps are allowed after X/XX/18 without a serious and compelling reason approved by the instructor, department chair, and college dean.
+This course only runs for a few weeks and all materials are available on the course website. It will be difficult to get caught up if you add the class after the first week. The last day to add or drop classes without special permission by the instructor is 2/2/18. No adds or dropps are allowed after 2/16/18 without a serious and compelling reason approved by the instructor, department chair, and college dean.
 
 
 ## Americans with Disabilities Act
