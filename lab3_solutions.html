@@ -278,16 +278,16 @@ f1</code></pre></div>
 <pre><code>## # A tibble: 336,776 x 4
 ##    origin distance air_time dest 
 ##    &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;
-##  1 EWR        1400      227 IAH  
-##  2 LGA        1416      227 IAH  
-##  3 JFK        1089      160 MIA  
-##  4 JFK        1576      183 BQN  
-##  5 LGA         762      116 ATL  
-##  6 EWR         719      150 ORD  
-##  7 EWR        1065      158 FLL  
-##  8 LGA         229       53 IAD  
-##  9 JFK         944      140 MCO  
-## 10 LGA         733      138 ORD  
+##  1 EWR        1400    227   IAH  
+##  2 LGA        1416    227   IAH  
+##  3 JFK        1089    160   MIA  
+##  4 JFK        1576    183   BQN  
+##  5 LGA         762    116   ATL  
+##  6 EWR         719    150   ORD  
+##  7 EWR        1065    158   FLL  
+##  8 LGA         229     53.0 IAD  
+##  9 JFK         944    140   MCO  
+## 10 LGA         733    138   ORD  
 ## # ... with 336,766 more rows</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Use <code>filter()</code> to select only the flights whose destination (<code>dest</code>) is Atlanta (ATL)</li>
@@ -316,16 +316,16 @@ f3</code></pre></div>
 <pre><code>## # A tibble: 17,215 x 5
 ##    origin distance air_time dest  speed
 ##    &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;
-##  1 LGA         762      116 ATL    394.
-##  2 LGA         762      134 ATL    341.
-##  3 JFK         760      128 ATL    356.
-##  4 EWR         746      120 ATL    373 
-##  5 LGA         762      126 ATL    363.
-##  6 LGA         762      126 ATL    363.
-##  7 JFK         760      126 ATL    362.
-##  8 LGA         762      132 ATL    346.
-##  9 LGA         762      123 ATL    372.
-## 10 LGA         762      129 ATL    354.
+##  1 LGA         762      116 ATL     394
+##  2 LGA         762      134 ATL     341
+##  3 JFK         760      128 ATL     356
+##  4 EWR         746      120 ATL     373
+##  5 LGA         762      126 ATL     363
+##  6 LGA         762      126 ATL     363
+##  7 JFK         760      126 ATL     362
+##  8 LGA         762      132 ATL     346
+##  9 LGA         762      123 ATL     372
+## 10 LGA         762      129 ATL     354
 ## # ... with 17,205 more rows</code></pre>
 </div>
 <div id="how-many-passengers-can-a-plane-hold-before-needing-another-engine" class="section level1">
@@ -382,9 +382,9 @@ f3</code></pre></div>
 <pre><code>## # A tibble: 3 x 4
 ##   num_engines ave_seats min_seats max_seats
 ##   &lt;fct&gt;           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
-## 1 one              3.78         2        16
-## 2 two            155.           6       400
-## 3 three+         243.           2       450</code></pre>
+## 1 one              3.78      2.00      16.0
+## 2 two            155         6.00     400  
+## 3 three+         243         2.00     450</code></pre>
 </div>
 
 

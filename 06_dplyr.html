@@ -351,7 +351,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Lesson 06 - Streamlined data management using <code>dplyr</code></h1>
 <h4 class="author"><em>Robin Donatello</em></h4>
-<h4 class="date"><em>Last Updated 07-18-2018</em></h4>
+<h4 class="date"><em>Last Updated 07-21-2018</em></h4>
 
 </div>
 
@@ -389,16 +389,16 @@ div.tocify {
 <pre><code>## # A tibble: 336,776 x 19
 ##     year month   day dep_time sched_dep_time dep_delay arr_time
 ##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;
-##  1  2013     1     1      517            515         2      830
-##  2  2013     1     1      533            529         4      850
-##  3  2013     1     1      542            540         2      923
-##  4  2013     1     1      544            545        -1     1004
-##  5  2013     1     1      554            600        -6      812
-##  6  2013     1     1      554            558        -4      740
-##  7  2013     1     1      555            600        -5      913
-##  8  2013     1     1      557            600        -3      709
-##  9  2013     1     1      557            600        -3      838
-## 10  2013     1     1      558            600        -2      753
+##  1  2013     1     1      517            515      2.00      830
+##  2  2013     1     1      533            529      4.00      850
+##  3  2013     1     1      542            540      2.00      923
+##  4  2013     1     1      544            545     -1.00     1004
+##  5  2013     1     1      554            600     -6.00      812
+##  6  2013     1     1      554            558     -4.00      740
+##  7  2013     1     1      555            600     -5.00      913
+##  8  2013     1     1      557            600     -3.00      709
+##  9  2013     1     1      557            600     -3.00      838
+## 10  2013     1     1      558            600     -2.00      753
 ## # ... with 336,766 more rows, and 12 more variables: sched_arr_time &lt;int&gt;,
 ## #   arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;,
 ## #   origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;,
@@ -423,16 +423,16 @@ div.tocify {
 <pre><code>## # A tibble: 842 x 19
 ##     year month   day dep_time sched_dep_time dep_delay arr_time
 ##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;
-##  1  2013     1     1      517            515         2      830
-##  2  2013     1     1      533            529         4      850
-##  3  2013     1     1      542            540         2      923
-##  4  2013     1     1      544            545        -1     1004
-##  5  2013     1     1      554            600        -6      812
-##  6  2013     1     1      554            558        -4      740
-##  7  2013     1     1      555            600        -5      913
-##  8  2013     1     1      557            600        -3      709
-##  9  2013     1     1      557            600        -3      838
-## 10  2013     1     1      558            600        -2      753
+##  1  2013     1     1      517            515      2.00      830
+##  2  2013     1     1      533            529      4.00      850
+##  3  2013     1     1      542            540      2.00      923
+##  4  2013     1     1      544            545     -1.00     1004
+##  5  2013     1     1      554            600     -6.00      812
+##  6  2013     1     1      554            558     -4.00      740
+##  7  2013     1     1      555            600     -5.00      913
+##  8  2013     1     1      557            600     -3.00      709
+##  9  2013     1     1      557            600     -3.00      838
+## 10  2013     1     1      558            600     -2.00      753
 ## # ... with 832 more rows, and 12 more variables: sched_arr_time &lt;int&gt;,
 ## #   arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;,
 ## #   origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;,
@@ -442,16 +442,16 @@ div.tocify {
 <pre><code>## # A tibble: 51,955 x 19
 ##     year month   day dep_time sched_dep_time dep_delay arr_time
 ##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;
-##  1  2013     1     1      517            515         2      830
-##  2  2013     1     1      533            529         4      850
-##  3  2013     1     1      542            540         2      923
-##  4  2013     1     1      544            545        -1     1004
-##  5  2013     1     1      554            600        -6      812
-##  6  2013     1     1      554            558        -4      740
-##  7  2013     1     1      555            600        -5      913
-##  8  2013     1     1      557            600        -3      709
-##  9  2013     1     1      557            600        -3      838
-## 10  2013     1     1      558            600        -2      753
+##  1  2013     1     1      517            515      2.00      830
+##  2  2013     1     1      533            529      4.00      850
+##  3  2013     1     1      542            540      2.00      923
+##  4  2013     1     1      544            545     -1.00     1004
+##  5  2013     1     1      554            600     -6.00      812
+##  6  2013     1     1      554            558     -4.00      740
+##  7  2013     1     1      555            600     -5.00      913
+##  8  2013     1     1      557            600     -3.00      709
+##  9  2013     1     1      557            600     -3.00      838
+## 10  2013     1     1      558            600     -2.00      753
 ## # ... with 51,945 more rows, and 12 more variables: sched_arr_time &lt;int&gt;,
 ## #   arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;,
 ## #   origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;,
@@ -480,16 +480,16 @@ div.tocify {
 <pre><code>## # A tibble: 336,776 x 6
 ##    sched_dep_time dep_delay arr_time sched_arr_time arr_delay carrier
 ##             &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt; &lt;chr&gt;  
-##  1            515         2      830            819        11 UA     
-##  2            529         4      850            830        20 UA     
-##  3            540         2      923            850        33 AA     
-##  4            545        -1     1004           1022       -18 B6     
-##  5            600        -6      812            837       -25 DL     
-##  6            558        -4      740            728        12 UA     
-##  7            600        -5      913            854        19 B6     
-##  8            600        -3      709            723       -14 EV     
-##  9            600        -3      838            846        -8 B6     
-## 10            600        -2      753            745         8 AA     
+##  1            515      2.00      830            819     11.0  UA     
+##  2            529      4.00      850            830     20.0  UA     
+##  3            540      2.00      923            850     33.0  AA     
+##  4            545     -1.00     1004           1022    -18.0  B6     
+##  5            600     -6.00      812            837    -25.0  DL     
+##  6            558     -4.00      740            728     12.0  UA     
+##  7            600     -5.00      913            854     19.0  B6     
+##  8            600     -3.00      709            723    -14.0  EV     
+##  9            600     -3.00      838            846    - 8.00 B6     
+## 10            600     -2.00      753            745      8.00 AA     
 ## # ... with 336,766 more rows</code></pre>
 <p>Type <code>select(flights, -(year:day))</code> to select all columns EXCEPT the ones between year and day.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">select</span>(flights, <span class="op">-</span>carrier)</code></pre></div>
@@ -502,18 +502,18 @@ div.tocify {
                 <span class="dt">speed =</span> distance <span class="op">/</span><span class="st"> </span>air_time <span class="op">*</span><span class="st"> </span><span class="dv">60</span>)
 <span class="kw">select</span>(a, gain, distance, air_time, speed)</code></pre></div>
 <pre><code>## # A tibble: 336,776 x 4
-##     gain distance air_time speed
-##    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;
-##  1     9     1400      227  370.
-##  2    16     1416      227  374.
-##  3    31     1089      160  408.
-##  4   -17     1576      183  517.
-##  5   -19      762      116  394.
-##  6    16      719      150  288.
-##  7    24     1065      158  404.
-##  8   -11      229       53  259.
-##  9    -5      944      140  405.
-## 10    10      733      138  319.
+##      gain distance air_time speed
+##     &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;
+##  1   9.00     1400    227     370
+##  2  16.0      1416    227     374
+##  3  31.0      1089    160     408
+##  4 -17.0      1576    183     517
+##  5 -19.0       762    116     394
+##  6  16.0       719    150     288
+##  7  24.0      1065    158     404
+##  8 -11.0       229     53.0   259
+##  9 - 5.00      944    140     405
+## 10  10.0       733    138     319
 ## # ... with 336,766 more rows</code></pre>
 <p>One key advantage of mutate is that you can refer to the columns you just created. Mutate flights to create two variables, <code>gain = arr_delay - dep_delay</code> and <code>gain_per_hour = gain / (air_time / 60)</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mutate</span>(flights, <span class="dt">gain =</span> arr_delay <span class="op">-</span><span class="st"> </span>dep_delay, 
@@ -521,16 +521,16 @@ div.tocify {
 <pre><code>## # A tibble: 336,776 x 21
 ##     year month   day dep_time sched_dep_time dep_delay arr_time
 ##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;
-##  1  2013     1     1      517            515         2      830
-##  2  2013     1     1      533            529         4      850
-##  3  2013     1     1      542            540         2      923
-##  4  2013     1     1      544            545        -1     1004
-##  5  2013     1     1      554            600        -6      812
-##  6  2013     1     1      554            558        -4      740
-##  7  2013     1     1      555            600        -5      913
-##  8  2013     1     1      557            600        -3      709
-##  9  2013     1     1      557            600        -3      838
-## 10  2013     1     1      558            600        -2      753
+##  1  2013     1     1      517            515      2.00      830
+##  2  2013     1     1      533            529      4.00      850
+##  3  2013     1     1      542            540      2.00      923
+##  4  2013     1     1      544            545     -1.00     1004
+##  5  2013     1     1      554            600     -6.00      812
+##  6  2013     1     1      554            558     -4.00      740
+##  7  2013     1     1      555            600     -5.00      913
+##  8  2013     1     1      557            600     -3.00      709
+##  9  2013     1     1      557            600     -3.00      838
+## 10  2013     1     1      558            600     -2.00      753
 ## # ... with 336,766 more rows, and 14 more variables: sched_arr_time &lt;int&gt;,
 ## #   arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;,
 ## #   origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;,
@@ -560,16 +560,16 @@ div.tocify {
 ## # Groups:   month [12]
 ##    month distance
 ##    &lt;int&gt;    &lt;dbl&gt;
-##  1     7       17
-##  2     1       80
-##  3     1       80
-##  4     1       80
-##  5     1       80
-##  6     1       80
-##  7     1       80
-##  8     1       80
-##  9     1       80
-## 10     1       80
+##  1     7     17.0
+##  2     1     80.0
+##  3     1     80.0
+##  4     1     80.0
+##  5     1     80.0
+##  6     1     80.0
+##  7     1     80.0
+##  8     1     80.0
+##  9     1     80.0
+## 10     1     80.0
 ## # ... with 336,766 more rows</code></pre>
 <ul>
 <li>The <code>summarise()</code> verb allows you to calculate summary statistics for each group. This is probably the most common function that is used in conjunction with <code>group_by</code>. For example, the average distance flown per month.</li>
@@ -578,18 +578,18 @@ div.tocify {
 <pre><code>## # A tibble: 12 x 2
 ##    month avg_airtime
 ##    &lt;int&gt;       &lt;dbl&gt;
-##  1     1       1007.
-##  2     2       1001.
-##  3     3       1012.
-##  4     4       1039.
-##  5     5       1041.
-##  6     6       1057.
-##  7     7       1059.
-##  8     8       1062.
-##  9     9       1041.
-## 10    10       1039.
-## 11    11       1050.
-## 12    12       1065.</code></pre>
+##  1     1        1007
+##  2     2        1001
+##  3     3        1012
+##  4     4        1039
+##  5     5        1041
+##  6     6        1057
+##  7     7        1059
+##  8     8        1062
+##  9     9        1041
+## 10    10        1039
+## 11    11        1050
+## 12    12        1065</code></pre>
 <p>Or simply the total number of flights per month.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summarize</span>(by_month, <span class="dt">count=</span><span class="kw">n</span>())</code></pre></div>
 <pre><code>## # A tibble: 12 x 2
