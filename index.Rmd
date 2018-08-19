@@ -15,11 +15,11 @@ See the [syllabus](syllabus.html) for details about the current class offerings.
 
 # Announcements
 
-_This site is in the process of being updated. Many links will not work_
+_This site has been updated for Fall 18. Please notify me of any broken or missing links._
 
 --------------------------------
 
-# Schedule - **Fall 18**
+# Schedule
 
 _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
 

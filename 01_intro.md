@@ -23,10 +23,21 @@ output:
 
 * Content is fully online on the course website.  
 * Class time is spent walking through labs and on the spot debugging / expanding on ideas and concepts.
-* Credit / No Credit, get 70% of the points and you pass.
-    - All assignments and points are laid out explicitly in the syllabus. 
 
+## Grading
+Credit / No Credit. There are 100 points available in this course. You must earn 70 points to receive credit for the course. 
 
+* Attendance: (10 pts)
+* Data Camp: (10 pts)
+* Assignments:
+    - Lab 1 (10 pts)
+    - Lab 2 (10 pts)
+    - Lab 3 (15 pts)
+    - Lab 4 (15 pts)
+* Project: 
+    - Exploratory Data Analysis (20 pts)
+    - Peer Review (10 pts)
+    
 ## Time Committment & Frustration
 * Fast paced, we're hitting the ground running and only have 5 weeks. 
 * Not designed to teach you everything about R, just enough to make you dangerous. 
