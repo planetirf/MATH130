@@ -1,25 +1,26 @@
 name: "Robin Donatello"
 output_dir: "."
 navbar:
-  title: "INTRO TO R (MATH 130)"
+  title: "MATH 130"
   left:
     - text: "Data"
       icon: fa-database
       href: http://www.norcalbiostat.com/data/
-#    - text: "Projects"
-#      icon: fa-bar-chart
-#      href: project.html
+    - text: Data Camp 
+      icon: fa-code
+      href: https://www.datacamp.com/
+#   - text: "Projects"
+#     icon: fa-bar-chart
+#     href: project.html
+
+      
+  right:
     - text: "Help/FAQ"
       icon: fa-question
       href: faq.html
-      
-  right:
     - text: "Syllabus"
       icon: fa-info-circle
       href: syllabus.html
-    - text: "Contact"
-      icon: fa-envelope-o
-      href: mailto:rdonatello@csuchico.edu
     - text: "Dr. D's Website"
       icon: fa-paw
       href: http://www.norcalbiostat.com/

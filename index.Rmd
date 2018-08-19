@@ -1,7 +1,7 @@
 
 <br><br>
 
-This is the landing page for <span style="color:blue">**Introduction to Data Analysis using R**</span>. This page is used for posting of regular announcements and information for students of the class. 
+This is the landing page for <span style="color:blue">**Introduction to R (MATH 130)**</span>. This page is used for posting of regular announcements and information for students of the class. 
 
 
 ----
@@ -19,20 +19,34 @@ _This site is in the process of being updated. Many links will not work_
 
 --------------------------------
 
-# Schedule (Fall 18)
+# Schedule - **Fall 18**
 
 _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
+
+### <a href="#week0" data-toggle="collapse">Prepare: Get connected and install programs</a>
+<div id="week0" class="collapse">
+
+
+* Fill out this Google Form to help me find optional Office Hours https://goo.gl/forms/v7DpH8wFFCUsQYt32 
+* Install R and R Studio: https://norcalbiostat.netlify.com/post/software-overview/
+* Use the link in Blackboard to join our Data Camp classroom.
+* Learn about the R Studio IDE by completing the Data Camp assignment: `Working with the R Studio IDE (Part 1)` (Due 9/4)
+
+</div>
 
 ### <a href="#week1" data-toggle="collapse">Week 1: Getting started with R and R Studio</a>
 
 <div id="week1" class="collapse">
+
 * Day 1: Introduction to the class and R. [[01_intro]](01_intro.html)
 * Assignments **Due before Day 2**
-    - Complete Data Camp: Introduction to R - Chapter 1 (Intro to Basics)
+    - Complete Data Camp: `Introduction to R - Chapter 1 (Intro to Basics)`
+    - Learn about the R Studio IDE by completing the Data Camp assignment: `Working with the R Studio IDE (Part 1)`
     - Watch 1 minute video: "[What is R Markdown?](http://rmarkdown.rstudio.com/lesson-1.html)"
 * Day 2: Reproducible Research using R Studio [[02_rstudio]](02_rstudio.html)
-* Assignments: [[Lab 1]](lab1.Rmd) 
-    - Directly based on Data Camp - Introduction to R. 
+* Assignments: 
+    - Finish the `Introduction to R` entire course on Data Camp.
+    - [[Lab 1]](lab1.Rmd) This is directly based on Data Camp - Introduction to R. 
     - You will submit the **.RMD file** for this assignment to Blackboard learn by the due date. 
     
   

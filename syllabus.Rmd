@@ -1,7 +1,7 @@
 ---
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 # Math 130: Introduction to R - Fall 18 
@@ -84,12 +84,15 @@ You will get out of this class what you put into it. Recall this is just a co-cu
 Credit / No Credit. There are 100 points available in this course. You must earn 70 points to receive credit for the course. 
 
 * Attendance: (10 pts)
+* Data Camp: (10 pts)
 * Assignments:
-    - Lab 1 (15 pts)
-    - Lab 2 (15 pts)
+    - Lab 1 (10 pts)
+    - Lab 2 (10 pts)
     - Lab 3 (15 pts)
     - Lab 4 (15 pts)
-* Project: (30 pts)
+* Project: 
+    - Exploratory Data Analysis (20 pts)
+    - Peer Review (10 pts)
 
 
 # Schedule of Topics

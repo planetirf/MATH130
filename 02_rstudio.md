@@ -52,9 +52,9 @@ From the Coursera [Reproducible research](https://www.coursera.org/course/repdat
 
 ## Additional Resources
 
-#### R Markdown
 * Introduction to R Markdown [tutorial](http://rmarkdown.rstudio.com/lesson-1.html) by R Studio. 
-
+* Learn about the R Studio IDE by completing the Data Camp assignment: `Working with the R Studio IDE (Part 1)`
+    
 #### Reproducible Research 
 
 * [Simply Statistics](http://simplystatistics.org/2014/06/06/the-real-reason-reproducible-research-is-important/) - The real reason reproducible research is important.

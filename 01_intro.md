@@ -80,8 +80,6 @@ Because it's not reproducible.
 
 ## Getting Started
 
-* Make a Data Camp account at www.datacamp.com 
-* Enroll in the free "Introduction to R" course. 
 * Complete the first chapter - **Intro to Basics** by the next class. 
 * There is a progress bar at the bottom of this page. You can track your progress through each chapter here. 
 

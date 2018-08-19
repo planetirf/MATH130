@@ -299,7 +299,7 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">INTRO TO R (MATH 130)</a>
+      <a class="navbar-brand" href="index.html">MATH 130</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -311,26 +311,26 @@ div.tocify {
   </a>
 </li>
 <li>
+  <a href="https://www.datacamp.com/">
+    <span class="fa fa-code"></span>
+     
+    Data Camp
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
   <a href="faq.html">
     <span class="fa fa-question"></span>
      
     Help/FAQ
   </a>
 </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li>
+<li>
   <a href="syllabus.html">
     <span class="fa fa-info-circle"></span>
      
     Syllabus
-  </a>
-</li>
-<li>
-  <a href="mailto:rdonatello@csuchico.edu">
-    <span class="fa fa-envelope-o"></span>
-     
-    Contact
   </a>
 </li>
 <li>
@@ -351,7 +351,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Lesson 06 - Streamlined data management using <code>dplyr</code></h1>
 <h4 class="author"><em>Robin Donatello</em></h4>
-<h4 class="date"><em>Last Updated 07-21-2018</em></h4>
+<h4 class="date"><em>Last Updated 08-18-2018</em></h4>
 
 </div>
 
@@ -420,6 +420,7 @@ div.tocify {
 <h2>Filter</h2>
 <p><code>filter()</code> allows you to select a subset of the rows of a data frame. The first argument is the name of the data frame, and the second and subsequent are filtering expressions evaluated in the context of that data frame. For example, we can select all flights on January 1st with</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">filter</span>(flights, month <span class="op">==</span><span class="st"> </span><span class="dv">1</span>, day <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)</code></pre></div>
+<pre><code>## Warning: package &#39;bindrcpp&#39; was built under R version 3.4.4</code></pre>
 <pre><code>## # A tibble: 842 x 19
 ##     year month   day dep_time sched_dep_time dep_delay arr_time
 ##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;
