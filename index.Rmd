@@ -83,17 +83,13 @@ _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
 * Assignment: [[Lab 4]](lab4.Rmd)  
 </div>
 
-### <a href="#week5" data-toggle="collapse">Week 5: Installing R locally, Exploratory Project</a>
+### <a href="#week5" data-toggle="collapse">Week 5: Putting it all together: Exploratory Project</a>
 
 <div id="week5" class="collapse">
 
-* Install R and R Studio on your personal computer.     
-    - Because cloud computers and lab computers are not always available. 
-    - Follow the [Software Overview](https://norcalbiostat.netlify.com/post/software-overview/) post to get your computer up and running with the R studio suite of awesomeness.  
-* Exploratory Data Analysis Project
-    - Now it's time to put your new 1337 skillz to the test!
-    - [Instructions](EDA_instructions.html) on the assignment and how to do the peer review. 
-    - Previous class projects can be seen  [[here]](https://norcalbiostat.github.io/peer_review/math130_eda.html). 
+* Now it's time to put your new 1337 skillz to the test!
+* [Instructions](EDA_instructions.html) on the assignment and how to do the peer review. 
+* Previous class projects can be seen  [[here]](https://norcalbiostat.github.io/peer_review/math130_eda.html). 
 
 </span>
     
