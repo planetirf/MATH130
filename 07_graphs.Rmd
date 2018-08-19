@@ -14,7 +14,7 @@ library(knitr)
 opts_chunk$set(warning=FALSE, message=FALSE) 
 ```
 
-> This lesson is a brief excerpt from Robin Donatello's [[Full data viz tutorial]](full_data_viz_tutorial.html). 
+> This lesson is a brief excerpt from Dr. Donatello's [[Full data viz tutorial]](full_data_viz_tutorial.html). 
 
 ----
 
