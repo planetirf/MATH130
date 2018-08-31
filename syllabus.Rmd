@@ -17,7 +17,7 @@ This course is designed as a primer to get the complete novice up and running wi
 * **Instructor**: Robin Donatello
 * **Office Location**: Holt 202
 * **Office Phone**: 898-5767
-* **Office Hours**: TBD. Check the course website for the most up to date information. 
+* **Office Hours**: Holt 202: M-3pm, W-1pm, R-10am 
 * **E-mail**: rdonatello@csuchico.edu
 * **Course Website:** https://norcalbiostat.github.io/MATH130/ 
 * **Prerequisites:** Basic computer literacy  
