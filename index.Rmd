@@ -59,7 +59,7 @@ _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
 
 * Getting data into R and exploring [[03_import]](03_import.html) 
 * Using functions to summarize and manage data [[04_functions_recode]](04_functions_recode.html)
-* In class [[notes]]()
+* In class: [[12:30 notes]](notes/day2notes_sec02.html), [[2pm notes]](notes/day2notes_sec01.html)
 * Assignment: [[Lab 2]](lab2.Rmd). 
 
 </div>
