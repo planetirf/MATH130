@@ -1,7 +1,8 @@
 ---
-title: "Lab 3: More data management and grouping using factors"
+title: 'Lab 3: More data management and grouping using factors'
 author: "NAME"
 date: "DATE"
+output: pdf_document
 ---
 
 Answer the questions in this lab and submit the compiled HTML or PDF by the deadline. Don't forget to change your name and date in the above header. 

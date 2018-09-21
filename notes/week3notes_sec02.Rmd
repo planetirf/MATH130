@@ -1,0 +1,189 @@
+---
+title: "Day 5 notes sec 02"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+email <- read.table("J:/MATH130/fall18/email.txt", header=TRUE, sep="\t")
+```
+
+Frequency table of the variable `number` - order of display is alphabetical. But this is an ordinal data type, so a more meaningful ordering would be none - small - big
+```{r}
+table(email$number)
+```
+
+# creating factors from numeric data
+```{r}
+table(email$spam)
+class(email$spam)
+```
+
+we'll use the `factor()` function to turn this numeric variable into a factor variable. 
+```{r}
+email$spam_fac <- factor(email$spam, labels=c("no", "yes"))
+```
+
+labels MUST be in the SAME order as the data. 
+
+Check to see that the recode worked.
+For factor variables - I tend to use a two-way table (aka cross-tab), where i put the original variable (spam) on the rows and the new variable (spam_fac) on the columns. And specify to show if there are any missing values. 
+
+```{r}
+table(email$spam, email$spam_fac, useNA = "always")
+```
+
+
+# changing order
+we're going to use the `factor()` function again, even though `number` is already a factor. But this time speify
+\
+specify the LEVELS instead of LABELS. 
+
+Don't overwrite your variable until you know the code you used to make the change WORKS. 
+```{r}
+email$number_ord <- factor(email$number, levels=c("none", "small", "big"))
+
+table(email$number_ord)
+```
+
+Now that i've confirmed it works, I could go back up and overwrite the `number` variable. 
+
+
+
+# Dplyr
+
+```{r}
+library(dplyr)
+library(nycflights13)
+flights
+```
+
+If we wnated to SEE the `flights` data set in our Global environment, we would have to "reassign" it
+```{r, eval=FALSE}
+flights<- flights
+```
+
+
+* All dplyr commands take the data set as the first argument. 
+* variable names don't need to be called with $ notation
+* nor do they need to be in quotes. 
+* all arguments are separated by commas. 
+
+
+## filter
+separate criteria to filter on by commas.
+So this is 1st month AND 1st day (Jan 1st).
+```{r}
+filter(flights, month == 1, day == 1)
+```
+
+subsetting the data to include flights only in jan or feb. 
+
+```{r}
+filter(flights, month == 1 | month == 2)
+filter(flights, month %in% c(1,2))
+```
+
+## select
+choose columns
+
+```{r}
+select(flights, month, day, year) # pulls out columns in the order specified. 
+select(flights, year:day)
+```
+
+notice yet I have not saved the results of these commands as a new data set. 
+
+Use the - sign to EXCLUDE certain variables. It's like dropping variables. 
+```{r}
+select(flights, -carrier)
+```
+
+
+
+call names 
+```{r}
+select(flights, names(flights)[5:7])
+```
+
+
+
+grouping data set
+
+```{r}
+str(flights)
+by_month <- group_by(flights, month)
+str(by_month)
+```
+
+
+calculate average distance traveled overall
+```{r}
+mean(flights$distance)
+summarise(flights, ave_dist=mean(distance))
+```
+
+
+```{r}
+summarise(by_month, avg_airtime = mean(distance, na.rm=TRUE))
+```
+
+total number of flights per month
+
+```{r}
+table(flights$month)
+```
+
+or the dplyr way -- the result here is a data frame
+
+```{r}
+summarize(by_month, count=n())
+```
+
+# chaining functions
+
+goal: and produce a data set that contains only the flights where the daily average delay is greater than a half hour.
+
+1. group the flights data set by day. 
+
+```{r}
+a1 <- group_by(flights, year, month, day)
+head(a1)
+```
+
+2. Trim down to only the variables we care about to make our lives easier
+```{r}
+a2 <- select(a1, arr_delay, dep_delay)
+head(a2)
+```
+
+3. make new variables
+
+```{r}
+a3 <- summarise(a2,
+                arr = mean(arr_delay, na.rm = TRUE),
+                dep = mean(dep_delay, na.rm = TRUE))
+head(a3)
+```
+
+4. now filter the data set to only keep days with delays over 30min
+
+```{r}
+a4 <- filter(a3, arr > 30 | dep > 30)
+head(a4)
+```
+
+nesting functions is possible. 
+
+```{r}
+prop.table(table(flights$month))
+```
+
+
+
+
+
+
+
+
