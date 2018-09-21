@@ -1,7 +1,8 @@
 ---
-title: "Lab 2: Importing, exploring, managing data using functions"
+title: 'Lab 2: Importing, exploring, managing data using functions'
 author: "Solutions"
 date: "DATE"
+output: pdf_document
 ---
 
 Answer the questions in this lab and submit the compiled WORD or PDF by the deadline. 
