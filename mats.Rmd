@@ -1,0 +1,43 @@
+---
+title: "Course Materials"
+output:
+  html_document:
+    highlight: tango
+    theme: yeti
+    toc: yes
+    toc_float: yes
+---
+
+### <a href="#videos" data-toggle="collapse">Lecture Notes</a>
+<div id="videos" class="collapse">
+
+* Introduction to the class and R. [[01_intro]](01_intro.html)
+* Reproducible Research using R Studio [[02_rstudio]](02_rstudio.html)
+* Getting data into R and exploring [[03_import]](03_import.html) 
+* Using functions to summarize and manage data [[04_functions_recode]](04_functions_recode.html)
+* Wrangling factors. [[05_factors]](05_factors.html) 
+* More data management and creating grouped summaries using `dplyr`. [[06_dplyr]](06_dplyr.html) 
+* Statistical Data Visualization [[07_graphs]](07_graphs.html)
+
+</div>
+
+### <a href="#videos" data-toggle="collapse">Videos</a>
+<div id="videos" class="collapse">
+
+
+</div>
+
+### <a href="#hw" data-toggle="collapse">Assignments </a>
+<div id="hw" class="collapse">
+
+* [[HW 1]](hw1.Rmd)
+* [[HW 2]](hw2.Rmd)
+* [[HW 3]](hw3.Rmd)
+* [[HW 4]](hw4.Rmd)
+* [Project Instructions](EDA_instructions_withPR.html)
+
+
+</div>
+
+
+

@@ -1,7 +1,7 @@
 name: "Robin Donatello"
 output_dir: "."
 navbar:
-  title: "MATH 130"
+  title: "MATH 130 (R)"
   left:
     - text: "Data"
       icon: fa-database
@@ -9,6 +9,9 @@ navbar:
     - text: Data Camp 
       icon: fa-code
       href: https://www.datacamp.com/
+    - text: Course Materials 
+      icon: fa-book
+      href: mats.html
 #   - text: "Projects"
 #     icon: fa-bar-chart
 #     href: project.html

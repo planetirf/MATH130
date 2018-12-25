@@ -15,22 +15,22 @@ See the [syllabus](syllabus.html) for details about the current class offerings.
 
 # Announcements
 
-_This site has been updated for Fall 18. Please notify me of any broken or missing links._
+_This site has been updated for Spring 19. Please notify me of any broken or missing links._
 
 --------------------------------
 
 # Schedule
 
 _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
+Click each weekly header below to expand and see the materials for that week. 
 
 ### <a href="#week0" data-toggle="collapse">Prepare: Get connected and install programs</a>
 <div id="week0" class="collapse">
 
 
-* Fill out this Google Form to help me find optional Office Hours https://goo.gl/forms/v7DpH8wFFCUsQYt32 
 * Install R and R Studio: https://norcalbiostat.netlify.com/post/software-overview/
 * Use the link in Blackboard to join our Data Camp classroom.
-* Learn about the R Studio IDE by completing the Data Camp assignment: `Working with the R Studio IDE (Part 1)` (Due 9/4)
+* Learn about the R Studio IDE by completing the Data Camp assignment: `Working with the R Studio IDE (Part 1)` 
 
 </div>
 
@@ -46,7 +46,7 @@ _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
 * Day 2: Reproducible Research using R Studio [[02_rstudio]](02_rstudio.html)
 * Assignments: 
     - Finish the `Introduction to R` entire course on Data Camp.
-    - [[Lab 1]](lab1.Rmd) This is directly based on Data Camp - Introduction to R. 
+    - [[HW 1]](hw1.Rmd) This is directly based on Data Camp - Introduction to R. 
     - You will submit the **.RMD file** for this assignment to Blackboard learn by the due date. 
     
   
@@ -59,8 +59,7 @@ _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
 
 * Getting data into R and exploring [[03_import]](03_import.html) 
 * Using functions to summarize and manage data [[04_functions_recode]](04_functions_recode.html)
-* In class: [[12:30 notes]](notes/day2notes_sec02.html), [[2pm notes]](notes/day2notes_sec01.html)
-* Assignment: [[Lab 2]](lab2.Rmd). 
+* Assignment: [[HW 2]](hw2.Rmd). 
 
 </div>
 
@@ -69,8 +68,7 @@ _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
 <div id="week3" class="collapse">
 * Wrangling factors. [[05_factors]](05_factors.html) 
 * More data management and creating grouped summaries using `dplyr`. [[06_dplyr]](06_dplyr.html) 
-* In class [[12:30 notes]](notes/week3notes_sec02.html), [[2pm notes]](notes/week3notes_sec01.html)
-* Assignment: [[Lab 3]](lab3.Rmd) 
+* Assignment: [[HW 3]](hw3.Rmd) 
 
 </div>
 
@@ -79,8 +77,7 @@ _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
 <div id="week4" class="collapse">
 * Statistical Data Visualization [[07_graphs]](07_graphs.html)
 * Graphics galore - [[the full data viz tutorial]](full_data_viz_tutorial.html) (optional)
-* In class [[notes]]()
-* Assignment: [[Lab 4]](lab4.Rmd)  
+* Assignment: [[HW 4]](hw4.Rmd)  
 </div>
 
 ### <a href="#week5" data-toggle="collapse">Week 5: Putting it all together: Exploratory Project</a>
@@ -89,7 +86,7 @@ _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
 
 * Now it's time to put your new 1337 skillz to the test!
 * [Instructions](EDA_instructions_withPR.html) on the assignment and how to do the peer review. 
-* Previous class projects can be seen  [[here]](https://norcalbiostat.github.io/peer_review/math130_eda.html). 
+* Previous class projects can be seen [[here]](https://norcalbiostat.github.io/peer_review/math130_eda.html). 
 
 </span>
     

@@ -4,7 +4,7 @@ output:
   html_document: default
 ---
 
-# Math 130: Introduction to R - Fall 18 
+# Math 130: Introduction to R - Spring 19
 
 [[Download this syllabus as a PDF]](syllabus.pdf)
 
@@ -14,36 +14,30 @@ This course is designed as a primer to get the complete novice up and running wi
 
 # Logistics
 
-* **Instructor**: Robin Donatello
-* **Office Location**: Holt 202
-* **Office Phone**: 898-5767
-* **Office Hours**: Holt 202: M-3pm, W-1pm, R-10am 
-* **E-mail**: rdonatello@csuchico.edu
 * **Course Website:** https://norcalbiostat.github.io/MATH130/ 
 * **Prerequisites:** Basic computer literacy  
-* **Workshop style:** This workshop style class runs from 8/27 - 9/28 only.
+* **Workshop style:** This workshop style class runs for 5 weeks only. See expectations for time commitment during these 5 weeks below. 
 
 
-|                        |        Section 01       |       Section 02       |
-|:-----------------------|:-----------------------:|:----------------------:|
-| **Meeting Days/Times** | TR 2-3:15               | TR 12:30-1:45          |
-| **Meeting Location**   | Holt 155                | Holt 155               |
-<!---
-| **Instructor**         | Robin Donatello         | Edward Roualdes        |
-| **Office Location**    | Holt 202                | Holt 204               |
-| **Office Phone**       | 898-5767                | 898-5807               |
-| **E-mail**             | rdonatello@csuchico.edu | eroualdes@csuchico.edu |
---->
+|                        |        Section 01       |       Section 02        |
+|:-----------------------|:-----------------------:|:-----------------------:|
+| **Meeting Days**       | 1/22/19 - 2/22/19       | 2/25/19 - 4/15/19       |
+| **Meeting Times**      | TR 9:30-10:45           | TR 9:30-10:45           |
+| **Meeting Location**   | Holt 155                | Holt 155                |
+| **Instructor**         | Edward Roualdes         | Robin Donatello         |
+| **Office Location**    | Holt 204                | Holt 202                |
+| **Office Phone**       | 898-5807                | 898-5767                |
+| **E-mail**             | eroualdes@csuchico.edu  | rdonatello@csuchico.edu |
 
 
 # Learning Outcomes
 By the end of the course, students will be able to
 
-* Import external data into R.
+* Import data into R from external files such as text files and spreadsheets. 
 * Calculate summary statistics.
 * Create new variables using different data types. 
-* Create informative data visualizations and tables.
 * Perform data management techniques such as subsetting, grouping, summarizing. 
+* Create informative data visualizations and tables.
 * Create a reproducible research document.
 * Conduct an exploratory data analysis in a reproducible manner.
 
@@ -51,14 +45,13 @@ By the end of the course, students will be able to
 
 * A reliable laptop, chromebook, tablet that can use a browser to access the internet.
 * Reliable internet connection while on and off campus.
-* A Data Camp account. This is an free online tool to learn R.
+* A Data Camp account. This is an free online tool to learn R. www.datacamp.com 
 
 #### Software
-During the last week (or earlier) you will install R and R Studio on your personal computer (Mac/PC/*nix only). That way you can take what you've learned in this class and apply it to other classes. Both are free. Walk through installation instructions can be found here: https://norcalbiostat.netlify.com/post/software-overview/ 
+During this class you will install R and R Studio on your personal computer (Mac/PC/*nix only). That way you can take what you've learned in this class and apply it to other classes. Both are free. Walk through installation instructions can be found here: https://norcalbiostat.netlify.com/post/software-overview/ 
 
 * R version 3.5.0 or later. Download from https://cran.r-project.org/ 
 * R Studio version 1.1 or later. Download the desktop version from https://www.rstudio.com/products/rstudio/download/#download
-
 
 
 
@@ -73,9 +66,9 @@ You will get out of this class what you put into it. Recall this is just a co-cu
 ## Resources
 
 * Data Science Initiative - https://datascience.csuchico.edu 
-    - Holds Community coding - drop in hours held in the library. Fall 18 hours TBD
+    - Holds Community coding - drop in hours held in the library. Spring 18 hours TBD
     - Weekly seminars and workshops in a variety of languages and topics. 
-* [Chico R Users Google Group](https://groups.google.com/forum/#!forum/chico-rug). This is our discussion forum to ask (and answer) questions outside of class. **I do not answer coding questions over email.**
+* [Chico R Users Google Group](https://groups.google.com/forum/#!forum/chico-rug). This is our discussion forum to ask (and answer) questions outside of class. *I do not answer coding questions over email.**
     - https://groups.google.com/forum/#!forum/chico-rug
 * The [R Users Meetup group](https://www.meetup.com/Chico-R-Users-Group/) useful if you want to stay connected to the community and learn about upcoming events. 
     - https://www.meetup.com/Chico-R-Users-Group/
@@ -86,13 +79,13 @@ Credit / No Credit. There are 100 points available in this course. You must earn
 * Attendance: (10 pts)
 * Data Camp: (10 pts)
 * Assignments:
-    - Lab 1 (10 pts)
-    - Lab 2 (10 pts)
-    - Lab 3 (15 pts)
-    - Lab 4 (15 pts)
+    - HW 1 (10 pts)
+    - HW 2 (15 pts)
+    - HW 3 (15 pts)
+    - HW 4 (15 pts)
 * Project: 
     - Exploratory Data Analysis (20 pts)
-    - Peer Review (10 pts)
+    - Peer Review (5 pts)
 
 
 # Schedule of Topics
@@ -113,7 +106,7 @@ The general outline of topics is listed below. A detailed most up to date schedu
 # Policies
 
 ## Adding and Dropping the course
-This course only runs for a few weeks and all materials are available on the course website. It will be difficult to get caught up if you add the class after the first week. The last day to add or drop classes without special permission by the instructor is 9/7/18. No adds or drops are allowed after 9/21/18 without a serious and compelling reason approved by the instructor, department chair, and college dean.
+This course only runs for a few weeks and all materials are available on the course website. It will be difficult to get caught up if you add the class after the first week. The last day to add or drop classes without special permission by the instructor is 2/1/19. No adds or drops are allowed after 2/15/19 without a serious and compelling reason approved by the instructor, department chair, and college dean.
 
 
 ## Americans with Disabilities Act
@@ -123,6 +116,7 @@ Accessibility Resource Center
 530-898-5959   
 Student Services Center 170  
 arcdept@csuchico.edu  
+
 
 ## Chico State Basic Needs Project
 
