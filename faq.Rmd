@@ -4,6 +4,19 @@ date: "Last Updated `r Sys.time()`"
 output: html_document
 ---
 
+ 
+# Common Error Messages
+Taken from: http://blog.revolutionanalytics.com/2015/03/the-most-common-r-error-messages.html
+
+* `could not find function` errors, usually caused by typos or not loading a required package
+* `Error in if` errors, caused by non-logical data or missing values passed to R's `if` conditional statement
+* `Error in eval` errors, caused by references to objects that don't exist
+* `cannot open` errors, caused by attempts to read a file that doesn't exist or can't be accessed
+* `no applicable method` errors, caused by using an object-oriented function on a data type it doesn't support
+* `subscript out of bounds` errors, caused by trying to access an element or dimension that doesn't exist
+* package errors caused by being unable to install, compile or load a package.
+    
+    
 # Where can I get help using R outside of class time? 
 
 ### Online
@@ -18,21 +31,22 @@ output: html_document
 
 ### In Person: 
 
-* **Community Coding Sessions** - TR 2-4pm, MLIB 442
+* **Community Coding Sessions** - F19 TBD
 
 > _Come code with us! Bring your Data Science and coding questions, data, and projects. We aim to provide a helpful and friendly working environment where you can work, ask questions or discuss ideas related to R, Python, Data Science, or more generally data visualization and analysis._
 
 * **Robin Donatello** - Stat professor. Holt 202. rdonatello@csuchico.edu 
-    - Office Hours M-3pm, W-1pm, R-10am
+    - Office Hours TBD
     - Most community coding sessions. 
 * **Edward Roualdes** - Stat professor. Holt 204. eroualdes@csuchico.edu
     - OH TBD
     - Most community coding sessions. 
-* **Victoria Coia** - peer mentor. vcoia@mail.csuchico.edu
-* **Eduardo Gomez** - peer mentor. egomez42@mail.csuchico.edu
-* **Ricardo Aguilar** - peer mentor. raguilar11@mail.csuchico.edu
-* **Mariby Cruz** - peer mentor.  mcruz27@mail.csuchico.edu
-    - available for personal tutoring, including weekends
+* **Peer Mentors** (possibly paid tutoring, some you can catch in the Math tutoring lab)
+    - Victoria Coia vcoia@mail.csuchico.edu
+    - Eduardo Gomez egomez42@mail.csuchico.edu
+    - Jerry Tucay jtucay@mail.csuchico.edu
+    - Ricardo Aguilar raguilar11@mail.csuchico.edu
+    - Mariby Cruz mcruz27@mail.csuchico.edu (available for personal tutoring, including weekends)
 
 
 # What other computers on campus have R? 
@@ -41,16 +55,5 @@ output: html_document
 * Butte 207 & 211 are open computer labs.
 
     
-    
-# Common Error Messages
-Taken from: http://blog.revolutionanalytics.com/2015/03/the-most-common-r-error-messages.html
-
-* `could not find function` errors, usually caused by typos or not loading a required package
-* `Error in if` errors, caused by non-logical data or missing values passed to R's `if` conditional statement
-* `Error in eval` errors, caused by references to objects that don't exist
-* `cannot open` errors, caused by attempts to read a file that doesn't exist or can't be accessed
-* `no applicable method` errors, caused by using an object-oriented function on a data type it doesn't support
-* `subscript out of bounds` errors, caused by trying to access an element or dimension that doesn't exist
-* package errors caused by being unable to install, compile or load a package.
-    
+   
     

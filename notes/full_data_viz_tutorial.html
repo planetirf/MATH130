@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="Robin Donatello" />
+
+
+<title>Full Data Visualization tutorial</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="custom.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 45px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+
+.section h2 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h3 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h4 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h5 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+.section h6 {
+  padding-top: 50px;
+  margin-top: -50px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">MATH 130 (R)</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="mats.html">
+    <span class="fa fa-book"></span>
+     
+    Course Materials
+  </a>
+</li>
+<li>
+  <a href="syllabus.html">
+    <span class="fa fa-info-circle"></span>
+     
+    Syllabus
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="faq.html">
+    <span class="fa fa-question"></span>
+     
+    Help/FAQ
+  </a>
+</li>
+<li>
+  <a href="http://www.norcalbiostat.com/">
+    <span class="fa fa-paw"></span>
+     
+    Dr. D's Website
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Full Data Visualization tutorial</h1>
+<h4 class="author"><em>Robin Donatello</em></h4>
+<h4 class="date"><em>Last Updated 12-26-2018</em></h4>
+
+</div>
+
+
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>Visualizing your data is hands down the most important thing you can learn to do. There are links to additional resources at the end of this document for additional learning.</p>
+<p>There are two audiences in mind when creating data visualizations:</p>
+<ol style="list-style-type: decimal">
+<li>For your eyes only (FYEO). These are quick and dirty plots, without annotation. Meant to be looked at once or twice.</li>
+<li>To share with others. These need to completely stand on their own. Axes labels, titles, colors as needed, possibly captions.</li>
+</ol>
+<p>You will see, and slowly learn, how to add these annotations and how to clean up your graphics to make them sharable. <code>ggplot2</code> already does a lot of this work for you.</p>
+<p>We will also use the two most common methods used to create plots. 1) Base graphics, 2) the <code>ggplot2</code> package. Each have their own advantages and disadvantages. If you have not done so already, go ahead and install the <code>ggplot2</code> package now.</p>
+<p>For <strong>almost</strong> every plot discussed we will create two types of plots</p>
+<ol style="list-style-type: decimal">
+<li>FYEO - using base graphics. (Base == Comes with R) Very powerful, but can be technical.</li>
+<li>FYEO - using <code>ggplot2</code>. Each have their own advantages and disadvantages.</li>
+</ol>
+<p>As time permits I will update each section with a third type of plot -</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Sharable - Contains all bells and whistles needed to make it presentable to others.</li>
+</ol>
+<p>Your task, should you choose to accept, is to follow along through this tutorial and at each step try to reproduce the plot shown. You can accomplish this by simply copying and pasting the syntax into a new R code (or R Markdown) document.</p>
+<div id="the-syntax-of-ggplot" class="section level2">
+<h2>The syntax of <code>ggplot</code></h2>
+<p>The reason we use the functions in <code>ggplot2</code> is for consistency in the structure of it’s arguments. Here is a bare bones generic plotting function:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(data, <span class="kw">aes</span>(<span class="dt">x=</span>x, <span class="dt">y=</span>y, <span class="dt">col=</span>col, <span class="dt">fill=</span>fill, <span class="dt">group=</span>group)) <span class="op">+</span><span class="st">  </span><span class="kw">geom_THING</span>() </code></pre></div>
+<div id="required-arguments" class="section level3">
+<h3>Required arguments</h3>
+<ul>
+<li><code>data</code>: What data set is this plot using? This is ALWAYS the first argument.</li>
+<li><code>aes()</code>: This is the <em>aestetics</em> of the plot. What’s variable is on the x, what is on the y? Do you want to color by another variable, perhaps fill some box by the value of another variable, or group by a variable.</li>
+<li><code>geom_THING()</code>: Every plot has to have a geometry. What is the shape of the thing you want to plot? Do you want to plot points - use <code>geom_points()</code>. Want to connect those points with a line? Use <code>geom_lines()</code>. We will see many varieties in this lab.</li>
+</ul>
+</div>
+<div id="optional-but-helpful-arguments" class="section level3">
+<h3>Optional but helpful arguments</h3>
+<ul>
+<li><code>ggtitle</code>: This is the overall plot title</li>
+<li><code>xlab()</code> and <code>ylab()</code> axis titles.</li>
+<li>scale_xy_blah to extend limits</li>
+<li>scale_fill_blah to specifying a fixed color, and change auto legend title</li>
+<li>themes</li>
+</ul>
+<p>For a <strong>full</strong> , and comprehensive tutorial and reference guide on how to do nearly anything in ggplot – this is by far my favorite reference <a href="http://www.cookbook-r.com/Graphs/" class="uri">http://www.cookbook-r.com/Graphs/</a> I reference things in there (like how to remove or change the title of a legend) constantly.</p>
+</div>
+</div>
+<div id="the-data" class="section level2">
+<h2>The Data</h2>
+<p>We will use a subset of the <code>diamonds</code> dataset that comes with the <code>ggplot2</code> package. This dataset contains the prices and other attributes of almost 54,000 diamonds. Review <code>?diamonds</code> to learn about the variables we will be using.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">&quot;diamonds&quot;</span>)
+<span class="kw">set.seed</span>(<span class="dv">1410</span>) <span class="co"># Make the sample reproducible</span>
+dsmall &lt;-<span class="st"> </span>diamonds[<span class="kw">sample</span>(<span class="kw">nrow</span>(diamonds), <span class="dv">1000</span>), ]</code></pre></div>
+</div>
+</div>
+<div id="univariate-single-variable" class="section level1">
+<h1>Univariate (Single Variable)</h1>
+<div id="categorical-variables" class="section level2">
+<h2>Categorical variables</h2>
+<p>Both Nominal and Ordinal data types can be visualized using the same methods: tables, barcharts and pie charts.</p>
+<div id="tables" class="section level3">
+<h3>Tables</h3>
+<p>Tables are the most common way to get summary statistics of a categorical variable. The <code>table()</code> function produces a frequency table, where each entry represents the number of records in the data set holding the corresponding labeled value.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(dsmall<span class="op">$</span>cut)</code></pre></div>
+<pre><code>## 
+##      Fair      Good Very Good   Premium     Ideal 
+##        27        83       226       277       387</code></pre>
+<p>There are 27 Fair quality diamonds, 83 good quality and 387 Ideal quality diamonds in this sample.</p>
+</div>
+<div id="barcharts-barplots" class="section level3">
+<h3>Barcharts / Barplots</h3>
+<p>A Barchart or barplot takes these frequencies, and draws bars along the X-axis where the height of the bars is determined by the frequencies seen in the table.</p>
+<div id="base" class="section level4">
+<h4>base</h4>
+<p>To create a barplot/barchart in base graphics requires the data to be in summarized in a table form first. Then the result of the table is plotted. The first argument is the table to be plotted, the <code>main</code> argument controls the title.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dc &lt;-<span class="st"> </span><span class="kw">table</span>(dsmall<span class="op">$</span>cut)
+<span class="kw">barplot</span>(dc, <span class="dt">main=</span><span class="st">&quot;Barchart using base graphics&quot;</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="ggplot" class="section level4">
+<h4>ggplot</h4>
+<p>The geometry needed to draw a barchart in ggplot is <code>geom_bar()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>cut)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>()</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="pretty" class="section level4">
+<h4>pretty</h4>
+<p>The biggest addition to a barchart is the numbers on top of the bars. This isn’t mandatory, but it does make it nice.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>cut)) <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">y =</span> ..count..)) <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;Frequnency of diamonds by cut type&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">y=</span>..count.. <span class="op">+</span><span class="st"> </span><span class="dv">10</span>, <span class="dt">label=</span>..count..), <span class="dt">stat=</span><span class="st">&#39;count&#39;</span>, <span class="dt">size =</span> <span class="dv">5</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+<div id="plotting-proportions" class="section level4">
+<h4>Plotting Proportions</h4>
+<p>Often you don’t want to compare counts but percents. To accomplish this, we have to aggregate the data to calculate the proportions first, then plot the aggregated data using <code>geom_col</code> to create the columns.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cut.props &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">prop.table</span>(<span class="kw">table</span>(dsmall<span class="op">$</span>cut)))
+cut.props <span class="co"># what does this data look like? </span></code></pre></div>
+<pre><code>##        Var1  Freq
+## 1      Fair 0.027
+## 2      Good 0.083
+## 3 Very Good 0.226
+## 4   Premium 0.277
+## 5     Ideal 0.387</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(cut.props, <span class="kw">aes</span>(<span class="dt">x=</span>Var1, <span class="dt">y=</span>Freq)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_col</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Proportion&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">xlab</span>(<span class="st">&quot;Cut type&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Proportion of diamonds by cut type&quot;</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+</div>
+<div id="cleveland-dot-plots" class="section level3">
+<h3>Cleveland Dot Plots</h3>
+<p>Another way to visualize categorical data that takes up less ink than bars is a Cleveland dot plot. Here again we are plotting summary data instead of the raw data. This uses a new <code>geom_segment</code> that draws the lines from x=0 to the dot, and that it should be placed on the y-axis at the value of <code>Freq</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(cut.props, <span class="kw">aes</span>(<span class="dt">x=</span>Freq, <span class="dt">y=</span>Freq)) <span class="op">+</span><span class="st">  </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">3</span>) <span class="op">+</span><span class="st"> </span><span class="kw">xlab</span>(<span class="st">&quot;Proportion of diamonds&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Cut Type&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_segment</span>(<span class="kw">aes</span>(<span class="dt">yend=</span>Freq), <span class="dt">xend=</span><span class="dv">0</span>, <span class="dt">color=</span><span class="st">&#39;grey50&#39;</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+<div id="pie-chart" class="section level3">
+<h3>Pie Chart</h3>
+<p>Just like <code>barplot()</code>, <code>pie()</code> takes a table object as it’s argument.</p>
+<div id="base-1" class="section level4">
+<h4>base</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dc &lt;-<span class="st"> </span><span class="kw">table</span>(dsmall<span class="op">$</span>cut)
+<span class="kw">pie</span>(dc)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>Pie charts are my <em>least</em> favorite plotting type. Human eyeballs can’t distinguish between angles as well as we can with heights. A mandatory piece needed to make the wedges readable is to add the percentages of each wedge.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pie</span>(dc, <span class="dt">labels =</span> <span class="kw">paste0</span>(<span class="kw">names</span>(dc), <span class="st">&#39; (&#39;</span>, <span class="kw">prop.table</span>(dc)<span class="op">*</span><span class="dv">100</span>, <span class="st">&quot;%)&quot;</span>))</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+</div>
+<div id="ggplot-1" class="section level4">
+<h4>ggplot</h4>
+<p>And here I thought pie charts couldn’t get worse… i’m not a fan at all of the ggplot version. So i’m not even going to show it. Here’s a link to another great tutorial that does show you how to make one.</p>
+<p><a href="http://www.sthda.com/english/wiki/ggplot2-pie-chart-quick-start-guide-r-software-and-data-visualization" class="uri">http://www.sthda.com/english/wiki/ggplot2-pie-chart-quick-start-guide-r-software-and-data-visualization</a></p>
+</div>
+</div>
+<div id="waffle-chart" class="section level3">
+<h3>Waffle Chart</h3>
+<p>This type of chart is not natively found in the <code>ggplot2</code> package, but it’s own <code>waffle</code> package. These are great for infographics.</p>
+<p>Reference: <a href="https://www.r-bloggers.com/making-waffle-charts-in-r-with-the-new-waffle-package/" class="uri">https://www.r-bloggers.com/making-waffle-charts-in-r-with-the-new-waffle-package/</a></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(waffle)
+
+<span class="kw">waffle</span>(dc<span class="op">/</span><span class="dv">10</span>, <span class="dt">rows=</span><span class="dv">5</span>, <span class="dt">size=</span><span class="fl">0.5</span>, 
+       <span class="dt">title=</span><span class="st">&quot;Cut quality of diamond&quot;</span>, 
+       <span class="dt">xlab=</span><span class="st">&quot;1 square == 10 diamonds&quot;</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+</div>
+</div>
+<div id="continuous-variable" class="section level2">
+<h2>Continuous variable</h2>
+<p>Here we can look at the price, carat, and depth of the diamonds.</p>
+<div id="dotplot" class="section level3">
+<h3>Dotplot</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(dsmall<span class="op">$</span>depth)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>The base function <code>plot()</code> creates a <strong>dotplot</strong> for a continuous variable. The value of the variable is plotted on the y axis, and the index, or row number, is plotted on the x axis. This gives you a nice, quick way to see the values of the data.</p>
+<p>Often you are not interested in the individual values of each data point, but the <em>distribution</em> of the data. In other words, where is the majority of the data? Does it look symmetric around some central point? Around what values do the bulk of the data lie?</p>
+</div>
+<div id="histograms" class="section level3">
+<h3>Histograms</h3>
+<p>Rather than showing the value of each observation, we prefer to think of the value as belonging to a . <strong>The height of the bars in a histogram display the frequency of values that fall into those of those bins.</strong> For example if we cut the poverty rates into 7 bins of equal width, the frequency table would look like this:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(<span class="kw">cut</span>(dsmall<span class="op">$</span>depth, <span class="dv">7</span>))</code></pre></div>
+<pre><code>## 
+## (54.7,56.9]   (56.9,59]   (59,61.2] (61.2,63.3] (63.3,65.5] (65.5,67.6] 
+##           3          35         222         654          72          10 
+## (67.6,69.8] 
+##           4</code></pre>
+<p>In a histogram, the binned counts are plotted as bars into a histogram. Note that the x-axis is continuous, so the bars touch. This is unlike the barchart that has a categorical x-axis, and vertical bars that are separated.</p>
+<div id="base-2" class="section level4">
+<h4>base</h4>
+<p>You can make a histogram in base graphics super easy.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(dsmall<span class="op">$</span>depth)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p>And it doesn’t take too much to clean it up. Here you can specify the number of bins by specifying how many <code>breaks</code> should be made in the data (the number of breaks controls the number of bins, and bin width) and use <code>col</code> for the fill color.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(dsmall<span class="op">$</span>depth, <span class="dt">xlab=</span><span class="st">&quot;depth&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Histogram of diamond depth&quot;</span>, <span class="dt">col=</span><span class="st">&quot;cyan&quot;</span>, <span class="dt">breaks=</span><span class="dv">20</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+</div>
+<div id="ggplot-2" class="section level4">
+<h4>ggplot</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>depth)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="fl">2.2</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p>The binwidth here is set by looking at the cut points above that were used to create 7 bins. Notice that darkgrey is the default fill color, but makes it hard to differentiate between the bars. So we’ll make the outline black using <code>colour</code>, and <code>fill</code> the bars with white.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>depth)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">colour=</span><span class="st">&quot;black&quot;</span>, <span class="dt">fill=</span><span class="st">&quot;white&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Distribution of diamond depth&quot;</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p>Note I did <strong>not</strong> specify the <code>binwidth</code> argument here. The size of the bins can hide features from your graph, the default value for ggplot2 is range/30 and usually is a good choice.</p>
+</div>
+</div>
+<div id="density-plots" class="section level3">
+<h3>Density plots</h3>
+<p>To get a better idea of the true shape of the distribution we can “smooth” out the bins and create what’s called a <code>density</code> plot or curve. Notice that the shape of this distribution curve is much more… “wigglier” than the histogram may have implied.</p>
+<div id="graphics" class="section level4">
+<h4>graphics</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">density</span>(dsmall<span class="op">$</span>depth))</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p>Awesome title huh? (NOT)</p>
+</div>
+<div id="ggplot2" class="section level4">
+<h4>ggplot2</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>depth)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_density</span>()</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+</div>
+</div>
+<div id="histograms-density" class="section level3">
+<h3>Histograms + density</h3>
+<p>Often is is more helpful to have the density (or kernel density) plot <em>on top of</em> a histogram plot.</p>
+<div id="base-3" class="section level4">
+<h4>Base</h4>
+<p>Since the height of the bars in a histogram default to showing the frequency of records in the data set within that bin, we need to 1) scale the height so that it’s a <em>relative frequency</em>, and then use the <code>lines()</code> function to add a <code>density()</code> line on top.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(dsmall<span class="op">$</span>depth, <span class="dt">prob=</span><span class="ot">TRUE</span>)
+<span class="kw">lines</span>(<span class="kw">density</span>(dsmall<span class="op">$</span>depth), <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+</div>
+<div id="ggplot-3" class="section level4">
+<h4>ggplot</h4>
+<p>The syntax starts the same, we’ll add a new geom, <code>geom_density</code> and color the line blue. Then we add the histogram geom using <code>geom_histogram</code> but must specify that the y axis should be on the density, not frequency, scale. Note that this has to go inside the aesthetic statement <code>aes()</code>. I’m also going to get rid of the fill by using <code>NA</code> so it doesn’t plot over the density line.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>depth)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_density</span>(<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">y=</span>..density..), <span class="dt">colour=</span><span class="st">&quot;black&quot;</span>, <span class="dt">fill=</span><span class="ot">NA</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+</div>
+</div>
+<div id="boxplots" class="section level3">
+<h3>Boxplots</h3>
+<p>Another very common way to visualize the distribution of a continuous variable is using a boxplot. Boxplots are useful for quickly identifying where the bulk of your data lie. R specifically draws a “modified” boxplot where values that are considered outliers are plotted as dots.</p>
+<div id="base-4" class="section level4">
+<h4>base</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(dsmall<span class="op">$</span>depth)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<p>Notice that the only axis labeled is the y=axis. Like a dotplot the x axis, or “width”, of the boxplot is meaningless here. We can make the axis more readable by flipping the plot on it’s side.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(dsmall<span class="op">$</span>depth, <span class="dt">horizontal =</span> <span class="ot">TRUE</span>, <span class="dt">main=</span><span class="st">&quot;Distribution of diamond prices&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Dollars&quot;</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p>Horizontal is a bit easier to read in my opinion.</p>
+</div>
+<div id="ggplot-4" class="section level4">
+<h4>ggplot</h4>
+<p>What about ggplot? ggplot doesn’t really like to do univariate boxplots. We can get around that by specifying that we want the box placed at a specific x value.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span><span class="dv">1</span>, <span class="dt">y=</span>depth)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>()</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p>To flip it horizontal you may think to simply swap x and y? Good thinking. Of course it wouldn’t be that easy. So let’s just flip the whole darned plot on it’s coordinate axis.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span><span class="dv">1</span>, <span class="dt">y=</span>depth)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>() <span class="op">+</span><span class="st"> </span><span class="kw">coord_flip</span>()</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+</div>
+</div>
+<div id="violin-plots" class="section level3">
+<h3>Violin plots</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span><span class="dv">1</span>, <span class="dt">y=</span>depth)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_violin</span>()</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+</div>
+<div id="boxplot-violin-plots" class="section level3">
+<h3>Boxplot + Violin plots</h3>
+<p>Overlaying a boxplot and a violin plot serves a similar purpose to Histograms + Density plots.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span><span class="dv">1</span>, <span class="dt">y=</span>depth)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_violin</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>()</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p>Better appearance - different levels of transparency of the box and violin.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span><span class="dv">1</span>, <span class="dt">y=</span>depth)) <span class="op">+</span><span class="st"> </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">              </span><span class="kw">geom_violin</span>(<span class="dt">fill=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">alpha=</span>.<span class="dv">1</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">              </span><span class="kw">geom_boxplot</span>(<span class="dt">fill=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">alpha=</span>.<span class="dv">5</span>, <span class="dt">width=</span>.<span class="dv">2</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">              </span><span class="kw">theme</span>(<span class="dt">axis.title.x=</span><span class="kw">element_blank</span>(),
+              <span class="dt">axis.text.x=</span><span class="kw">element_blank</span>(),
+              <span class="dt">axis.ticks.x=</span><span class="kw">element_blank</span>())</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+</div>
+</div>
+<div id="normal-qq-plots" class="section level2">
+<h2>Normal QQ plots</h2>
+<p>The last useful plot that we will do on a single continuous variable is to assess the <em>normality</em> of the distribution. Basically how close the data follows a normal distribution.</p>
+<div id="base-5" class="section level4">
+<h4>base</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qqnorm</span>(dsmall<span class="op">$</span>price)
+<span class="kw">qqline</span>(dsmall<span class="op">$</span>price, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<p>The line I make red because it is a reference line. The closer the points are to following this line, the more “normal” the shape of the distribution is. Price has some pretty strong deviation away from that line. Below I have plotted what a normal distribution looks like as an example of a “perfect” fit.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">z &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1000</span>)
+<span class="kw">qqnorm</span>(z)
+<span class="kw">qqline</span>(z, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+</div>
+<div id="ggplot-5" class="section level4">
+<h4>ggplot</h4>
+<p>qq (or qnorm) plots specifically plot the data against a theoretical distribution. That means in the <code>aes()</code> aesthetic argument we don’t specify either x or y, but instead the <code>sample=</code> is the variable we want to plot.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">sample=</span>price)) <span class="op">+</span><span class="st"> </span><span class="kw">stat_qq</span>()</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<p>Additional references on making qqplots in ggplot: <a href="http://www.sthda.com/english/wiki/ggplot2-qq-plot-quantile-quantile-graph-quick-start-guide-r-software-and-data-visualization" class="uri">http://www.sthda.com/english/wiki/ggplot2-qq-plot-quantile-quantile-graph-quick-start-guide-r-software-and-data-visualization</a></p>
+</div>
+</div>
+</div>
+<div id="bivariate-two-variables" class="section level1">
+<h1>Bivariate (Two Variables)</h1>
+<div id="categorical-v.-categorical" class="section level2">
+<h2>Categorical v. Categorical</h2>
+<div id="two-way-tables" class="section level3">
+<h3>Two-way Tables</h3>
+<p>Cross-tabs, cross-tabulations and two-way tables (all the same thing, different names) can be created by using the <code>table()</code> function.</p>
+<div id="frequency-table" class="section level4">
+<h4>Frequency table</h4>
+<p>The frequency table is constructed using the <code>table()</code> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(dsmall<span class="op">$</span>cut, dsmall<span class="op">$</span>color)</code></pre></div>
+<pre><code>##            
+##              D  E  F  G  H  I  J
+##   Fair       4  5  4  3 10  1  0
+##   Good      13  6 19 16 10 13  6
+##   Very Good 30 60 37 50 26 18  5
+##   Premium   39 42 40 55 46 40 15
+##   Ideal     63 69 52 77 65 40 21</code></pre>
+<p>There are 4 Fair diamonds with color D, and 21 Ideal quality diamonds with color J.</p>
+</div>
+<div id="cell-proportions" class="section level4">
+<h4>Cell proportions</h4>
+<p>Wrapping <code>prop.table()</code> around a table gives you the <strong>cell</strong> proportions.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.table</span>(<span class="kw">table</span>(dsmall<span class="op">$</span>cut, dsmall<span class="op">$</span>color))</code></pre></div>
+<pre><code>##            
+##                 D     E     F     G     H     I     J
+##   Fair      0.004 0.005 0.004 0.003 0.010 0.001 0.000
+##   Good      0.013 0.006 0.019 0.016 0.010 0.013 0.006
+##   Very Good 0.030 0.060 0.037 0.050 0.026 0.018 0.005
+##   Premium   0.039 0.042 0.040 0.055 0.046 0.040 0.015
+##   Ideal     0.063 0.069 0.052 0.077 0.065 0.040 0.021</code></pre>
+<p>0.4% of all diamonds are D color and Fair cut, 2.1% are J color and Ideal cut.</p>
+</div>
+<div id="row-proportions" class="section level4">
+<h4>Row proportions</h4>
+<p>To get the <strong>row</strong> proportions, you specify <code>margin=1</code>. The percentages now add up to 1 across the rows.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">prop.table</span>(<span class="kw">table</span>(dsmall<span class="op">$</span>cut, dsmall<span class="op">$</span>color), <span class="dt">margin=</span><span class="dv">1</span>),<span class="dv">3</span>)</code></pre></div>
+<pre><code>##            
+##                 D     E     F     G     H     I     J
+##   Fair      0.148 0.185 0.148 0.111 0.370 0.037 0.000
+##   Good      0.157 0.072 0.229 0.193 0.120 0.157 0.072
+##   Very Good 0.133 0.265 0.164 0.221 0.115 0.080 0.022
+##   Premium   0.141 0.152 0.144 0.199 0.166 0.144 0.054
+##   Ideal     0.163 0.178 0.134 0.199 0.168 0.103 0.054</code></pre>
+<p>14.8% of all Fair quality diamonds are color D. 5.4% of all Ideal quality diamonds have color J.</p>
+</div>
+<div id="column-proportions" class="section level4">
+<h4>Column proportions</h4>
+<p>To get the <strong>column</strong> proportions, you specify <code>margin=2</code>. The percentages now add up to 1 down the columns.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">prop.table</span>(<span class="kw">table</span>(dsmall<span class="op">$</span>cut, dsmall<span class="op">$</span>color), <span class="dt">margin=</span><span class="dv">2</span>),<span class="dv">3</span>)</code></pre></div>
+<pre><code>##            
+##                 D     E     F     G     H     I     J
+##   Fair      0.027 0.027 0.026 0.015 0.064 0.009 0.000
+##   Good      0.087 0.033 0.125 0.080 0.064 0.116 0.128
+##   Very Good 0.201 0.330 0.243 0.249 0.166 0.161 0.106
+##   Premium   0.262 0.231 0.263 0.274 0.293 0.357 0.319
+##   Ideal     0.423 0.379 0.342 0.383 0.414 0.357 0.447</code></pre>
+<p>2.7% of all D color diamonds are of Fair quality. 44.7% of all J color diamonds are of Ideal quality.</p>
+</div>
+</div>
+<div id="grouped-bar-charts" class="section level3">
+<h3>Grouped bar charts</h3>
+<p>To compare proportions of one categorical variable within the same level of another, is to use grouped barcharts.</p>
+<div id="base-6" class="section level4">
+<h4>base</h4>
+<p>As before, the object to be plotted needs to be the result of a table.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cc &lt;-<span class="st"> </span><span class="kw">table</span>(dsmall<span class="op">$</span>cut, dsmall<span class="op">$</span>color)
+<span class="kw">barplot</span>(cc)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+<p>Stacked bars can be difficult to interpret, and very difficult to compare values between groups. A side by side barchart is preferable. The <code>beside=TRUE</code> is what controls the placement of the bars.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(cc, <span class="dt">main=</span><span class="st">&quot;quick side by side barchart using base graphics&quot;</span>, <span class="dt">beside=</span><span class="ot">TRUE</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+<p>Great, but what do the colors represent? We need to add a legend. And i’m going to customize the colors.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(cc, <span class="dt">main=</span><span class="st">&quot;quick side by side barchart using base graphics&quot;</span>, <span class="dt">beside=</span><span class="ot">TRUE</span>, 
+        <span class="dt">col=</span><span class="kw">rainbow</span>(<span class="dv">5</span>), <span class="dt">legend=</span><span class="kw">rownames</span>(cc))</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+<p>For more than 2 colors I do not recommend choosing the colors yourself. I know little about color theory so I use the built-in color palettes. Here is a <a href="https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf">great cheatsheet</a> about using color palettes.</p>
+</div>
+<div id="ggplot-6" class="section level4">
+<h4>ggplot</h4>
+<p>Again plot the cut on the x axis, but then <code>fill</code> using the second categorical variable. This has the effect of visualizing the <strong>row</strong> percents from the table above. The percent of color, within each type of cut.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>cut, <span class="dt">fill=</span>color)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>()</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+<p>Again the default is a stacked barchart. So we just specify <code>position=dodge</code> to put the bars side by side.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>cut, <span class="dt">fill=</span>color)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">&quot;dodge&quot;</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
+<p>And look, an automatic legend. What if I wanted to better compare cut within color group? This is the <strong>column</strong> percentages. Just switch which variable is the x axis and which one is used to fill the colors!</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>color, <span class="dt">fill=</span>cut)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">&quot;dodge&quot;</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
+<p>And this easy change is why we love <code>ggplot2</code>.</p>
+</div>
+</div>
+<div id="mosaic-plots" class="section level3">
+<h3>Mosaic plots</h3>
+<p>But what if you want to know how two categorical variables are related and you don’t want to look at two different barplots? Mosaic plots are a way to visualize the proportions in a table. So here’s the two-way table we’ll be plotting.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(dsmall<span class="op">$</span>cut, dsmall<span class="op">$</span>color)</code></pre></div>
+<pre><code>##            
+##              D  E  F  G  H  I  J
+##   Fair       4  5  4  3 10  1  0
+##   Good      13  6 19 16 10 13  6
+##   Very Good 30 60 37 50 26 18  5
+##   Premium   39 42 40 55 46 40 15
+##   Ideal     63 69 52 77 65 40 21</code></pre>
+<p>The syntax for a mosaic plot uses <em>model notation</em>, which is basically y ~ x where the ~ is read as “twiddle” or “tilde”. It’s to the left of your <strong>1</strong> key.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mosaicplot</span>(cut<span class="op">~</span>color, <span class="dt">data=</span>dsmall)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
+<p>Helpful, ish. Here are two very useful options. In reverse obviousness, <code>color</code> applies shades of gray to one of the factor levels, and <code>shade</code> applies a color gradient scale to the cells in order of what is less than expected (red) to what is more than expected (blue) if these two factors were completely independent.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)) <span class="co"># display the plots in 1 row and 2 columns</span>
+<span class="kw">mosaicplot</span>(cut<span class="op">~</span>color, <span class="dt">data=</span>dsmall, <span class="dt">color=</span><span class="ot">TRUE</span>)
+<span class="kw">mosaicplot</span>(cut<span class="op">~</span>color, <span class="dt">data=</span>dsmall, <span class="dt">shade=</span><span class="ot">TRUE</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-45-1.png" width="960" /></p>
+<p>For example, there are fewer ‘Very Good’ cut diamonds that are color ‘G’, and fewer ‘Premium’ cut diamonds that are color ‘H’. As you can see, knowing what your data means when trying to interpret what the plots are telling you is essential.</p>
+<p>That’s about all the ways you can plot categorical variables. If you are wondering why there was no 3D barcharts demonstrated see<br />
+<a href="http://faculty.atu.edu/mfinan/2043/section31.pdf">here</a>, <a href="http://www.bbc.co.uk/schools/gcsebitesize/maths/statistics/representingdata2rev5.shtml">here</a>, and <a href="https://en.wikipedia.org/wiki/Misleading_graph">here</a> for other ways you can really screw up your visualization.</p>
+</div>
+</div>
+<div id="continuous-v.-continuous" class="section level2">
+<h2>Continuous v. Continuous</h2>
+<div id="scatterplot" class="section level3">
+<h3>Scatterplot</h3>
+<p>The most common method of visualizing the relationship between two continuous variables is by using a scatterplot.</p>
+<div id="base-7" class="section level4">
+<h4>base</h4>
+<p>Back to the <code>plot()</code> command. Here we use model notation again, so it’s <span class="math inline">\(y~x\)</span>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(price<span class="op">~</span>carat, <span class="dt">data=</span>dsmall)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
+<p>Looks like for the most part as the carat value increases so does price. That makes sense.</p>
+</div>
+<div id="ggplot-7" class="section level4">
+<h4>ggplot</h4>
+<p>With ggplot we specify both the x and y variables, and add a point.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>carat, <span class="dt">y=</span>price)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
+</div>
+</div>
+</div>
+<div id="scatterplot-matrix" class="section level2">
+<h2>Scatterplot matrix</h2>
+<p>A scatterplot matrix allows you to look at the bivariate comparison of multiple pairs of variables simultaneously. First we need to trim down the data set to only include the variables we want to plot, then we use the <code>pairs()</code> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">c.vars &lt;-<span class="st"> </span>dsmall[,<span class="kw">c</span>(<span class="st">&#39;carat&#39;</span>, <span class="st">&#39;depth&#39;</span>, <span class="st">&#39;price&#39;</span>, <span class="st">&#39;x&#39;</span>, <span class="st">&#39;y&#39;</span>, <span class="st">&#39;z&#39;</span>)]
+<span class="kw">pairs</span>(c.vars)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-48-1.png" width="672" /> We can see price has a non-linear relationship with X, Y and Z and x &amp; y have a near perfect linear relationship.</p>
+<p><strong>Other Resources</strong> * <a href="http://www.statmethods.net/graphs/scatterplot.html" class="uri">http://www.statmethods.net/graphs/scatterplot.html</a> * <a href="https://www.r-bloggers.com/scatterplot-matrices/" class="uri">https://www.r-bloggers.com/scatterplot-matrices/</a></p>
+<div id="adding-lines-to-the-scatterplots" class="section level3">
+<h3>Adding lines to the scatterplots</h3>
+<p>Two most common trend lines added to a scatterplots are the “best fit” straight line and the “lowess” smoother line.</p>
+<div id="base-8" class="section level4">
+<h4>base</h4>
+<p>The best fit line (in blue) gets added by using the <code>abline()</code> function wrapped around the linear model function <code>lm()</code>. Note it uses the same model notation syntax and the <code>data=</code> statement as the <code>plot()</code> function does. The lowess line is added using the <code>lines()</code> function, but the <code>lowess()</code> function itself doesn’t allow for the <code>data=</code> statement so we have to use <code>$</code> sign notation.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(price<span class="op">~</span>carat, <span class="dt">data=</span>dsmall)
+<span class="kw">abline</span>(<span class="kw">lm</span>(price<span class="op">~</span>carat, <span class="dt">data=</span>dsmall), <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)
+<span class="kw">lines</span>(<span class="kw">lowess</span>(dsmall<span class="op">$</span>price<span class="op">~</span>dsmall<span class="op">$</span>carat), <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
+</div>
+<div id="ggplot-8" class="section level4">
+<h4>ggplot</h4>
+<p>With ggplot, we just add a <code>geom_smooth()</code> layer.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>carat, <span class="dt">y=</span>price)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>() </code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
+<p>Here the point-wise confidence interval for this lowess line is shown in grey. If you want to turn the confidence interval off, use <code>se=FALSE</code>. Also notice that the smoothing geom uses a different function or window than the <code>lowess</code> function used in base graphics.</p>
+<p>Here it is again using the <code>ggplot</code> plotting function and adding another <code>geom_smooth()</code> layer for the <code>lm</code> (linear model) line in blue, and the lowess line (by not specifying a method) in red.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>carat, <span class="dt">y=</span>price)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">se=</span><span class="ot">FALSE</span>, <span class="dt">method=</span><span class="st">&quot;lm&quot;</span>, <span class="dt">color=</span><span class="st">&quot;blue&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">se=</span><span class="ot">FALSE</span>, <span class="dt">color=</span><span class="st">&quot;red&quot;</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
+</div>
+</div>
+</div>
+<div id="line-plots" class="section level2">
+<h2>Line plots</h2>
+<p>Line plots connect each dot with a straight line.</p>
+<p>We saw earlier that <code>carat</code> and <code>price</code> seemed possibly linear. Let see how the average price changes with carat.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
+price.per.carat &lt;-<span class="st"> </span>dsmall <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(carat) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(price))</code></pre></div>
+<div id="base-9" class="section level3">
+<h3>base</h3>
+<p>For base graphics, type=‘b’ means both points and lines, ‘l’ gives you just lines and ‘p’ gives you only points. You can find more plotting character options under <code>?pch</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(mean<span class="op">~</span>carat, <span class="dt">data=</span>price.per.carat, <span class="dt">type=</span><span class="st">&#39;l&#39;</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
+</div>
+<div id="ggplot-9" class="section level3">
+<h3>ggplot</h3>
+<p>With ggplot we specify that we want a line geometry only.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(price.per.carat, <span class="kw">aes</span>(<span class="dt">x=</span>carat, <span class="dt">y=</span>mean)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>()</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
+<p>How does this relationship change with cut of the diamond? First lets get the average price per combination of carat and cut.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ppc2 &lt;-<span class="st"> </span>dsmall <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(cut, carat) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(price))</code></pre></div>
+<div id="base-10" class="section level4">
+<h4>base</h4>
+<p>This plot can be created in base graphics, but it takes an advanced knowledge of the graphics system to do so. So I do not show it here.</p>
+</div>
+<div id="ggplot-10" class="section level4">
+<h4>ggplot</h4>
+<p>This is where ggplot starts to excel in it’s ease of creating more complex plots. All we have to do is specify that we want the lines colored by the cut variable.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(ppc2, <span class="kw">aes</span>(<span class="dt">x=</span>carat, <span class="dt">y=</span>mean, <span class="dt">col=</span>cut)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>()</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
+<p>And we get one line per cut.</p>
+</div>
+</div>
+</div>
+<div id="continuous-v.-categorical" class="section level2">
+<h2>Continuous v. Categorical</h2>
+<p>Create an appropriate plot for a continuous variable, and plot it for each level of the categorical variable.</p>
+<div id="dotplotstrip-chart" class="section level3">
+<h3>Dotplot/strip chart</h3>
+<p>Dotplots can be very useful when plotting dots against several categories. They can also be called stripcharts.</p>
+<div id="base-11" class="section level4">
+<h4>base</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stripchart</span>(carat <span class="op">~</span><span class="st"> </span>cut, <span class="dt">data=</span>dsmall)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
+<p>Doesn’t look to pretty, but kinda gets the point across. Few fair quality diamonds in the data set, pretty spread out across the carat range except one high end outlier.</p>
+</div>
+<div id="ggplot-11" class="section level4">
+<h4>ggplot</h4>
+<p>We can reproduce the same thing by plotting one continuous variable against one categorical variable, and adding a layer of points. I’d argue that horizontal looks better due to the axis-labels.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">y=</span>carat, <span class="dt">x=</span>cut)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()
+b &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">y=</span>cut, <span class="dt">x=</span>carat)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()
+<span class="kw">grid.arrange</span>(a, b, <span class="dt">ncol=</span><span class="dv">2</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
+</div>
+</div>
+<div id="grouped-boxplots" class="section level3">
+<h3>Grouped boxplots</h3>
+<div id="base-12" class="section level4">
+<h4>base</h4>
+<p>Base graphics plots grouped boxplots with also just the addition of a twiddle (tilde) <code>~</code>. Another example of where model notation works.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(carat<span class="op">~</span>color, <span class="dt">data=</span>dsmall)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
+</div>
+<div id="ggplot-12" class="section level4">
+<h4>ggplot</h4>
+<p>A simple addition, just define your x and y accordingly.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>color, <span class="dt">y=</span>carat, <span class="dt">fill=</span>color)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>()</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
+</div>
+<div id="adding-violins" class="section level4">
+<h4>Adding violins</h4>
+<p>Violin plots can be overlaid here as well.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>color, <span class="dt">y=</span>carat, <span class="dt">fill=</span>color)) <span class="op">+</span>
+<span class="st">        </span><span class="kw">geom_violin</span>(<span class="dt">alpha=</span>.<span class="dv">1</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_boxplot</span>(<span class="dt">alpha=</span>.<span class="dv">5</span>, <span class="dt">width=</span>.<span class="dv">2</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
+</div>
+</div>
+<div id="grouped-histograms" class="section level3">
+<h3>Grouped histograms</h3>
+<div id="base-13" class="section level4">
+<h4>base</h4>
+<p>There is no easy way to create grouped histograms in base graphics we will skip it.</p>
+</div>
+<div id="ggplot-13" class="section level4">
+<h4>ggplot</h4>
+<p>By default ggplot wants to overlay all plots on the same grid. This doesn’t look to good with histograms. Instead you can overlay density plots</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>carat, <span class="dt">fill=</span>color)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>()
+b &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>carat, <span class="dt">fill=</span>color)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_density</span>() 
+<span class="kw">grid.arrange</span>(a,b, <span class="dt">ncol=</span><span class="dv">2</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-62-1.png" width="960" /></p>
+<p>The solid fills are still difficult to read, so we can either turn down the alpha (turn up the transparency) or only color the lines and not the fill.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">c &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>carat, <span class="dt">fill=</span>color)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_density</span>(<span class="dt">alpha=</span>.<span class="dv">2</span>)
+d &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>carat, <span class="dt">col=</span>color)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_density</span>() 
+<span class="kw">grid.arrange</span>(c,d, <span class="dt">ncol=</span><span class="dv">2</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-63-1.png" width="960" /></p>
+</div>
+</div>
+</div>
+</div>
+<div id="joy-plots-in-progress" class="section level1">
+<h1>Joy plots (in progress)</h1>
+<p>Hot off the press, gaining instant popularity this summer (2017). They are a combination of a Cleveland dot plot and a density plot.</p>
+<p>See this blog post by Revolution Analytics in the meantime: <a href="http://blog.revolutionanalytics.com/2017/07/joyplots.html" class="uri">http://blog.revolutionanalytics.com/2017/07/joyplots.html</a></p>
+</div>
+<div id="faceting-paneling" class="section level1">
+<h1>Faceting / paneling</h1>
+<p>ggplot introduces yet another term called <code>faceting</code>. The definition is <em>a particular aspect or feature of something</em>, or <em>one side of something many-sided, especially of a cut gem</em>. Basically instead of plotting the grouped graphics on the same plotting area, we let each group have it’s own plot, or facet.</p>
+<p>We add a <code>facet_wrap()</code> and specify that we want to panel on the color group. Note the twiddle in front of color.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>carat, <span class="dt">fill=</span>color)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_density</span>() <span class="op">+</span><span class="st"> </span><span class="kw">facet_wrap</span>(<span class="op">~</span>color)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-64-1.png" width="672" /></p>
+<p>The grid placement can be semi-controlled by using the <code>ncol</code> argument in the <code>facet_wrap()</code> statement.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>carat, <span class="dt">fill=</span>color)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_density</span>() <span class="op">+</span><span class="st"> </span><span class="kw">facet_wrap</span>(<span class="op">~</span>color, <span class="dt">ncol=</span><span class="dv">4</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-65-1.png" width="672" /></p>
+<p>It is important to compare distributions across groups on the same scale, and our eyes can compare items vertically better than horizontally. So let’s force <code>ncol=1</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>carat, <span class="dt">fill=</span>color)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_density</span>() <span class="op">+</span><span class="st"> </span><span class="kw">facet_wrap</span>(<span class="op">~</span>color, <span class="dt">ncol=</span><span class="dv">1</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-66-1.png" width="672" /></p>
+<div id="other-ways-to-get-multiple-plots-per-window" class="section level2">
+<h2>Other ways to get multiple plots per window</h2>
+<div id="base-14" class="section level3">
+<h3>base</h3>
+<p>I use <code>par(mfrow=c(r,c))</code> for base graphics, where <code>r</code> is the number of rows and <code>c</code> the number of columns.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))
+<span class="kw">plot</span>(dsmall<span class="op">$</span>carat)
+<span class="kw">plot</span>(dsmall<span class="op">$</span>color)
+<span class="kw">plot</span>(dsmall<span class="op">$</span>price <span class="op">~</span><span class="st"> </span>dsmall<span class="op">$</span>carat)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
+<p>Other resources including learning about <code>layouts</code>. Multipanel plotting with base graphics <a href="http://seananderson.ca/courses/11-multipanel/multipanel.pdf" class="uri">http://seananderson.ca/courses/11-multipanel/multipanel.pdf</a></p>
+<div id="ggplot-14" class="section level4">
+<h4>ggplot</h4>
+<p>Use the <code>grid.arrange</code> function in the <code>gridExtra</code> package. I’ve done it several times above. You assign the output of a ggplot object to an object (here it’s <code>plot1</code> and <code>plot2</code>). Then you use <code>grid.arrange()</code> to arrange them either side by side or top and bottom.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>carat, <span class="dt">fill=</span>color)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_density</span>(<span class="dt">alpha=</span>.<span class="dv">2</span>)
+b &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>carat, <span class="dt">col=</span>color)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_density</span>() 
+<span class="kw">grid.arrange</span>(a,b, <span class="dt">ncol=</span><span class="dv">2</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
+</div>
+</div>
+</div>
+</div>
+<div id="multivariate-2-variables" class="section level1">
+<h1>Multivariate (2+ variables)</h1>
+<p>This is not much more complicated than taking an appropriate bivariate plot and adding a third variable through paneling, coloring, or changing a shape.</p>
+<p>This is trivial to do in ggplot, not trivial in base graphics. So I won’t show those examples.</p>
+<div id="three-continuous" class="section level2">
+<h2>Three continuous</h2>
+<p>Continuous variables can also be mapped to the size of the point. Here I set the alpha on the points so we could see the overplotting (many points on a single spot). So the darker the spot the more data points on that spot.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>carat, <span class="dt">y=</span>price, <span class="dt">size=</span>depth)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">alpha=</span>.<span class="dv">2</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
+</div>
+<div id="two-categorical-and-one-continuous" class="section level2">
+<h2>Two categorical and one continuous</h2>
+<p>This is very similar to side by side boxplots, one violin plot per <code>cut</code>, within each level of color. This is difficult to really see due to the large number of categories each factor has.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>color, <span class="dt">y=</span>price, <span class="dt">fill=</span>cut)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_violin</span>()</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-70-1.png" width="672" /></p>
+<p>Best bet here would be to panel on color and change the x axis to cut.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>cut, <span class="dt">y=</span>price, <span class="dt">fill=</span>cut)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_violin</span>() <span class="op">+</span><span class="st"> </span><span class="kw">facet_wrap</span>(<span class="op">~</span>color)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-71-1.png" width="672" /></p>
+</div>
+<div id="two-continuous-and-one-categorical" class="section level2">
+<h2>Two continuous and one categorical</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>carat, <span class="dt">y=</span>price, <span class="dt">color=</span>cut)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;Colored by cut&quot;</span>)
+d &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>carat, <span class="dt">y=</span>price, <span class="dt">color=</span>cut)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">      </span><span class="kw">geom_smooth</span>(<span class="dt">se=</span><span class="ot">FALSE</span>) <span class="op">+</span><span class="kw">ggtitle</span>(<span class="st">&quot;Lowess line per cut&quot;</span>)
+<span class="kw">grid.arrange</span>(a, d, <span class="dt">nrow=</span><span class="dv">1</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-72-1.png" width="672" /></p>
+<p>Change the shape</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>carat, <span class="dt">y=</span>price, <span class="dt">shape=</span>cut)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;Shape by cut&quot;</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-73-1.png" width="672" /></p>
+<p>Or we just panel by the third variable</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>carat, <span class="dt">y=</span>price)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">facet_wrap</span>(<span class="op">~</span>cut)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-74-1.png" width="672" /></p>
+</div>
+<div id="paneling-on-two-variables" class="section level2">
+<h2>Paneling on two variables</h2>
+<p>Who says we’re stuck with only faceting on one variable? A variant on <code>facet_wrap</code> is <code>facet_grid</code>. Here we can specify multiple variables to panel on.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>carat, <span class="dt">fill=</span>color)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_density</span>() <span class="op">+</span><span class="st"> </span><span class="kw">facet_grid</span>(cut<span class="op">~</span>color)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-75-1.png" width="960" /></p>
+<p>How about plotting price against caret, for all combinations of color and clarity, with the points further separated by cut?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>carat, <span class="dt">y=</span>price, <span class="dt">color=</span>cut)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">facet_grid</span>(clarity<span class="op">~</span>color)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-76-1.png" width="672" /></p>
+<p>And lastly let’s look back at how we can play with scatterplots of using a third categorical variable (using <code>ggplot2</code> only). We can color the points by cut,</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>carat, <span class="dt">y=</span>price, <span class="dt">color=</span>cut)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-77-1.png" width="672" /></p>
+<p>We could add a smoothing lowess line for each cut separately,</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>carat, <span class="dt">y=</span>price, <span class="dt">color=</span>cut)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">se=</span><span class="ot">FALSE</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-78-1.png" width="672" /></p>
+<p>We could change the color by clarity, and shape by cut.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(dsmall, <span class="kw">aes</span>(<span class="dt">x=</span>carat, <span class="dt">y=</span>price, <span class="dt">color=</span>clarity, <span class="dt">shape=</span>cut)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() </code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-79-1.png" width="672" /></p>
+<p>That’s pretty hard to read. So note that just because you <strong>can</strong> change an aesthetic, doesn’t mean you should. And just because you can plot things on the same axis, doesn’t mean you have to.</p>
+<p>Before you share your plot with any other eyes, always take a step back and try to explain what it is telling you. If you have to take more than a minute to get to the point then it may be too complex and simpler graphics are likely warranted.</p>
+<hr />
+</div>
+</div>
+<div id="troubleshooting" class="section level1">
+<h1>Troubleshooting</h1>
+<p><strong>Problem:</strong> Missing data showing up as a category in ggplot?</p>
+<p>Get rid of that far right bar!</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(NCbirths, <span class="kw">aes</span>(<span class="dt">x=</span>marital)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>()</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-81-1.png" width="672" /></p>
+<p><strong>Solution:</strong> Use <code>dplyr</code> to select only the variables you are going to plot, then pipe in the <code>na.omit()</code> at the end. It will create a temporary data frame (e.g) <code>plot.data</code> that you then provide to <code>ggplot()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">plot.data &lt;-<span class="st"> </span>NCbirths <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(marital) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">na.omit</span>()
+<span class="kw">ggplot</span>(plot.data, <span class="kw">aes</span>(<span class="dt">x=</span>marital)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>()</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-82-1.png" width="672" /></p>
+<p><strong>Problem:</strong> Got numerical binary 0/1 data but want to plot it as categorical? &gt; Other related error messages: &gt; * Continuous x aesthetic – did you forget aes(group=…)?</p>
+<p>Consider a continuous variable for the number of characters in an email <code>num_char</code>, and a 0/1 binary variable <code>spam</code>.</p>
+<p><strong>Solution:</strong> Create a second variable <code>var_factor</code> for plotting and keep the binary <code>var</code> as 0/1 for analysis.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">email<span class="op">$</span>spam_cat &lt;-<span class="st"> </span><span class="kw">factor</span>(email<span class="op">$</span>spam, <span class="dt">labels=</span><span class="kw">c</span>(<span class="st">&quot;Ham&quot;</span>, <span class="st">&quot;Spam&quot;</span>))
+<span class="kw">ggplot</span>(email, <span class="kw">aes</span>(<span class="dt">y=</span>num_char, <span class="dt">x=</span>spam_cat)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>()</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-83-1.png" width="672" /></p>
+<p><strong>Problem:</strong> You want to change the legend title for a <code>fill</code> or <code>color</code> scale.</p>
+<p><strong>Solution:</strong> Add the <code>name=</code> argument to whatever layer you added that created the legend. Here I speciefied a <code>fill</code>, and it was a <code>discrete</code> variable. So I use the <code>scale_fill_discrete()</code> layer.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(email, <span class="kw">aes</span>(<span class="dt">y=</span>num_char, <span class="dt">x=</span>spam_cat, <span class="dt">fill=</span>spam_cat)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">scale_fill_discrete</span>(<span class="dt">name=</span><span class="st">&quot;Ya like Spam?&quot;</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-84-1.png" width="672" /></p>
+<p>Here, I <code>col</code>ored the points by a discrete variable, so the layer is <code>scale_color_discrete()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(email, <span class="kw">aes</span>(<span class="dt">x=</span>num_char, <span class="dt">y=</span>line_breaks, <span class="dt">col=</span>spam_cat)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_color_discrete</span>(<span class="dt">name=</span><span class="st">&quot;Ya like Spam?&quot;</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-85-1.png" width="672" /></p>
+<p><strong>Problem:</strong> You want to add means to boxplots. Boxplots are great. Even better with violin overlays. Know what makes them even better than butter? Adding a point for the mean. <code>stat_summary</code> is the layer you want to add. Check out <a href="https://stackoverflow.com/questions/23942959/ggplot2-show-separate-mean-values-in-box-plot-for-grouped-data">this stack overflow post</a> for more context.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(email, <span class="kw">aes</span>(<span class="dt">x=</span>spam_cat, <span class="dt">y=</span>num_char, <span class="dt">fill=</span>spam_cat)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_boxplot</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">fun.y=</span><span class="st">&quot;mean&quot;</span>, <span class="dt">geom=</span><span class="st">&quot;point&quot;</span>, <span class="dt">size=</span><span class="dv">3</span>, <span class="dt">pch=</span><span class="dv">17</span>,<span class="dt">color=</span><span class="st">&quot;blue&quot;</span>)</code></pre></div>
+<p><img src="full_data_viz_tutorial_files/figure-html/unnamed-chunk-86-1.png" width="672" /></p>
+<p>I suggest playing around with <code>size</code> and plotting character <code>pch</code> to get a feel for how these work. You can also look at <code>?pch</code> (and scroll down in the help file) to see the 25 default plotting characters.</p>
+<hr />
+</div>
+<div id="but-what-about" class="section level1">
+<h1>But what about…</h1>
+<ul>
+<li>Legend adjustment: remove it, move it to another side, rename it</li>
+<li>Custom specified colors and shapes</li>
+</ul>
+<p>Go here <a href="http://www.cookbook-r.com/Graphs/" class="uri">http://www.cookbook-r.com/Graphs/</a> for these. This tutorial is long enough.</p>
+</div>
+<div id="other-plots-not-mentioned" class="section level1">
+<h1>Other plots not mentioned</h1>
+<ul>
+<li>Heat maps <a href="https://www.r-bloggers.com/how-to-make-a-simple-heatmap-in-ggplot2/" class="uri">https://www.r-bloggers.com/how-to-make-a-simple-heatmap-in-ggplot2/</a></li>
+<li>Word clouds <a href="https://rpubs.com/brandonkopp/creating-word-clouds-in-r" class="uri">https://rpubs.com/brandonkopp/creating-word-clouds-in-r</a> , simpler: <a href="http://dangoldin.com/2016/06/06/word-clouds-in-r/" class="uri">http://dangoldin.com/2016/06/06/word-clouds-in-r/</a></li>
+<li>Interactive plots - Look into <code>plotly()</code> and <code>ggplotly()</code></li>
+<li>the circle type plots</li>
+</ul>
+</div>
+<div id="additional-resources" class="section level1">
+<h1>Additional Resources</h1>
+<p>For any Google Search - be sure to limit searches to within the past year or so. R packages get updated very frequently, and many functions change or become obsolete.</p>
+<ul>
+<li>R Graphics: <a href="https://www.stat.auckland.ac.nz/~paul/RGraphics/rgraphics.html" class="uri">https://www.stat.auckland.ac.nz/~paul/RGraphics/rgraphics.html</a> The best book about using base graphics</li>
+<li>R Graphics Cookbook: <a href="http://www.cookbook-r.com/Graphs/" class="uri">http://www.cookbook-r.com/Graphs/</a> or <a href="http://amzn.com/1449316956" class="uri">http://amzn.com/1449316956</a> The best book for using ggplot2</li>
+<li>STHDA: Statisical tools for high-throughput data analysis. <a href="http://www.sthda.com/english/" class="uri">http://www.sthda.com/english/</a></li>
+<li>Quick-R: <a href="http://www.statmethods.net/graphs/index.html">Basic Graphs</a></li>
+<li>Quick-R: <a href="http://www.statmethods.net/advgraphs/ggplot2.html">ggplot2</a></li>
+<li>Books
+<ul>
+<li>ggplot2 <a href="http://ggplot2.org/book/" class="uri">http://ggplot2.org/book/</a> or <a href="http://amzn.com/0387981403" class="uri">http://amzn.com/0387981403</a></li>
+<li>qplot <a href="http://ggplot2.org/book/qplot.pdf" class="uri">http://ggplot2.org/book/qplot.pdf</a></li>
+</ul></li>
+<li>Help lists
+<ul>
+<li>ggplot2 mailing list <a href="http://groups.google.com/group/ggplot2" class="uri">http://groups.google.com/group/ggplot2</a></li>
+<li>stackoverflow <a href="http://stackoverflow.com/tags/ggplot2" class="uri">http://stackoverflow.com/tags/ggplot2</a></li>
+<li>Chico R users group</li>
+</ul></li>
+</ul>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

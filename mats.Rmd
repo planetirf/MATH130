@@ -4,40 +4,80 @@ output:
   html_document:
     highlight: tango
     theme: yeti
-    toc: yes
-    toc_float: yes
 ---
 
-### <a href="#videos" data-toggle="collapse">Lecture Notes</a>
-<div id="videos" class="collapse">
+Here you will find links to course materials such as lecture notes, videos, data sets and assignments. 
+-----
 
-* Introduction to the class and R. [[01_intro]](01_intro.html)
-* Reproducible Research using R Studio [[02_rstudio]](02_rstudio.html)
-* Getting data into R and exploring [[03_import]](03_import.html) 
-* Using functions to summarize and manage data [[04_functions_recode]](04_functions_recode.html)
-* Wrangling factors. [[05_factors]](05_factors.html) 
-* More data management and creating grouped summaries using `dplyr`. [[06_dplyr]](06_dplyr.html) 
-* Statistical Data Visualization [[07_graphs]](07_graphs.html)
+<a href="http://www.datacamp.com"> 
+  <img src="datacamp.png" alt="Data Camp" style="width:225px;height:50px;">
+</a>
+
+
+
+### [Data Sets]( http://www.norcalbiostat.com/data/)
+This page contains a list of entry level data sets for this and other Statistics classes at CSU, Chico. Clicking on these links will either directly download the file, or open the file in your web browser. If the file opens in your web browser you must _right click_ and choose _save link as_, or _save target as_. In both cases **save these files into your class folder**. 
+
+
+### <a href="#hw" data-toggle="collapse">Assignments </a>
+<div id="hw" class="collapse">
+
+* [HW 1](hw/hw1.Rmd)
+* [HW 2](hw/hw2.Rmd)
+* [HW 3](hw/hw3.Rmd)
+* [HW 4](hw/hw4.Rmd)
+* [Data Analysis Project](hw/EDA_instructions_withPR.html)
+
+
+</div>
+
+### <a href="#notes" data-toggle="collapse">Lecture Notes</a>
+<div id="notes" class="collapse">
+
+<!--- https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html ---> 
+
+* [[01_intro]](notes/01_intro.html) Introduction to the class and R. [[PDF]](notes/01_intro.pdf)
+* [[02_rstudio]](notes/02_rstudio.html) Reproducible Research using R Studio [[PDF]](notes/02_rstudio.pdf)
+* [[03_import]](notes/03_import.html) Getting data into R. [[PDF]](notes/03_import.pdf)
+* [[04_functions]](notes/04_functions.html) Using functions to learn about data. [[PDF]](notes/04_functions.pdf) 
+* [[04_dm]](notes/04_dm.html) Basic data management. [[PDF]](notes/04_dm.pdf) 
+* [[05_factors]](notes/05_factors.html) Factors: one of the most annoying yet useful data types. [[PDF]](notes/02_rstudio.pdf)
+* [[06_dplyr]](notes/06_dplyr.html) Data management the _tidy_ way. [[PDF]](notes/06_dplyr.pdf)
+* [[07_graphs]](notes/07_graphs.html) Data Visualization I [[PDF]](notes/07_graphs.pdf)
+* [[0x_aggregate]] Grouped summaries. [[PDF]](notes/06_groups.pdf)
+* [[0x_joins]] Grouped summaries. [[PDF]](notes/06_joins.pdf)
+* [[07_graphs]](notes/07_graphs.html) Data Visualization II  [[PDF]](notes/07_graphs.pdf)
 
 </div>
 
 ### <a href="#videos" data-toggle="collapse">Videos</a>
 <div id="videos" class="collapse">
 
+These videos sometimes contain examples developed for the [Data Analysis and Visualization in R for Ecologists](https://datacarpentry.org/R-ecology-lesson/index.html ), a [Data Carpentry](https://datacarpentry.org/) lesson. 
+
+* 01_Intro
+* 01a_R  
+* 01b_DataCamp
+* 02_RStudio
+* 02b_rr -- cut down? very short. 
+* 02c_Rmarkdown
+* hw1 -- include more info on indexing and subsetting data frames based on logical statements
+* import
+* functions (include missing data here)
+* data management
+* hw 2
+* factors
+* dplyr basic
+* ggplot basic
+* hw 3
+* grouped summaries
+* table joins
+* ggplot advanced
+* hw 4
+
 
 </div>
 
-### <a href="#hw" data-toggle="collapse">Assignments </a>
-<div id="hw" class="collapse">
-
-* [[HW 1]](hw1.Rmd)
-* [[HW 2]](hw2.Rmd)
-* [[HW 3]](hw3.Rmd)
-* [[HW 4]](hw4.Rmd)
-* [Project Instructions](EDA_instructions_withPR.html)
-
-
-</div>
 
 
 

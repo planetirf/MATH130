@@ -3,12 +3,6 @@ output_dir: "."
 navbar:
   title: "MATH 130 (R)"
   left:
-    - text: "Data"
-      icon: fa-database
-      href: http://www.norcalbiostat.com/data/
-    - text: Data Camp 
-      icon: fa-code
-      href: https://www.datacamp.com/
     - text: Course Materials 
       icon: fa-book
       href: mats.html

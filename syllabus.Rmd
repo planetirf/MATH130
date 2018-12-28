@@ -63,21 +63,13 @@ This adds up to 15 hours in class, and 30 hours outside of class during these 5 
 
 You will get out of this class what you put into it. Recall this is just a co-curriculuar or supplemental basic introductory class. You will not learn everything there is to know about R, nor likely not feel proficient by the time you are done. But you will be solidly on the path where you can continue to learn and improve. 
 
-## Resources
-
-* Data Science Initiative - https://datascience.csuchico.edu 
-    - Holds Community coding - drop in hours held in the library. Spring 18 hours TBD
-    - Weekly seminars and workshops in a variety of languages and topics. 
-* [Chico R Users Google Group](https://groups.google.com/forum/#!forum/chico-rug). This is our discussion forum to ask (and answer) questions outside of class. *I do not answer coding questions over email.**
-    - https://groups.google.com/forum/#!forum/chico-rug
-* The [R Users Meetup group](https://www.meetup.com/Chico-R-Users-Group/) useful if you want to stay connected to the community and learn about upcoming events. 
-    - https://www.meetup.com/Chico-R-Users-Group/
-
 # Grading
 Credit / No Credit. There are 100 points available in this course. You must earn 70 points to receive credit for the course. 
 
-* Attendance: (10 pts)
+* Daily attendance: (10 pts)
 * Data Camp: (10 pts)
+    - Intro to R 
+    - Working with R Studio IDE (Part 1) - Ch 1 & 2 (Orientation, Programming) 
 * Assignments:
     - HW 1 (10 pts)
     - HW 2 (15 pts)

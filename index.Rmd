@@ -29,7 +29,8 @@ Click each weekly header below to expand and see the materials for that week.
 
 
 * Install R and R Studio: https://norcalbiostat.netlify.com/post/software-overview/
-* Use the link in Blackboard to join our Data Camp classroom.
+* Join our Data Camp classroom by using the invite link sent to you by your instructor. 
+    - This is necessary to track your progress
 * Learn about the R Studio IDE by completing the Data Camp assignment: `Working with the R Studio IDE (Part 1)` 
 
 </div>
@@ -38,16 +39,23 @@ Click each weekly header below to expand and see the materials for that week.
 
 <div id="week1" class="collapse">
 
-* Day 1: Introduction to the class and R. [[01_intro]](01_intro.html)
-* Assignments **Due before Day 2**
-    - Complete Data Camp: `Introduction to R - Chapter 1 (Intro to Basics)`
-    - Learn about the R Studio IDE by completing the Data Camp assignment: `Working with the R Studio IDE (Part 1)`
-    - Watch 1 minute video: "[What is R Markdown?](http://rmarkdown.rstudio.com/lesson-1.html)"
-* Day 2: Reproducible Research using R Studio [[02_rstudio]](02_rstudio.html)
-* Assignments: 
-    - Finish the `Introduction to R` entire course on Data Camp.
-    - [[HW 1]](hw1.Rmd) This is directly based on Data Camp - Introduction to R. 
-    - You will submit the **.RMD file** for this assignment to Blackboard learn by the due date. 
+`r emo::ji("paper")`
+
+* Introduction to the class. [[01_intro]](notes/01_intro.html)
+* Reproducible Research using R Studio [[02_rstudio]](notes/02_rstudio.html)
+
+`r emo::ji("pencil")` Assignments (in order): 
+
+* Create a Data Camp account and join our classroom
+    - your invite link is in Blackboard, or email Robin with your Chico State account to be added.
+* Finish the `Introduction to R` course on Data Camp. 
+* Watch the 1 minute video: "[What is R Markdown?](http://rmarkdown.rstudio.com/lesson-1.html)"
+* Complete the Data Camp course: `Working with the R Studio IDE (Part 1)`, **Orientation and Programming** only!
+* [[HW 1]](hw/hw1.Rmd) 
+    - Click this link to download the code file, be sure to save the file into your class folder. <span style="color:red">Do not leave this in your downloads folder.</span>
+    - You will write your answers directly in this rmarkdown code file.
+    - Be sure to knit often! (after every question is advised.)
+    - Submit the **.RMD file** for this assignment as instructed by the due date. 
     
   
 </div>
@@ -57,27 +65,27 @@ Click each weekly header below to expand and see the materials for that week.
 
 <div id="week2" class="collapse">
 
-* Getting data into R and exploring [[03_import]](03_import.html) 
-* Using functions to summarize and manage data [[04_functions_recode]](04_functions_recode.html)
-* Assignment: [[HW 2]](hw2.Rmd). 
+* Getting data into R and exploring [[03_import]](notes/03_import.html) 
+* Using functions to summarize and manage data [[04_functions_recode]](notes/04_functions_recode.html)
+* Assignment: [[HW 2]](hw/hw2.Rmd). 
 
 </div>
 
 ### <a href="#week3" data-toggle="collapse">Week 3: Factors, more data management and grouped summaries.</a>
 
 <div id="week3" class="collapse">
-* Wrangling factors. [[05_factors]](05_factors.html) 
-* More data management and creating grouped summaries using `dplyr`. [[06_dplyr]](06_dplyr.html) 
-* Assignment: [[HW 3]](hw3.Rmd) 
+* Wrangling factors. [[05_factors]](notes/05_factors.html) 
+* More data management and creating grouped summaries using `dplyr`. [[06_dplyr]](notes/06_dplyr.html) 
+* Assignment: [[HW 3]](hw/hw3.Rmd) 
 
 </div>
 
 ### <a href="#week4" data-toggle="collapse">Week 4: Making pretty pictures to win friends and influence people.</a>
 
 <div id="week4" class="collapse">
-* Statistical Data Visualization [[07_graphs]](07_graphs.html)
-* Graphics galore - [[the full data viz tutorial]](full_data_viz_tutorial.html) (optional)
-* Assignment: [[HW 4]](hw4.Rmd)  
+* Statistical Data Visualization [[07_graphs]](notes/07_graphs.html)
+* Graphics galore - [[the full data viz tutorial]](notes/full_data_viz_tutorial.html) (optional)
+* Assignment: [[HW 4]](hw/hw4.Rmd)  
 </div>
 
 ### <a href="#week5" data-toggle="collapse">Week 5: Putting it all together: Exploratory Project</a>
@@ -85,7 +93,7 @@ Click each weekly header below to expand and see the materials for that week.
 <div id="week5" class="collapse">
 
 * Now it's time to put your new 1337 skillz to the test!
-* [Instructions](EDA_instructions_withPR.html) on the assignment and how to do the peer review. 
+* [Instructions](hw/EDA_instructions_withPR.html) on the assignment and how to do the peer review. 
 * Previous class projects can be seen [[here]](https://norcalbiostat.github.io/peer_review/math130_eda.html). 
 
 </span>
