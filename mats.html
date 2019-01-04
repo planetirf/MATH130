@@ -11,7 +11,7 @@
 
 
 
-<title>Course Materials</title>
+<title></title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,9 +20,6 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
-<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
-<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
 
 
 
@@ -173,13 +170,6 @@ $(document).ready(function () {
     Course Materials
   </a>
 </li>
-<li>
-  <a href="syllabus.html">
-    <span class="fa fa-info-circle"></span>
-     
-    Syllabus
-  </a>
-</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -187,6 +177,13 @@ $(document).ready(function () {
     <span class="fa fa-question"></span>
      
     Help/FAQ
+  </a>
+</li>
+<li>
+  <a href="syllabus.html">
+    <span class="fa fa-info-circle"></span>
+     
+    Syllabus
   </a>
 </li>
 <li>
@@ -205,23 +202,16 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Course Materials</h1>
 
 </div>
 
 
-<hr />
+<div id="here-you-will-find-links-to-course-materials-such-as-lecture-notes-videos-data-sets-and-assignments." class="section level2">
+<h2>Here you will find links to course materials such as lecture notes, videos, data sets and assignments.</h2>
 <p><a href="http://www.datacamp.com"> <img src="datacamp.png" alt="Data Camp" style="width:225px;height:50px;"> </a></p>
 <div id="data-sets" class="section level3">
-<h3><a href="#data" data-toggle="collapse">Data sets</a></h3>
-<div id="data" class="collapse">
-<p>List of commonly used data sets in this class.</p>
-<ul>
-<li>NC Births</li>
-<li>Email</li>
-<li>Other selected data sets: <a href="http://www.norcalbiostat.com/data/" class="uri">http://www.norcalbiostat.com/data/</a></li>
-</ul>
-</div>
+<h3><a href="http://www.norcalbiostat.com/data/">Data Sets</a></h3>
+<p>This page contains a list of entry level data sets for this and other Statistics classes at CSU, Chico. Clicking on these links will either directly download the file, or open the file in your web browser. If the file opens in your web browser you must <em>right click</em> and choose <em>save link as</em>, or <em>save target as</em>. In both cases <strong>save these files into your class folder</strong>.</p>
 </div>
 <div id="assignments" class="section level3">
 <h3><a href="#hw" data-toggle="collapse">Assignments </a></h3>
@@ -231,28 +221,55 @@ $(document).ready(function () {
 <li><a href="hw/hw2.Rmd">HW 2</a></li>
 <li><a href="hw/hw3.Rmd">HW 3</a></li>
 <li><a href="hw/hw4.Rmd">HW 4</a></li>
-<li><a href="hw/EDA_instructions_withPR.html">Project Instructions</a></li>
+<li><a href="hw/EDA_instructions_withPR.html">Data Analysis Project</a></li>
 </ul>
 </div>
+<!--- https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html --->
 </div>
-<div id="lecture-notes" class="section level3">
-<h3><a href="#videos" data-toggle="collapse">Lecture Notes</a></h3>
-<div id="videos" class="collapse">
+<div id="notes" class="section level3">
+<h3>Notes</h3>
 <ul>
-<li>Introduction to the class and R. <a href="01_intro.html">[01_intro]</a></li>
-<li>Reproducible Research using R Studio <a href="02_rstudio.html">[02_rstudio]</a></li>
-<li>Getting data into R and exploring <a href="03_import.html">[03_import]</a></li>
-<li>Using functions to summarize and manage data <a href="04_functions_recode.html">[04_functions_recode]</a></li>
-<li>Wrangling factors. <a href="05_factors.html">[05_factors]</a></li>
-<li>More data management and creating grouped summaries using <code>dplyr</code>. <a href="06_dplyr.html">[06_dplyr]</a></li>
-<li>Statistical Data Visualization <a href="07_graphs.html">[07_graphs]</a></li>
+<li><a href="https://norcalbiostat.netlify.com/post/software-overview/">[00_setup]</a> Installing R and R Studio</li>
+<li><a href="notes/01_intro.html">[01_intro]</a> Introduction to the class and R. <a href="notes/01_intro.pdf">[PDF]</a></li>
+<li><a href="notes/02_rstudio.html">[02_rstudio]</a> Reproducible Research using R Studio <a href="notes/02_rstudio.pdf">[PDF]</a></li>
+<li><a href="notes/03_import.html">[03_import]</a> Getting data into R. <a href="notes/03_import.pdf">[PDF]</a></li>
+<li><a href="notes/04_functions.html">[04_functions]</a> Using functions to learn about data. <a href="notes/04_functions.pdf">[PDF]</a></li>
+<li><a href="notes/04_dm.html">[04_dm]</a> Basic data management. <a href="notes/04_dm.pdf">[PDF]</a></li>
+<li><a href="notes/05_factors.html">[05_factors]</a> Factors: one of the most annoying yet useful data types. <a href="notes/02_rstudio.pdf">[PDF]</a></li>
+<li><a href="notes/06_dplyr.html">[06_dplyr]</a> Data management the <em>tidy</em> way. <a href="notes/06_dplyr.pdf">[PDF]</a></li>
+<li><a href="notes/07_graphs.html">[07_graphs]</a> Data Visualization I <a href="notes/07_graphs.pdf">[PDF]</a></li>
+<li>[[0x_aggregate]] Grouped summaries. <a href="notes/06_groups.pdf">[PDF]</a></li>
+<li>[[0x_joins]] Grouped summaries. <a href="notes/06_joins.pdf">[PDF]</a></li>
+<li><a href="notes/07_graphs.html">[07_graphs]</a> Data Visualization II <a href="notes/07_graphs.pdf">[PDF]</a></li>
 </ul>
 </div>
 </div>
 <div id="videos" class="section level3">
-<h3><a href="#videos" data-toggle="collapse">Videos</a></h3>
-<div id="videos" class="collapse">
-
+<h3>Videos</h3>
+<p>These videos sometimes contain examples developed for the <a href="https://datacarpentry.org/R-ecology-lesson/index.html">Data Analysis and Visualization in R for Ecologists</a>, a <a href="https://datacarpentry.org/">Data Carpentry</a> lesson.</p>
+<ul>
+<li>01_Intro</li>
+<li>01a_R<br />
+</li>
+<li>01b_DataCamp</li>
+<li>02_RStudio</li>
+<li>02b_rr – cut down? very short.</li>
+<li>02c_Rmarkdown</li>
+<li>hw1 – include more info on indexing and subsetting data frames based on logical statements</li>
+<li>import</li>
+<li>functions (include missing data here)</li>
+<li>data management</li>
+<li>hw 2</li>
+<li>factors</li>
+<li>dplyr basic</li>
+<li>ggplot basic</li>
+<li>hw 3</li>
+<li>grouped summaries</li>
+<li>table joins</li>
+<li>ggplot advanced</li>
+<li>hw 4</li>
+</ul>
+</div>
 </div>
 </div>
 

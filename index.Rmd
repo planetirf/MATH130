@@ -27,11 +27,15 @@ Click each weekly header below to expand and see the materials for that week.
 ### <a href="#week0" data-toggle="collapse">Prepare: Get connected and install programs</a>
 <div id="week0" class="collapse">
 
+`r emo::ji("notebook_with_decorative_cover")` Reading:
 
-* Install R and R Studio: https://norcalbiostat.netlify.com/post/software-overview/
+* Install R and R Studio [[HTML]](https://norcalbiostat.netlify.com/post/software-overview/)  `r emo::ji("cross_mark")`
+
+`r emo::ji("pencil2")` Assignments: 
+
 * Join our Data Camp classroom by using the invite link sent to you by your instructor. 
-    - This is necessary to track your progress
-* Learn about the R Studio IDE by completing the Data Camp assignment: `Working with the R Studio IDE (Part 1)` 
+* Create a class folder in an easy to find place. Name this file using one of the options below:
+    - No spaces, either ALL CAPS (`MATH130`), no caps (`math130`), or snake_case (`math_130`)
 
 </div>
 
@@ -39,21 +43,19 @@ Click each weekly header below to expand and see the materials for that week.
 
 <div id="week1" class="collapse">
 
-`r emo::ji("paper")`
+`r emo::ji("notebook_with_decorative_cover")` Reading:
 
-* Introduction to the class. [[01_intro]](notes/01_intro.html)
-* Reproducible Research using R Studio [[02_rstudio]](notes/02_rstudio.html)
+* Introduction to the class. [[HTML]](notes/01_intro.html) [[PDF]](notes/01_intro.pdf) 
+* Reproducible Research using R Studio [[HTML]](notes/02_rstudio.html) [[PDF]](notes/02_rstudio.pdf) `r emo::ji("cross_mark")`
 
-`r emo::ji("pencil")` Assignments (in order): 
+`r emo::ji("pencil2")` Assignments (in order): 
 
-* Create a Data Camp account and join our classroom
-    - your invite link is in Blackboard, or email Robin with your Chico State account to be added.
-* Finish the `Introduction to R` course on Data Camp. 
+* Complete the Data Camp assigned course: `Introduction to R` 
 * Watch the 1 minute video: "[What is R Markdown?](http://rmarkdown.rstudio.com/lesson-1.html)"
-* Complete the Data Camp course: `Working with the R Studio IDE (Part 1)`, **Orientation and Programming** only!
-* [[HW 1]](hw/hw1.Rmd) 
-    - Click this link to download the code file, be sure to save the file into your class folder. <span style="color:red">Do not leave this in your downloads folder.</span>
-    - You will write your answers directly in this rmarkdown code file.
+* Complete the Data Camp assigned course: `Working with the R Studio IDE (Part 1)`, **Orientation and Programming** only!
+* Click this link to download the homework assignment. [[HW 1 RMD]](hw/hw1.Rmd) `r emo::ji("cross_mark")`
+    - <span style="color:red">Save it into your class folder</span>
+    - You will write your answers directly in this Rmarkdown code file.
     - Be sure to knit often! (after every question is advised.)
     - Submit the **.RMD file** for this assignment as instructed by the due date. 
     
@@ -65,8 +67,8 @@ Click each weekly header below to expand and see the materials for that week.
 
 <div id="week2" class="collapse">
 
-* Getting data into R and exploring [[03_import]](notes/03_import.html) 
-* Using functions to summarize and manage data [[04_functions_recode]](notes/04_functions_recode.html)
+* Getting data into R and exploring [[03_import]](notes/03_import.html) `r emo::ji("cross_mark")`
+* Using functions to summarize and manage data [[04_functions_recode]](notes/04_functions_recode.html)`r emo::ji("cross_mark")`
 * Assignment: [[HW 2]](hw/hw2.Rmd). 
 
 </div>

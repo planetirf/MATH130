@@ -1,10 +1,3 @@
----
-title: "Course Materials"
-output:
-  html_document:
-    highlight: tango
-    theme: yeti
----
 
 Here you will find links to course materials such as lecture notes, videos, data sets and assignments. 
 -----
@@ -28,30 +21,27 @@ This page contains a list of entry level data sets for this and other Statistics
 * [HW 4](hw/hw4.Rmd)
 * [Data Analysis Project](hw/EDA_instructions_withPR.html)
 
-
 </div>
-
-### <a href="#notes" data-toggle="collapse">Lecture Notes</a>
-<div id="notes" class="collapse">
 
 <!--- https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html ---> 
 
-* [[01_intro]](notes/01_intro.html) Introduction to the class and R. [[PDF]](notes/01_intro.pdf)
-* [[02_rstudio]](notes/02_rstudio.html) Reproducible Research using R Studio [[PDF]](notes/02_rstudio.pdf)
-* [[03_import]](notes/03_import.html) Getting data into R. [[PDF]](notes/03_import.pdf)
-* [[04_functions]](notes/04_functions.html) Using functions to learn about data. [[PDF]](notes/04_functions.pdf) 
-* [[04_dm]](notes/04_dm.html) Basic data management. [[PDF]](notes/04_dm.pdf) 
-* [[05_factors]](notes/05_factors.html) Factors: one of the most annoying yet useful data types. [[PDF]](notes/02_rstudio.pdf)
-* [[06_dplyr]](notes/06_dplyr.html) Data management the _tidy_ way. [[PDF]](notes/06_dplyr.pdf)
-* [[07_graphs]](notes/07_graphs.html) Data Visualization I [[PDF]](notes/07_graphs.pdf)
-* [[0x_aggregate]] Grouped summaries. [[PDF]](notes/06_groups.pdf)
-* [[0x_joins]] Grouped summaries. [[PDF]](notes/06_joins.pdf)
-* [[07_graphs]](notes/07_graphs.html) Data Visualization II  [[PDF]](notes/07_graphs.pdf)
 
-</div>
+### Notes
 
-### <a href="#videos" data-toggle="collapse">Videos</a>
-<div id="videos" class="collapse">
+* Installing R and R Studio             [[HTML]](https://norcalbiostat.netlify.com/post/software-overview/) 
+* Introduction to the class and R.      [[HTML]](notes/01_intro.html)     [[PDF]](notes/01_intro.pdf)
+* Reproducible Research using R Studio  [[HTML]](notes/02_rstudio.html)   [[PDF]](notes/02_rstudio.pdf)
+* Getting data into R.                  [[HTML]](notes/03_import.html)    [[PDF]](notes/03_import.pdf)
+* Using functions to learn about data.  [[HTML]](notes/04_functions.html) [[PDF]](notes/04_functions.pdf) 
+* Basic data management.                [[HTML]](notes/04_dm.html)        [[PDF]](notes/04_dm.pdf) 
+* Managing Factors                      [[HTML]](notes/05_factors.html)   [[PDF]](notes/05_factors.pdf)
+* Data Visualization I                  [[HTML]](notes/07_graph.html)     [[PDF]](notes/07_graph.pdf)
+* Data management the `dplyr` way.      [[HTML]](notes/06_dplyr.html)     [[PDF]](notes/06_dplyr.pdf)
+* Merging data from multiple sources    [[HTML]](notes/06_joins.html)     [[PDF]](notes/06_joins.pdf)
+* Data Visualization II                 [[HTML]](notes/07_graph2.html)    [[PDF]](notes/07_graph2.pdf)
+
+
+### Videos
 
 These videos sometimes contain examples developed for the [Data Analysis and Visualization in R for Ecologists](https://datacarpentry.org/R-ecology-lesson/index.html ), a [Data Carpentry](https://datacarpentry.org/) lesson. 
 
@@ -74,9 +64,6 @@ These videos sometimes contain examples developed for the [Data Analysis and Vis
 * table joins
 * ggplot advanced
 * hw 4
-
-
-</div>
 
 
 

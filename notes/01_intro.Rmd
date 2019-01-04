@@ -2,11 +2,13 @@
 title: "Lesson 01 - Introduction to the class and R"
 author: "Robin Donatello"
 date: "December 27, 2018"
-output: 
-  slidy_presentation: 
-    theme: yeti
+output:
+  slidy_presentation:
+    footer: rdonatello@csuchico.edu
     highlight: tango
-    footer: "rdonatello@csuchico.edu"
+    theme: yeti
+  beamer_presentation:
+    highlight: tango
 ---
  
 ## Course Description
@@ -103,8 +105,12 @@ Because it's not reproducible.
 ## Getting Help -- In Person
 
 * Data Science Initiative 
-    - http://datascience.csuchico.edu 
-    - Community coding - drop in hours held in the library. Spring 19 hours TBD
+    - http://datascience.csuchico.edu What the Data Science community at Chico is up to.  
+    - Community Coding. TR 2-4pm MLIB 442. 
+        - Dedicated space to work on coding projects. 
+        - Collaborate with your peers and learn from experts. 
+        - Need 1 unit? Enroll in Math 290-02 and attend at least 10 times. 
+        - You DON'T need to be enrolled to attend!
     - Weekly seminars and workshops in a variety of languages and topics. 
 * The [R Users Meetup group](https://www.meetup.com/Chico-R-Users-Group/) useful if you want to stay connected to the community and learn about upcoming events. 
     - https://www.meetup.com/Chico-R-Users-Group/
