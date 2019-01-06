@@ -1,24 +1,25 @@
 ---
 title: "Lesson 01 - Introduction to the class and R"
 author: "Robin Donatello"
-date: "December 27, 2018"
+date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
-  slidy_presentation:
-    footer: rdonatello@csuchico.edu
+  pdf_document:
+    toc: no
+  html_document:
     highlight: tango
     theme: yeti
-  beamer_presentation:
-    highlight: tango
+    toc: yes
+    toc_float: yes
 ---
  
-## Course Description
+# Course Description
 
 This course is designed as a primer to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R in an environment that emphasizes reproducible research and literate programming for data analysis. 
 
 The target audience is anyone who wants to do their own data analysis. The course will cumulate with an peer-evaluated exploratory data analysis on either a pre-specified data set or your data set of choice. 
 
 
-## Schedule of Topics
+# Schedule of Topics
 
 * Intro to the R language and it's packages
 * R Studio suite of awesomeness
@@ -30,20 +31,19 @@ The target audience is anyone who wants to do their own data analysis. The cours
 * Data Manipulation and Aggregation
 * Exploratory Data Analysis
 
-## Logistics / Structure of this class
+# Logistics 
 
 * All content is fully online on the course website: https://norcalbiostat.github.io/MATH130/ 
-* Videos are available for some content
 * We will also use Data Camp (www.datacamp.com) is a free online learning tool we will use to start learn R.
 * Class time is spent expanding on ideas and concepts, working through labs as a class or in pairs, and working on individual assignments. 
 
-## Grading 
+# Grading 
 
 * Credit / No Credit. There are 100 points available in this course through attendance, assignments, and a final project.  
 * You must earn 70 points to receive credit for the course. 
 * The [syllabus](../syllabus.html) provides specific details on points per assignment. 
     
-## Time Committment & Frustration
+# Time Committment 
 * Fast paced, we're hitting the ground running and only have 5 weeks. 
 * Not designed to teach you everything about R, just enough to make you dangerous. 
 * Daily practice will pay off.  
@@ -57,6 +57,8 @@ _We've all been there. It will get easier_
 
 
 
+# Tool choices
+
 ## Why use R?
 
 * Open source, and free
@@ -64,7 +66,6 @@ _We've all been there. It will get easier_
 * Tons of learning resources
 * Currently R is used in Chico's upper division Applied Statistics and Data Science courses. 
 * Very popular in [Data Science](https://r4ds.had.co.nz/), [Economics](https://www.core-econ.org/why-doing-economics-has-embraced-r/), [Natural Sciences](https://www.nature.com/news/programming-tools-adventures-with-r-1.16609), [Psychology](https://personality-project.org/r/) and many other fields.  
-
 
 ## Why use R Studio?
 
@@ -102,7 +103,9 @@ Because it's not reproducible.
 * Need to expand your model? Gotta do it all over. 
 * Made a mistake in the data coding? Gotta do it all over...
 
-## Getting Help -- In Person
+# Getting Help
+
+## In Person
 
 * Data Science Initiative 
     - http://datascience.csuchico.edu What the Data Science community at Chico is up to.  
@@ -119,19 +122,21 @@ Because it's not reproducible.
 <center><img src="debugging.jpg" width="350px"></center>
 _Sometimes a second pair of eyeballs is all you need_
 
-## Getting Help -- Online
+## Online
 
 * In RStudio go to `Help` --> `Cheatsheets` 
 * [Chico R Users Google Group](https://groups.google.com/forum/#!forum/chico-rug). This is our discussion forum to ask (and answer) questions outside of class. 
     - https://groups.google.com/forum/#!forum/chico-rug
 * Googling error messages: https://www.google.com/search?q=common+R+error+messages
-    - Good blog by expert R contributer http://varianceexplained.org/courses/errors/ 
+    - Good blog by expert R contributor http://varianceexplained.org/courses/errors/ 
 * Stack Overflow tag [r] https://stackoverflow.com/questions/tagged/r 
 * R Studio community https://community.rstudio.com/ 
 * Twitter: #rstats @Rstudio 
 
 
-## Getting Help -- I'm a book kinda person
+## Written
+
+If you're a book kinda person, there is plenty of help available as well. Many have online versions or free PDF's. 
 
 * R Markdown, the Definitive Guide: https://bookdown.org/yihui/rmarkdown/
 * R for Data Science https://r4ds.had.co.nz/

@@ -1,8 +1,10 @@
 ---
-title: 'Lesson 04 - Data management using functions'
+title: "Lesson 04 - Functions and basic data management"
 author: "Robin Donatello"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
+  pdf_document:
+    toc: no
   html_document:
     highlight: tango
     theme: yeti
@@ -10,30 +12,75 @@ output:
     toc_float: yes
 ---
 
------ 
 
 # Introduction
-In this lesson we will introduce how to use functions to summarize data in a data frame, and to do basic data management tasks such as removing missing values. 
+In this lesson we will introduce how to use functions and their arguments, how to summarize data in a data frame, and to do basic data management tasks such as making new variables, recoding data and dealing with missing data. 
 
 
-### Student Learning Objectives
+## Student Learning Objectives
 After completing this lesson students will be able to
 
 * Work with variables inside a data frame
-* Summarize data in the presence of missing data elements in a data table. 
+* Identify when data values are missing
+* Use function arguments to perform calculations in the presence of missing data. 
 * Make new variables inside a data frame. 
 * Selectively edit (and recode) data elements. 
 
-We'll use the data set on births in North Carolina for this lesson. 
+
+## Preparation
+Prior to this lesson students should
+
+* Download the [[04_fun_dm_notes.Rmd]] R markdown file and save into your Math130 folder. 
+* Change the path below to import the `NCbirths` data set. 
 
 ```{r}
-NCbirths <- read.csv("data/NCbirths.csv", header=TRUE)
+NCbirths <- read.csv("../data/NCbirths.csv", header=TRUE)
 ```
 
 ----- 
 
+# Missing Data
 
-# What's a function? 
+Let's look at the `NCbirths` data set, specifically the first column containing data on the father's age (`fage`).
+```{r}
+head(NCbirths)
+```
+
+* R puts a `NA` as a placeholder when the value for that piece of data is missing. 
+* Missing data can be a result of many things: skip patterns in a survey (i.e. non-smokers don't get asked how many packs per week they smoke), errors in data reads from a machine, etc. 
+
+
+**Problem 1** 
+`R` can't do arithmetic on missing data. So `5 + NA = NA`, and if you were to try to calculate the `mean()` of a variable, you'd also get `NA`. 
+
+```{r}
+mean(NCbirths$fage)
+```
+
+**Problem 2**
+Some plots will show `NA` as it's own category, which is undesirable. 
+
+```{r, echo=FALSE}
+library(ggplot2)
+ggplot(NCbirths, aes(premie))+geom_bar()
+```
+
+
+## Identifying missing values 
+
+1. Look at the raw data using `head()` or `str()`
+2. Look at data summaries using `table()` for categorical data and `summary()` for numerical data. 
+
+```{r}
+table(NCbirths$habit, useNA="always")
+summary(NCbirths$fage)
+```
+
+Later lessons will discuss how to work around these missing values.
+
+----
+
+# Functions
 
 Functions take inputs, called **arguments** and provide outputs, or results. A few functions you have already used are `head()`, `table()` and `subset()`. Let's look at the `mean` function again by typing ?mean. 
 
@@ -46,6 +93,7 @@ is the most general definition of the mean function. This section also shows you
 ```{r, eval=FALSE}
 mean(x, trim = 0, na.rm = FALSE, ...)
 ```
+
 In the **Arguments** section the help file defines what each argument does.
 
 * `x` is the object that you want to take the mean of
@@ -56,7 +104,7 @@ In the **Arguments** section the help file defines what each argument does.
 * `...` is called the ellipsis, and it is a way for R to pass arguments to or 
   from other methods without the function having to name them explicitly. 
 
-### Argument ordering
+## Argument ordering
 A function's arguments can be named, or can be referred to by position. As an example, let's look at the variable on the `NCbirths` data set that contains data on the fathers age: `NCbirths$fage`. 
   
 If we were to calculate the mean, we'd get NA. 
@@ -84,13 +132,14 @@ But let's not get that crazy.
 
 R, at its heart, is a functional programming language [(cite: Adv. R by Wickham)](http://adv-r.had.co.nz/Functional-programming.html). We interact with the program, and data, using functions. 
 
------
+----- 
+
 
 # Summarizing data
 
 There are two main methods to summarize data. Both were introduced in the last lesson: `table()` for categorical factor variables, and `summary()` for numeric variables. 
 
-**Frequency Tables for categorical data**
+## Frequency Tables for categorical data
 Let's look at the variable for whether or not the baby was born underweight. R acknowledges it is a factor variable already. 
 ```{r}
 class(NCbirths$lowbirthweight)
@@ -102,7 +151,7 @@ You can create a frequency table by using the `table()` function. The `useNA="al
 table(NCbirths$lowbirthweight, useNA="always")
 ```
 
-**Summary statistics for numerical data**
+## Summary statistics for numerical data
 Numerical variables can be summarized using statistics such as the min, max, mean and median. The function `summary()` prints out the five number summary, and includes the mean. 
 
 ```{r}
@@ -147,17 +196,16 @@ But what about other weights that aren't quite as low as 1, but still unusually 
 boxplot(NCbirths$weight)
 ```
 
-Let's set all birthweights less than 4 lbs to missing. 
+Let's set all birth weights less than 4 lbs to missing. 
 
 ```{r}
 NCbirths$weight[NCbirths$weight < 4] <- NA
 ```
 
-It is important to plott the data again, to make sure that there are no values below 4 now. 
+It is important to plot the data again, to make sure that there are no values below 4 now. 
 ```{r}
 boxplot(NCbirths$weight)
 ```
-
 
 -----
 
@@ -192,12 +240,12 @@ head(NCbirths[,c('gained', 'weight', 'wtgain_mom')])
 Let's add a variable to identify if a mother in the North Carolina births data set was underage at the time of birth. 
 
 * We will define this as if the mothers age `mage` is under 18. 
-* We will create a new factor varible with two values: `underage` and `adult`. 
+* We will create a new factor variable with two values: `underage` and `adult`. 
 * We will use the `ifelse()` function. 
     - It's set of arguments are: `ifelse(logical, value if TRUE, value if FALSE)`
     - The `logical` argument is a statement that resolves as a `boolean` variable, as either TRUE or FALSE.
-    - The second argument is what you want the resulting varible to contain if the logical argument is `TRUE`
-    - The last argument is what you want the resulting varible to contain if the logical argument is `FALSE`
+    - The second argument is what you want the resulting variable to contain if the logical argument is `TRUE`
+    - The last argument is what you want the resulting variable to contain if the logical argument is `FALSE`
 
 Make a new variable `underage` on the `NCbirths` data set. If `mage` is under 18, then the value of this new variable is `underage`, else it is labeled as `adult`. 
 
@@ -221,15 +269,21 @@ NCbirths[NCbirths$mage %in% c(18,19),c('mage', 'underage')]
 
 # Additional References
 
-This lesson was an introduction to typical basic data management tasks. In lesson 06 you will learn how to use functions in the `dplyr` package to perform the same, and more different data management tasks, in a more streamline manner. Both levels of techniques are equally usefull depending on the task. 
+This lesson was an introduction to typical basic data management tasks. In a later lesson you will learn how to use functions in the `dplyr` package to perform the same, and more different data management tasks, in a more streamline manner. Both levels of techniques are equally useful depending on the task. 
 
 There are always many ways to approach a problem in R. Our goal in this class is to provide you with a few ways to think of a problem. You will find what fits best for your coding style as you progress. 
-
 
 There are several other Data Camp courses that all have the first chapter free that you can use to get a start on learning more about how to import and clean up data. Here are a few. 
 
 * [Cleaning Data in R](https://www.datacamp.com/courses/cleaning-data-in-r)
 * Tidy Data - The [Journal](http://vita.had.co.nz/papers/tidy-data.pdf), and the 
   [tutorial](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html)
+
+
+Resources for handling missing data
+
+* http://www.statmethods.net/input/missingdata.html
+* https://stats.idre.ucla.edu/r/faq/how-does-r-handle-missing-values/
+* http://faculty.nps.edu/sebuttre/home/R/missings.html
 
 

@@ -1,0 +1,54 @@
+---
+title: 'Lesson 03 - Getting data into R'
+output: html_document
+---
+
+
+# Introduction
+
+
+# Download data
+
+
+# Importing data
+
+
+## Text files
+
+Read in the `email.txt` file here. 
+```{r}
+
+```
+
+> What happens if you forget to include the arguments for `header` or `sep`? Try that now. 
+
+**Forgetting both arguments**
+
+```{r}
+
+```
+
+**Forgetting the header**
+```{r}
+
+```
+
+**Forgetting the separator**
+```{r}
+
+```
+
+
+## CSV: Comma Separated Values
+Read in the `NCBirths.csv` file here. 
+```{r}
+
+```
+
+## Excel files
+Read in the `WashPost Police Shootings 2015.xlsx` file here. Don't forget that you need to load the `readxl` library first. 
+```{r}
+#library(readxl)
+
+```
+

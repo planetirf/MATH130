@@ -1,19 +1,29 @@
 
-Here you will find links to course materials such as lecture notes, videos, data sets and assignments. 
------
+<br><br> 
+
+# Online Learning Platform
+
+Data Camp can be found at http://www.datacamp.com or by clicking the banner below.
+The link to join our DataCamp classroom is provided by your instructor. 
+Without it you will only be able to access the free modules. 
 
 <a href="http://www.datacamp.com"> 
   <img src="datacamp.png" alt="Data Camp" style="width:225px;height:50px;">
 </a>
 
 
+----
 
-### [Data Sets]( http://www.norcalbiostat.com/data/)
+
+# Data Sets
+
+All data can be downloaded from Dr. Donatello's website: http://www.norcalbiostat.com/data/
+
 This page contains a list of entry level data sets for this and other Statistics classes at CSU, Chico. Clicking on these links will either directly download the file, or open the file in your web browser. If the file opens in your web browser you must _right click_ and choose _save link as_, or _save target as_. In both cases **save these files into your class folder**. 
 
+----
 
-### <a href="#hw" data-toggle="collapse">Assignments </a>
-<div id="hw" class="collapse">
+# Assignments
 
 * [HW 1](hw/hw1.Rmd)
 * [HW 2](hw/hw2.Rmd)
@@ -21,50 +31,19 @@ This page contains a list of entry level data sets for this and other Statistics
 * [HW 4](hw/hw4.Rmd)
 * [Data Analysis Project](hw/EDA_instructions_withPR.html)
 
-</div>
+---
 
-<!--- https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html ---> 
+# Notes
+Lesson  notes are available in both HTML and PDF format. Some lessons have accompanying RMD files that can be used to take notes in during the lesson. 
 
-
-### Notes
-
-* Installing R and R Studio             [[HTML]](https://norcalbiostat.netlify.com/post/software-overview/) 
 * Introduction to the class and R.      [[HTML]](notes/01_intro.html)     [[PDF]](notes/01_intro.pdf)
-* Reproducible Research using R Studio  [[HTML]](notes/02_rstudio.html)   [[PDF]](notes/02_rstudio.pdf)
-* Getting data into R.                  [[HTML]](notes/03_import.html)    [[PDF]](notes/03_import.pdf)
-* Using functions to learn about data.  [[HTML]](notes/04_functions.html) [[PDF]](notes/04_functions.pdf) 
-* Basic data management.                [[HTML]](notes/04_dm.html)        [[PDF]](notes/04_dm.pdf) 
+* Getting started with R Markdown       [[HTML]](notes/02_rmd.html)       [[PDF]](notes/02_rmd.pdf)
+* Getting data into R.                  [[HTML]](notes/03_import.html)    [[PDF]](notes/03_import.pdf)    [[RMD]](notes/03_import_notes.Rmd)
+* Using functions to learn about data.  [[HTML]](notes/04_fun_dm.html)    [[PDF]](notes/04_fun_dm.pdf)    [[RMD]](notes/04_fun_dm_notes.Rmd) 
 * Managing Factors                      [[HTML]](notes/05_factors.html)   [[PDF]](notes/05_factors.pdf)
-* Data Visualization I                  [[HTML]](notes/07_graph.html)     [[PDF]](notes/07_graph.pdf)
-* Data management the `dplyr` way.      [[HTML]](notes/06_dplyr.html)     [[PDF]](notes/06_dplyr.pdf)
-* Merging data from multiple sources    [[HTML]](notes/06_joins.html)     [[PDF]](notes/06_joins.pdf)
-* Data Visualization II                 [[HTML]](notes/07_graph2.html)    [[PDF]](notes/07_graph2.pdf)
-
-
-### Videos
-
-These videos sometimes contain examples developed for the [Data Analysis and Visualization in R for Ecologists](https://datacarpentry.org/R-ecology-lesson/index.html ), a [Data Carpentry](https://datacarpentry.org/) lesson. 
-
-* 01_Intro
-* 01a_R  
-* 01b_DataCamp
-* 02_RStudio
-* 02b_rr -- cut down? very short. 
-* 02c_Rmarkdown
-* hw1 -- include more info on indexing and subsetting data frames based on logical statements
-* import
-* functions (include missing data here)
-* data management
-* hw 2
-* factors
-* dplyr basic
-* ggplot basic
-* hw 3
-* grouped summaries
-* table joins
-* ggplot advanced
-* hw 4
-
+* Data Visualization I                  [[HTML]](notes/06_plots.html)     [[PDF]](notes/06_plots.pdf)
+* Data management the `dplyr` way.      [[HTML]](notes/07_dplyr.html)     [[PDF]](notes/07_dplyr.pdf)
+* Data Visualization II                 [[HTML]](notes/08_plot2.html)     [[PDF]](notes/08_plot2.pdf)
 
 
 

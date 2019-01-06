@@ -1,0 +1,119 @@
+---
+title: "Lesson 04 - Functions and basic data management"
+output: html_document
+---
+
+
+# Introduction
+
+
+## Preparation
+* Change the path below to import the `NCbirths` data set. 
+
+```{r}
+NCbirths <- read.csv("../data/NCbirths.csv", header=TRUE)
+```
+
+----- 
+
+# Missing Data
+
+
+
+## Identifying missing values 
+
+
+----
+
+# Functions
+
+
+## Argument ordering
+
+Calculate the mean fathers age after removing the missing values. 
+
+```{r}
+
+```
+
+----- 
+
+
+# Summarizing data
+
+
+## Frequency Tables for categorical data
+Create a frequency table for whether or not the baby was born underweight. 
+
+```{r}
+ 
+```
+
+Do it again but show if there are any missing. 
+
+```{r}
+ 
+```
+
+## Summary statistics for numerical data
+
+Summary statistics for the number of visits. 
+
+```{r}
+
+```
+
+-----
+
+# Recoding data
+
+
+
+**Example 1: Too low birthweight**
+
+Set all records where `weight=1` to missing. 
+
+```{r}
+ 
+```
+
+Confirm it worked by creating a boxplot of `weight`. 
+```{r}
+
+```
+
+-----
+
+# Creating new variables
+
+
+#### **Example: basic arithmetic on existing variables**
+
+
+Create a new variable `wtgain_mom` the weight gained by the mother, that is not due to the baby by subtracting `weight` from `gained`.
+```{r}
+ 
+```
+
+Confirm this variable was created correctly
+
+```{r}
+
+```
+
+
+
+#### **Example: Using `ifelse()` to create a binary variable**
+
+Make a new variable `underage` on the `NCbirths` data set. If `mage` is under 18, then the value of this new variable is `underage`, else it is labeled as `adult`. 
+
+```{r}
+
+```
+
+Confirm it worked.
+
+```{r}
+ 
+```
+

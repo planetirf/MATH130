@@ -1,40 +1,55 @@
 ---
-title: "Lab 2: Importing, exploring, managing data using functions"
+title: "HW 2: Importing, exploring, managing data using functions"
 author: "NAME"
 date: "DATE"
 ---
 
 Answer the questions in this lab and submit the compiled WORD or PDF by the deadline. 
 
-## Importing Data
 
-1. When reading in the `Police Shootings` Excel data set, what do the arguments `sheet=1` and `col_names=TRUE` mean? 
-
-
-Use the `NCbirths` data set to answer the next set of questions. Read in the data set in the code chunk below. 
+1. Questions in this assignment use the `NCbirths` data set. Read in the data set in the code chunk below. 
 
 ```{r}
 # Read in the NC Births data set here, then delete this comment
 ```
 
 
-2. How many observations and variables are contained in this data set? 
+2. When reading in the `Police Shootings` Excel data set, what do the arguments `sheet=1` and `col_names=TRUE` mean? 
 
 
-3. Calculate the mean age of the mothers (`mage`) in the sample.
+
+3. Use the `str()` function to determine how many observations and variables are contained in the `NCbirths` data set. 
+Write the code necessary, then answer the question in a complete sentence. 
+
+
+
+4. Go to Dr. D's data website (http://norcalbiostat.com/data/cleaned_data/) and find 3 data sets with different file types.
+For each file state the name of the file, it's file type, and the function you would need to use to read that file into R. 
+
+> Ex: The `email` data set is tab-delimited text (.txt) file. It can be read into R using the `read.delim()` function. 
+
+* 
+
+* 
+
+* 
+
+
+
+5. Calculate the mean age of the mothers (`mage`) in the sample.
 ```{r}
 
 ```
 
 
-4. Pregnancies last on average 38 weeks. Edit the `weeks` variable to change all records where `weeks` is greater than 38, to equal 38. That is, for all record where `weeks>38`, change the value of `weeks` to `<- 38`. 
+6. Pregnancies last on average 38 weeks. Edit the `weeks` variable to change all records where `weeks` is greater than 38, to equal 38. That is, for all record where `weeks>38`, change the value of `weeks` to `<- 38`. 
 
 ```{r}
 
 ```
 
 
-5. Use the `summary` function to calculate summary statistics on the fathers age (`fage`). 
+7. Use the `summary` function to calculate summary statistics on the fathers age (`fage`). 
    Round to 3 digits using the `digits=` argument. Don't forget that you can look at the 
    bottom of the help for summary (`?summary`) file for examples on how to use this function.  
 ```{r}
@@ -42,14 +57,15 @@ Use the `NCbirths` data set to answer the next set of questions. Read in the dat
 ```
 
    
-6. What is the distribution of smoking habit (`habit`) amongst the mothers in the sample? 
+8. What is the distribution of smoking habit (`habit`) amongst the mothers in the sample? 
    i.e. How many are smokers and how many are non-smokers?  _Hint: Use the `table()`_ function. 
 ```{r}
 
 ```
    
    
-7. Use the `ifelse()` function to create a new variable called `missing_fage` to identify if the fathers age is missing. The **logical statement** to identify if something is missing looks like this: `is.na(variable)`. 
+9. Use the `ifelse()` function to create a new variable called `missing_fage` to identify if the fathers age is missing. 
+The **logical statement** to identify if something is missing looks like this: `is.na(variable)`. 
     * Set this new variable equal to `'MISSING'` if `fage` is missing (the logical statement is TRUE)
     * set this new variable equal to `'OBSERVED'` if `fage` is not missing (the logical statement is FALSE)
 
@@ -59,7 +75,7 @@ Use the `NCbirths` data set to answer the next set of questions. Read in the dat
 
 
 
-8. What class of data is this new variable? 
+10. What class of data is this new variable? _Hint: Use the `class()` function._
 ```{r}
 
 ```
@@ -67,7 +83,8 @@ Use the `NCbirths` data set to answer the next set of questions. Read in the dat
  
  
    
-9. What percent of records are missing the fathers age? 
+11. What percent of records are missing the fathers age? There are several ways you can calculate this! 
+Explain what your process, and answer the question in a full sentence. 
 
 
 

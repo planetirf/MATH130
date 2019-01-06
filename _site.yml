@@ -3,12 +3,12 @@ output_dir: "."
 navbar:
   title: "MATH 130 (R)"
   left:
-    - text: Course Materials 
+    - text: Data Camp
+      icon: fa-code
+      href: datacamp.com
+    - text: Materials 
       icon: fa-book
       href: mats.html
-#   - text: "Projects"
-#     icon: fa-bar-chart
-#     href: project.html
 
       
   right:

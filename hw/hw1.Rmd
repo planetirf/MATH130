@@ -45,7 +45,7 @@ a <- "green"
 
 Data Camp took you through a tour of Vegas data. Let's recreate and play around with a week at the tables. 
 
-1. Create three vectors (`weekday`, `poker`, `roulette`) to describe the following outcome. 
+1. Create three vectors (`weekday`, `poker`, `roulette`) to describe the following outcome. Be sure to use these vector names exactly as I have written them here. 
 
 * `weekday`: The 5 weekdays.
 * `poker`: 
@@ -122,10 +122,11 @@ vegas <- data.frame(day = weekday, poker = poker, roulette = roulette)
 
 > Knit now. Did the vegas data set show up in your output? 
 > If not, did you remove `eval=FALSE` from your code chunk options? 
+> If that didn't work, did you name your vectors earlier exactly `weekday`, `poker`, and `roulette`?
 
 
-2. Print out the records for just Tuesday and Thursday using bracket notation
-and indices `[,]`. 
+2. Print out the records for just Tuesday and Thursday using bracket notation 
+and indices `[,]`. _Hint: To print out the first two columns you could use [,c(1,2)]_
 ```{r}
 
 ```
@@ -136,22 +137,23 @@ and indices `[,]`.
 ```
 
 
-3. Print out the records for Wednesday only, using a logical statement such
-as `day == "Wed"` to identify the row of interest. 
+3. Print out the records for Wednesday only, using bracket notation and a logical statement such
+as `vegas$day == "Wed"` to identify the row of interest. 
 ```{r}
 
 ```
 
 
-4. Create a new variable called `total` that adds the daily totals for each
-game together. Print the full data set again.
+4. Create a new variable called `vegas$total` that adds the daily totals for each
+game together. Print the full data set again. Notice that the `total` variable is now 
+part of the `vegas` dat set. 
 ```{r}
 
 ```
 
 5. Use this new total vector to subset the data frame now to only include days
 where there was a positive total. Store this result as a new object called 
-`win_days`, and print this new object to the screen. 
+`vegas$win_days`, and print this new object to the screen. 
 ```{r}
 
 ```

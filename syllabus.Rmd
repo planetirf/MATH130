@@ -68,8 +68,6 @@ Credit / No Credit. There are 100 points available in this course. You must earn
 
 * Daily attendance: (10 pts)
 * Data Camp: (10 pts)
-    - Intro to R 
-    - Working with R Studio IDE (Part 1) - Ch 1 & 2 (Orientation, Programming) 
 * Assignments:
     - HW 1 (10 pts)
     - HW 2 (15 pts)
@@ -83,15 +81,14 @@ Credit / No Credit. There are 100 points available in this course. You must earn
 # Schedule of Topics
 The general outline of topics is listed below. A detailed most up to date schedule can be found on the course website. 
 
-* Intro to the R language and it's packages
-* R Studio suite of awesomeness
-* Reproducible Research with R Markdown
-* Functions
+* Intro to the R language and the R Studio Integrated Development Environment. 
+* Conducting reproducible research with R Markdown
 * Getting data into R
-* Managing the spreadsheet-like data frame
-* Data Visualization
-* Data Manipulation and Aggregation
-* Exploratory Data Analysis
+* Managing spreadsheet-like data using functions
+* Basic data management
+* Data Visualization using base, and `ggplot2` graphics
+* Data Manipulation and Aggregation with `dplyr`
+* Exploratory Data Analysis (individual project)
 
 ----
 

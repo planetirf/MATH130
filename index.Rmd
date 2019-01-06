@@ -22,44 +22,29 @@ _This site has been updated for Spring 19. Please notify me of any broken or mis
 # Schedule
 
 _Last Updated: `r format(Sys.Date(), '%m/%d/%Y')` _
+
 Click each weekly header below to expand and see the materials for that week. 
-
-### <a href="#week0" data-toggle="collapse">Prepare: Get connected and install programs</a>
-<div id="week0" class="collapse">
-
-`r emo::ji("notebook_with_decorative_cover")` Reading:
-
-* Install R and R Studio [[HTML]](https://norcalbiostat.netlify.com/post/software-overview/)  `r emo::ji("cross_mark")`
-
-`r emo::ji("pencil2")` Assignments: 
-
-* Join our Data Camp classroom by using the invite link sent to you by your instructor. 
-* Create a class folder in an easy to find place. Name this file using one of the options below:
-    - No spaces, either ALL CAPS (`MATH130`), no caps (`math130`), or snake_case (`math_130`)
-
-</div>
 
 ### <a href="#week1" data-toggle="collapse">Week 1: Getting started with R and R Studio</a>
 
 <div id="week1" class="collapse">
 
-`r emo::ji("notebook_with_decorative_cover")` Reading:
+`r emo::ji("notebook_with_decorative_cover")` Notes :
 
-* Introduction to the class. [[HTML]](notes/01_intro.html) [[PDF]](notes/01_intro.pdf) 
-* Reproducible Research using R Studio [[HTML]](notes/02_rstudio.html) [[PDF]](notes/02_rstudio.pdf) `r emo::ji("cross_mark")`
+* lec01-Introduction to the class.  [[HTML]](notes/01_intro.html) [[PDF]](notes/01_intro.pdf) 
+* lec02-Introduction to R Markdown  [[HTML]](notes/02_rmd.html)   [[PDF]](notes/02_rmd.pdf) 
 
 `r emo::ji("pencil2")` Assignments (in order): 
 
-* Complete the Data Camp assigned course: `Introduction to R` 
-* Watch the 1 minute video: "[What is R Markdown?](http://rmarkdown.rstudio.com/lesson-1.html)"
-* Complete the Data Camp assigned course: `Working with the R Studio IDE (Part 1)`, **Orientation and Programming** only!
-* Click this link to download the homework assignment. [[HW 1 RMD]](hw/hw1.Rmd) `r emo::ji("cross_mark")`
-    - <span style="color:red">Save it into your class folder</span>
-    - You will write your answers directly in this Rmarkdown code file.
-    - Be sure to knit often! (after every question is advised.)
-    - Submit the **.RMD file** for this assignment as instructed by the due date. 
+1. Join our Data Camp classroom by using the invite link sent to you by your instructor. 
+2. Complete the Data Camp assigned course: `Introduction to R` 
+3. Watch the 1 minute video: "[What is R Markdown?](http://rmarkdown.rstudio.com/lesson-1.html)"
+4. Complete the Data Camp assigned course: `Working with the R Studio IDE (Part 1)`, **Orientation and Programming** only!
+5. Install R and R Studio onto your computer. 
+6. Review lec02 notes (done in class day 2)
+7. Complete Homework 1. [[HW 1]](hw/hw1.Rmd)
+    - Submit the `.RMD file` for this assignment as instructed by the due date.  
     
-  
 </div>
 
 
@@ -67,39 +52,51 @@ Click each weekly header below to expand and see the materials for that week.
 
 <div id="week2" class="collapse">
 
-* Getting data into R and exploring [[03_import]](notes/03_import.html) `r emo::ji("cross_mark")`
-* Using functions to summarize and manage data [[04_functions_recode]](notes/04_functions_recode.html)`r emo::ji("cross_mark")`
-* Assignment: [[HW 2]](hw/hw2.Rmd). 
+`r emo::ji("notebook_with_decorative_cover")` Notes :
+
+* Getting data into R. [[HTML]](notes/03_import.html) [[PDF]](notes/03_import.pdf) [[RMD]](notes/03_import_notes.Rmd) 
+* Using functions to summarize and manage data. [[HTML]](notes/04_fun_dm.html) [[PDF]](notes/04_fun_dm.pdf) [[RMD]](notes/04_fun_dm_notes.Rmd)
+
+`r emo::ji("pencil2")` Assignment [[HW 2]](hw/hw2.Rmd). 
 
 </div>
 
 ### <a href="#week3" data-toggle="collapse">Week 3: Factors, more data management and grouped summaries.</a>
 
 <div id="week3" class="collapse">
+
+`r emo::ji("notebook_with_decorative_cover")` Notes :
+
 * Wrangling factors. [[05_factors]](notes/05_factors.html) 
 * More data management and creating grouped summaries using `dplyr`. [[06_dplyr]](notes/06_dplyr.html) 
-* Assignment: [[HW 3]](hw/hw3.Rmd) 
+
+
+`r emo::ji("pencil2")` Assignment [[HW 3]](hw/hw3.Rmd).  
 
 </div>
 
 ### <a href="#week4" data-toggle="collapse">Week 4: Making pretty pictures to win friends and influence people.</a>
 
 <div id="week4" class="collapse">
+
+`r emo::ji("notebook_with_decorative_cover")` Notes :
+
 * Statistical Data Visualization [[07_graphs]](notes/07_graphs.html)
 * Graphics galore - [[the full data viz tutorial]](notes/full_data_viz_tutorial.html) (optional)
-* Assignment: [[HW 4]](hw/hw4.Rmd)  
+
+`r emo::ji("pencil2")` Assignment [[HW 4]](hw/hw4.Rmd).  
+
 </div>
 
 ### <a href="#week5" data-toggle="collapse">Week 5: Putting it all together: Exploratory Project</a>
 
 <div id="week5" class="collapse">
 
-* Now it's time to put your new 1337 skillz to the test!
-* [Instructions](hw/EDA_instructions_withPR.html) on the assignment and how to do the peer review. 
-* Previous class projects can be seen [[here]](https://norcalbiostat.github.io/peer_review/math130_eda.html). 
+Now it's time to put your new 1337 skillz to the test!
 
-</span>
-    
+Previous class projects can be seen [[here]](https://norcalbiostat.github.io/peer_review/math130_eda.html). 
+
+`r emo::ji("pencil2")` Assignment: [[Exploratory Data Analysis Project]](hw/EDA_instructions_withPR.html).  
 
 </div>
 
