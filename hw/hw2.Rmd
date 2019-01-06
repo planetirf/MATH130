@@ -18,13 +18,11 @@ Answer the questions in this lab and submit the compiled WORD or PDF by the dead
 
 
 
-3. Use the `str()` function to determine how many observations and variables are contained in the `NCbirths` data set. 
-Write the code necessary, then answer the question in a complete sentence. 
+3. Use the `str()` function to determine how many observations and variables are contained in the `NCbirths` data set. Write the code necessary, then answer the question in a complete sentence. 
 
 
 
-4. Go to Dr. D's data website (http://norcalbiostat.com/data/cleaned_data/) and find 3 data sets with different file types.
-For each file state the name of the file, it's file type, and the function you would need to use to read that file into R. 
+4. Go to Dr. D's data website (http://norcalbiostat.com/data/cleaned_data/) and find 3 data sets with different file types. For each file state the name of the file, it's file type, and the function you would need to use to read that file into R. 
 
 > Ex: The `email` data set is tab-delimited text (.txt) file. It can be read into R using the `read.delim()` function. 
 
@@ -42,52 +40,39 @@ For each file state the name of the file, it's file type, and the function you w
 ```
 
 
-6. Pregnancies last on average 38 weeks. Edit the `weeks` variable to change all records where `weeks` is greater than 38, to equal 38. That is, for all record where `weeks>38`, change the value of `weeks` to `<- 38`. 
+6. Pregnancies last on average 38 weeks. Recode the `weeks` variable to change all records where `weeks` is greater than 38, to equal 38. That is, for all record where `weeks>38`, change the value of `weeks` to `<- 38`. 
 
 ```{r}
 
 ```
 
 
-7. Use the `summary` function to calculate summary statistics on the fathers age (`fage`). 
-   Round to 3 digits using the `digits=` argument. Don't forget that you can look at the 
-   bottom of the help for summary (`?summary`) file for examples on how to use this function.  
+7. Use the `summary` function to calculate summary statistics on the fathers age (`fage`). Round to 3 digits using the `digits=` argument. Don't forget that you can look at the bottom of the help for summary (`?summary`) file for examples on how to use this function.  
 ```{r}
 
 ```
 
    
-8. What is the distribution of smoking habit (`habit`) amongst the mothers in the sample? 
-   i.e. How many are smokers and how many are non-smokers?  _Hint: Use the `table()`_ function. 
+8. What is the distribution of smoking habit (`habit`) among? i.e. How many are smokers and how many are non-smokers?  _Hint: Use the `table()`_ function. 
 ```{r}
 
 ```
    
+
+9. Use the `is.na()` function to create a new variable called `missing_gained` on the `NCbirths` data set that identifies if data on the `gained` variable is missing. 
+    
+    
+    
    
-9. Use the `ifelse()` function to create a new variable called `missing_fage` to identify if the fathers age is missing. 
-The **logical statement** to identify if something is missing looks like this: `is.na(variable)`. 
-    * Set this new variable equal to `'MISSING'` if `fage` is missing (the logical statement is TRUE)
-    * set this new variable equal to `'OBSERVED'` if `fage` is not missing (the logical statement is FALSE)
-
-```{r}
-
-```
-
-
-
-10. What class of data is this new variable? _Hint: Use the `class()` function._
-```{r}
-
-```
-   
- 
- 
-   
-11. What percent of records are missing the fathers age? There are several ways you can calculate this! 
-Explain what your process, and answer the question in a full sentence. 
+10. What percent of records are missing data on weight gained during pregnancy? There are several ways you can calculate this! Explain what your process, and answer the question in a full sentence. 
 
 
 
 
+11. Use the `ifelse()` function to dichotomize the `weeks` variable at it's mean where records with values over the mean are labeled `AboveAve` and records with values below the mean are labeled `UnderAve`. Call this new variable `week_ave`. (_Hint: Calculate the mean value for the variable `weeks`, then use that number in the logical statement part of the `ifelse` function._)
 
+
+
+
+12. Create a frequency table for your new variable (`week_ave`) in the previous question. Then use the pipe operator `%>%` to add on the function `prop.table()` at the end. What does the `prop.table()` function do? 
 

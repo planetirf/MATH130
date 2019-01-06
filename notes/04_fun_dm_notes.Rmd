@@ -103,7 +103,7 @@ Confirm this variable was created correctly
 
 
 
-#### **Example: Using `ifelse()` to create a binary variable**
+## Dichtomizing data 
 
 Make a new variable `underage` on the `NCbirths` data set. If `mage` is under 18, then the value of this new variable is `underage`, else it is labeled as `adult`. 
 
@@ -116,4 +116,12 @@ Confirm it worked.
 ```{r}
  
 ```
+
+
+# Chaining using the pipe %>%
+
+```{r}
+
+```
+
 

@@ -54,35 +54,38 @@ Click each weekly header below to expand and see the materials for that week.
 
 `r emo::ji("notebook_with_decorative_cover")` Notes :
 
-* Getting data into R. [[HTML]](notes/03_import.html) [[PDF]](notes/03_import.pdf) [[RMD]](notes/03_import_notes.Rmd) 
-* Using functions to summarize and manage data. [[HTML]](notes/04_fun_dm.html) [[PDF]](notes/04_fun_dm.pdf) [[RMD]](notes/04_fun_dm_notes.Rmd)
+* Getting data into R [[HTML]](notes/03_import.html) [[PDF]](notes/03_import.pdf) [[RMD]](notes/03_import_notes.Rmd) 
+* Using functions to summarize and manage data [[HTML]](notes/04_fun_dm.html) [[PDF]](notes/04_fun_dm.pdf) [[RMD]](notes/04_fun_dm_notes.Rmd)
 
 `r emo::ji("pencil2")` Assignment [[HW 2]](hw/hw2.Rmd). 
 
 </div>
 
-### <a href="#week3" data-toggle="collapse">Week 3: Factors, more data management and grouped summaries.</a>
+### <a href="#week3" data-toggle="collapse">Week 3: Factors and Making pretty pictures to win friends and influence people.</a>
 
 <div id="week3" class="collapse">
 
 `r emo::ji("notebook_with_decorative_cover")` Notes :
 
-* Wrangling factors. [[05_factors]](notes/05_factors.html) 
-* More data management and creating grouped summaries using `dplyr`. [[06_dplyr]](notes/06_dplyr.html) 
-
+* Wrangling factors  [[HTML]](notes/05_factors.html) [[PDF]](notes/05_factors.pdf) [[RMD]](notes/05_factors_notes.Rmd) 
+* Basic Graphing     [[HTML]](notes/06_plots.html)   [[PDF]](notes/06_plots.pdf)   [[RMD]](notes/06_plots_notes.Rmd)
+* (not quite) [[All the graphing things]](https://norcalbiostat.github.io/AppliedStatistics_notes/data-viz.html) (optional)
 
 `r emo::ji("pencil2")` Assignment [[HW 3]](hw/hw3.Rmd).  
 
+This assignment uses data from the `nycflights13` package. This data set is on all flights out of the three major airports in NYC from 2013. There are multiple data sets contained within this package. Install this package before you start the homework so that you can access these data sets. 
+
 </div>
 
-### <a href="#week4" data-toggle="collapse">Week 4: Making pretty pictures to win friends and influence people.</a>
+### <a href="#week4" data-toggle="collapse">Week 4: Better data management! Better plots!</a>
 
 <div id="week4" class="collapse">
 
 `r emo::ji("notebook_with_decorative_cover")` Notes :
 
-* Statistical Data Visualization [[07_graphs]](notes/07_graphs.html)
-* Graphics galore - [[the full data viz tutorial]](notes/full_data_viz_tutorial.html) (optional)
+* More data management and aggregation `dplyr` [[HTML]](notes/07_dplyr.html)  [[PDF]](notes/07_dplyr.pdf) [[RMD]](notes/07_dplyr_notes.Rmd) 
+* Intermediate Graphing                        [[HTML]](notes/08_plots2.html) [[PDF]](notes/08_plots2.pdf) [[RMD]](notes/08_plots2_notes.Rmd)
+* (not quite) [[All the graphing things]](https://norcalbiostat.github.io/AppliedStatistics_notes/data-viz.html) (optional)
 
 `r emo::ji("pencil2")` Assignment [[HW 4]](hw/hw4.Rmd).  
 

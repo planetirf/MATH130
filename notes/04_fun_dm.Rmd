@@ -3,13 +3,13 @@ title: "Lesson 04 - Functions and basic data management"
 author: "Robin Donatello"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
-  pdf_document:
-    toc: no
   html_document:
     highlight: tango
     theme: yeti
     toc: yes
     toc_float: yes
+  pdf_document:
+    toc: no
 ---
 
 
@@ -30,10 +30,12 @@ After completing this lesson students will be able to
 ## Preparation
 Prior to this lesson students should
 
-* Download the [[04_fun_dm_notes.Rmd]] R markdown file and save into your Math130 folder. 
-* Change the path below to import the `NCbirths` data set. 
+* Download the [[04_fun_dm_notes.Rmd]](04_fun_dm_notes.Rmd) R markdown file and save into your Math130 folder. 
+* Write the code to import the `NCbirths` data set into this notes file. Run it to make sure it works. 
+* Install the `dplyr` package. 
 
-```{r}
+```{r, warning=FALSE, message=FALSE}
+library(dplyr)
 NCbirths <- read.csv("../data/NCbirths.csv", header=TRUE)
 ```
 
@@ -77,6 +79,21 @@ summary(NCbirths$fage)
 ```
 
 Later lessons will discuss how to work around these missing values.
+
+### Is it NA?
+
+The `is.na()` function returns TRUE or FALSE for each element in the provided vector for whether or not that element is missing.  
+```{r}
+is.na(c("green", NA, 3))
+```
+
+This can be used to count the number of missing values in a variable
+
+```{r}
+sum(is.na(NCbirths$fage))
+```
+
+There are 171 records in this data set where the age for the father is not present. 
 
 ----
 
@@ -235,7 +252,9 @@ head(NCbirths[,c('gained', 'weight', 'wtgain_mom')])
 
 
 
-#### **Example: Using `ifelse()` to create a binary variable**
+## Dichtomizing data 
+
+The `ifelse()` is hands down the easiest way to create a binary variable (dichotomizing, only 2 levels)
 
 Let's add a variable to identify if a mother in the North Carolina births data set was underage at the time of birth. 
 
@@ -264,6 +283,40 @@ table(NCbirths$underage, useNA="always")
 ```{r}
 NCbirths[NCbirths$mage %in% c(18,19),c('mage', 'underage')]
 ```
+
+Notice I snuck a new operator in on you - `%in%`. This is a way you can provide a list of values (a.k.a a vector) and say "if the value of the variable I want is %in% any of these options in this vector..." do the thing. 
+
+-----
+
+# Chaining using the pipe %>%
+
+![](../pipe.png)
+
+The pipe is technically part of the `magrittr` package, but quite often we will use it in conjunction with functions from the `dplyr` package introduced in lesson 07. In fact it's so commonly used with `dplyr` functions that it the `magrittr` package is loaded when you load `dplyr` (which is what we did here). However, the pipe operator is so useful in many other places that it deserves it's own introduction here. 
+
+> "and then...."
+
+This is what I read to myself when using the pipe (`%>%`). The pipe lets you chain functions together, as long as the first argument of the function is a `data.frame` or a variable in a `data.frame`. 
+
+### Example: Frequency tables & summary statistics
+
+Earlier we saw that to create a frequency table for categorical variable we can type: 
+```{r}
+table(NCbirths$mature)
+```
+
+This is also accomplished by first stating the variable, then piping in the summary function. 
+
+```{r}
+NCbirths$mature %>% table()
+
+NCbirths$mage %>% mean()
+```
+
+So in my head i'm reading "Take the `mage` variable on the `NCbirths` data set, _and then_ calculate the mean."
+
+Seems kinda trivial here, the base function without the pipe is pretty easy. But I promise the usefulness will be apparent before the class is out. 
+
 
 -----
 

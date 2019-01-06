@@ -1,25 +1,30 @@
 ---
-title: "Lab 3: More data management and grouping using factors"
+title: "Lab 4"
 author: "NAME"
 date: "DATE"
+output: html_document
 ---
 
-Answer the questions in this lab and submit the compiled HTML or PDF by the deadline. Don't forget to change your name and date in the above header. 
+# Introduction
 
-This lab uses the `dplyr` and `nycflights13` packages. It is good habit to load all packages in the first code chunk. 
+You will be managing factors and creating some basic plots in this homework assignment. The data sets you will use come from two places, `NCbirths` which you will have to read in below, and the `planes` data set which comes part of the `nycflights13` package. 
+
+The code chunk below sets some code chunk options (using `opts_chunk` from the `knitr` package) to make your knitted report output more readable. I encourage you to play around with these options to learn how they work. 
 
 ```{r, warning=FALSE, message=FALSE}
-library(dplyr)
-library(nycflights13)
+knitr::opts_chunk$set(warning=FALSE, message=FALSE, fig.height=4, fig.width=5, fig.align='center') 
+# Load the ggplot2 library here
+# Load the nycflights13 library here
+# Read in the NCbirths data set here. 
 ```
 
+You can use a combination of base and `ggplot2` graphics for this lab. Your answers can be for your eyes only (exploratory). They do not have to be pretty.  
 
-# Factors
 
 ## How many passengers can a plane hold before needing another engine? 
 This question uses the `planes` data set. Let's load that into our working environment so we can look at it.
 ```{r}
-planes <- planes
+data(planes)
 ```
 
 
@@ -29,7 +34,6 @@ planes <- planes
 
 ```
 
-The number of engines is an integer variable with values between 1 and 4. 
 
 2. There are too few planes with more than 2 engines. Recode all records with 4 engines to a value of 3. _Hint: Revisit lesson 04_. Create a `table` of this variable again to ensure that all 4's are now 3's. 
 
@@ -53,51 +57,57 @@ Make sure you create this new variable as part of the `planes` data set. (i.e. `
 ```
 
 
-# dplyr
+# Univariate plots
+This section uses data from both the `NCbirths` and the `planes` data sets. 
 
-## Basic verbs
-You will use the `flights` data set for the next few exercises.  Let's load that into our working environment so we can look at it.
-```{r}
-flights <- flights
-```
 
-* At each step use the assignment operator `<-` to store the results into a new data table and use that data in the next step. 
-* At each step, print out the resulting data frame so you can see the results. 
-* These steps have been started for you. You must remove the `eval=FALSE` in the code chunk to get it to work when you knit. 
-
-1. Use `select()` to extract the following variables: `origin`, `distance`, and `air_time`, `dest`. 
-
-```{r, eval=FALSE}
-f1 <- flights %>% select()
-f1
-```
-
-2. Use `filter()` to select only the flights whose destination (`dest`) is Atlanta (ATL)
-
-```{r, eval=FALSE}
-f2 <- f1 %>% filter()
-f2
-```
-
-3. Use `mutate()` to create a new variable `speed` that calculates speed of the plane as `distance/air_time*60.
-
-```{r, eval=FALSE}
-f3 <- f1 %>% mutate()
-f3
-```
+1. A table of marital status (`marital`) from NCbirths. 
 
 
 
-5. Use `dplyr` chaining magic to...
+2. A barchart of maritial status (same as above)
 
-* take the planes data set that you created earlier _and then_...
-* `group_by`the `num_engines` _and then_...
-* use `summarise` to create three new variables: 
-    - `ave_seats` as the `mean()` number of `seats`
-    - `min_seats` as the `min()` number of `seats`
-    - `max_seats` as the `max()` number of `seats`
 
-```{r}
 
-```
+3. A barchart of the type of plane (`planes$type`) with the levels displayed in increasing frequency order. 
+
+
+
+4. A histogram of mothers age (`mage`) with an overlaid density plot in a different color. Be sure that both density curve and histogram can be seen. 
+
+
+
+5. A horizontal boxplot of weight of the baby (`weight`)
+
+
+
+# Bivariate plots
+
+6. Create a two-way frequency table of maturity status (`mature`) against smoking `habit`
+
+
+
+7. Create a proportion table of smoking habit _within_ maturity status. Round to 3 digits. 
+
+
+
+8. Create a grouped barchart that reflects the frequencies you calculated above. Think carefully which variable goes on the `x` axis, and which one is used for the `fill`
+
+
+
+9. A scatterplot of length of pregnancy in `weeks` and the babies `weight`. Include a smoother line in brown, and a best fit linear model line in purple
+    
+    
+
+10. Grouped boxplots of baby `weight` by mothers smoking `habit`. Make sure you `fill` the boxes by `habit` as well. 
+
+
+
+11. Replicate the same plot as above, but overlay a violin plot and change the transparency of both violin and boxplot layers. 
+
+
+
+12. Overlaid density plots of weight `gained` by babies `gender`. Do not apply a `fill`, only use the `color` aestetic. 
+
+
 

@@ -1,22 +1,23 @@
 ---
-title: "Lesson 07 - Creating graphics"
+title: "Lesson 06 - Creating graphics"
 author: "Robin Donatello"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
   html_document:
     toc: yes
     toc_float: yes
+  pdf_document:
+    toc: no
 ---
 
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
-library(knitr)
-opts_chunk$set(warning=FALSE, message=FALSE) 
+library(dplyr)
+knitr::opts_chunk$set(warning=FALSE, message=FALSE, cache=TRUE) 
 ```
 
-> This lesson is a brief excerpt from Dr. Donatello's [[Full data viz tutorial]](full_data_viz_tutorial.html). 
+> This lesson is a brief excerpt from the [[Applied Statistics Notebook]](https://norcalbiostat.github.io/AppliedStatistics_notes/data-viz.html). 
 
-----
 
 # Introduction
 Visualizing your data is hands down the most important thing you can learn to do. Seeing is critical to understanding. There are two audiences in mind when creating data visualizations: 
@@ -26,16 +27,25 @@ Visualizing your data is hands down the most important thing you can learn to do
 
 You will see, and slowly learn, how to add these annotations and how to clean up your graphics to make them sharable. Functions inside the `ggplot2` package automatically does a lot of this work for you. Remember this package has to be loaded prior to being able to access the functions within. 
 
-```{r}
-library(ggplot2)
-```
+## Student Learning Outcomes
+After completing this lesson students will be able to
+
+* create basic data visualizations
+
+## Preparation
+
+Prior to this lesson students should
+
+* Download the [[06_plots_notes.Rmd]] R markdown file and save into your Math130 folder. 
+* Install the `ggplot2` package. 
+
 
 Use the navbar to the left to help you navigate this long document. 
 
 ## The syntax of `ggplot`
 The reason we use the functions in `ggplot2` is for consistency in the structure of it's arguments. Here is a bare bones generic plotting function: 
 
-```{r, eval=FALSE}
+```r
 ggplot(data, aes(x=x, y=y, col=col, fill=fill, group=group)) +  geom_THING() 
 ```
 
@@ -83,6 +93,12 @@ The geometry needed to draw a barchart in ggplot is `geom_bar()`.
 ```{r}
 ggplot(dsmall, aes(x=cut)) + geom_bar()
 ```
+
+We can reorder these levels on the fly. Here i'm using `forcats` but that's only one option. 
+```{r}
+ggplot(dsmall, aes(x=forcats::fct_infreq(cut))) + geom_bar() + xlab("cut")
+```
+
 
 ## Continuous variable
 The price, carat, and depth of the diamonds are all continuous variables. 
@@ -153,14 +169,14 @@ There are 4 Fair diamonds with color D, and 21 Ideal quality diamonds with color
 #### Cell proportions
 Wrapping `prop.table()` around a table gives you the **cell** proportions. 
 ```{r}
-prop.table(table(dsmall$cut, dsmall$color))
+table(dsmall$cut, dsmall$color) %>% prop.table()
 ```
 0.4% of all diamonds are D color and Fair cut, 2.1% are J color and Ideal cut. 
 
 #### Row proportions
 To get the **row** proportions, you specify `margin=1`. The percentages now add up to 1 across the rows. 
 ```{r}
-round(prop.table(table(dsmall$cut, dsmall$color), margin=1),3)
+table(dsmall$cut, dsmall$color) %>% prop.table(margin=1) %>% round(3)
 ```
 
 14.8% of all Fair quality diamonds are color D. 5.4% of all Ideal quality diamonds have color J.
@@ -168,7 +184,7 @@ round(prop.table(table(dsmall$cut, dsmall$color), margin=1),3)
 #### Column proportions
 To get the **column** proportions, you specify `margin=2`. The percentages now add up to 1 down the columns. 
 ```{r}
-round(prop.table(table(dsmall$cut, dsmall$color), margin=2),3)
+table(dsmall$cut, dsmall$color) %>% prop.table(margin=2) %>% round(3)
 ```
 
 2.7% of all D color diamonds are of Fair quality. 44.7% of all J color diamonds are of Ideal quality. 
@@ -205,7 +221,7 @@ With ggplot we specify both the x and y variables, and add a point.
 ggplot(dsmall, aes(x=carat, y=price)) + geom_point()
 ```
 
-### Adding lines to the scatterplots 
+#### Adding lines to the scatterplots 
 Two most common trend lines added to a scatterplots are the "best fit" straight line and the "lowess" smoother line. This is done by adding a `geom_smooth()` layer. 
 
 ```{r}
@@ -236,7 +252,7 @@ A simple addition, just define your x and y accordingly. Specifying your `fill` 
 ggplot(dsmall, aes(x=color, y=carat, fill=color)) + geom_boxplot()
 ```
 
-### Adding violins to the boxplot
+#### Adding violins to the boxplot
 A violin plot is like a density plot, turned on it's side, and reflected around the axis for symmetry purposes. Overlaying a boxplot and a violin plot serves a similar purpose to Histograms + Density plots. It shows outliers, the location of most the data, and better shows the shape/skew of the distribution
 
 ```{r}
@@ -244,27 +260,6 @@ ggplot(dsmall, aes(x=color, y=carat, fill=color)) +
         geom_violin(alpha=.1) + 
         geom_boxplot(alpha=.5, width=.2)
 ```
-
-### Grouped histograms
-
-By default ggplot wants to overlay all plots on the same grid. This doesn't look to good with histograms or density plots. The top layer hides the others. 
-```{r, fig.width=10}
-a <- ggplot(dsmall, aes(x=carat, fill=color)) + geom_histogram()
-b <- ggplot(dsmall, aes(x=carat, fill=color)) + geom_density() 
-gridExtra::grid.arrange(a,b, ncol=2)
-```
-
-The solid fills are still difficult to read, so we can either turn down the alpha (turn up the transparency) or only color the lines and not the fill. 
-```{r, fig.width=10}
-d <- ggplot(dsmall, aes(x=carat, fill=color)) + geom_density(alpha=.2)
-e <- ggplot(dsmall, aes(x=carat, col=color)) + geom_density() 
-gridExtra::grid.arrange(d,e, ncol=2)
-```
-
-These last few plots demonstrate how to place two plots side by side. 
-
-1. Each plot is stored as an object (`a`, `b`, `d`, `e`)
-2. The `grid.arrange` function is located within the `gridExtra` package, plots the specified objects in the number of columns specified by `ncol`. 
 
 -----
 

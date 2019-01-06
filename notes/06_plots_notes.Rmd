@@ -1,0 +1,153 @@
+---
+title: "Lesson 06 - Creating graphics"
+output: html_document
+---
+
+# Introduction
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+knitr::opts_chunk$set(warning=FALSE, message=FALSE,error=TRUE) 
+library(ggplot2)
+data("diamonds")
+set.seed(1410) # Make the sample reproducible
+dsmall <- diamonds[sample(nrow(diamonds), 1000), ]
+```
+
+# Univariate (One Variable)
+
+
+## Categorical variables
+
+### Tables
+A table of `cut`. 
+
+```{r}
+ 
+```
+
+
+### Barcharts / Barplots
+Fill in the blankn line to create a barchart of `cut`. 
+
+```{r}
+ggplot(dsmall, aes(x=____)) + geom_bar()
+```
+
+
+## Continuous variable
+
+
+### Histograms
+A histogram of depth. 
+
+```{r}
+ggplot(dsmall, aes(x=_____)) + _________
+```
+
+### Density plots
+
+```{r}
+ggplot(______, aes(x=depth)) + _______()
+```
+
+### Histograms + density 
+
+
+```{r}
+ggplot(_____, aes(x=______)) + geom_density(col="blue") + 
+  geom_histogram(___(y=..____..), colour="black", fill=NA)
+```
+
+### Boxplots
+
+#### base
+```{r}
+boxplot(_____$_____)
+```
+
+```{r}
+boxplot(dsmall$depth, horizontal = _____, main="__________", xlab="__________")
+```
+
+----
+
+# Bivariate (Two Variables)
+
+## Categorical v. Categorical
+
+### Two-way Tables
+
+#### Frequency table
+
+```{r}
+table(dsmall$___, dsmall$_____)
+```
+
+#### Cell proportions
+
+```{r}
+_____(dsmall$cut, dsmall$color) %>% ________
+```
+
+
+#### Row proportions
+
+```{r}
+table(____$____, dsmall$color) %>% prop.table(________) %>% _____(3)
+```
+
+
+#### Column proportions
+
+```{r}
+table(____$____, ____$____) %>% ________(margin=2) %>% round(_)
+```
+
+
+### Grouped bar charts
+
+```{r}
+ggplot(______, ___(_=___, fill=color)) + _________() + geom_bar(_______ = "dodge")
+```
+
+
+## Continuous v. Continuous 
+
+### Scatterplot
+
+```{r}
+ggplot(dsmall, aes(______, _______)) + geom_point()
+```
+
+#### Adding lines to the scatterplots 
+
+```{r}
+ggplot(______, ____(_____, y=price)) + _______ + geom_smooth() 
+```
+
+
+```{r}
+_____(______, ___(____, ______)) + ________ + 
+  geom_smooth(se=FALSE, method="lm", color="blue") + 
+  geom_smooth(se=FALSE, color="red")
+```
+
+
+## Continuous v. Categorical
+
+
+### Grouped boxplots
+
+```{r}
+ggplot(dsmall, aes(x=color, y=carat, fill=______)) + geom_boxplot()
+```
+
+#### Adding violins to the boxplot
+
+```{r}
+ggplot(_____, aes(x=_____, y=carat, fill=_____)) +
+        geom______(alpha=.1) + 
+        geom_______(alpha=.5, width=.2)
+```
+
+

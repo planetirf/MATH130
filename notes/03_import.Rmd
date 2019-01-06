@@ -3,13 +3,13 @@ title: "Lesson 03 - Getting data into R"
 author: "Robin Donatello"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
-  pdf_document:
-    toc: no
   html_document:
     highlight: tango
     theme: yeti
     toc: yes
     toc_float: yes
+  pdf_document:
+    toc: no
 ---
 
 
@@ -27,7 +27,7 @@ After completing this lesson students will be able to
 ### Preparation
 Prior to this lesson students should
 
-* Download the [[03_import_notes.Rmd]] R markdown file and save into your Math130 folder. This is a blank/outline version of these notes for you to follow along with during class and write your own notes. 
+* Download the [[03_import_notes.Rmd]](03_import_notes.Rmd) R markdown file and save into your Math130 folder. This is a blank/outline version of these notes for you to follow along with during class and write your own notes. 
 * Install the `readxl` package by typing `install.packages("readxl")` into your console. 
 
 

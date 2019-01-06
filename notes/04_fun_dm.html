@@ -270,10 +270,12 @@ div.tocify {
 <h2>Preparation</h2>
 <p>Prior to this lesson students should</p>
 <ul>
-<li>Download the [[04_fun_dm_notes.Rmd]] R markdown file and save into your Math130 folder.</li>
-<li>Change the path below to import the <code>NCbirths</code> data set.</li>
+<li>Download the <a href="04_fun_dm_notes.Rmd">[04_fun_dm_notes.Rmd]</a> R markdown file and save into your Math130 folder.</li>
+<li>Write the code to import the <code>NCbirths</code> data set into this notes file. Run it to make sure it works.</li>
+<li>Install the <code>dplyr</code> package.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">NCbirths &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;../data/NCbirths.csv&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
+NCbirths &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;../data/NCbirths.csv&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</code></pre></div>
 <hr />
 </div>
 </div>
@@ -318,7 +320,17 @@ div.tocify {
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
 ##   14.00   25.00   30.00   30.26   35.00   55.00     171</code></pre>
 <p>Later lessons will discuss how to work around these missing values.</p>
+<div id="is-it-na" class="section level3">
+<h3>Is it NA?</h3>
+<p>The <code>is.na()</code> function returns TRUE or FALSE for each element in the provided vector for whether or not that element is missing.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.na</span>(<span class="kw">c</span>(<span class="st">&quot;green&quot;</span>, <span class="ot">NA</span>, <span class="dv">3</span>))</code></pre></div>
+<pre><code>## [1] FALSE  TRUE FALSE</code></pre>
+<p>This can be used to count the number of missing values in a variable</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(<span class="kw">is.na</span>(NCbirths<span class="op">$</span>fage))</code></pre></div>
+<pre><code>## [1] 171</code></pre>
+<p>There are 171 records in this data set where the age for the father is not present.</p>
 <hr />
+</div>
 </div>
 </div>
 <div id="functions" class="section level1">
@@ -423,8 +435,9 @@ div.tocify {
 ## 5     27   6.38      20.62
 ## 6     22   5.38      16.62</code></pre>
 </div>
-<div id="example-using-ifelse-to-create-a-binary-variable" class="section level4">
-<h4><strong>Example: Using <code>ifelse()</code> to create a binary variable</strong></h4>
+<div id="dichtomizing-data" class="section level2">
+<h2>Dichtomizing data</h2>
+<p>The <code>ifelse()</code> is hands down the easiest way to create a binary variable (dichotomizing, only 2 levels)</p>
 <p>Let’s add a variable to identify if a mother in the North Carolina births data set was underage at the time of birth.</p>
 <ul>
 <li>We will define this as if the mothers age <code>mage</code> is under 18.</li>
@@ -525,6 +538,37 @@ div.tocify {
 ## 108   19    adult
 ## 109   19    adult
 ## 110   19    adult</code></pre>
+<p>Notice I snuck a new operator in on you - <code>%in%</code>. This is a way you can provide a list of values (a.k.a a vector) and say “if the value of the variable I want is %in% any of these options in this vector…” do the thing.</p>
+<hr />
+</div>
+</div>
+<div id="chaining-using-the-pipe" class="section level1">
+<h1>Chaining using the pipe %&gt;%</h1>
+<div class="figure">
+<img src="data:image/png;base64,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" />
+
+</div>
+<p>The pipe is technically part of the <code>magrittr</code> package, but quite often we will use it in conjunction with functions from the <code>dplyr</code> package introduced in lesson 07. In fact it’s so commonly used with <code>dplyr</code> functions that it the <code>magrittr</code> package is loaded when you load <code>dplyr</code> (which is what we did here). However, the pipe operator is so useful in many other places that it deserves it’s own introduction here.</p>
+<blockquote>
+<p>“and then….”</p>
+</blockquote>
+<p>This is what I read to myself when using the pipe (<code>%&gt;%</code>). The pipe lets you chain functions together, as long as the first argument of the function is a <code>data.frame</code> or a variable in a <code>data.frame</code>.</p>
+<div id="example-frequency-tables-summary-statistics" class="section level3">
+<h3>Example: Frequency tables &amp; summary statistics</h3>
+<p>Earlier we saw that to create a frequency table for categorical variable we can type:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(NCbirths<span class="op">$</span>mature)</code></pre></div>
+<pre><code>## 
+##  mature mom younger mom 
+##         133         867</code></pre>
+<p>This is also accomplished by first stating the variable, then piping in the summary function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">NCbirths<span class="op">$</span>mature <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">table</span>()</code></pre></div>
+<pre><code>## .
+##  mature mom younger mom 
+##         133         867</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">NCbirths<span class="op">$</span>mage <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mean</span>()</code></pre></div>
+<pre><code>## [1] 27</code></pre>
+<p>So in my head i’m reading “Take the <code>mage</code> variable on the <code>NCbirths</code> data set, <em>and then</em> calculate the mean.”</p>
+<p>Seems kinda trivial here, the base function without the pipe is pretty easy. But I promise the usefulness will be apparent before the class is out.</p>
 <hr />
 </div>
 </div>
