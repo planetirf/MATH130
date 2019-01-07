@@ -136,6 +136,23 @@ _____(______, ___(____, ______)) + ________ +
 ## Continuous v. Categorical
 
 
+### Overlaid density plots
+
+```{r}
+ggplot(______, aes(x=depth, fill=____)) + geom_density()
+```
+
+
+```{r}
+ggplot(______, aes(x=____, fill=____)) + geom_density(alpha=__)
+```
+
+
+```{r}
+ggplot(dsmall, aes(x=depth, _____=cut)) + geom_density()
+```
+
+
 ### Grouped boxplots
 
 ```{r}

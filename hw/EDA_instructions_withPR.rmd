@@ -1,9 +1,11 @@
 ---
-title: 'Exploratory Data Analysis Project'
+title: "Exploratory Data Analysis Project"
 output:
   html_document:
     toc: yes
     toc_float: yes
+  pdf_document:
+    toc: no
 ---
 
 Time to put everything you learned in this class into action. In an exploratory data analysis (EDA) you are just looking at (exploring) the data and learning about the data and possible relationships between variables. This is not a formal statistical analysis, you cannot make any claims about groups being statistically different. This is just descriptive. You are allowed and encouraged to hypothesize why you observe certain relationships or data characteristics, just be sure not to draw any conclusions from the data. 
@@ -33,20 +35,18 @@ You have a choice here. If you are currently working on some data that you would
 
 If you do not have your own data, you can choose from one of the following data sets, all of which can be downloaded from the [Data](https://norcalbiostat.netlify.com/data/cleaned_data/) page of my teaching course website. Here are some viable choices: 
 
-
-* **NCbirths**: Information on births recorded in North Carolina in 2004 and health behaviors of their mothers. 
 * **Depression**: Level of depression (`cesd`), health care, and demographic characteristics. 
 * **High School and Beyond**: Educational, vocational, and personal development of elementary and high school students. 
 * **Police Shootings**: Characteristics of individuals killed by police in 2015. 
 * **Email Spam**: Characteristics of emails used to predict if the email is spam or not. 
 * **HIV**: Data on adolescent children living with HIV positive parents. 
 
-Any other data sets require instructor approval. Data sets such as the 'plants' or 'arm strength' data sets are insufficiently complex for this project. 
+Any other data sets require instructor approval. Data sets such as the 'plants' or arm strength' data sets are insufficiently complex for this project. Also you can't use the `email` or `NCbirths` data sets because we've used them too much already. 
 
 # How to submit
 
 * To allow for adequate time for peer grading the submission deadline is a strict cutoff. Really late assignments won't be accepted. 
-* Knit your file to WORD or PDF, then upload to [[this link]](https://www.dropbox.com/request/i8P2Z2fHn2hz3xbdZq6f) by the due date. 
+* Knit your file to WORD or PDF, then upload to [[LINK TBD]]() by the due date. 
 
 
 # Peer Review 
@@ -55,7 +55,7 @@ After the submission deadline, your analysis projects will be randomly assigned 
 This means you will score and provide feedback on 2 reports. The instructor(s) will also score all projects for their class sections.  
 
 * All submissions will be processed and posted to a [peer review](https://norcalbiostat.github.io/peer_review/math130_eda.html) website. 
-* Your assignments will be posted on this [spreadsheet](https://docs.google.com/spreadsheets/d/1GItQRInVYfLgIT25RqNMQI9L1_lwqz19EkcClVrdrGk/edit?usp=sharing)
+* Your assignments will be posted on this [spreadsheet - LINK TBD]()
     - If one or both of the people you are assigned to review do not submit a project, pick another person to review. You do not have to notify your instructor if this happens. 
 * Download your assigned projects to review to your computer. 
     - Using the commenting features of either WORD or a PDF reader, provide 4 comments for each project. 

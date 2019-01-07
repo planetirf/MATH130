@@ -1,88 +1,75 @@
 ---
-title: "Lab 3: More data management and grouping using factors"
+title: "HW4 3: Better data management! Better plots!"
 author: "NAME"
 date: "DATE"
 ---
 
-Answer the questions in this lab and submit the compiled HTML or PDF by the deadline. Don't forget to change your name and date in the above header. 
-
-This lab uses the `dplyr` and `nycflights13` packages. It is good habit to load all packages in the first code chunk. 
+This homework uses the `dplyr` and `nycflights13` packages. It is good habit to load all needed packages in the first code chunk. 
 
 ```{r, warning=FALSE, message=FALSE}
-library(dplyr)
-library(nycflights13)
+
+
 ```
 
-
-
-# dplyr
-
-## Basic verbs
-You will use the `flights` data set for the next few exercises.  Let's load that into our working environment so we can look at it.
-```{r}
-flights <- flights
-```
-
-* At each step use the assignment operator `<-` to store the results into a new data table and use that data in the next step. 
-* At each step, print out the resulting data frame so you can see the results. 
-* These steps have been started for you. You must remove the `eval=FALSE` in the code chunk to get it to work when you knit. 
-
-1. Use `select()` to extract the following variables: `origin`, `distance`, and `air_time`, `dest`. 
-
-```{r, eval=FALSE}
-f1 <- flights %>% select()
-f1
-```
-
-2. Use `filter()` to select only the flights whose destination (`dest`) is Atlanta (ATL)
-
-```{r, eval=FALSE}
-f2 <- f1 %>% filter()
-f2
-```
-
-3. Use `mutate()` to create a new variable `speed` that calculates speed of the plane as `distance/air_time*60.
-
-```{r, eval=FALSE}
-f3 <- f1 %>% mutate()
-f3
-```
-
-
-
-5. Use `dplyr` chaining magic to...
-
-* take the planes data set that you created earlier _and then_...
-* `group_by`the `num_engines` _and then_...
-* use `summarise` to create three new variables: 
-    - `ave_seats` as the `mean()` number of `seats`
-    - `min_seats` as the `min()` number of `seats`
-    - `max_seats` as the `max()` number of `seats`
-
+Use the `flights` data set for the next few exercises.  Load that data set here by typing `data(flights)`. 
 ```{r}
 
 ```
 
 
-# Multivariable graphing
 
-1. A scatterplot of length of pregnancy in `weeks` and the babies `weight`, color the points and lowess lines by `gender`. 
-
-
-2. Use `facet_wrap` to create side by side boxplots with overlaid violins (using good trasparency options) of `weight` by `mature`, paneled by `whitemom`. 
-
-3. Remove the NA group from the previous plot and recreate the plot. 
+1. Use `select()` to extract the following variables: `origin`, `distance`, and `air_time`, `dest`. Save this result as a data set named `f1`. 
 
 
 
-4. Now add points for the means to the above plot. 
+2. Take the `f1` data set and `filter()` to select only the flights whose destination (`dest`) is Atlanta (ATL). Save this result as `f2`. _Hint: the destination variable is a character variable, so think carefully about how you specify ATL_. 
 
 
-5. Use `coord_flip()` to make the boxes horizontal
+3. Take the `f2` data set and use `mutate()` to create a new variable `speed` that calculates speed of the plane as `distance/air_time*60`. Save this result as `f3`. 
+
+
+4. Use `ggplot` to plot the distribution of the planes speed on it's way to Atlanta using a histogram. 
 
 
 
-6. Go to the [R Cookbook](http://www.cookbook-r.com/Graphs/) and learn how to remove that legend. 
+5. Use `dplyr` chaining magic (%>%) to combine questions 1-4 in one step. 
 
-7. Apply a `theme_minimal()` or `theme_bw()` layer to remove the grey background from the plot. 
+
+6. The three airports in the NYC region are all pretty close together. Do they all have the same travel time to Chicago O'Hare (ORD)? Use the same tactic as you did in steps 1-4 (or 5) by subsetting to the desired destination, then create overlapping density plots of `air_time` where each density plot is colored (or filled) by the variable `origin`. _Forget how to create colored lines? Revisit lesson 06_. 
+
+
+
+7. What is the monthly average departure delay time? 
+
+
+
+8. Use `geom_col()` to create a barplot to visualize the above information. 
+
+
+9. Create a scatterplot comparing the departure delay against arrival delay for flights to the Bay Area ("SFO", "SJC", "OAK"). Color the points by `origin`. What do you notice? 
+
+
+
+10. Do all airports have similar delays flying to O'Hare (ORD) throughout the year? Use `facet_wrap` to create side by side boxplots with overlaid violins (using good trasparency options) of departure delay `dep_delay` by `origin`, paneled by `month`.  
+
+
+
+
+11. Remove flights with delays over an hour and recreate the above plot.
+
+
+
+12. Use `coord_flip()` to 1) make the boxes horizontal, 2) change the background theme to something else and 3) change the axes labels to read in english, 4) add a title. 
+
+
+13. Go to the [R Cookbook](http://www.cookbook-r.com/Graphs/) and learn how to remove the legend. 
+
+
+14. What type of delays can we expect when traveling out of LGA? 
+    * Filter to only select flights out of LGA. 
+    * Calculate the mean `air_time` for each `dest`ination
+    * Create a scatterplot with destination on the x, calculated average on the y
+    * Flip the coordinates
+    * Reorder the destination by the value of the mean. 
+
 

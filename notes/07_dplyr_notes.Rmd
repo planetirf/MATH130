@@ -1,0 +1,114 @@
+---
+title: "Lesson 07 - Data management and aggregation using `dplyr`"
+output: html_document
+---
+
+
+# Introduction 
+
+## Preparation
+
+```{r, warning=FALSE, message=FALSE}
+knitr::opts_chunk$set(warning=FALSE, message=FALSE,error=TRUE) 
+library(dplyr); library(nycflights13)
+data(flights)
+```
+
+## Exploring airline flight data with dplyr. 
+
+## Filter
+
+Select all flights on January 1st with 
+```{r}
+filter(flights, month == 1, day == 1)
+```
+
+Filter the flights data set to only select flights in January or February.
+```{r}
+filter(flights, month == _ | month == _)
+```
+
+## Select
+Select the variables month, day and year from the flights data set. 
+
+```{r}
+select(flights, _____, ___, ____)
+```
+
+You can use a colon (:) to select all columns physically located between two variables. 
+```{r}
+select(flights, ____:____)
+```
+
+To exclude specific columns you use the minus sign (-)
+```{r}
+select(flights, -___)
+```
+
+This also works to exclude all columns EXCEPT the ones between two variables. 
+```{r}
+select(flights, -(____:___))
+```
+
+
+## Mutate
+
+Create two variables: gain (as arrival delay minus departure delay) and speed (as distance divided by time, converted to hours). 
+```{r}
+a <- mutate(_____, ____ = arr_delay - dep_delay, 
+                  _____ = distance / air_time * 60)
+
+select(a, gain, distance, air_time, speed)
+```
+
+Or, 
+```{r}
+mutate(flights, ____ = arr_delay - dep_delay, 
+                gain_per_hour = _____ / (air_time / 60 ))
+```  
+
+
+## Summarize
+Calculate the average departure delay on the entire flights data set. 
+```{r}
+summarise(_______, delay = mean(______, _______))
+```
+
+
+
+# Grouped Operations
+Create a new data set that is grouped by month. 
+
+```{r}
+by_month <- group_by(flights, ______)
+```
+
+Orders first by grouping variables, then by the sorting variable. 
+```{r}
+how_long <- arrange(by_month, _______)
+select(how_long, month, distance)
+```
+
+
+The average distance flown per month. 
+```{r}
+summarise(______, avg_airtime = mean(distance, na.rm=TRUE))
+```
+
+Total number of flights per month. 
+```{r}
+summarize(by_month, count=_______)
+``` 
+
+# Chaining Operations
+
+```{r}
+flights %>%
+  group_by(___, ___, ___) %>%
+  ______(arr_delay, dep_delay) %>%
+  ________(
+    arr = mean(arr_delay, na.rm = TRUE),
+    dep = mean(dep_delay, na.rm = TRUE)
+  ) %>%
+  ______(arr > 30 | dep > 30)
+```

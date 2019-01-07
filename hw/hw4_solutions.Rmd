@@ -1,0 +1,146 @@
+---
+title: "HW4 3: Better data management! Better plots!"
+author: "Solutions"
+date: "Jan 6, 2019"
+---
+
+This homework uses the `dplyr` and `nycflights13` packages. It is good habit to load all packages in the first code chunk. 
+
+```{r, warning=FALSE, message=FALSE}
+library(dplyr)
+library(nycflights13)
+```
+
+Use the `flights` data set for the next few exercises.  Load that data set here by typing `data(flights)`. 
+```{r}
+data(flights)
+```
+
+* At each step use the assignment operator `<-` to store the results into a new data table and use that data in the next step. 
+* At each step, print out the resulting data frame so you can see the results. 
+
+Example _(not run)_ 
+```r
+p1 <- planes %>% select(type)
+p1
+```
+
+1. Use `select()` to extract the following variables: `origin`, `distance`, and `air_time`, `dest`. Save this result as a data set named `f1`. 
+```{r}
+f1 <- flights %>% select(origin, distance, air_time, dest)
+f1
+```
+
+
+2. Take the `f1` data set and `filter()` to select only the flights whose destination (`dest`) is Atlanta (ATL). Save this result as `f2`. _Hint: the destination variable is a character variable, so think carefully about how you specify ATL_. 
+
+```{r}
+f2 <- f1 %>% filter(dest=="ATL")
+f2
+```
+
+3. Take the `f2` data set and use `mutate()` to create a new variable `speed` that calculates speed of the plane as `distance/air_time*60`. Save this result as `f3`. 
+```{r}
+f3 <- f2 %>% mutate(speed = distance / air_time*60)
+f3
+```
+
+4. Use `ggplot` to plot the distribution of the planes speed on it's way to Atlanta using a histogram. 
+```{r}
+library(ggplot2)
+ggplot(f3, aes(x=speed)) +  geom_histogram()
+```
+
+
+5. Use `dplyr` chaining magic (%>%) to combine questions 1-4 in one step. 
+
+```{r}
+flights %>% select(origin, distance, air_time, dest) %>% filter(dest=="ATL") %>% 
+            mutate(speed = distance / air_time*60) %>% 
+            ggplot(aes(x=speed)) +  geom_histogram()
+```
+
+6. The three airports in the NYC region are all pretty close together. Do they all have the same travel time to Chicago O'Hare (ORD)? Use the same tactic as you did in steps 1-4 (or 5) by subsetting to the desired destination, then create overlapping density plots of `air_time` where each density plot is colored (or filled) by the variable `origin`. _Forget how to create colored lines? Revisit lesson 06_. 
+
+```{r}
+flights %>% filter(dest=="ORD") %>% 
+            ggplot(aes(x=air_time, fill=origin)) +  geom_density(alpha=.3)
+```
+
+7. What is the monthly average departure delay time? 
+
+```{r}
+mon.ave <- flights %>% group_by(month) %>% summarise(mean=mean(dep_delay, na.rm=TRUE))
+mon.ave
+```
+
+8. Use `geom_col()` to create a barplot to visualize the above information. 
+
+```{r}
+ggplot(mon.ave, aes(x=month, y=mean)) + geom_col()
+```
+
+
+9. Create a scatterplot comparing the departure delay against arrival delay for flights to the Bay Area ("SFO", "SJC", "OAK"). Color the points by `origin`. What do you notice? 
+
+```{r}
+flights %>% filter(dest %in% c("SFO", "SJC", "OAK")) %>% 
+            ggplot(aes(x=dep_delay, y=arr_delay, col=origin)) + 
+            geom_point()
+```
+
+Flights out of Laguardia (LGA) does not fly to the Bay Area. 
+
+
+
+10. Do all airports have similar delays flying to O'Hare (ORD) throughout the year? Use `facet_wrap` to create side by side boxplots with overlaid violins (using good trasparency options) of departure delay `dep_delay` by `origin`, paneled by `month`.  
+
+```{r}
+flights %>% filter(dest=="ORD") %>% 
+    ggplot(aes(x=origin, fill=origin, y=dep_delay)) + geom_boxplot() + 
+    facet_wrap(~month)
+```
+
+
+11. Remove flights with delays over an hour and recreate the above plot.
+
+```{r}
+flights %>% filter(dest=="ORD" & dep_delay < 60) %>% 
+    ggplot(aes(x=origin, fill=origin, y=dep_delay)) + geom_boxplot() + 
+    facet_wrap(~month)
+```
+
+12. Use `coord_flip()` to 1) make the boxes horizontal, 2) change the background theme to something else and 3) change the axes labels to read in english, 4) add a title. 
+```{r}
+flights %>% filter(dest=="ORD" & dep_delay < 60) %>% 
+    ggplot(aes(x=origin, fill=origin, y=dep_delay)) + geom_boxplot() + 
+    facet_wrap(~month) + coord_flip() + theme_light() + 
+    xlab("Departure Airport") + ylab("Departure delay (min)") + 
+    ggtitle("Flight delays in minutes for flights delayed under an hour, going to Chicago O'Hare")
+```
+
+
+13. Go to the [R Cookbook](http://www.cookbook-r.com/Graphs/) and learn how to remove the legend. 
+```{r}
+flights %>% filter(dest=="ORD" & dep_delay < 60) %>% 
+    ggplot(aes(x=origin, fill=origin, y=dep_delay)) + geom_boxplot() + 
+    facet_wrap(~month) + coord_flip() + theme_light() + 
+    xlab("Departure Airport") + ylab("Departure delay (min)") + 
+    ggtitle("Flight delays in minutes for flights delayed under an hour, going to Chicago O'Hare") + 
+    scale_fill_discrete(guide=FALSE)
+```
+
+
+14. What type of delays can we expect when traveling out of LGA? 
+    * Filter to only select flights out of LGA. 
+    * Calculate the mean `air_time` for each `dest`ination
+    * Create a scatterplot with destination on the x, calculated average on the y
+    * Flip the coordinates
+    * Reorder the destination by the value of the mean. 
+
+```{r}
+flights %>% filter(origin=="LGA") %>% group_by(dest) %>% 
+            summarize(mean=mean(air_time, na.rm=TRUE)) %>% 
+            ggplot(aes(x=forcats::fct_reorder(dest, mean), y=mean)) + geom_point() + coord_flip()
+```
+

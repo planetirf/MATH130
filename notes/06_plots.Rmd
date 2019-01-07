@@ -3,17 +3,17 @@ title: "Lesson 06 - Creating graphics"
 author: "Robin Donatello"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
+  pdf_document:
+    toc: no
   html_document:
     toc: yes
     toc_float: yes
-  pdf_document:
-    toc: no
 ---
 
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 library(dplyr)
-knitr::opts_chunk$set(warning=FALSE, message=FALSE, cache=TRUE) 
+knitr::opts_chunk$set(warning=FALSE, message=FALSE) 
 ```
 
 > This lesson is a brief excerpt from the [[Applied Statistics Notebook]](https://norcalbiostat.github.io/AppliedStatistics_notes/data-viz.html). 
@@ -38,9 +38,6 @@ Prior to this lesson students should
 
 * Download the [[06_plots_notes.Rmd]] R markdown file and save into your Math130 folder. 
 * Install the `ggplot2` package. 
-
-
-Use the navbar to the left to help you navigate this long document. 
 
 ## The syntax of `ggplot`
 The reason we use the functions in `ggplot2` is for consistency in the structure of it's arguments. Here is a bare bones generic plotting function: 
@@ -240,8 +237,29 @@ ggplot(dsmall, aes(x=carat, y=price)) + geom_point() +
 
 
 ## Continuous v. Categorical
-Create an appropriate plot for a continuous variable, and plot it for each
-level of the categorical variable. 
+Create an appropriate plot for a continuous variable, and plot it for each level of the categorical variable by shading the plots or coloring the lines depending on the group. 
+
+### Overlaid density plots
+
+You could `fill` the density curves depending on the group, but then it's hard to see overlap. 
+```{r}
+ggplot(dsmall, aes(x=depth, fill=cut)) + geom_density()
+```
+
+We can adjust the transparency of the density curve by applying a value to `alpha` inside the density layer. Alpha is a measure of transparency, from 0=clear to 1=opaque. 
+
+```{r}
+ggplot(dsmall, aes(x=depth, fill=cut)) + geom_density(alpha=.3)
+```
+
+Now we can see that there are some fair cut diamonds with deptsh around 60. This peak was hidden from us before. 
+
+You could also just color the lines and leave the fill alone. 
+```{r}
+ggplot(dsmall, aes(x=depth, color=cut)) + geom_density()
+```
+
+We won't talk about changing colors in this lab, but the yellow is prety hard to read. 
 
 
 ### Grouped boxplots

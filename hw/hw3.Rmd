@@ -7,7 +7,7 @@ output: html_document
 
 # Introduction
 
-You will be managing factors and creating some basic plots in this homework assignment. The data sets you will use come from two places, `NCbirths` which you will have to read in below, and the `planes` data set which comes part of the `nycflights13` package. 
+You will be managing factors and creating some basic plots in this homework assignment. The data sets you will use come from two places, `NCbirths` which you will have to read in below, and the `planes` data set which comes part of the `nycflights13` package. The `planes` data set contains data on plane characteristics such as the number of engines. 
 
 The code chunk below sets some code chunk options (using `opts_chunk` from the `knitr` package) to make your knitted report output more readable. I encourage you to play around with these options to learn how they work. 
 

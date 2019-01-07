@@ -1,8 +1,10 @@
 ---
-title: "Lesson 06 - Streamlined data management using `dplyr`"
+title: "Lesson 07 - Data management and aggregation using `dplyr`"
 author: "Robin Donatello"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
+  pdf_document:
+    toc: no
   html_document:
     highlight: tango
     theme: yeti
@@ -10,7 +12,6 @@ output:
     toc_float: yes
 ---
 
------ 
 
 # Introduction 
 When working with data you must:
@@ -28,32 +29,44 @@ The dplyr package makes each of these steps as fast and easy as possible by:
 3. Using efficient data storage back ends, so that you spend as little time 
    waiting for the computer as possible.
 
-The goal of this lesson is to introduce you to the basic tools that dplyr provides, and show how you to apply them to data frames. You must have the `dplyr`, and `nycflights13` packages installed before you can proceed.  Install them now if you have not done so yet. 
 
-Let's load all the packages we will need for this lab. Add the _code chunk_ arguments: `warning=FALSE` & `message=FALSE` to suppress pesky warnings and messages, `dplyr` tends to have a lot of these.
+## Student Learning Outcomes
+After completing this lesson students will be able to
+
+* Explain the difference between a `data.table` and a `tibble`. 
+* Build and execute a chain of command to accomplish a data management task
+* Create new variables using `mutate`. 
+* Subset the data using `filter`.
+* Create summary statistics using `summarize`
+* Sort the data using `arrange`
+* Learn how to use code chunk options to disable warning messages. 
+
+
+## Preparation
+
+Prior to this lesson students should
+
+* Download the [[07_dplyr_notes.Rmd]] R markdown file and save into your Math130 folder. 
+* Ensure that the `dplyr` and `nyflights13` data sets are installed by running the first code chunk. 
 
 ```{r, warning=FALSE, message=FALSE}
 library(dplyr); library(nycflights13)
+data(flights)
 ```
 
 ## Exploring airline flight data with dplyr. 
 
-The `nycflights13` package contains several data sets that can be used to help understand what causes delays. 
+The `nycflights13` package contains several data sets that can be used to help understand what causes delays. We will be using the `flights` data set which contains information about all flights that departed from NYC (e.g. EWR, JFK and LGA) in 2013. 
 
-* `flights`: information about all flights that departed from NYC (e.g. EWR, JFK and LGA) in 2013. 
-* `weather`: hourly meteorological data for each airport
-* `planes`: construction information about each plane
-* `airports`: airport names and locations
-* `airlines`: translation between two letter carrier codes and names
+# Tibbles
 
-**Special notice** These data sets, and any data set created with `dplyr`
-has a specific data type called a `tibble`. These are not as furry and prolific as their cousins the `tribbles`. `tibbles` behaves for all intents and purposes as a `data.frame`, just gets displayed differently. For example, the `flights` data set contains data on 19 characteristics (variables) from 336,776 flights. There's no way I would want to print out a data set that large. But I'm gonna....  
+The `flights` data set, and any data set created with `dplyr`, has a specific data type called a `tibble`. These are not as furry and prolific as their cousins the `tribbles`. `tibbles` behaves for all intents and purposes as a `data.frame`, just gets displayed differently. For example, the `flights` data set contains data on 19 characteristics (variables) from 336,776 flights. There's no way I would want to print out a data set that large. But I'm gonna....  
 
 ```{r}
 flights
 ```
 
-The output has been trimmed to something more reasonable for our viewing pleasure. 
+The output has been trimmed to something more reasonable for our viewing pleasure. This may not seem such a big deal because R Studio already provides some level of truncation for our viewing pleasure. 
 
 # Basic verbs
 The `dplyr` package contains new data manipulation functions, also called verbs. We will look at the following four: 
@@ -72,8 +85,7 @@ The first argument is the name of the data frame, and the second and subsequent 
 filter(flights, month == 1, day == 1)
 ```
 
-
-`filter()` works similarly to `subset()` except that you can give it any number of filtering conditions which are joined together with &. You can use other Boolean operators explicitly. Fill in the blanks to filter the flights data set to only select flights in January or February.
+`filter()` works similarly to `subset()` except that you can give it any number of filtering conditions which are joined together with &. You can use other Boolean operators explicitly. Here we select flights in January or February.
 ```{r}
 filter(flights, month == 1 | month == 2)
 ```
@@ -84,16 +96,22 @@ Often you work with large data sets with many columns where only a few are actua
 select(flights, month, day, year)
 ```
 
-Type `select(flights, year:day)` to select all columns physically located between year and day.
+You can use a colon (:) to select all columns physically located between two variables. 
 ```{r}
-select(flights, sched_dep_time:carrier)
+select(flights, year:day)
 ```
 
-Type `select(flights, -(year:day))` to select all columns EXCEPT the ones between year and day.
-```{r, eval=FALSE}
+To exclude specific columns you use the minus sign (-)
+```{r}
 select(flights, -carrier)
 ```
 
+This also works to exclude all columns EXCEPT the ones between two variables. 
+```{r}
+select(flights, -(year:day))
+```
+
+ 
 ## Mutate
 As well as selecting from the set of existing columns, it's often useful to add new columns that are functions of existing columns. This is the job of mutate()!
 
@@ -144,8 +162,7 @@ summarise(by_month, avg_airtime = mean(distance, na.rm=TRUE))
 Or simply the total number of flights per month. 
 ```{r}
 summarize(by_month, count=n())
-```
-
+``` 
 
 # Chaining Operations
 Consider the following group of operations that take the data set `flights`, and produce a final data set (`a4`) that contains only the flights where the daily average delay is greater than a half hour. 

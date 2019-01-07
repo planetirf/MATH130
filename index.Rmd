@@ -99,7 +99,7 @@ Now it's time to put your new 1337 skillz to the test!
 
 Previous class projects can be seen [[here]](https://norcalbiostat.github.io/peer_review/math130_eda.html). 
 
-`r emo::ji("pencil2")` Assignment: [[Exploratory Data Analysis Project]](hw/EDA_instructions_withPR.html).  
+`r emo::ji("pencil2")` Assignment: Exploratory Data Analysis Project [[HTML]](hw/EDA_instructions_withPR.html) [[PDF]](hw/EDA_instructions_withPR.pdf).  
 
 </div>
 
