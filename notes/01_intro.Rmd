@@ -11,12 +11,12 @@ output:
   pdf_document:
     toc: no
 ---
- 
+
 # Course Description
 
-This course is designed as a primer to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R in an environment that emphasizes reproducible research and literate programming for data analysis. 
+This course is designed as a primer to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R in an environment that emphasizes reproducible research and literate programming for data analysis.
 
-The target audience is anyone who wants to do their own data analysis. The course will cumulate with an peer-evaluated exploratory data analysis on either a pre-specified data set or your data set of choice. 
+The target audience is anyone who wants to do their own data analysis. The course will cumulate with an peer-evaluated exploratory data analysis on either a pre-specified data set or your data set of choice.
 
 
 # Schedule of Topics
@@ -31,22 +31,22 @@ The target audience is anyone who wants to do their own data analysis. The cours
 * Data Manipulation and Aggregation
 * Exploratory Data Analysis
 
-# Logistics 
+# Logistics
 
-* All content is fully online on the course website: https://norcalbiostat.github.io/MATH130/ 
+* All content is fully online on the course website: https://norcalbiostat.github.io/MATH130/
 * We will also use Data Camp (www.datacamp.com) is a free online learning tool we will use to start learn R.
-* Class time is spent expanding on ideas and concepts, working through labs as a class or in pairs, and working on individual assignments. 
+* Class time is spent expanding on ideas and concepts, working through labs as a class or in pairs, and working on individual assignments.
 
-# Grading 
+# Grading
 
-* Credit / No Credit. There are 100 points available in this course through attendance, assignments, and a final project.  
-* You must earn 70 points to receive credit for the course. 
-* The [syllabus](../syllabus.html) provides specific details on points per assignment. 
-    
-# Time Committment 
-* Fast paced, we're hitting the ground running and only have 5 weeks. 
-* Not designed to teach you everything about R, just enough to make you dangerous. 
-* Daily practice will pay off.  
+* Credit / No Credit. There are 100 points available in this course through attendance, assignments, and a final project.
+* You must earn 70 points to receive credit for the course.
+* The [syllabus](../syllabus.html) provides specific details on points per assignment.
+
+# Time Committment
+* Fast paced, we're hitting the ground running and only have 5 weeks.
+* Not designed to teach you everything about R, just enough to make you dangerous.
+* Daily practice will pay off.
 * But can be very rewarding
 * Garbage in = garbage out
 * Effort in = satisfaction
@@ -64,31 +64,31 @@ _We've all been there. It will get easier_
 * Open source, and free
 * Rapid improvement
 * Tons of learning resources
-* Currently R is used in Chico's upper division Applied Statistics and Data Science courses. 
-* Very popular in [Data Science](https://r4ds.had.co.nz/), [Economics](https://www.core-econ.org/why-doing-economics-has-embraced-r/), [Natural Sciences](https://www.nature.com/news/programming-tools-adventures-with-r-1.16609), [Psychology](https://personality-project.org/r/) and many other fields.  
+* Currently R is used in Chico's upper division Applied Statistics and Data Science courses.
+* Very popular in [Data Science](https://r4ds.had.co.nz/), [Economics](https://www.core-econ.org/why-doing-economics-has-embraced-r/), [Natural Sciences](https://www.nature.com/news/programming-tools-adventures-with-r-1.16609), [Psychology](https://personality-project.org/r/) and many other fields.
 
 ## Why use R Studio?
 
-- Customizable workspace that docks all windows together. 
-- Notebook formats that allow for easy sharing of code and output, and integration with other languages (Python, C++, SQL, STAN)
-- Syntax highlighting, warning errors when missing a closing parentheses. 
+- Customizable workspace that docks all windows together.
+- Notebook formats that allow for easy sharing of code and output, and integration with other languages (Python, C++, SQL, Stan)
+- Syntax highlighting, warning errors when missing a closing parentheses.
 - Cross-platform interface. Also works on Windows/iOS/Linux.
-- Tab completion for functions. Forget the syntax or a variable name? Popup helpers are available. 
+- Tab completion for functions. Forget the syntax or a variable name? Popup helpers are available.
 - Free training videos available from the developers directly.
-- Built in version control 
+- Built in version control
 - One button publishing of reproducible documents such as reports, interactive visualizations, presentations (like this one!), websites.
 
 
-## Programming is scary! 
+## Programming is scary!
 Learning to program has other benefits
 
 * Improves your logical skills and critical problem solving
 * Increases your attention to detail
 * Increases your self reliance and empowers you to control your own research.
-* Your PI will love your awesome graphics and reports. 
-* Some people think what you do is magic. 
+* Your PI will love your awesome graphics and reports.
+* Some people think what you do is magic.
 * Thinking graduate school? [[expect to learn this on your own]](http://www.nature.com/nature/journal/v541/n7638/full/nj7638-563a.html)
-* [[A few]](https://skillcrush.com/2015/01/28/laurence-bradford-10-reasons/) [[other lists]](https://careerfoundry.com/en/blog/web-development/7-benefits-of-learning-to-code/) [[of reasons]](https://skillcrush.com/2017/01/30/learn-to-code-benefits/) 
+* [[A few]](https://skillcrush.com/2015/01/28/laurence-bradford-10-reasons/) [[other lists]](https://careerfoundry.com/en/blog/web-development/7-benefits-of-learning-to-code/) [[of reasons]](https://skillcrush.com/2017/01/30/learn-to-code-benefits/)
 
 <br>
 <center><img src="orly-changestuff.jpg" width="350px"></center>
@@ -98,24 +98,24 @@ _No joke, this is the key to learning the details of how things work_
 
 Because it's not reproducible.
 
-* Which boxes did you click last time? 
+* Which boxes did you click last time?
 * New data? Gotta do it all over.
-* Need to expand your model? Gotta do it all over. 
+* Need to expand your model? Gotta do it all over.
 * Made a mistake in the data coding? Gotta do it all over...
 
 # Getting Help
 
 ## In Person
 
-* Data Science Initiative 
-    - http://datascience.csuchico.edu What the Data Science community at Chico is up to.  
-    - Community Coding. TR 2-4pm MLIB 442. 
-        - Dedicated space to work on coding projects. 
-        - Collaborate with your peers and learn from experts. 
-        - Need 1 unit? Enroll in Math 290-02 and attend at least 10 times. 
+* Data Science Initiative
+    - http://datascience.csuchico.edu What the Data Science community at Chico is up to.
+    - Community Coding. TR 2-4pm MLIB 442.
+        - Dedicated space to work on coding projects.
+        - Collaborate with your peers and learn from experts.
+        - Need 1 unit? Enroll in Math 290-02 and attend at least 10 times.
         - You DON'T need to be enrolled to attend!
-    - Weekly seminars and workshops in a variety of languages and topics. 
-* The [R Users Meetup group](https://www.meetup.com/Chico-R-Users-Group/) useful if you want to stay connected to the community and learn about upcoming events. 
+    - Weekly seminars and workshops in a variety of languages and topics.
+* The [R Users Meetup group](https://www.meetup.com/Chico-R-Users-Group/) useful if you want to stay connected to the community and learn about upcoming events.
     - https://www.meetup.com/Chico-R-Users-Group/
 
 <br>
@@ -124,31 +124,26 @@ _Sometimes a second pair of eyeballs is all you need_
 
 ## Online
 
-* In RStudio go to `Help` --> `Cheatsheets` 
-* [Chico R Users Google Group](https://groups.google.com/forum/#!forum/chico-rug). This is our discussion forum to ask (and answer) questions outside of class. 
+* In RStudio go to `Help` --> `Cheatsheets`
+* [Chico R Users Google Group](https://groups.google.com/forum/#!forum/chico-rug). This is our discussion forum to ask (and answer) questions outside of class.
     - https://groups.google.com/forum/#!forum/chico-rug
 * Googling error messages: https://www.google.com/search?q=common+R+error+messages
-    - Good blog by expert R contributor http://varianceexplained.org/courses/errors/ 
-* Stack Overflow tag [r] https://stackoverflow.com/questions/tagged/r 
-* R Studio community https://community.rstudio.com/ 
-* Twitter: #rstats @Rstudio 
+    - Good blog by expert R contributor http://varianceexplained.org/courses/errors/
+* Stack Overflow tag [r] https://stackoverflow.com/questions/tagged/r
+* R Studio community https://community.rstudio.com/
+* Twitter: #rstats @Rstudio
 
 
 ## Written
 
-If you're a book kinda person, there is plenty of help available as well. Many have online versions or free PDF's. 
+If you're a book kinda person, there is plenty of help available as well. Many have online versions or free PDF's.
 
 * R Markdown, the Definitive Guide: https://bookdown.org/yihui/rmarkdown/
 * R for Data Science https://r4ds.had.co.nz/
-* Cookbook for R http://www.cookbook-r.com/ 
+* Cookbook for R http://www.cookbook-r.com/
 * R Graphics Cookbook (I use this all the time) -- Chapter 8 in the above link
-* The Art of R Programming https://nostarch.com/artofr.htm 
-* R for... http://r4stats.com/ 
-    - Excel Users https://www.rforexcelusers.com/ 
-    - SAS and SPSS Users http://r4stats.com/books/r4sas-spss/ 
-    - STATA Users http://r4stats.com/books/r4stata/ 
-
-
-
-
-
+* The Art of R Programming https://nostarch.com/artofr.htm
+* R for... http://r4stats.com/
+    - Excel Users https://www.rforexcelusers.com/
+    - SAS and SPSS Users http://r4stats.com/books/r4sas-spss/
+    - STATA Users http://r4stats.com/books/r4stata/
