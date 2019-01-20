@@ -109,7 +109,7 @@ Because it's not reproducible.
 
 * Data Science Initiative
     - http://datascience.csuchico.edu What the Data Science community at Chico is up to.
-    - Community Coding. TR 2-4pm MLIB 442.
+    - Community Coding. TR 2-4pm THMA 116.
         - Dedicated space to work on coding projects.
         - Collaborate with your peers and learn from experts.
         - Need 1 unit? Enroll in Math 290-02 and attend at least 10 times.
