@@ -1,6 +1,7 @@
 ---
 output:
   pdf_document: default
+  word_document: default
   html_document: default
 ---
 
@@ -21,13 +22,23 @@ This course is designed as a primer to get the complete novice up and running wi
 
 |                        |        Section 01       |       Section 02        |
 |:-----------------------|:-----------------------:|:-----------------------:|
-| **Meeting Days**       | 1/22/19 - 2/22/19       | 2/25/19 - 4/15/19       |
+| **Meeting Days**       | 1/22/19 - 2/22/19       | 2/25/19 - 4/5/19        |
 | **Meeting Times**      | TR 9:30-10:45           | TR 9:30-10:45           |
 | **Meeting Location**   | Holt 155                | Holt 155                |
 | **Instructor**         | Edward Roualdes         | Robin Donatello         |
 | **Office Location**    | Holt 204                | Holt 202                |
 | **Office Phone**       | 898-5807                | 898-5767                |
 | **E-mail**             | eroualdes@csuchico.edu  | rdonatello@csuchico.edu |
+
+
+
+## Additional Support
+
+* The Data Science Initiative offers year-round training workshops and seminars on data-science related topics including R. See http://datascience.csuchico.edu for more information and a schedule of events.  
+* Community Coding: TR 2-4pm, THMA 116
+    - Students, staff, faculty, and the public are invited to join our Community Coding sessions. Bring your computer, coding projects, and your questions to this open working environment. 
+    - Commit to studying 1 hr. per week for your (not necessarily CS) programming course and earn credit. Enroll in MATH 290-02 (5854), a 1 unit credit/no-credit course.  Credit is earned by attending at least 10 times.
+
 
 
 # Learning Outcomes
