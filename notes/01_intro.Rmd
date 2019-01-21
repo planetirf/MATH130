@@ -3,13 +3,13 @@ title: "Lesson 01 - Introduction to the class and R"
 author: "Robin Donatello"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
-  pdf_document:
-    toc: no
   html_document:
     highlight: tango
     theme: yeti
     toc: yes
     toc_float: yes
+  pdf_document:
+    toc: no
 ---
 
 # Course Description
@@ -109,7 +109,7 @@ Because it's not reproducible.
 
 * Data Science Initiative
     - http://datascience.csuchico.edu What the Data Science community at Chico is up to.
-    - Community Coding. TR 2-4pm THMA 116.
+    - Community Coding. TR 2-4pm THMA 116. [[flyer]](cc_flyer_s19.pdf)
         - Dedicated space to work on coding projects.
         - Collaborate with your peers and learn from experts.
         - Need 1 unit? Enroll in Math 290-02 and attend at least 10 times.
