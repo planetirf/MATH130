@@ -1,7 +1,7 @@
 ---
-title: "Lab1"
+title: "HW 1"
 author: "Solutions"
-draft: true
+output: pdf_document
 ---
 
 Here's your chance to demonstrate that you can integrate the topics and skills you learned through the Data Camp course into a literate report. Each section asks you to perform a few tasks based on each of the chapters in the Introduction to R course. 
