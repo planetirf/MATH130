@@ -1,103 +1,167 @@
 ---
-title: 'Lab 3: More data management and grouping using factors'
+title: "Homework 3"
 author: "NAME"
 date: "DATE"
-output: pdf_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 
-Answer the questions in this lab and submit the compiled HTML or PDF by the deadline. Don't forget to change your name and date in the above header. 
+# Introduction
 
-This lab uses the `dplyr` and `nycflights13` packages. It is good habit to load all packages in the first code chunk. 
+You will be managing factors and creating some basic plots in this homework assignment. The data sets you will use come from two places, `NCbirths` which you will have to read in below, and the `planes` data set which comes part of the `nycflights13` package. The `planes` data set contains data on plane characteristics such as the number of engines. 
+
+The code chunk below sets some code chunk options (using `opts_chunk` from the `knitr` package) to make your knitted report output more readable. I encourage you to play around with these options to learn how they work. 
 
 ```{r, warning=FALSE, message=FALSE}
-library(dplyr)
+knitr::opts_chunk$set(warning=FALSE, message=FALSE, fig.height=4, fig.width=5, fig.align='center') 
+library(ggplot2)
 library(nycflights13)
+library(dplyr)
+df <- read.csv("https://norcalbiostat.netlify.com/data/NCbirths.csv")
 ```
 
-
-# Basic verbs
-You will use the `flights` data set for the next few exercises.  Let's load that into our working environment so we can look at it.
-```{r}
-flights <- flights
-```
-
-* At each step use the assignment operator `<-` to store the results into a new data table and use that data in the next step. 
-* At each step, print out the resulting data frame so you can see the results. 
-
-1. Use `select()` to extract the following variables: `origin`, `distance`, and `air_time`, `dest`. 
-
-```{r}
-f1 <- flights %>% select(origin, distance, air_time, dest)
-f1
-```
-
-2. Use `filter()` to select only the flights whose destination (`dest`) is Atlanta (ATL)
-
-```{r}
-f2 <- f1 %>% filter(dest == 'ATL')
-f2
-```
-
-3. Use `mutate()` to create a new variable `speed` that calculates speed of the plane as `distance/air_time*60.
-
-```{r}
-f3 <- f2 %>% mutate(speed = distance/air_time*60)
-f3
-```
+You can use a combination of base and `ggplot2` graphics for this lab. Your answers can be for your eyes only (exploratory). They do not have to be pretty.  
 
 
-# How many passengers can a plane hold before needing another engine? 
+## How many passengers can a plane hold before needing another engine? 
 This question uses the `planes` data set. Let's load that into our working environment so we can look at it.
 ```{r}
-planes <- planes
+data(planes)
 ```
 
 
 1. Examine the variable `engines` using `table()` and `class`. What is it's data type? 
 
+The variable engines has data type integer.
 
 ```{r}
-table(planes$engines)
 class(planes$engines)
+table(planes$engines)
 ```
 
-The number of engines is an integer variable with values between 1 and 4. 
 
 2. There are too few planes with more than 2 engines. Recode all records with 4 engines to a value of 3. _Hint: Revisit lesson 04_. Create a `table` of this variable again to ensure that all 4's are now 3's. 
 
 ```{r}
-planes$engines[planes$engines==4] <- 3
+planes$engines[planes$engines == 4] <- 3
 table(planes$engines)
 ```
 
 
 3. Create a new factor variable `num_engines` from `engines` with labels "one", "two", "three+". 
+Make sure you create this new variable as part of the `planes` data set. (i.e. `planes$num_engines <-` )
 
 ```{r}
 planes$num_engines <- factor(planes$engines, labels=c("one", "two", "three+"))
+table(planes$num_engines)
 ```
 
 
-4. Create a two-way `table` of `engines` against `new_engines` to confirm that this new factor variable was created correctly. 
+4. Create a two-way `table` of `engines` against `num_engines` to confirm that this new factor variable was created correctly. 
 
 ```{r}
-table(planes$num_engines, planes$engines)
+table(planes$engines, planes$num_engines)
 ```
 
 
-5. Use `dplyr` chaining magic to...
+# Univariate plots
+This section uses data from both the `NCbirths` and the `planes` data sets. 
 
-* take the planes data set _and then_...
-* `group_by`the `num_engines` _and then_...
-* use `summarise` to create three new variables: 
-    - `ave_seats` as the `mean()` number of `seats`
-    - `min_seats` as the `min()` number of `seats`
-    - `max_seats` as the `max()` number of `seats`
 
+1. A table of marital status (`marital`) from NCbirths. 
 
 ```{r}
-planes %>% group_by(num_engines) %>% summarise(ave_seats = mean(seats), 
-                                               min_seats = min(seats), 
-                                               max_seats = max(seats))
+table(df$marital)
 ```
+
+
+
+2. A barchart of marital status (same as above)
+
+```{r}
+ggplot(df, aes(marital)) + geom_bar()
+```
+
+
+
+3. A barchart of the type of plane (`planes$type`) with the levels displayed in increasing frequency order. 
+
+```{r}
+ggplot(planes, aes(forcats::fct_rev(type))) + geom_bar()
+```
+
+
+4. A histogram of mothers age (`mage`) with an overlaid density plot in a different color. Be sure that both density curve and histogram can be seen. 
+
+```{r}
+ggplot(df, aes(mage)) + geom_histogram(aes(y=..density..)) + geom_density()
+```
+
+
+
+5. A horizontal boxplot of weight of the baby (`weight`)
+I don't care how they make this plot, so long as it looks like a horizontal boxplot.
+
+```{r}
+ggplot(df, aes(0, weight)) + geom_boxplot() + coord_flip()
+```
+
+
+# Bivariate plots
+
+6. Create a two-way frequency table of maturity status (`mature`) against smoking `habit`
+
+```{r}
+table(df$mature, df$habit)
+```
+
+
+7. Create a proportion table of smoking habit _within_ maturity status. Round to 3 digits. 
+
+```{r}
+table(df$mature, df$habit) %>% prop.table(margin=1) %>% round(3)
+```
+
+
+
+8. Create a grouped barchart that reflects the frequencies you calculated above. Think carefully which variable goes on the `x` axis, and which one is used for the `fill`
+
+```{r}
+ggplot(df, aes(mature, fill=habit)) + geom_bar(position="dodge")
+```
+
+
+9. A scatterplot of length of pregnancy in `weeks` and the babies `weight`. Include a smoother line in brown, and a best fit linear model line in purple
+    
+```{r}
+ggplot(df, aes(weeks, weight)) + 
+  geom_point() +
+  geom_smooth(se=FALSE, color="brown") + 
+  geom_smooth(se=FALSE, method="lm", color="purple")
+
+```
+    
+10. Grouped boxplots of baby `weight` by mothers smoking `habit`. Make sure you `fill` the boxes by `habit` as well. 
+
+```{r}
+ggplot(df, aes(habit, weight, fill=habit)) + geom_boxplot()
+```
+
+
+11. Replicate the same plot as above, but overlay a violin plot and change the transparency of both violin and boxplot layers. 
+
+```{r}
+ggplot(df, aes(habit, weight, fill=habit)) + 
+  geom_boxplot(width=.1) +
+  geom_violin(alpha=.1)
+```
+
+
+12. Overlaid density plots of weight `gained` by babies `gender`. Do not apply a `fill`, only use the `color` aesthetic. 
+
+```{r}
+ggplot(df, aes(gained, color=gender)) + geom_density()
+```
+
 

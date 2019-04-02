@@ -1,44 +1,47 @@
 ---
-title: "HW 1"
-author: "Solutions"
-output: pdf_document
+title: "Lab1"
+author: "SOLUTIONS"
+date: "DATE"
+output: html_document
+linkcolor: blue
 ---
 
 Here's your chance to demonstrate that you can integrate the topics and skills you learned through the Data Camp course into a literate report. Each section asks you to perform a few tasks based on each of the chapters in the Introduction to R course. 
 
-When the question asks you to perform a coding task, insert a code chunk after each question where you will
-write the code to answer that question. Knitting after each completed code chunk will help you to ensure your 
-final product works as intended! That way if it breaks, you know exactly where the error lies. 
-It's like saving after every answer!
+When the question asks you to perform a coding task, insert a code chunk after each question where you will write the code to answer that question. Knitting after each completed code chunk will help you to ensure your final product works as intended! That way if it breaks, you know exactly where the error lies. It's like saving after every answer!
 
 The first question is done for you as an example. 
 
-## Basic building blocks
+## Intro to basics
 
-0. Calculate 3 + 4. Put the answer below and knit the document. 
+0. Calculate 3 + 4. Put the answer in the grey area below and knit the document. 
 ```{r}
 3+4
 ```
 
 
-1. Calculate $\frac{1}{\sqrt{2}}$, then knit the document. 
+1. Calculate $2^5$, then knit the document. 
 ```{r}
-1/sqrt(2)
+2^5
 ```
 
 2. Assign a numeric value to the variable `my_apples`, assign a different numeric value to the variable `my_oranges`. Add these two together and assign the result to the variable `my_fruit`. Print the result of `my_fruit` to the report. 
 ```{r}
-my_apples <- 1
-my_oranges <- 2
+my_apples <- 6
+my_oranges <- 19
 my_fruit <- my_apples + my_oranges
 my_fruit
 ```
 
-**3. Consider the following code: `a <- "green"` What type of data is `a`?**
+3. Consider the following code below. What type of data is `a`? That is, what is it's `class`? 
+```{r}
+a <- "green"
+class(a)
+```
 
-a character, or a string. 
+Its class is "character"
 
-**4. What are the values that _logical_ data types can hold (_Hint: There are only two_)**
+4. A variable that classified as `logical` can hold only what two values? These are also called Boolean variables. 
 
 TRUE and FALSE
 
@@ -49,7 +52,7 @@ TRUE and FALSE
 
 Data Camp took you through a tour of Vegas data. Let's recreate and play around with a week at the tables. 
 
-**1. Create three vectors (`weekday`, `poker`, `roulette`) to describe the following outcome.** 
+1. Create three vectors (`weekday`, `poker`, `roulette`) to describe the following outcome. Be sure to use these vector names exactly as I have written them here. 
 
 * `weekday`: The 5 weekdays.
 * `poker`: 
@@ -66,20 +69,17 @@ Data Camp took you through a tour of Vegas data. Let's recreate and play around 
     - Friday you won $10
 
 ```{r}
-weekday <- c("Mon", "Tue", "Wed", "Thu", "Fri")
-poker  <- c(140, -50, 20, -120, 240)
+weekday <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+poker <- c(140, -50, 20, -120, 240)
 roulette <- c(-24, -50, 100, -350, 10)
 ```
 
-**2. How much money did you gain/loose overall? What game did you do better on?**
-
+2. How much money did you gain/loose overall? What game did you do better on? 
 ```{r}
-sum(poker)
-sum(roulette)
 sum(poker) + sum(roulette)
+sum(poker) > sum(roulette)
 ```
-
-I did better in poker because i came out with +$230 this week. 
+Lost $84 overall. Did better on poker.
 
 ## Matrix
 
@@ -93,14 +93,15 @@ rownames(star_wars_matrix) <- c("phantom_menace", "attack_clones", "reveng_sith"
 colnames(star_wars_matrix) <- c("US", "non-US")
 ```
 
-1. Print out this matrix and take a look at i. 
+1. Print out this matrix and take a look at it. 
 ```{r}
 star_wars_matrix
 ```
 
+
 2. Select the rows for the second trilogy released (Episodes I-III). This is also referred to as subsetting.
 ```{r}
-star_wars_matrix[1:3,]
+star_wars_matrix[1:3, ]
 ```
 
 3. Use `colSums()` on your selection above to find out how much this trilogy made in total. 
@@ -112,58 +113,58 @@ colSums(star_wars_matrix[1:3,])
 4. Do the same calculation for the first trilogy (Episodes IV-VI), and 2 released so far of the most recent trilogy (Episodes VII & VIII) 
 
 ```{r}
-colSums(star_wars_matrix[4:6,])
-colSums(star_wars_matrix[7:8,])
+colSums(star_wars_matrix[c(4,5,6,7,8), ])
 ```
 
 
-## Data Frames
-In the section above, all that data was contained in separate vectors.
-Let's combine them into a `data.frame` and explore. Data frames are a
-more common way of storing data in R. 
 
-Use the following code to create a data frame out of the vegas data. The code
-chunk has already been written for you, you just need to remove the `eval=FALSE`
-portion so that it will evaluate. 
+## Data Frames
+In the section above, all that data was contained in separate vectors. Let's combine them into a `data.frame` and explore. Data frames are a more common way of storing data in R. 
+
+Use the following code to create a data frame out of the vegas data. The code chunk has already been written for you, you just need to remove the `eval=FALSE` portion so that it will evaluate. 
 ```{r}
 vegas <- data.frame(day = weekday, poker = poker, roulette = roulette)
 ```
 
-**1. Print out the `vegas` data set in it's entirety**
+1. Print out the `vegas` data set in it's entirety
 ```{r}
 vegas
 ```
 
-**2. Print out the records for just Tuesday and Thursday using bracket notation
-and indices `[,]`.**
+> Knit now. Did the vegas data set show up in your output? 
+> If not, did you remove `eval=FALSE` from your code chunk options? 
+> If that didn't work, did you name your vectors earlier exactly `weekday`, `poker`, and `roulette`?
+
+
+2. Print out the records for just Tuesday and Thursday using bracket notation 
+and indices `[,]`. _Hint: To print out the first two columns you could use [,c(1,2)]_
 ```{r}
 vegas[c(2,4),]
 ```
 
-**3. Use dollar sign notation to print just the poker variable: (`vegas$poker`).**
+3. Use dollar sign notation to print just the poker variable: (`vegas$poker`).
 ```{r}
 vegas$poker
 ```
 
 
-**3. Print out the records for Wednesday only, using a logical statement such
-as `day == "Wed"` to identify the row of interest.**
+3. Print out the records for Wednesday only, using bracket notation and a logical statement such
+as `vegas$day == "Wed"` to identify the row of interest. 
 ```{r}
-vegas[vegas$day=="Wed",]
+vegas[vegas$day== "Wednesday",]
 ```
 
 
-**4. Create a new variable called `total` that adds the daily totals for each
-game together. Print the full data set again.**
+4. Create a new variable called `vegas$total` that adds the daily totals for each
+game together. Print the full data set again. Notice that the `total` variable is now 
+part of the `vegas` dat set. 
 ```{r}
-vegas$total <- vegas$poker + vegas$roulette
-vegas
+vegas$total <- rowSums(vegas[,c(2,3)])
 ```
 
-**5. Use this new total vector to subset the data frame now to only include days
+5. Use this new total vector to subset the data frame now to only include days
 where there was a positive total. Store this result as a new object called 
-`win_days`, and print this new object to the screen.**
+`vegas$win_days`, and print this new object to the screen. 
 ```{r}
-win_days <- subset(vegas, total>0)
-win_days
+vegas[vegas$total > 0, ]
 ```

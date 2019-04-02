@@ -41,14 +41,15 @@ If you do not have your own data, you can choose from one of the following data 
 * **Email Spam**: Characteristics of emails used to predict if the email is spam or not.
 * **HIV**: Data on adolescent children living with HIV positive parents.
 
-Any other data sets require instructor approval. Data sets such as the 'plants' or arm strength' data sets are insufficiently complex for this project. Also you can't use the `email` or `NCbirths` data sets because we've used them too much already.
+Any other data sets require instructor approval. Data sets such as the 'plants' or arm strength' data sets are insufficiently complex for this project. Also you can't use the `dsmall`, `diamonds`, `email` or `NCbirths` data sets because we've used them too much already.
 
 # How to submit
 
 * To allow for adequate time for peer grading the submission deadline is a strict cutoff. Really late assignments won't be accepted.
 * Knit your file to HTML, WORD, or PDF, then upload to
-  [here](https://drive.google.com/drive/folders/1PBoNjP3940K6JUvGE1674-nT3LgVFmK6?usp=sharing)
-  by the due date.
+  [here](https://www.dropbox.com/request/LLbhFO1PXI4P2TOLd5rQ)
+  by the due date. (Section 02 Due Date: Sat 4/6 midnight)
+  - If you knit to HTML, you must open & save the resulting file as PDF so it can be commented on. 
 * Put your student username in the name of the file somewhere, so that your fellow
   students know which assignment they are to reveiw.
 
@@ -59,7 +60,7 @@ After the submission deadline, your analysis projects will be randomly assigned 
 This means you will score and provide feedback on 2 reports. The instructor(s) will also score all projects for their class sections.
 
 * All submissions will be processed and posted to a [peer review](https://norcalbiostat.github.io/peer_review/math130_eda.html) website.
-* Your assignments will be posted on this [spreadsheet](https://docs.google.com/spreadsheets/d/1ik6HlN7LHSlxmqMF80Dn0p8wEpaOV-igPw0OB2AQb0k/edit?usp=sharing).
+* Your assignments will be posted on this [spreadsheet](https://docs.google.com/spreadsheets/d/1GItQRInVYfLgIT25RqNMQI9L1_lwqz19EkcClVrdrGk/edit?usp=sharing).
     - If one or both of the people you are assigned to review do not submit a project, pick another person to review. You do not have to notify your instructor if this happens.
 * Download your assigned projects to review to your computer.
     - Using the commenting features of either WORD or a PDF reader, provide 4 comments for each project.
