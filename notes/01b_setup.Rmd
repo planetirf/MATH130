@@ -1,0 +1,71 @@
+---
+title: "Getting your System Setup"
+date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
+output:
+  html_document:
+    highlight: tango
+    theme: yeti
+    toc: yes
+    toc_float: yes
+  pdf_document:
+    toc: no
+---
+
+This lesson will show you how to get your system setup to work in the modern data analysis environment R Studio. 
+
+
+# 1. Download and install R (v 3.5+)
+
+* Download R from https://cran.r-project.org/ 
+    - Direct link for Mac OS X El Capitan or higher: https://cran.r-project.org/bin/macosx/R-3.6.0.pkg 
+    - Direct link for Windows 10 https://cran.r-project.org/bin/windows/base/R-3.6.0-win.exe 
+    
+* Install R by double clicking on the downloaded file (Windows), or by dragging
+
+<span style="color:red">check this</span>
+
+
+# 2. Download and install R Studio (v 1.2+)
+
+* Download R Studio from https://www.rstudio.com/products/rstudio/download/#download
+
+* Install R Studio
+    * Windows: Double click on the downloaded file to run the installer program. 
+    * Mac: Double click on the downloaded file, then drag the R Studio Icon into your Applications folder. 
+
+* Watch the following short video to learn how to navigate R Studio. 
+
+<p><a href="https://www.rstudio.com/products/RStudio/?wvideo=520zbd3tij"><img src="https://embedwistia-a.akamaihd.net/deliveries/260e6e980f526abaedf8ef3378270c899da74f08.jpg?origin_v2=1&amp;image_play_button_size=2x&amp;image_crop_resized=960x540&amp;image_play_button=1&amp;image_play_button_color=71a5d4e0" width="400" height="225" style="width: 400px; height: 225px;"></a></p><p><a href="https://www.rstudio.com/products/RStudio/?wvideo=520zbd3tij">RStudio IDE Overview</a></p>
+
+   
+
+# 3. Setting preferences in R Studio to retain sanity while debugging
+
+* Open R Studio and go to the file menu go to Tools then Global Options.
+* Uncheck "Restore .RData into workspace at startup" 
+* Where it says "Save workspace to .RData on exit:" Select "Never""
+* Click apply then ok to close that window.
+  
+This will ensure that when you restart R you do not "carry forward" objects such as data sets that you were working on in a prior assignment. 
+
+It is _highly_ recommended to completely shut down R studio when you are done working. 
+    
+ 
+# 4. Set up a class folder 
+
+The desktop may be a convienant place to put your files, 
+
+Create a class folder created on your computer using one of the options below:
+
+    - ALL CAPS (MATH130)
+    - no caps (math130)
+    - snake_case (math_130)
+    - CamelCase (Math130) is not recommended (do you want to remember what letters were capitalized?)
+
+* Put all files related to this class in here. 
+* This means when you download a file, right click and "Save as" or "Save target as" and **actively choose** where to download this file. Do not let files live in your downloads folder. 
+* <span style="color:red">Do not open any files from your browser window after downloading. </span>
+
+
+[Click this link to download Homework 1 now](hw/hw1.Rmd)
+

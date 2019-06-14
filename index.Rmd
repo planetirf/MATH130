@@ -15,7 +15,7 @@ See the [syllabus](syllabus.html) for details about the current class offerings.
 
 # Announcements
 
-_This site has been updated for Spring 19. Please notify me of any broken or missing links._
+_This site is currently being updated for Fall 19._
 
 --------------------------------
 
@@ -31,17 +31,17 @@ Click each weekly header below to expand and see the materials for that week.
 
 `r emo::ji("notebook_with_decorative_cover")` Notes :
 
-* lec01-Introduction to the class.  [[HTML]](notes/01_intro.html) [[PDF]](notes/01_intro.pdf) 
-* lec02-Introduction to R Markdown  [[HTML]](notes/02_rmd.html)   [[PDF]](notes/02_rmd.pdf) 
+* lec01-Introduction to the class.  [[HTML]](notes/01_intro.html) [[PDF]](notes/01_intro.pdf) `r emo::ji("check")`
+* lec02-Introduction to R Markdown  [[HTML]](notes/02_rmd.html)   [[PDF]](notes/02_rmd.pdf)   `r emo::ji("x")`
 
 `r emo::ji("pencil2")` Assignments (in order): 
 
-1. Join our Data Camp classroom by using the invite link sent to you by your instructor. 
-2. Complete the Data Camp assigned course: `Introduction to R` 
-3. Watch the 1 minute video: "[What is R Markdown?](http://rmarkdown.rstudio.com/lesson-1.html)"
+1. Follow these notes to get your system setup with the necessary programs. [[HTML]](notes/01b_setup.html)  `r emo::ji("x")`
+
+Watch the 1 minute video: "[What is R Markdown?](http://rmarkdown.rstudio.com/lesson-1.html)"
 4. Complete the Data Camp assigned course: `Working with the R Studio IDE (Part 1)`, **Orientation and Programming** only!
-5. Install R and R Studio onto your computer. 
-6. Review lec02 notes (done in class day 2)
+
+
 7. Complete Homework 1. [[HW 1]](hw/hw1.Rmd)
     - Submit the `.RMD file` for this assignment as instructed by the due date.  
     

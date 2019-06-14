@@ -1,6 +1,5 @@
 ---
-title: "Lesson 01 - Introduction to the class and R"
-author: "Robin Donatello"
+title: "Lesson 01 - Introduction to the class"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
   html_document:
@@ -12,14 +11,14 @@ output:
     toc: no
 ---
 
-# Course Description
+# Course Overview
 
 This course is designed as a primer to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R in an environment that emphasizes reproducible research and literate programming for data analysis.
 
 The target audience is anyone who wants to do their own data analysis. The course will cumulate with an peer-evaluated exploratory data analysis on either a pre-specified data set or your data set of choice.
 
 
-# Schedule of Topics
+## Schedule of Topics
 
 * Intro to the R language and it's packages
 * R Studio suite of awesomeness
@@ -31,19 +30,18 @@ The target audience is anyone who wants to do their own data analysis. The cours
 * Data Manipulation and Aggregation
 * Exploratory Data Analysis
 
-# Logistics
+## Logistics
 
 * All content is fully online on the course website: https://norcalbiostat.github.io/MATH130/
-* We will also use Data Camp (www.datacamp.com) is a free online learning tool we will use to start learn R.
-* Class time is spent expanding on ideas and concepts, working through labs as a class or in pairs, and working on individual assignments.
+* Class time is spent expanding on ideas and concepts, working through assignments as a class or in pairs. 
 
-# Grading
+## Grading
 
 * Credit / No Credit. There are 100 points available in this course through attendance, assignments, and a final project.
 * You must earn 70 points to receive credit for the course.
 * The [syllabus](../syllabus.html) provides specific details on points per assignment.
 
-# Time Committment
+## Time Committment
 * Fast paced, we're hitting the ground running and only have 5 weeks.
 * Not designed to teach you everything about R, just enough to make you dangerous.
 * Daily practice will pay off.
@@ -52,7 +50,7 @@ The target audience is anyone who wants to do their own data analysis. The cours
 * Effort in = satisfaction
 
 <br>
-<center><img src="hard.jpg" width="350px"></center>
+<center><img src="../static/img/hard.jpg" width="350px"></center>
 _We've all been there. It will get easier_
 
 
@@ -91,7 +89,7 @@ Learning to program has other benefits
 * [[A few]](https://skillcrush.com/2015/01/28/laurence-bradford-10-reasons/) [[other lists]](https://careerfoundry.com/en/blog/web-development/7-benefits-of-learning-to-code/) [[of reasons]](https://skillcrush.com/2017/01/30/learn-to-code-benefits/)
 
 <br>
-<center><img src="orly-changestuff.jpg" width="350px"></center>
+<center><img src="../static/img/orly-changestuff.jpg" width="350px"></center>
 _No joke, this is the key to learning the details of how things work_
 
 ## Why no point and click?
@@ -109,7 +107,7 @@ Because it's not reproducible.
 
 * Data Science Initiative
     - http://datascience.csuchico.edu What the Data Science community at Chico is up to.
-    - Community Coding. TR 2-4pm THMA 116. [[flyer]](cc_flyer_s19.pdf)
+    - Community Coding. 
         - Dedicated space to work on coding projects.
         - Collaborate with your peers and learn from experts.
         - Need 1 unit? Enroll in Math 290-02 and attend at least 10 times.
@@ -119,7 +117,7 @@ Because it's not reproducible.
     - https://www.meetup.com/Chico-R-Users-Group/
 
 <br>
-<center><img src="debugging.jpg" width="350px"></center>
+<center><img src="../static/img/debugging.jpg" width="350px"></center>
 _Sometimes a second pair of eyeballs is all you need_
 
 ## Online

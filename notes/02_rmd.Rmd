@@ -1,6 +1,5 @@
 ---
-title: "Lesson 02 - Introduction to R Markdown and Homework 1"
-author: "Robin Donatello"
+title: "Lesson 02 - Setting up your system"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
   pdf_document:
@@ -42,25 +41,7 @@ install.packages("rmarkdown")
 install.packages("knitr")
 ```
 
-* A class folder created on your computer using one of the options below:
-    - ALL CAPS (MATH130)
-    - no caps (math130)
-    - snake_case (math_130)
-    - CamelCase (Math130) is not recommended (do you want to remember what letters were capitalized?)
 
-# Setting preferences
-
-It is advised to set the following preferences to retain your sanity when debugging. 
-
-* In RStudio the file menu go to Tools then Global Options.
-* Uncheck "Restore .RData into workspace at startup" 
-* Where it says "Save workspace to .RData on exit:" Select "Never""
-* Click apply then ok to close that window.
-  
-This will ensure that when you restart R you do not "carry forward" objects such as data sets that you were working on in a prior assignment. 
-
-It is _highly_ recommended to completely shut down R studio when you are done working. 
-    
 # Test your setup
 
 Let's create your first markdown file!
@@ -85,6 +66,5 @@ This is what we mean by reproducible. If you make a change in the code document,
 4. Knit this file to HTML. 
 5. Look at each piece of the output around problem 0. Mentally match each piece of output with the corresponding section in the RMD file. 
 6. This provides a homework template for you to use to write your assignment. Write your answers directly into this document. 
-    - If this doesn't look familiar, go finish the Data Camp homework first!
 7. Submit the **RMD** file before the due date. I will knit the file on my machine and grade the result. Make sure it looks good before turning it in!
 
