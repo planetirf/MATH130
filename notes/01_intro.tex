@@ -1,0 +1,397 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Lesson 01 - Introduction to the class},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Lesson 01 - Introduction to the class}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{}
+    \preauthor{}\postauthor{}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{Last Updated 06-14-2019}
+
+
+\begin{document}
+\maketitle
+
+\hypertarget{course-overview}{%
+\section{Course Overview}\label{course-overview}}
+
+This course is designed as a primer to get the complete novice up and
+running with the basic knowledge of how to use the statistical
+programming language R in an environment that emphasizes reproducible
+research and literate programming for data analysis.
+
+The target audience is anyone who wants to do their own data analysis.
+The course will cumulate with an peer-evaluated exploratory data
+analysis on either a pre-specified data set or your data set of choice.
+
+\hypertarget{schedule-of-topics}{%
+\subsection{Schedule of Topics}\label{schedule-of-topics}}
+
+\begin{itemize}
+\tightlist
+\item
+  Intro to the R language and it's packages
+\item
+  R Studio suite of awesomeness
+\item
+  Reproducible Research with R Markdown
+\item
+  Functions
+\item
+  Getting data into R
+\item
+  Managing the spreadsheet-like data frame
+\item
+  Data Visualization
+\item
+  Data Manipulation and Aggregation
+\item
+  Exploratory Data Analysis
+\end{itemize}
+
+\hypertarget{logistics}{%
+\subsection{Logistics}\label{logistics}}
+
+\begin{itemize}
+\tightlist
+\item
+  All content is fully online on the course website:
+  \url{https://norcalbiostat.github.io/MATH130/}
+\item
+  Class time is spent expanding on ideas and concepts, working through
+  assignments as a class or in pairs.
+\end{itemize}
+
+\hypertarget{grading}{%
+\subsection{Grading}\label{grading}}
+
+\begin{itemize}
+\tightlist
+\item
+  Credit / No Credit. There are 100 points available in this course
+  through attendance, assignments, and a final project.
+\item
+  You must earn 70 points to receive credit for the course.
+\item
+  The \href{../syllabus.html}{syllabus} provides specific details on
+  points per assignment.
+\end{itemize}
+
+\hypertarget{time-committment}{%
+\subsection{Time Committment}\label{time-committment}}
+
+\begin{itemize}
+\tightlist
+\item
+  Fast paced, we're hitting the ground running and only have 5 weeks.
+\item
+  Not designed to teach you everything about R, just enough to make you
+  dangerous.
+\item
+  Daily practice will pay off.
+\item
+  But can be very rewarding
+\item
+  Garbage in = garbage out
+\item
+  Effort in = satisfaction
+\end{itemize}
+
+\emph{We've all been there. It will get easier}
+
+\hypertarget{tool-choices}{%
+\section{Tool choices}\label{tool-choices}}
+
+\hypertarget{why-use-r}{%
+\subsection{Why use R?}\label{why-use-r}}
+
+\begin{itemize}
+\tightlist
+\item
+  Open source, and free
+\item
+  Rapid improvement
+\item
+  Tons of learning resources
+\item
+  Currently R is used in Chico's upper division Applied Statistics and
+  Data Science courses.
+\item
+  Very popular in \href{https://r4ds.had.co.nz/}{Data Science},
+  \href{https://www.core-econ.org/why-doing-economics-has-embraced-r/}{Economics},
+  \href{https://www.nature.com/news/programming-tools-adventures-with-r-1.16609}{Natural
+  Sciences}, \href{https://personality-project.org/r/}{Psychology} and
+  many other fields.
+\end{itemize}
+
+\hypertarget{why-use-r-studio}{%
+\subsection{Why use R Studio?}\label{why-use-r-studio}}
+
+\begin{itemize}
+\tightlist
+\item
+  Customizable workspace that docks all windows together.
+\item
+  Notebook formats that allow for easy sharing of code and output, and
+  integration with other languages (Python, C++, SQL, Stan)
+\item
+  Syntax highlighting, warning errors when missing a closing
+  parentheses.
+\item
+  Cross-platform interface. Also works on Windows/iOS/Linux.
+\item
+  Tab completion for functions. Forget the syntax or a variable name?
+  Popup helpers are available.
+\item
+  Free training videos available from the developers directly.
+\item
+  Built in version control
+\item
+  One button publishing of reproducible documents such as reports,
+  interactive visualizations, presentations (like this one!), websites.
+\end{itemize}
+
+\hypertarget{programming-is-scary}{%
+\subsection{Programming is scary!}\label{programming-is-scary}}
+
+Learning to program has other benefits
+
+\begin{itemize}
+\tightlist
+\item
+  Improves your logical skills and critical problem solving
+\item
+  Increases your attention to detail
+\item
+  Increases your self reliance and empowers you to control your own
+  research.
+\item
+  Your PI will love your awesome graphics and reports.
+\item
+  Some people think what you do is magic.
+\item
+  Thinking graduate school?
+  \href{http://www.nature.com/nature/journal/v541/n7638/full/nj7638-563a.html}{{[}expect
+  to learn this on your own{]}}
+\item
+  \href{https://skillcrush.com/2015/01/28/laurence-bradford-10-reasons/}{{[}A
+  few{]}}
+  \href{https://careerfoundry.com/en/blog/web-development/7-benefits-of-learning-to-code/}{{[}other
+  lists{]}}
+  \href{https://skillcrush.com/2017/01/30/learn-to-code-benefits/}{{[}of
+  reasons{]}}
+\end{itemize}
+
+\emph{No joke, this is the key to learning the details of how things
+work}
+
+\hypertarget{why-no-point-and-click}{%
+\subsection{Why no point and click?}\label{why-no-point-and-click}}
+
+Because it's not reproducible.
+
+\begin{itemize}
+\tightlist
+\item
+  Which boxes did you click last time?
+\item
+  New data? Gotta do it all over.
+\item
+  Need to expand your model? Gotta do it all over.
+\item
+  Made a mistake in the data coding? Gotta do it all over\ldots{}
+\end{itemize}
+
+\hypertarget{getting-help}{%
+\section{Getting Help}\label{getting-help}}
+
+\hypertarget{in-person}{%
+\subsection{In Person}\label{in-person}}
+
+\begin{itemize}
+\tightlist
+\item
+  Data Science Initiative
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{http://datascience.csuchico.edu} What the Data Science
+    community at Chico is up to.
+  \item
+    Community Coding.
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Dedicated space to work on coding projects.
+    \item
+      Collaborate with your peers and learn from experts.
+    \item
+      Need 1 unit? Enroll in Math 290-02 and attend at least 10 times.
+    \item
+      You DON'T need to be enrolled to attend!
+    \end{itemize}
+  \item
+    Weekly seminars and workshops in a variety of languages and topics.
+  \end{itemize}
+\item
+  The \href{https://www.meetup.com/Chico-R-Users-Group/}{R Users Meetup
+  group} useful if you want to stay connected to the community and learn
+  about upcoming events.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://www.meetup.com/Chico-R-Users-Group/}
+  \end{itemize}
+\end{itemize}
+
+\emph{Sometimes a second pair of eyeballs is all you need}
+
+\hypertarget{online}{%
+\subsection{Online}\label{online}}
+
+\begin{itemize}
+\tightlist
+\item
+  In RStudio go to \texttt{Help} --\textgreater{} \texttt{Cheatsheets}
+\item
+  \href{https://groups.google.com/forum/\#!forum/chico-rug}{Chico R
+  Users Google Group}. This is our discussion forum to ask (and answer)
+  questions outside of class.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \url{https://groups.google.com/forum/\#!forum/chico-rug}
+  \end{itemize}
+\item
+  Googling error messages:
+  \url{https://www.google.com/search?q=common+R+error+messages}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Good blog by expert R contributor
+    \url{http://varianceexplained.org/courses/errors/}
+  \end{itemize}
+\item
+  Stack Overflow tag {[}r{]}
+  \url{https://stackoverflow.com/questions/tagged/r}
+\item
+  R Studio community \url{https://community.rstudio.com/}
+\item
+  Twitter: \#rstats @Rstudio
+\end{itemize}
+
+\hypertarget{written}{%
+\subsection{Written}\label{written}}
+
+If you're a book kinda person, there is plenty of help available as
+well. Many have online versions or free PDF's.
+
+\begin{itemize}
+\tightlist
+\item
+  R Markdown, the Definitive Guide:
+  \url{https://bookdown.org/yihui/rmarkdown/}
+\item
+  R for Data Science \url{https://r4ds.had.co.nz/}
+\item
+  Cookbook for R \url{http://www.cookbook-r.com/}
+\item
+  R Graphics Cookbook (I use this all the time) -- Chapter 8 in the
+  above link
+\item
+  The Art of R Programming \url{https://nostarch.com/artofr.htm}
+\item
+  R for\ldots{} \url{http://r4stats.com/}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Excel Users \url{https://www.rforexcelusers.com/}
+  \item
+    SAS and SPSS Users \url{http://r4stats.com/books/r4sas-spss/}
+  \item
+    STATA Users \url{http://r4stats.com/books/r4stata/}
+  \end{itemize}
+\end{itemize}
+
+
+\end{document}

@@ -1,0 +1,140 @@
+---
+title: "Lesson 02 - Getting your System Setup"
+date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
+output:
+  pdf_document:
+    toc: no
+  html_document:
+    highlight: tango
+    theme: yeti
+    toc: yes
+    toc_float: yes
+---
+
+This lesson will show you how to get your system setup to work in the modern data analysis environment R Studio. 
+
+> If you are using an iPad or Chromebook or otherwise do not have a computer that you can install programs on, 
+> head over to http://rstudio.cloud.com, make an account and start a new project. Then go watch the video below on 
+> how to navigate R studio. 
+
+While the cloud is easier to initially setup, I want you to only use it if you absolutely have to. Having your own
+installation on your computer ensures that
+
+* you likely want to customize your programs
+* you will be able to put your files under version control
+* you always have access to your code even with unstable or no internet
+* Honestly, it may not always be free. This is an alpha testing stage for the company. 
+
+R is the programming language that we will be using. R Studio is the program we will _use_ R through. 
+You need to install both. 
+
+<br>
+
+# 1. Download and install R 
+<center><img src="../static/img/R.png" width="200px"></center>
+
+* Download R (v3.5+) from https://cran.r-project.org/ 
+    - Direct link for Mac OS X El Capitan or higher: https://cran.r-project.org/bin/macosx/R-3.6.0.pkg 
+    - Direct link for Windows 10 https://cran.r-project.org/bin/windows/base/R-3.6.0-win.exe 
+    
+* Install R by double clicking on the downloaded file and following the prompts. Default settings are OK. 
+    - Delete any desktop shortcut that was created (looks like the icon above.)
+
+
+# 2. Download and install R Studio
+<center><img src="../static/img/RStudio.png" width="200px"></center>
+
+* Download R Studio (v 1.2+) from https://www.rstudio.com/products/rstudio/download/#download
+    - Choose the download link that corresponds to your operating system. 
+
+* Install R Studio
+    * Windows: Double click on the downloaded file to run the installer program. 
+    * Mac: Double click on the downloaded file, then drag the R Studio Icon into your Applications folder.
+        - After you are done, eject the "Drive" that you downloaded by dragging it to your trash. 
+
+* Watch the following short video to learn how to navigate R Studio. 
+
+<p><a href="https://www.rstudio.com/products/RStudio/?wvideo=520zbd3tij"><img src="https://embedwistia-a.akamaihd.net/deliveries/260e6e980f526abaedf8ef3378270c899da74f08.jpg?origin_v2=1&amp;image_play_button_size=2x&amp;image_crop_resized=960x540&amp;image_play_button=1&amp;image_play_button_color=71a5d4e0" width="400" height="225" style="width: 400px; height: 225px;"></a></p><p><a href="https://www.rstudio.com/products/RStudio/?wvideo=520zbd3tij">RStudio IDE Overview</a></p>
+
+   
+
+# 3. Setting preferences in R Studio to retain sanity while debugging
+
+* Open R Studio and go to the file menu go to Tools then Global Options.
+* Uncheck "Restore .RData into workspace at startup" 
+* Where it says "Save workspace to .RData on exit:" Select "Never""
+* Click apply then ok to close that window.
+  
+This will ensure that when you restart R you do not "carry forward" objects such as data sets that you were working on in a prior assignment. 
+
+You should make a habit to completely shut down R studio when you are done working. 
+Your open tabs will be saved, but your environment will be cleared. _This is a good thing._
+    
+ 
+# 4. Set up a class folder 
+
+* Create a class folder in an easy to find place on your computer using one of the options below:
+
+    - ALL CAPS (MATH130)
+    - no caps (math130)
+    - snake_case (math_130) 
+    - CamelCase (Math130) 
+
+* In this `math130` folder, create a subfolder named `data`, and a second subfolder for `homework`. 
+* You will put all files related to this class in here.
+    - Lecture notes go in the main folder, homework in the `homework` folder, and data in, you guessed it, the `data` folder. 
+* This means when you download a file, right click and "Save as" or "Save target as" and **actively choose** where to download this file. Do not let files live in your downloads folder. 
+* `r emo::ji("no_entry_sign")` Do not open any files from your browser window after downloading.
+
+
+Test this out now by clicking [[this link]](hw/hw1.Rmd) to download Homework 1 assignment now. 
+
+
+# 5. Installing Packages
+
+R is considered an **Open Source** software program. That means many (thousands) of people contribute to the software. They do this by writing commands (called functions) to make a particular analysis easier, or to make a graphic prettier.
+
+When you download R, you get access to a lot of functions that we will use. However these other _user-written_ packages add so much good stuff that it really is the backbone of the customizability and functionality that makes R so powerful of a language. 
+
+For example we will be creating graphics using functions like `boxplot()` and `hist()` that exist in base R. But we will quickly move on to creating graphics using functions contained in the `ggplot2` package. We will be managing data using functions in `dplyr` and reading in Excel files using `readxl`. Installing packages will become your favorite pasttime. 
+
+To get started open R Studio and in the Console type the following command to install the `rmarkdown` package. Hit enter to submit the command to R and watch the install. 
+
+```r
+install.packages("ggplot2")
+```
+
+When the console returns to showing a `>` (and the stop sign in the top right corner of the Console window goes away), R is done doing what you asked it to do and ready for you to give it another command. You should get a message that looks similar to the message below. 
+
+```
+The downloaded binary packages are in
+	C:\Users\Robin\AppData\Local\Temp\Rtmpi8NAym\downloaded_packages
+```
+
+Some packages use functions that live in other packages. These are called dependencies and will be automatically installed when you tell R to install a new package. 99% of the time you will not have to install them manually on your own. 
+
+
+> You only have to install packages once. To access commands within the functions you must load the package first using the code `library(package name)`. We will start to use various packages next week. 
+
+
+Now that you're a package installing pro, go ahead and install the following packages that we will be using in the next few weeks. Type these commands into the console one at a time, hitting enter to submit, and waiting for it to finish before entering the next command. **R is case sensitive**.
+
+```r
+install.packages("rmarkdown")
+install.packages("knitr")
+install.packages("forcats")
+install.packages("readxl")
+install.packages("dplyr")
+```
+
+Note in this last package that is a lower case letter L at the end. For read EXCELL. It is not the number 1 (one). 
+
+`r emo::ji("warning")` If you see a message such as the one below, check for a typo. 
+
+```
+Warning in install.packages :
+  package ‘ggplot’ is not available (for R version 3.5.1)
+```
+
+The correct package name is `ggplot2`, not `ggplot`.
+

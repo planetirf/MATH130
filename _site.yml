@@ -6,14 +6,6 @@ navbar:
   - text: Materials 
     icon: fa-book
     href: mats.html
-    menu:
-    - text: Notes
-      icon: fa-page
-      href: assignments.html
-    - text: Assignments 
-      icon: fa-page
-      href: assignments.html
-
       
   right:
     - text: "Help/FAQ"

@@ -6,7 +6,7 @@ output: html_document
 linkcolor: blue
 ---
 
-Here's your chance to demonstrate that you can integrate the topics and skills you learned through the Data Camp course into a literate report. Each section asks you to perform a few tasks based on each of the chapters in the Introduction to R course. 
+Here's your chance to demonstrate that you can integrate the topics and skills you learned so far into a literate report. 
 
 When the question asks you to perform a coding task, insert a code chunk after each question where you will write the code to answer that question. Knitting after each completed code chunk will help you to ensure your final product works as intended! That way if it breaks, you know exactly where the error lies. It's like saving after every answer!
 
