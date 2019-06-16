@@ -2,13 +2,14 @@
 title: "Lesson 01 - Introduction to the class"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
+  pdf_document:
+    toc: no
   html_document:
     highlight: tango
     theme: yeti
     toc: yes
     toc_float: yes
-  pdf_document:
-    toc: no
+    css: ../css/yeti.css
 ---
 
 # Course Overview
@@ -57,13 +58,26 @@ _We've all been there. It will get easier_
 
 # Tool choices
 
+The term "`R`" is used to refer to both the programming language and the
+software that interprets the scripts written using it.
+
+[RStudio](https://rstudio.com) is currently a very popular way to not only write
+your R scripts but also to interact with the R software. To function correctly,
+RStudio needs R and therefore both need to be installed on your computer.
+
+
 ## Why use R?
 
-* Open source, and free
-* Rapid improvement
+* Open source, cross-platform, and free
+* Great for reproducibility
+* Interdisciplinary and extensible
+    - Examples in [Data Science](https://r4ds.had.co.nz/), [Economics](https://www.core-econ.org/why-doing-economics-has-embraced-r/), [Natural Sciences](https://www.nature.com/news/programming-tools-adventures-with-r-1.16609), [Psychology](https://personality-project.org/r/).
 * Tons of learning resources
 * Currently R is used in Chico's upper division Applied Statistics and Data Science courses.
-* Very popular in [Data Science](https://r4ds.had.co.nz/), [Economics](https://www.core-econ.org/why-doing-economics-has-embraced-r/), [Natural Sciences](https://www.nature.com/news/programming-tools-adventures-with-r-1.16609), [Psychology](https://personality-project.org/r/) and many other fields.
+* Does not involve lots of pointing and clicking (that's a good thing!)
+* Works on data of all shapes and sizes
+* Produces high-quality graphics
+* Large and welcoming community
 
 ## Why use R Studio?
 
@@ -81,16 +95,18 @@ _We've all been there. It will get easier_
 Learning to program has other benefits
 
 * Improves your logical skills and critical problem solving
+* Your series of commands are explictily written down and subject to review. 
 * Increases your attention to detail
 * Increases your self reliance and empowers you to control your own research.
 * Your PI will love your awesome graphics and reports.
 * Some people think what you do is magic.
 * Thinking graduate school? [[expect to learn this on your own]](http://www.nature.com/nature/journal/v541/n7638/full/nj7638-563a.html)
 * [[A few]](https://skillcrush.com/2015/01/28/laurence-bradford-10-reasons/) [[other lists]](https://careerfoundry.com/en/blog/web-development/7-benefits-of-learning-to-code/) [[of reasons]](https://skillcrush.com/2017/01/30/learn-to-code-benefits/)
+* The key to learning the details of how things work under the hood is often by trial and error.
 
 <br>
-<center><img src="../static/img/orly-changestuff.jpg" width="350px"></center>
-_No joke, this is the key to learning the details of how things work_
+<center><img src="../static/img/orly-changestuff.jpg" width="250px"></center>
+
 
 ## Why no point and click?
 
@@ -101,47 +117,5 @@ Because it's not reproducible.
 * Need to expand your model? Gotta do it all over.
 * Made a mistake in the data coding? Gotta do it all over...
 
-# Getting Help
 
-## In Person
-
-* Data Science Initiative
-    - http://datascience.csuchico.edu What the Data Science community at Chico is up to.
-    - Community Coding. 
-        - Dedicated space to work on coding projects.
-        - Collaborate with your peers and learn from experts.
-        - Need 1 unit? Enroll in Math 290-02 and attend at least 10 times.
-        - You DON'T need to be enrolled to attend!
-    - Weekly seminars and workshops in a variety of languages and topics.
-* The [R Users Meetup group](https://www.meetup.com/Chico-R-Users-Group/) useful if you want to stay connected to the community and learn about upcoming events.
-    - https://www.meetup.com/Chico-R-Users-Group/
-
-<br>
-<center><img src="../static/img/debugging.jpg" width="350px"></center>
-_Sometimes a second pair of eyeballs is all you need_
-
-## Online
-
-* In RStudio go to `Help` --> `Cheatsheets`
-* [Chico R Users Google Group](https://groups.google.com/forum/#!forum/chico-rug). This is our discussion forum to ask (and answer) questions outside of class.
-    - https://groups.google.com/forum/#!forum/chico-rug
-* Googling error messages: https://www.google.com/search?q=common+R+error+messages
-    - Good blog by expert R contributor http://varianceexplained.org/courses/errors/
-* Stack Overflow tag [r] https://stackoverflow.com/questions/tagged/r
-* R Studio community https://community.rstudio.com/
-* Twitter: #rstats @Rstudio
-
-
-## Written
-
-If you're a book kinda person, there is plenty of help available as well. Many have online versions or free PDF's.
-
-* R Markdown, the Definitive Guide: https://bookdown.org/yihui/rmarkdown/
-* R for Data Science https://r4ds.had.co.nz/
-* Cookbook for R http://www.cookbook-r.com/
-* R Graphics Cookbook (I use this all the time) -- Chapter 8 in the above link
-* The Art of R Programming https://nostarch.com/artofr.htm
-* R for... http://r4stats.com/
-    - Excel Users https://www.rforexcelusers.com/
-    - SAS and SPSS Users http://r4stats.com/books/r4sas-spss/
-    - STATA Users http://r4stats.com/books/r4stata/
+# Questions? 

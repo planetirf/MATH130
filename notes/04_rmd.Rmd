@@ -7,6 +7,7 @@ output:
     theme: yeti
     toc: yes
     toc_float: yes
+    css: ../css/yeti.css
   pdf_document:
     toc: no
 ---
@@ -17,15 +18,11 @@ output:
 In this lesson you will learn to write a document using R markdown, integrate live R code into a literate statistical program, compile R markdown documents using `knitr` and related tools, and organize a data analysis sandbox so that it is reproducible and accessible to others.
 
 
-### Student Learning Objectives
+### Learning Objectives
 
-After completing this lesson students will be able to create a reproducible R Markdown document that integrates written text, R code and output into a literate document.  
+After completing this lesson learners will be able to 
 
 
-# Requirements
-
-* R and R Studio must be installed
-* The following R packages must be installed: `rmarkdown` and `knitr`. (See Lesson 02 for instructions)
 
 # Appearance
 

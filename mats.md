@@ -1,6 +1,8 @@
 
 <br><br> 
 
+
+
 # Notes
 Lesson notes are available in both HTML and PDF format. Some lessons have accompanying RMD files that can be used to take notes in during the lesson. 
 

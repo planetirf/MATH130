@@ -1,0 +1,37 @@
+---
+title: "Course materials"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(dplyr)
+library(stringr)
+library(knitr); library(kableExtra)
+opts_chunk$set(echo = FALSE)
+```
+
+```{r}
+f  <- list.files("hw", pattern='*.Rmd')
+f <- f[!grepl("solutions", f )]
+hw <- data.frame(filenames = paste0('hw/', f ))
+
+
+out.hw <- hw %>% mutate(name = gsub("hw/|.Rmd",  "", filenames), 
+                        link = sprintf("[%s](%s)",name, filenames))
+
+```
+
+# Assignments
+
+To download RMD template files, right click and "save as". Do not open in a browser then save. 
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+x = out.hw %>% select(name, link) %>%
+    kable(format="html") %>%
+    kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive" ,"bordered"), 
+                  full_width=FALSE,  position = "left")
+#gsub("<thead>.*</thead>", "", x)
+```
+
+```{r, echo=TRUE, results='asis'}
+paste0("<li>", sprintf("[%s](%s)",toupper(out.hw$name), out.hw$filenames), "</li>")
+```
