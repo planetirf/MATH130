@@ -17,9 +17,10 @@ output:
 In this lesson we will introduce ways to get data from external files into R, how R works with data, and how to use functions to explore your data frame. 
 
 ### Student Learning Objectives
-After completing this lesson students will be able to
+After completing this lesson learners will be able to
 
 * Import data that is stored in an external Excel, CSV or tab-delimited text file into R.
+* Compare and contrast the three file types discussed in this lesson. 
 * Use functions to examine data objects to ensure data was imported correctly. 
 * Extract vectors out of data frames using variable names.
 * Identify missing data elements in a data table. 

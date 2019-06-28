@@ -2,21 +2,21 @@
 title: "Lesson 01 - Introduction to the class"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
+  pdf_document:
+    toc: no
   html_document:
     highlight: tango
     theme: yeti
     toc: yes
     toc_float: yes
     css: ../css/yeti.css
-  pdf_document:
-    toc: no
 ---
 
 # Course Overview
 
 This course is designed as a primer to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R in an environment that emphasizes reproducible research and literate programming for data analysis.
 
-The target audience is anyone who wants to do their own data analysis. The course will cumulate with an peer-evaluated exploratory data analysis on either a pre-specified data set or your data set of choice.
+The target audience is anyone who wants to do their own data analysis. The course will culminate with an peer-evaluated exploratory data analysis on either a pre-specified data set or your data set of choice.
 
 
 ## Schedule of Topics
@@ -42,7 +42,7 @@ The target audience is anyone who wants to do their own data analysis. The cours
 * You must earn 70 points to receive credit for the course.
 * The [syllabus](../syllabus.html) provides specific details on points per assignment.
 
-## Time Committment
+## Time Commitment
 * Fast paced, we're hitting the ground running and only have 5 weeks.
 * Not designed to teach you everything about R, just enough to make you dangerous.
 * Daily practice will pay off.
@@ -95,7 +95,7 @@ RStudio needs R and therefore both need to be installed on your computer.
 Learning to program has other benefits
 
 * Improves your logical skills and critical problem solving
-* Your series of commands are explictily written down and subject to review. 
+* Your series of commands are explicitly written down and subject to review. 
 * Increases your attention to detail
 * Increases your self reliance and empowers you to control your own research.
 * Your PI will love your awesome graphics and reports.

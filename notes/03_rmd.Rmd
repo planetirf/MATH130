@@ -2,14 +2,14 @@
 title: "Lesson 04 - Intro to R Markdown"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
+  pdf_document:
+    toc: no
   html_document:
     highlight: tango
     theme: yeti
     toc: yes
     toc_float: yes
     css: ../css/yeti.css
-  pdf_document:
-    toc: no
 ---
 
 
@@ -28,10 +28,9 @@ After completing this lesson learners will be able to create a new R markdown do
 * Have the following packages installed: `rmarkdown`, `knitr`
 
 
-
 # Document structure 
 
-R Markdown is an example of literate programming where the explanation of the program (or analysis) logic is presented in a natural language (such as english), with supporting pieces of code embedded in the document itself. R Markdown combines normal text such as this sentence, code and the output from the code all in one Rmarkdown (`.Rmd`) file. 
+R Markdown is an example of literate programming where the explanation of the program (or analysis) logic is presented in a natural language (such as English), with supporting pieces of code embedded in the document itself. R Markdown combines normal text such as this sentence, code and the output from the code all in one Rmarkdown (`.Rmd`) file. 
 
 
 ![Components of a markdown document](../static/img/rmarkdown_components.png)
@@ -87,4 +86,4 @@ You are now ready to start the first assignment.
 
 * Intro to R Markdown by R Studio (1 minute video): "[What is R Markdown?](http://rmarkdown.rstudio.com/lesson-1.html)"
     - Relevant portions in this tutorial are "How it works", "Code Chunks", and "Output Formats"
-* Gallery of the vast range of output and product types that you can create using R Markdown including PDF reports, interactive dahsboards, maps, webpages like this one and more:  https://rmarkdown.rstudio.com/gallery.html
+* Gallery of the vast range of output and product types that you can create using R Markdown including PDF reports, interactive dashboards, maps, webpages like this one and more:  https://rmarkdown.rstudio.com/gallery.html

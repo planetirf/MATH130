@@ -2,14 +2,14 @@
 title: "Lesson 03 - Getting Started with R"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%y')`"
 output:
+  pdf_document:
+    toc: no
   html_document:
     highlight: tango
     theme: yeti
     css: ../css/yeti.css
     toc: yes
     toc_float: yes
-  pdf_document:
-    toc: no
 ---
 
 
@@ -236,10 +236,42 @@ of words (**character** or **string**). The other common data type that we will 
 sqrt(4)==2
 ```
 
-We will see how to use these logical statements to do things such as subseting data and creating new variables. 
+We will see how to use these logical statements to do things such as subsetting data and creating new variables. 
 
 Vectors are one of the many **data structures** that R uses. Other important ones are lists (`list`), matrices (`matrix`), data frames (`data.frame`), factors (`factor`) and arrays (`array`). We will only talk about `data.frame`s and `factors` in this class. 
 
+
+## Doing math on vectors
+
+You can perform math operations on the elements of a vector such as
+```{r}
+weight_KG <- weight_g/1000
+weight_KG
+```
+
+When adding two vectors together, the elements in the same position are added to each other. So element 1 in the vector `a` is added to element 1 in vector `b`. 
+```{r}
+a <- c(1,2,3)
+b <- c(6,7,8)
+a+b
+```
+
+More complex calculations can be performed on multiple vectors. 
+```{r}
+wt_lb <- c(155, 135, 90)
+ht_in <- c(72, 64, 50)
+bmi <- 703*wt_lb / ht_in^2
+bmi
+```
+      
+All these operations on vectors behave the same way when dealing with variables in a data set (data.frame).   
+   
+If you want to add the values _within_ a vector, you use functions such as `sum()`, `max()` and `mean()`
+```{r}
+sum(a)
+max(b)
+mean(a+b)
+```
 
 ## Subsetting vectors
 
@@ -252,28 +284,21 @@ animals[2]
 animals[c(2, 3)]
 ```
 
-The number in the indicies indicates which element to extract. For example we can extract the 3rd element in `weight_g` by typing
+The number in the indices indicates which element to extract. For example we can extract the 3rd element in `weight_g` by typing
 
 ```{r}
 weight_g[3]
 ```
 
-
-
 ### Conditional subsetting
 
-Another common way of subsetting is by using a logical vector. `TRUE` will
-select the element with the same index, while `FALSE` will not:
-
-Typically, these logical vectors are not typed by hand, but are the output of
-other functions or logical tests such as: 
+Another common way of subsetting is by using a logical vector. `TRUE` will select the element with the same index, while `FALSE` will not. Typically, these logical vectors are not typed by hand, but are the output of other functions or logical tests such as: 
 
 ```{r}
 weight_g > 50  # returns TRUE or FALSE depending on which elements that meet the condition
 ```
 
-We can use this output to select elements in a _different_ vector where the value
-of that logical statement is TRUE. For instance, if you wanted to select only the values where weight in grams is above 50 we would type:
+We can use this output to select elements in a _different_ vector where the value of that logical statement is TRUE. For instance, if you wanted to select only the values where weight in grams is above 50 we would type:
 
 ```{r}
 weight_g[weight_g > 50]

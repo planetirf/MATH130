@@ -41,7 +41,7 @@ Click each weekly header below to expand and see the materials for that week.
 
 1. Follow the [[lec02]](notes/02_setup.html) notes to install the necessary programs.
 2. Complete Assignment 1. 
-    - Download the [[Assignment 1]](hw/hw1.Rmd) `r emo::ji("x")` file. Save this in your Math 130 folder. You will write your answers directly in this file. 
+    - Download the [[Assignment 1]](hw/hw1.Rmd) `r emo::ji("warning")` file. Save this in your Math 130 folder. You will write your answers directly in this file. 
     - Submit the `.RMD file` for this assignment as instructed by the due date.  
     
 </div>

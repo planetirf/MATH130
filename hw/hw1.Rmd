@@ -12,7 +12,7 @@ When the question asks you to perform a coding task, insert a code chunk after e
 
 The first question is done for you as an example. 
 
-## Intro to R
+# Object assignments
 
 0. Calculate 3 + 4. Put the answer in the grey area below and knit the document. Make sure you can find this code and output in the resulting HTML file. 
 ```{r}
@@ -25,42 +25,45 @@ The first question is done for you as an example.
 
 ```
 
-What are the values after each statement in the following?
+2. What are the values after each statement in the following?
 
 ```{r}
-mass <- 47.5            # mass?
-age  <- 122             # age?
-mass <- mass * 2.0      # mass?
-age  <- age - 20        # age?
-mass_index <- mass/age  # mass_index?
+mass <- 47.5            # a
+age  <- 122             # b
+mass <- mass * 2.0      # c
+age  <- age - 20        # d
+mass_index <- mass/age  # e
+```
+
+a. `mass` = 
+b. `age` = 
+c. `mass` = 
+d. `age` = 
+e. `mass_index` = 
+
+
+3. Assign a numeric value to the variable `my_apples`, assign a different numeric value to the variable `my_oranges`. Add these two together and assign the result to the variable `my_fruit`. Print the result of `my_fruit` to the report. 
+```{r}
+
+```
+
+4. What type of data is `my_fruit`? Use a function discussed in lesson 03 to have R show the answer to this question.
+```{r}
+
 ```
 
 
+5. A variable that classified as `logical` can hold only what two values? These are also called Boolean variables. 
 
 
-2. Assign a numeric value to the variable `my_apples`, assign a different numeric value to the variable `my_oranges`. Add these two together and assign the result to the variable `my_fruit`. Print the result of `my_fruit` to the report. 
+6. Knit this document. 
+
+
+# Vectors
+
+1. The following vectors have been created for you. Use the `class()` function to identify the type of vector for each of these examples. Report your answer for each in a sentence below. 
+
 ```{r}
-
-```
-
-3. Consider the following code below. What type of data is `a`? That is, what is it's `class`? 
-```{r}
-a <- "green"
-```
-
-
-4. A variable that classified as `logical` can hold only what two values? These are also called Boolean variables. 
-
-
-5. Knit this document. 
-
-
-## Vectors
-
-
-##### Use the `class()` function to identify tge type of vector for each of these examples. 
-
-```r
 num_char <- c(1, 2, 3, "a")
 num_logical <- c(1, 2, 3, TRUE)
 char_logical <- c("a", "b", "c", TRUE)
@@ -68,13 +71,13 @@ tricky <- c(1, 2, 3, "4")
 ```
 
 
-Data Camp took you through a tour of Vegas data. Let's recreate and play around with a week at the tables. 
+Let's go to Vegas!
 
-1. Create three vectors (`weekday`, `poker`, `roulette`) to describe the following outcome. Be sure to use these vector names exactly as I have written them here. 
+1. Create three vectors (`weekday`, `poker`, `roulette`) using the `c()` operator to describe the following outcome. 
 
-* `weekday`: The 5 weekdays.
+* `weekday`: The 5 weekdays. Use these three letter codes: mon, tue, wed, thu, fri.
 * `poker`: 
-    - On Monday you won $140
+    - On Monday you won $140 
     - Tuesday you lost $50
     - Wednesday you won $20
     - Thursday you lost $120
@@ -86,101 +89,39 @@ Data Camp took you through a tour of Vegas data. Let's recreate and play around 
     - Thursday you lost $350
     - Friday you won $10
 
+
+_Hint: If I won $30 on monday and lost $20 on tuesday, my vector would look like `c(30, -20)`_
 ```{r}
 
 ```
 
-2. How much money did you gain/loose overall? What game did you do better on? 
+2. Use the `sum()` function to calculate how much money did you gain/loose on each game.
 ```{r}
 
 ```
 
-
-
-## Matrix
-
-Click the green play button in the top right corner of this code chunk to run all code in that chunk. This will create a matrix containing the box ofice numbers for all current Star Wars movies. 
-
-```{r}
-domestic <- c(474.544, 310.676, 380.270, 460.998, 290.271, 309.205, 936.662, 321.282)
-worldwide <- c(1027.044, 656.695, 848.998, 786.598, 534.171, 572.705, 2058.662, 635.282)
-star_wars_matrix <- matrix(c(domestic, worldwide), ncol=2, byrow=FALSE)
-rownames(star_wars_matrix) <- c("phantom_menace", "attack_clones", "reveng_sith", "new_hope", "empire_strikes", "return_jedi", "force_awakens", "last_jedi")
-colnames(star_wars_matrix) <- c("US", "non-US")
-```
-
-1. Print out this matrix and take a look at it. 
-```{r}
-
-```
-
-
-2. Select the rows for the second trilogy released (Episodes I-III). This is also referred to as subsetting.
-```{r}
-
-```
-
-3. Use `colSums()` on your selection above to find out how much this trilogy made in total. 
-
-```{r}
-
-```
-
-4. Do the same calculation for the first trilogy (Episodes IV-VI), and 2 released so far of the most recent trilogy (Episodes VII & VIII) 
-
+3. Add the results of both vectors together, then calculate your net gain over the weekend. Did you come out ahead? 
 ```{r}
 
 ```
 
 
 
-## Data Frames
-In the section above, all that data was contained in separate vectors. Let's combine them into a `data.frame` and explore. Data frames are a more common way of storing data in R. 
-
-Use the following code to create a data frame out of the vegas data. The code chunk has already been written for you, you just need to remove the `eval=FALSE` portion so that it will evaluate. 
-```{r, eval=FALSE}
-vegas <- data.frame(day = weekday, poker = poker, roulette = roulette)
-```
-
-1. Print out the `vegas` data set in it's entirety
-```{r}
-
-```
-
-> Knit now. Did the vegas data set show up in your output? 
-> If not, did you remove `eval=FALSE` from your code chunk options? 
-> If that didn't work, did you name your vectors earlier exactly `weekday`, `poker`, and `roulette`?
-
-
-2. Print out the records for just Tuesday and Thursday using bracket notation 
-and indices `[,]`. _Hint: To print out the first two columns you could use [,c(1,2)]_
-```{r}
-
-```
-
-3. Use dollar sign notation to print just the poker variable: (`vegas$poker`).
+4. On which days did you make money on poker? _Hint: subset the `weekday` vector using a logical statement about `poker`_
 ```{r}
 
 ```
 
 
-3. Print out the records for Wednesday only, using bracket notation and a logical statement such
-as `vegas$day == "Wed"` to identify the row of interest. 
+
+
+5. On which days did you do better on poker than roulette? _Hint: compare the two vectors using a statement of inequality_
+
 ```{r}
 
 ```
 
 
-4. Create a new variable called `vegas$total` that adds the daily totals for each
-game together. Print the full data set again. Notice that the `total` variable is now 
-part of the `vegas` dat set. 
-```{r}
+6. Knit this document to make sure it still works. 
 
-```
 
-5. Use this new total vector to subset the data frame now to only include days
-where there was a positive total. Store this result as a new object called 
-`vegas$win_days`, and print this new object to the screen. 
-```{r}
-
-```

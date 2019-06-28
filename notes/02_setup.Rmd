@@ -2,14 +2,14 @@
 title: "Lesson 02 - Getting set up"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
+  pdf_document:
+    toc: no
   html_document:
     highlight: tango
     theme: yeti
     toc: yes
     toc_float: yes
     css: ../css/yeti.css
-  pdf_document:
-    toc: no
 ---
 
 ## Learning Objectives
@@ -168,7 +168,7 @@ R is considered an **Open Source** software program. That means many (thousands)
 
 When you download R, you get access to a lot of functions that we will use. However these other _user-written_ packages add so much good stuff that it really is the backbone of the customizability and functionality that makes R so powerful of a language. 
 
-For example we will be creating graphics using functions like `boxplot()` and `hist()` that exist in base R. But we will quickly move on to creating graphics using functions contained in the `ggplot2` package. We will be managing data using functions in `dplyr` and reading in Excel files using `readxl`. Installing packages will become your favorite pasttime. 
+For example we will be creating graphics using functions like `boxplot()` and `hist()` that exist in base R. But we will quickly move on to creating graphics using functions contained in the `ggplot2` package. We will be managing data using functions in `dplyr` and reading in Excel files using `readxl`. Installing packages will become your favorite past-time. 
 
 To get started type in the console the following command to install the `rmarkdown` package. 
 

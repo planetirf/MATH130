@@ -1653,9 +1653,7 @@ div.tocify {
 <li>Call functions and use arguments to change their default options.</li>
 <li>Inspect the content of vectors and manipulate their content.</li>
 <li>Subset and extract values from vectors.</li>
-<li>Inspect the content of matricies and manipulate their content.</li>
-<li>Subset and extract values from matricies.</li>
-<li>Create a reproducible R Markdown document that integrates written text, R code and output into a literate document.</li>
+<li>Write logical statements that resolve as TRUE and FALSE.</li>
 </ul>
 <hr />
 </div>
@@ -1770,51 +1768,76 @@ div.tocify {
 <pre><code>## [1] FALSE</code></pre>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" title="1"><span class="kw">sqrt</span>(<span class="dv">4</span>)<span class="op">==</span><span class="dv">2</span></a></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<p>We will see how to use these logical statements to do things such as subseting data and creating new variables.</p>
-<p>Vectors are one of the many <strong>data structures</strong> that R uses. Other important ones are lists (<code>list</code>), matrices (<code>matrix</code>), data frames (<code>data.frame</code>), factors (<code>factor</code>) and arrays (<code>array</code>).</p>
+<p>We will see how to use these logical statements to do things such as subsetting data and creating new variables.</p>
+<p>Vectors are one of the many <strong>data structures</strong> that R uses. Other important ones are lists (<code>list</code>), matrices (<code>matrix</code>), data frames (<code>data.frame</code>), factors (<code>factor</code>) and arrays (<code>array</code>). We will only talk about <code>data.frame</code>s and <code>factors</code> in this class.</p>
 </div>
+<div id="doing-math-on-vectors" class="section level2">
+<h2>Doing math on vectors</h2>
+<p>You can perform math operations on the elements of a vector such as</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" title="1">weight_KG &lt;-<span class="st"> </span>weight_g<span class="op">/</span><span class="dv">1000</span></a>
+<a class="sourceLine" id="cb40-2" title="2">weight_KG</a></code></pre></div>
+<pre><code>## [1] 0.050 0.060 0.065 0.082</code></pre>
+<p>When adding two vectors together, the elements in the same position are added to each other. So element 1 in the vector <code>a</code> is added to element 1 in vector <code>b</code>.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" title="1">a &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb42-2" title="2">b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>)</a>
+<a class="sourceLine" id="cb42-3" title="3">a<span class="op">+</span>b</a></code></pre></div>
+<pre><code>## [1]  7  9 11</code></pre>
+<p>More complex calculations can be performed on multiple vectors.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" title="1">wt_lb &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">155</span>, <span class="dv">135</span>, <span class="dv">90</span>)</a>
+<a class="sourceLine" id="cb44-2" title="2">ht_in &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">72</span>, <span class="dv">64</span>, <span class="dv">50</span>)</a>
+<a class="sourceLine" id="cb44-3" title="3">bmi &lt;-<span class="st"> </span><span class="dv">703</span><span class="op">*</span>wt_lb <span class="op">/</span><span class="st"> </span>ht_in<span class="op">^</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb44-4" title="4">bmi</a></code></pre></div>
+<pre><code>## [1] 21.01948 23.17017 25.30800</code></pre>
+<p>All these operations on vectors behave the same way when dealing with variables in a data set (data.frame).</p>
+<p>If you want to add the values <em>within</em> a vector, you use functions such as <code>sum()</code>, <code>max()</code> and <code>mean()</code></p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" title="1"><span class="kw">sum</span>(a)</a></code></pre></div>
+<pre><code>## [1] 6</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" title="1"><span class="kw">max</span>(b)</a></code></pre></div>
+<pre><code>## [1] 8</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" title="1"><span class="kw">mean</span>(a<span class="op">+</span>b)</a></code></pre></div>
+<pre><code>## [1] 9</code></pre>
 </div>
-<div id="subsetting-vectors" class="section level1">
-<h1>Subsetting vectors</h1>
+<div id="subsetting-vectors" class="section level2">
+<h2>Subsetting vectors</h2>
 <p>If we want to extract one or several values from a vector, we must provide one or several indices in square brackets. For instance:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" title="1">animals &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;mouse&quot;</span>, <span class="st">&quot;rat&quot;</span>, <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>)</a>
-<a class="sourceLine" id="cb40-2" title="2">animals[<span class="dv">2</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" title="1">animals &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;mouse&quot;</span>, <span class="st">&quot;rat&quot;</span>, <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>)</a>
+<a class="sourceLine" id="cb52-2" title="2">animals[<span class="dv">2</span>]</a></code></pre></div>
 <pre><code>## [1] &quot;rat&quot;</code></pre>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" title="1">animals[<span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)]</a></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" title="1">animals[<span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)]</a></code></pre></div>
 <pre><code>## [1] &quot;rat&quot; &quot;dog&quot;</code></pre>
-<p>The number in the indicies indicates which element to extract. For example we can extract the 3rd element in <code>weight_g</code> by typing</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" title="1">weight_g[<span class="dv">3</span>]</a></code></pre></div>
+<p>The number in the indices indicates which element to extract. For example we can extract the 3rd element in <code>weight_g</code> by typing</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" title="1">weight_g[<span class="dv">3</span>]</a></code></pre></div>
 <pre><code>## [1] 65</code></pre>
-<div id="conditional-subsetting" class="section level2">
-<h2>Conditional subsetting</h2>
-<p>Another common way of subsetting is by using a logical vector. <code>TRUE</code> will select the element with the same index, while <code>FALSE</code> will not:</p>
-<p>Typically, these logical vectors are not typed by hand, but are the output of other functions or logical tests such as:</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" title="1">weight_g <span class="op">&gt;</span><span class="st"> </span><span class="dv">50</span>  <span class="co"># returns TRUE or FALSE depending on which elements that meet the condition</span></a></code></pre></div>
+<div id="conditional-subsetting" class="section level3">
+<h3>Conditional subsetting</h3>
+<p>Another common way of subsetting is by using a logical vector. <code>TRUE</code> will select the element with the same index, while <code>FALSE</code> will not. Typically, these logical vectors are not typed by hand, but are the output of other functions or logical tests such as:</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" title="1">weight_g <span class="op">&gt;</span><span class="st"> </span><span class="dv">50</span>  <span class="co"># returns TRUE or FALSE depending on which elements that meet the condition</span></a></code></pre></div>
 <pre><code>## [1] FALSE  TRUE  TRUE  TRUE</code></pre>
 <p>We can use this output to select elements in a <em>different</em> vector where the value of that logical statement is TRUE. For instance, if you wanted to select only the values where weight in grams is above 50 we would type:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" title="1">weight_g[weight_g <span class="op">&gt;</span><span class="st"> </span><span class="dv">50</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" title="1">weight_g[weight_g <span class="op">&gt;</span><span class="st"> </span><span class="dv">50</span>]</a></code></pre></div>
 <pre><code>## [1] 60 65 82</code></pre>
 <p>You can combine multiple tests using <code>&amp;</code> (both conditions are true, AND) or <code>|</code> (at least one of the conditions is true, OR):</p>
 <p><em>Weight is less than 30g or greater than 60g</em></p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" title="1">weight_g[weight_g <span class="op">&lt;</span><span class="st"> </span><span class="dv">30</span> <span class="op">|</span><span class="st"> </span>weight_g <span class="op">&gt;</span><span class="st"> </span><span class="dv">60</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" title="1">weight_g[weight_g <span class="op">&lt;</span><span class="st"> </span><span class="dv">30</span> <span class="op">|</span><span class="st"> </span>weight_g <span class="op">&gt;</span><span class="st"> </span><span class="dv">60</span>]</a></code></pre></div>
 <pre><code>## [1] 65 82</code></pre>
 <p><em>Weight is between 60 and 80lbs</em></p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" title="1">weight_g[weight_g <span class="op">&gt;=</span><span class="st"> </span><span class="dv">60</span> <span class="op">&amp;</span><span class="st"> </span>weight_g <span class="op">&lt;=</span><span class="st"> </span><span class="dv">80</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" title="1">weight_g[weight_g <span class="op">&gt;=</span><span class="st"> </span><span class="dv">60</span> <span class="op">&amp;</span><span class="st"> </span>weight_g <span class="op">&lt;=</span><span class="st"> </span><span class="dv">80</span>]</a></code></pre></div>
 <pre><code>## [1] 60 65</code></pre>
 <p>Here, <code>&lt;</code> stands for “less than”, <code>&gt;</code> for “greater than”, <code>&gt;=</code> for “greater than or equal to”, and <code>==</code> for “equal to”. The double equal sign <code>==</code> is a test for numerical equality between the left and right hand sides, and should not be confused with the single <code>=</code> sign, which performs variable assignment (similar to <code>&lt;-</code>).</p>
 <p>A common task is to search for certain strings in a vector. One could use the “or” operator <code>|</code> to test for equality to multiple values, but this can quickly become tedious. The function <code>%in%</code> allows you to test if any of the elements of a search vector are found:</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" title="1">animals &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;mouse&quot;</span>, <span class="st">&quot;rat&quot;</span>, <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>)</a>
-<a class="sourceLine" id="cb54-2" title="2">animals[animals <span class="op">==</span><span class="st"> &quot;cat&quot;</span> <span class="op">|</span><span class="st"> </span>animals <span class="op">==</span><span class="st"> &quot;rat&quot;</span>] <span class="co"># returns both rat and cat</span></a></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" title="1">animals &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;mouse&quot;</span>, <span class="st">&quot;rat&quot;</span>, <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>)</a>
+<a class="sourceLine" id="cb66-2" title="2">animals[animals <span class="op">==</span><span class="st"> &quot;cat&quot;</span> <span class="op">|</span><span class="st"> </span>animals <span class="op">==</span><span class="st"> &quot;rat&quot;</span>] <span class="co"># returns both rat and cat</span></a></code></pre></div>
 <pre><code>## [1] &quot;rat&quot; &quot;cat&quot;</code></pre>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" title="1">animals <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;rat&quot;</span>, <span class="st">&quot;cat&quot;</span>, <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;duck&quot;</span>, <span class="st">&quot;goat&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" title="1">animals <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;rat&quot;</span>, <span class="st">&quot;cat&quot;</span>, <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;duck&quot;</span>, <span class="st">&quot;goat&quot;</span>)</a></code></pre></div>
 <pre><code>## [1] FALSE  TRUE  TRUE  TRUE</code></pre>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" title="1">animals[animals <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;rat&quot;</span>, <span class="st">&quot;cat&quot;</span>, <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;duck&quot;</span>, <span class="st">&quot;goat&quot;</span>)]</a></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" title="1">animals[animals <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;rat&quot;</span>, <span class="st">&quot;cat&quot;</span>, <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;duck&quot;</span>, <span class="st">&quot;goat&quot;</span>)]</a></code></pre></div>
 <pre><code>## [1] &quot;rat&quot; &quot;dog&quot; &quot;cat&quot;</code></pre>
+</div>
 </div>
 <div id="order-matters." class="section level2">
 <h2>Order matters.</h2>
 <p>When considering string or character vectors or data elements, R treats everything in alphabetical order. Thus</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" title="1"><span class="st">&quot;four&quot;</span> <span class="op">&gt;</span><span class="st"> &quot;five&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" title="1"><span class="st">&quot;four&quot;</span> <span class="op">&gt;</span><span class="st"> &quot;five&quot;</span></a></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>This will come back to bug you when dealing with categorical data types called <code>factor</code>s in a later lesson. Don’t worry, we’ll show you how to be the boss of your factors and not let R tell you that “one” is greater than “four”.</p>
 <hr />
