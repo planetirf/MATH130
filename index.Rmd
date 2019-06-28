@@ -34,26 +34,26 @@ Click each weekly header below to expand and see the materials for that week.
 * lec01-Introduction to the class   [[HTML]](notes/01_intro.html) [[PDF]](notes/01_intro.pdf) `r emo::ji("warning")`
 * lec02-Getting setup               [[HTML]](notes/02_setup.html) [[PDF]](notes/02_setup.pdf)`r emo::ji("warning")`
 * lec03-Introduction to R Markdown  [[HTML]](notes/03_rmd.html)   [[PDF]](notes/03_rmd.pdf) `r emo::ji("warning")`
-* lec04-Introduction to R           [[HTML]](notes/04_r.html)     [[PDF]](notes/04_r.pdf)  `r emo::ji("x")`
+* lec04-Introduction to R           [[HTML]](notes/04_r.html)     [[PDF]](notes/04_r.pdf)  `r emo::ji("warning")`
 
 
 `r emo::ji("pencil2")` Assignments (in order): 
 
 1. Follow the [[lec02]](notes/02_setup.html) notes to install the necessary programs.
 2. Complete Assignment 1. 
-    - Download the [[Assignment 1]](hw/hw1.Rmd) file. Save this in your Math 130 folder. You will write your answers directly in this file. 
+    - Download the [[Assignment 1]](hw/hw1.Rmd) `r emo::ji("x")` file. Save this in your Math 130 folder. You will write your answers directly in this file. 
     - Submit the `.RMD file` for this assignment as instructed by the due date.  
     
 </div>
 
 
-### <a href="#week2" data-toggle="collapse">Week 2: Importing, exploring, managing data using functions. </a>
+### <a href="#week2" data-toggle="collapse">Week 2: Working with data in R </a>
 
 <div id="week2" class="collapse">
 
 `r emo::ji("notebook_with_decorative_cover")` Notes :
 
-* Working with Data [[HTML]](notes/05_import.html) [[PDF]](notes/05_import.pdf) [[RMD]](notes/05_import_notes.Rmd) `r emo::ji("x")`
+* Importing and exploring data frames [[HTML]](notes/05_import.html) [[PDF]](notes/05_import.pdf) [[RMD]](notes/05_import_notes.Rmd) `r emo::ji("x")`
 * Using functions to summarize and manage data [[HTML]](notes/06_fun_dm.html) [[PDF]](notes/06_fun_dm.pdf)`r emo::ji("x")` [[RMD]](notes/06_fun_dm_notes.Rmd)
 
 `r emo::ji("pencil2")` Assignment [[HW 2]](hw/hw2.Rmd). 
