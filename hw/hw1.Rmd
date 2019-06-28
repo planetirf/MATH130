@@ -1,5 +1,5 @@
 ---
-title: "Lab1"
+title: "Assignment 1"
 author: "STUDENT NAME"
 date: "DATE"
 output: html_document
@@ -14,13 +14,13 @@ The first question is done for you as an example.
 
 ## Intro to R
 
-0. Calculate 3 + 4. Put the answer in the grey area below and knit the document. 
+0. Calculate 3 + 4. Put the answer in the grey area below and knit the document. Make sure you can find this code and output in the resulting HTML file. 
 ```{r}
 3+4
 ```
 
 
-1. Calculate $2^5$, then knit the document. 
+1. Calculate $2^5$ by typing this mathematical expression in the code chunk below and then knit the document. 
 ```{r}
 
 ```
@@ -34,6 +34,8 @@ mass <- mass * 2.0      # mass?
 age  <- age - 20        # age?
 mass_index <- mass/age  # mass_index?
 ```
+
+
 
 
 2. Assign a numeric value to the variable `my_apples`, assign a different numeric value to the variable `my_oranges`. Add these two together and assign the result to the variable `my_fruit`. Print the result of `my_fruit` to the report. 
@@ -52,7 +54,19 @@ a <- "green"
 
 5. Knit this document. 
 
+
 ## Vectors
+
+
+##### Use the `class()` function to identify tge type of vector for each of these examples. 
+
+```r
+num_char <- c(1, 2, 3, "a")
+num_logical <- c(1, 2, 3, TRUE)
+char_logical <- c("a", "b", "c", TRUE)
+tricky <- c(1, 2, 3, "4")
+```
+
 
 Data Camp took you through a tour of Vegas data. Let's recreate and play around with a week at the tables. 
 
@@ -80,6 +94,8 @@ Data Camp took you through a tour of Vegas data. Let's recreate and play around 
 ```{r}
 
 ```
+
+
 
 ## Matrix
 

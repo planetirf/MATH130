@@ -1,5 +1,5 @@
 ---
-title: "Lesson 03 - Getting data into R"
+title: "Lesson 05 - Working with Data"
 author: "Robin Donatello"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
@@ -14,22 +14,19 @@ output:
 
 
 # Introduction
-In this lesson we will introduce ways to get data into R, and how to use functions to exploring the data. 
+In this lesson we will introduce ways to get data from external files into R, how R works with data, and how to use functions to explore your data frame. 
 
 ### Student Learning Objectives
 After completing this lesson students will be able to
 
 * Import data that is stored in an external Excel, CSV or tab-delimited text file into R.
 * Use functions to examine data objects to ensure data was imported correctly. 
+* Extract vectors out of data frames using variable names.
 * Identify missing data elements in a data table. 
-* Identify data types for each variable in a data frame. 
+
 
 ### Preparation
-Prior to this lesson students should
-
-* Download the [[03_import_notes.Rmd]](03_import_notes.Rmd) R markdown file and save into your Math130 folder. This is a blank/outline version of these notes for you to follow along with during class and write your own notes. 
-* Install the `readxl` package by typing `install.packages("readxl")` into your console. 
-
+Prior to this lesson learners must have the `readxl` package installed, and three data sets listed below downloaded into their `data` sub-folder in their Math 130 folder. 
 
 # Download data
 In this lesson we are only going to explore reading files that exist on your computer into R from three most commonly used data sources: A tab-delimited text file, A CSV file and an Excel file. Let's start by downloading these files. 

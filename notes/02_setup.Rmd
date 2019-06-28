@@ -1,5 +1,5 @@
 ---
-title: "Lesson 02 - Getting ready to start"
+title: "Lesson 02 - Getting set up"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
   html_document:
@@ -23,14 +23,11 @@ After completing this lesson learners will be able to:
 * Use the built-in RStudio help interface to search for more information on R functions.
 * Demonstrate how to provide sufficient information for troubleshooting with the R user community.
 
-# Installing Necessary programs
+# Installing programs
 
-> If you are using an iPad or Chromebook or otherwise do not have a computer that you can install programs on, 
-> head over to http://rstudio.cloud.com, make an account and start a new project. Then go watch the video below on 
-> how to navigate R studio. 
+> If you are using an iPad or Chromebook or otherwise do not have a computer that you can install programs on, head over to http://rstudio.cloud.com, make an account and start a new project. Then go watch the video below on how to navigate R studio. 
 
-While the cloud is easier to initially setup, I want you to only use it if you absolutely have to. Having your own
-installation on your computer ensures that
+While the cloud is easier to initially setup, I want you to only use it if you absolutely have to. Having your own installation on your computer ensures that
 
 * you likely want to customize your programs
 * you will be able to put your files under version control
@@ -98,8 +95,7 @@ You need to choose a naming convention for your class folder and stick with it. 
 
 Call this working directory `math130`, and create the three subfolders: `data`, `homework`, `documents`.  
 
-You will put all files related to this class in here. For example lecture notes go in the document folder, 
-homework in the `homework` folder, and data in, you guessed it, the `data` folder. 
+You will put all files related to this class in here. For example lecture notes go in the document folder, assignments in the `homework` folder, and data in, you guessed it, the `data` folder. 
 
 This means when you download a file, right click and "Save as" or "Save target as" and **actively choose** where to download this file. Do not let files live in your downloads folder. 
 
@@ -110,7 +106,7 @@ Your working directory should now look like this:
 
 <center><img src="../static/img/folder_org.png" width="350px"></center>
 
-Click [[this link]](hw/hw1.Rmd) to download Homework 1 assignment and put it in your `homework` folder now.  
+Right click [[this link]](hw/hw1.Rmd) to download and save Assignment 1 into your `homework` folder now.  
 
 ----
 
@@ -162,8 +158,60 @@ command and return you to the `>` prompt.
 ##### Fix the math expression above by closing the parenthesis. 
 
 
-We'll get into how R sees and uses data in the next lesson. 
+We'll get into how R sees and uses data this week. 
 
+----
+
+# Installing Packages
+
+R is considered an **Open Source** software program. That means many (thousands) of people contribute to the software. They do this by writing commands (called functions) to make a particular analysis easier, or to make a graphic prettier.
+
+When you download R, you get access to a lot of functions that we will use. However these other _user-written_ packages add so much good stuff that it really is the backbone of the customizability and functionality that makes R so powerful of a language. 
+
+For example we will be creating graphics using functions like `boxplot()` and `hist()` that exist in base R. But we will quickly move on to creating graphics using functions contained in the `ggplot2` package. We will be managing data using functions in `dplyr` and reading in Excel files using `readxl`. Installing packages will become your favorite pasttime. 
+
+To get started type in the console the following command to install the `rmarkdown` package. 
+
+```r
+install.packages("ggplot2")
+```
+
+When the console returns to showing a `>` (and the stop sign in the top right corner of the Console window goes away), R is done doing what you asked it to do and ready for you to give it another command. You should get a message that looks similar to the message below. 
+
+```
+The downloaded binary packages are in
+	C:\Users\Robin\AppData\Local\Temp\Rtmpi8NAym\downloaded_packages
+```
+
+Some packages use functions that live in other packages. These are called dependencies and will be automatically installed when you tell R to install a new package. 99% of the time you will not have to install them manually on your own. 
+
+
+> You only have to install packages once. To access commands within the functions you must load the package first using the code `library(package name)`. We will start to use various packages next week. 
+
+
+Now that you're a package installing pro, go ahead and install the following packages that we will be using in the next few weeks. Type these commands into the console one at a time and wait for it to finish before entering the next command. **R is case sensitive**.
+
+```r
+install.packages("rmarkdown")
+install.packages("knitr")
+install.packages("forcats")
+install.packages("readxl")
+install.packages("dplyr")
+```
+
+Note in this last package that is a lower case letter L at the end. For read EXCELL. It is not the number 1 (one). 
+
+<span style="color:red">If you see a message such as the one below, check for a typo.</span>
+
+```
+Warning in install.packages :
+  package ‘ggplot’ is not available (for R version 3.5.1)
+```
+
+The correct package name is `ggplot2`, not `ggplot`.
+
+
+> Alternative Method of installing Packages: Use the Package tab in the lower right corner. 
 
 ----
 
@@ -224,7 +272,7 @@ answers:
 
 ----
 
-# Asking for help
+# Where to get help
 
 The key to receiving help from someone is for them to rapidly grasp your
 problem. You should make it as easy as possible to pinpoint where the issue
