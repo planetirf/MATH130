@@ -24,96 +24,6 @@
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  { background-color: #f8f8f8; }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ef2929; } /* Alert */
-code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #c4a000; } /* Attribute */
-code span.bn { color: #0000cf; } /* BaseN */
-code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4e9a06; } /* Char */
-code span.cn { color: #000000; } /* Constant */
-code span.co { color: #8f5902; font-style: italic; } /* Comment */
-code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
-code span.dt { color: #204a87; } /* DataType */
-code span.dv { color: #0000cf; } /* DecVal */
-code span.er { color: #a40000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #0000cf; } /* Float */
-code span.fu { color: #000000; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
-code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
-code span.ot { color: #8f5902; } /* Other */
-code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
-code span.sc { color: #000000; } /* SpecialChar */
-code span.ss { color: #4e9a06; } /* SpecialString */
-code span.st { color: #4e9a06; } /* String */
-code span.va { color: #000000; } /* Variable */
-code span.vs { color: #4e9a06; } /* VerbatimString */
-code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
-
-</style>
-<script>
-// apply pandoc div.sourceCode style to pre.sourceCode instead
-(function() {
-  var sheets = document.styleSheets;
-  for (var i = 0; i < sheets.length; i++) {
-    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
-    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
-      var rule = rules[j];
-      // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
-      var style = rule.style.cssText;
-      // check if color or background-color is set
-      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
-      // replace div.sourceCode by a pre.sourceCode rule
-      sheets[i].deleteRule(j);
-      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
-    }
-  }
-})();
-</script>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 
 
 <style type="text/css">
@@ -360,7 +270,7 @@ $(document).ready(function () {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="mats.html">
+  <a href="materials.html">
     <span class="fa fa-book"></span>
      
     Materials
@@ -396,27 +306,50 @@ $(document).ready(function () {
 </div>
 
 
-<div id="assignments" class="section level1">
-<h1>Assignments</h1>
-<p>To download RMD template files, right click and “save as”. Do not open in a browser then save.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">paste0</span>(<span class="st">&quot;&lt;li&gt;&quot;</span>, <span class="kw">sprintf</span>(<span class="st">&quot;[%s](%s)&quot;</span>,<span class="kw">toupper</span>(out.hw<span class="op">$</span>name), out.hw<span class="op">$</span>filenames), <span class="st">&quot;&lt;/li&gt;&quot;</span>)</a></code></pre></div>
-[1] "
-<li>
-<a href="hw/hw1.Rmd">HW1</a>
-</li>
-" "
-<li>
-<a href="hw/hw2.Rmd">HW2</a>
-</li>
-" [3] "
-<li>
-<a href="hw/hw3.Rmd">HW3</a>
-</li>
-" "
-<li>
-<a href="hw/hw4.Rmd">HW4</a>
-</li>
-<p>"</p>
+<div id="assignments" class="section level3">
+<h3>Assignments</h3>
+<ul>
+<li><a href="hw/hw1.Rmd">hw1</a></li>
+<li><a href="hw/hw2.Rmd">hw2</a></li>
+<li><a href="hw/hw3.Rmd">hw3</a></li>
+<li><a href="hw/hw4.Rmd">hw4</a></li>
+</ul>
+<!-- end of list -->
+</div>
+<div id="notes-in-html-format" class="section level3">
+<h3>Notes in HTML format</h3>
+<ul>
+<li><a href="notes/01_intro.html">01_intro</a></li>
+<li><a href="notes/02_setup.html">02_setup</a></li>
+<li><a href="notes/03_rmd.html">03_rmd</a></li>
+<li><a href="notes/04_r.html">04_r</a></li>
+<li><a href="notes/05_import.html">05_import</a></li>
+</ul>
+<!-- end of list -->
+</div>
+<div id="notes-in-pdf-format" class="section level3">
+<h3>Notes in PDF format</h3>
+<ul>
+<li><a href="notes/01_intro.pdf">01_intro</a></li>
+<li><a href="notes/02_setup.pdf">02_setup</a></li>
+<li><a href="notes/03_rmd.pdf">03_rmd</a></li>
+<li><a href="notes/04_r.pdf">04_r</a></li>
+<li><a href="notes/05_import.pdf">05_import</a></li>
+</ul>
+<!-- end of list -->
+</div>
+<div id="rmd-fill-in-the-blank-notes" class="section level3">
+<h3>RMD “fill in the blank” notes</h3>
+<p>To download RMD files, right click and “save as”. Do not open in a browser then save.</p>
+<ul>
+<li><a href="05_import_notes.Rmd">05_import_notes</a></li>
+<li><a href="06_dm_notes.Rmd">06_dm_notes</a></li>
+<li><a href="07_factors_notes.Rmd">07_factors_notes</a></li>
+<li><a href="08_plots_notes.Rmd">08_plots_notes</a></li>
+<li><a href="09_dplyr_notes.Rmd">09_dplyr_notes</a></li>
+<li><a href="10_plots2_notes.Rmd">10_plots2_notes</a></li>
+</ul>
+<!-- end of list -->
 </div>
 
 

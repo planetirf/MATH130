@@ -1,5 +1,5 @@
 ---
-title: "Lesson 03 - Getting Started with R"
+title: "Lesson 04 - Getting Started with R"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%y')`"
 output:
   pdf_document:
@@ -27,6 +27,9 @@ This lesson is designed to explain the basics of how R works as a programming la
 * Inspect the content of vectors and manipulate their content.
 * Subset and extract values from vectors.
 * Write logical statements that resolve as TRUE and FALSE.
+* Describe what a data frame is.
+* Summarize the contents of a data frame.
+* Extract vectors out of data frames using variable names.
 
 ---
 
@@ -343,6 +346,75 @@ Thus
 ```
 
 This will come back to bug you when dealing with categorical data types called `factor`s in a later lesson. Don't worry, we'll show you how to be the boss of your factors and not let R tell you that "one" is greater than "four". 
+
+# Data Frames
+
+Data frames are like spreadsheet data, rectangular with rows and columns. Ideally each row represents data on a single observation and each column contains data on a single variable, or characteristic, of the observation. This is called `tidy data`. We will start to learn some tools to look at the data, and for getting data from an external file into R for analysis. 
+
+We will use a data set called `iris` that comes with R for now, but in the next lesson learn how to import data from an external file into R. We can open a data viewer window to see the contents of this data frame by typing
+```r
+View(iris)
+```
+
+A data frame is the representation of data in the format of a table where the columns are vectors that all have the same length. Because columns are vectors, each column must contain a single type of data (e.g., characters, integers, factors). For example, here is a figure depicting a data frame comprising a numeric, a character, and a logical vector.
+
+![figure depicting a data frame](../static/img/data-frame.png)
+
+When data sets are very large, it may be difficult to see all columns or all rows. We can get an idea of the structure of the data frame including variable names and types by using the `str` function,
+```{r}
+str(iris)
+```
+
+The iris data set has 5 variables, `Sepal.Length`, `Sepal.Width`, `Petal.Length`, and `Petal.Width` which are all numeric variables, and `Species` which is a factor. 
+
+
+## Inspecting data.frame objects
+
+We already saw how the functions view() and str() can be useful to check the content and the structure of a data frame. Here is a non-exhaustive list of functions to get a sense of the content/structure of the data. Let’s try them out!
+
+* Size:
+    - `dim(iris)` - returns a vector with the number of rows in the first element, 
+                       and the number of columns as the second element (the  dimensions of the object)
+    - `nrow(iris)` - returns the number of rows
+    - `ncol(iris)` - returns the number of columns
+* Content:
+    - `head(iris)` - shows the first 6 rows
+    - `tail(iris)` - shows the last 6 rows
+* Names:
+    - `names(iris)` - returns the column names (synonym of colnames() for data.frame objects)
+    - `rownames(iris)` - returns the row names
+* Summary:
+    - `str(iris)` - structure of the object and information about the class, length and content of each column
+    - `summary(iris)` - summary statistics for each column
+
+
+Note: most of these functions are “generic”, they can be used on other types of objects besides a data.frame
+
+## Identifying variables
+
+Data frames can be subset by calling indices (as shown previously), but also by calling their column names directly:
+
+```r
+iris[, "Petal.Length"]
+iris[, 3] 
+iris$Petal.Length 
+```
+
+The `$` notation has the format `data$variable` and so can be thought of as specifying which data set the variable is in. 
+It is easy to imagine a situation where two different data sets have the same name. 
+
+This allows us to perform calculations on an individual variable. Below is an example of finding the mean Sepal length for all irises in the data set. 
+
+```{r}
+mean(iris$Petal.Length)
+```
+
+You can also subset a variable based on the value of a secondary variable. Here is an example of finding the average Sepal Length for the `setosa` species only. 
+```{r}
+mean(iris$Petal.Length[iris$Species=="setosa"])
+```
+
+Note that the $ is used in both locations where we want to identify a variable. 
 
 
 ----

@@ -29,19 +29,21 @@ Click each weekly header below to expand and see the materials for that week.
 
 <div id="week1" class="collapse">
 
-`r emo::ji("notebook_with_decorative_cover")` Notes :
+`r emo::ji("memo")` Prepare:
+
+* Follow the [[lec02]](notes/02_setup.html) notes to install the necessary programs.
+
+
+`r emo::ji("books")` Notes :
 
 * lec01-Introduction to the class   [[HTML]](notes/01_intro.html) [[PDF]](notes/01_intro.pdf) `r emo::ji("warning")`
 * lec02-Getting setup               [[HTML]](notes/02_setup.html) [[PDF]](notes/02_setup.pdf)`r emo::ji("warning")`
 * lec03-Introduction to R Markdown  [[HTML]](notes/03_rmd.html)   [[PDF]](notes/03_rmd.pdf) `r emo::ji("warning")`
 * lec04-Introduction to R           [[HTML]](notes/04_r.html)     [[PDF]](notes/04_r.pdf)  `r emo::ji("warning")`
 
+`r emo::ji("pencil2")` Assignments: 
 
-`r emo::ji("pencil2")` Assignments (in order): 
-
-1. Follow the [[lec02]](notes/02_setup.html) notes to install the necessary programs.
-2. Complete Assignment 1. 
-    - Download the [[Assignment 1]](hw/hw1.Rmd) `r emo::ji("warning")` file. Save this in your Math 130 folder. You will write your answers directly in this file. 
+* Download the [[Assignment 1]](hw/hw1.Rmd) `r emo::ji("warning")` file. Save this in your Math 130 folder. You will write your answers directly in this file. 
     - Submit the `.RMD file` for this assignment as instructed by the due date.  
     
 </div>
@@ -51,12 +53,20 @@ Click each weekly header below to expand and see the materials for that week.
 
 <div id="week2" class="collapse">
 
-`r emo::ji("notebook_with_decorative_cover")` Notes :
+`r emo::ji("memo")` Prepare :
+Right click and save the following data sets **into the `data` subfolder in your MATH130 folder**. * **DO NOT RENAME ANYTHING** If you download multiple copies of the data, do not keep the versions that have a (1) or some number in the name. Do not leave these files in your downloads folder. 
 
-* Importing and exploring data frames [[HTML]](notes/05_import.html) [[PDF]](notes/05_import.pdf) [[RMD]](notes/05_import_notes.Rmd) `r emo::ji("x")`
-* Using functions to summarize and manage data [[HTML]](notes/06_fun_dm.html) [[PDF]](notes/06_fun_dm.pdf)`r emo::ji("x")` [[RMD]](notes/06_fun_dm_notes.Rmd)
 
-`r emo::ji("pencil2")` Assignment [[HW 2]](hw/hw2.Rmd). 
+* [NCBirths](https://norcalbiostat.netlify.com/data/NCbirths.csv)
+* [email](https://norcalbiostat.netlify.com/data/email.txt)
+* [Police Shootings](https://norcalbiostat.netlify.com/data/fatal-police-shootings-data.xlsx)
+
+`r emo::ji("books")` Notes :
+
+* lec05 - Getting data into R [[HTML]](notes/05_import.html) [[PDF]](notes/05_import.pdf) [[RMD]](notes/05_import_notes.Rmd) `r emo::ji("warning")`
+* lec06 - Introductory data management [[HTML]](notes/06_dm.html) [[PDF]](notes/06_dm.pdf)`r emo::ji("x")` [[RMD]](notes/06_dm_notes.Rmd)
+
+`r emo::ji("pencil2")` Assignment [[HW 2]](hw/hw2.Rmd).  `r emo::ji("x")`
 
 </div>
 
@@ -64,7 +74,7 @@ Click each weekly header below to expand and see the materials for that week.
 
 <div id="week3" class="collapse">
 
-`r emo::ji("notebook_with_decorative_cover")` Notes :
+`r emo::ji("books")` Notes :
 
 * Wrangling factors  [[HTML]](notes/07_factors.html) [[PDF]](notes/07_factors.pdf) [[RMD]](notes/07_factors_notes.Rmd) `r emo::ji("x")`
 * Basic Graphing     [[HTML]](notes/08_plots.html)   [[PDF]](notes/08_plots.pdf)   [[RMD]](notes/08_plots_notes.Rmd)`r emo::ji("x")`
@@ -80,7 +90,7 @@ This assignment uses data from the `nycflights13` package. This data set is on a
 
 <div id="week4" class="collapse">
 
-`r emo::ji("notebook_with_decorative_cover")` Notes :
+`r emo::ji("books")` Notes :
 
 * More data management and aggregation `dplyr` [[HTML]](notes/09_dplyr.html)  [[PDF]](notes/09_dplyr.pdf)`r emo::ji("x")` [[RMD]](notes/07_dplyr_notes.Rmd) 
 * Intermediate Graphing                        [[HTML]](notes/10_plots2.html) [[PDF]](notes/10_plots2.pdf)`r emo::ji("x")` [[RMD]](notes/08_plots2_notes.Rmd)

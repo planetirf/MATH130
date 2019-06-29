@@ -1,5 +1,5 @@
 ---
-title: "Lesson 04 - Functions and basic data management"
+title: "Lesson 06 - Introductory data management"
 author: "Robin Donatello"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
@@ -94,60 +94,6 @@ sum(is.na(NCbirths$fage))
 ```
 
 There are 171 records in this data set where the age for the father is not present. 
-
-----
-
-# Functions
-
-Functions take inputs, called **arguments** and provide outputs, or results. A few functions you have already used are `head()`, `table()` and `subset()`. Let's look at the `mean` function again by typing ?mean. 
-
-The **Usage** section of the documentation includes two versions of the mean() function; What's the difference? The first function 
-```{r, eval=FALSE}
-mean(x,...)
-```
-
-is the most general definition of the mean function. This section also shows you what the default values for each argument are. This is a very important piece to pay attention. Sometimes the default behaviors are not what you want to happen. 
-```{r, eval=FALSE}
-mean(x, trim = 0, na.rm = FALSE, ...)
-```
-
-In the **Arguments** section the help file defines what each argument does.
-
-* `x` is the object that you want to take the mean of
-* `trim` is a number from 0 to 0.5 that defines the fraction of observations 
-  to be excluded from each side before the mean is calculated. 
-* `na.rm` is a logical value (`TRUE`/`FALSE`) that tells `R` whether NA values 
-  should be stripped before the computation proceeds.
-* `...` is called the ellipsis, and it is a way for R to pass arguments to or 
-  from other methods without the function having to name them explicitly. 
-
-## Argument ordering
-A function's arguments can be named, or can be referred to by position. As an example, let's look at the variable on the `NCbirths` data set that contains data on the fathers age: `NCbirths$fage`. 
-  
-If we were to calculate the mean, we'd get NA. 
-```{r}
-mean(NCbirths$fage)
-```
-
-We need to tell R to _remove_ the `NA`'s from the data prior to calculating the mean. 
-```{r}
-mean(NCbirths$fage, na.rm=TRUE)
-```
-
-It worked fine because I named the argument to remove missing values. What if I didn't state what that argument was? 
-```{r, error=TRUE}
-mean(NCbirths$fage, TRUE)
-```
-
-R is expecting a value for trim as the second argument and doesn't know what to do with the value `TRUE`. If you name the arguments, then the order is irrelevant. 
-
-```{r}
-mean(na.rm=TRUE, x=NCbirths$fage, trim=.1)
-```
-
-But let's not get that crazy. 
-
-R, at its heart, is a functional programming language [(cite: Adv. R by Wickham)](http://adv-r.had.co.nz/Functional-programming.html). We interact with the program, and data, using functions. 
 
 ----- 
 

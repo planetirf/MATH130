@@ -1,11 +1,12 @@
 ---
-title: "Lesson 05 - Importing and exploring data frames"
+title: "Lesson 05 - Getting data into R"
 author: "Robin Donatello"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
   html_document:
     highlight: tango
     theme: yeti
+    css: ../css/yeti.css
     toc: yes
     toc_float: yes
   pdf_document:
@@ -22,22 +23,14 @@ After completing this lesson learners will be able to
 * Import data that is stored in an external Excel, CSV or tab-delimited text file into R.
 * Compare and contrast the three file types discussed in this lesson. 
 * Use functions to examine data objects to ensure data was imported correctly. 
-* Extract vectors out of data frames using variable names.
-* Identify missing data elements in a data table. 
 
 
-### Preparation
-Prior to this lesson learners must have the `readxl` package installed, and three data sets listed below downloaded into their `data` sub-folder in their Math 130 folder. 
 
-# Download data
-In this lesson we are only going to explore reading files that exist on your computer into R from three most commonly used data sources: A tab-delimited text file, A CSV file and an Excel file. Let's start by downloading these files. 
 
-* From the [Data](https://norcalbiostat.netlify.com/data/cleaned_data/) page download the following data sets **into your MATH130 folder**: `NCBirths`, `email`, and `Police Shootings`. 
-* **DO NOT RENAME ANYTHING** If you download multiple copies of the data, do not keep the versions that have a (1) or some number in the name. 
+# File types
+In this lesson we are only going to explore reading files that exist on your computer into R from three most commonly used data sources: A tab-delimited text file, A CSV file and an Excel file. 
 
-Ideally each row represents data on a single observation and each column contains data on a single variable, or characteristic, of the observation. This is called `tidy data`. We will start to learn some tools to look at the data, and for getting data from an external file into R for analysis. 
-
-The three different files we just downloaded have different file types, or extensions.  
+The three different files we will be using have different file types, or extensions.  
 
 * `email.txt` is a `.txt` or "text" file.
 * `NCBirths.csv` is a `.csv` or "comma separated values" file.
@@ -50,15 +43,15 @@ There are two main types of delimiters we will consider in this class; comma and
 Each of these different data types requires a different function or mechanism to import the data into R. If you use the wrong mechanism, the data may not be read in correctly if at all. 
 
 
-# Importing data
+# General Importing data
 
 To import data into R, we have to tell the program explicitly where to find the files you just downloaded. To do that we need to find the file's _path_. 
 
-The _path_ is a programmatic way to direct your computer to the location of a file. It's like the file's address, or, where it lives on your computer. 
+The _path_ is a programmatic way to direct your computer to the location of a file. It's like the file's address, or, where it lives on your computer. ([link]("../static/img/path.png") to picture to explain absolute vs relative path if there is time)
 
 In all the examples below, the path shown (`data/`) is the path on **MY** computer.You will have to update this path to **YOUR** path on **YOUR** machine that points to your MATH130 folder. 
 
-You can easily find the path of a file by navigating to the desired file in your finder or browser window, right click and copy the file to the clipboard, then right click and pasting into a R markdown file. This will show a path that looks something like this: 
+You can  find the path of a file by navigating to the desired file in your finder or browser window, right click and copy the file to the clipboard, then right click and pasting into a R markdown file. This will show a path that looks something like this: 
 
 ```r
 file:///C:/Box Sync/Data/Challenger.txt
@@ -66,6 +59,13 @@ file:///C:/Box Sync/Data/Challenger.txt
 
 You will need to remove the `file:///` part at the beginning before using this path. You will have three chances in this lab to practice this. 
 
+
+### Special Instructions for Mac
+
+* Navigate to the file or folder you wish to copy the path for Right-click (or Control+Click, or a Two-Finger click on trackpads) on the file or folder in the Mac Finder
+* While in the right-click menu, hold down the OPTION key to reveal the “Copy (item name) as Pathname” option, it replaces the standard Copy option Once selected, the file or folders path is now in the clipboard, ready to be pasted anywhere
+
+*Source: https://stackoverflow.com/questions/52695546/how-to-copy-path-of-a-file-in-mac-os*
 
 ## Checking the import was successfull
 
@@ -151,9 +151,17 @@ police[1:10,1:5]
 * Categorical variables such as `manner_of_death` and `city` are read in as `character` instead of factor. We may or may not want to change that later.
 * Numeric variables such as `age` are of type `dbl` (double). This is similar to `integer` or `numeric`, so we are fine. 
 
------ 
+----
 
 # Additional resources
 
-* https://www.datacamp.com/courses/importing-data-into-r
+## Importing Data
+
+* Marin Stats Lectures
+    - Import Data, Copy Data from Excel to R CSV & TXT Files https://www.youtube.com/watch?v=qPk0YEKhqB8
+    - Importing , Checking and Working with Data in R https://www.youtube.com/watch?v=U4-RnTW5dfw
+* Quick-R https://www.statmethods.net/input/importingdata.html
+* Computing for the Social Sciences: https://cfss.uchicago.edu/notes/importing-data/
+* Importing Data with R Studio https://support.rstudio.com/hc/en-us/articles/218611977-Importing-Data-with-RStudio
+* Importing Data into R Studio cloud https://community.rstudio.com/t/importing-data-into-r-studio-cloud/14332
 
