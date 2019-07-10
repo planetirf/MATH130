@@ -15,7 +15,7 @@ See the [syllabus](syllabus.html) for details about the current class offerings.
 
 # Announcements
 
-_This site has been updated for Spring 19. Please notify me of any broken or missing links._
+_This site is currently being updated for Fall 19._
 
 --------------------------------
 
@@ -29,35 +29,44 @@ Click each weekly header below to expand and see the materials for that week.
 
 <div id="week1" class="collapse">
 
-`r emo::ji("notebook_with_decorative_cover")` Notes :
+`r emo::ji("memo")` Prepare:
 
-* lec01-Introduction to the class.  [[HTML]](notes/01_intro.html) [[PDF]](notes/01_intro.pdf) 
-* lec02-Introduction to R Markdown  [[HTML]](notes/02_rmd.html)   [[PDF]](notes/02_rmd.pdf) 
+* Follow the [[lec02]](notes/02_setup.html) notes to install the necessary programs.
 
-`r emo::ji("pencil2")` Assignments (in order): 
 
-1. Join our Data Camp classroom by using the invite link sent to you by your instructor. 
-2. Complete the Data Camp assigned course: `Introduction to R` 
-3. Watch the 1 minute video: "[What is R Markdown?](http://rmarkdown.rstudio.com/lesson-1.html)"
-4. Complete the Data Camp assigned course: `Working with the R Studio IDE (Part 1)`, **Orientation and Programming** only!
-5. Install R and R Studio onto your computer. 
-6. Review lec02 notes (done in class day 2)
-7. Complete Homework 1. [[HW 1]](hw/hw1.Rmd)
+`r emo::ji("books")` Notes :
+
+* lec01-Introduction to the class   [[HTML]](notes/01_intro.html) [[PDF]](notes/01_intro.pdf) `r emo::ji("warning")`
+* lec02-Getting setup               [[HTML]](notes/02_setup.html) [[PDF]](notes/02_setup.pdf)`r emo::ji("warning")`
+* lec03-Introduction to R Markdown  [[HTML]](notes/03_rmd.html)   [[PDF]](notes/03_rmd.pdf) `r emo::ji("warning")`
+* lec04-Introduction to R           [[HTML]](notes/04_r.html)     [[PDF]](notes/04_r.pdf)  `r emo::ji("warning")`
+
+`r emo::ji("pencil2")` Assignments: 
+
+* Download the [[Assignment 1]](hw/hw1.Rmd) `r emo::ji("warning")` file. Save this in your Math 130 folder. You will write your answers directly in this file. 
     - Submit the `.RMD file` for this assignment as instructed by the due date.  
     
 </div>
 
 
-### <a href="#week2" data-toggle="collapse">Week 2: Importing, exploring, managing data using functions. </a>
+### <a href="#week2" data-toggle="collapse">Week 2: Working with data in R </a>
 
 <div id="week2" class="collapse">
 
-`r emo::ji("notebook_with_decorative_cover")` Notes :
+`r emo::ji("memo")` Prepare :
+Right click and save the following data sets **into the `data` subfolder in your MATH130 folder**. * **DO NOT RENAME ANYTHING** If you download multiple copies of the data, do not keep the versions that have a (1) or some number in the name. Do not leave these files in your downloads folder. 
 
-* Getting data into R [[HTML]](notes/03_import.html) [[PDF]](notes/03_import.pdf) [[RMD]](notes/03_import_notes.Rmd) 
-* Using functions to summarize and manage data [[HTML]](notes/04_fun_dm.html) [[PDF]](notes/04_fun_dm.pdf) [[RMD]](notes/04_fun_dm_notes.Rmd)
 
-`r emo::ji("pencil2")` Assignment [[HW 2]](hw/hw2.Rmd). 
+* [NCBirths](https://norcalbiostat.netlify.com/data/NCbirths.csv)
+* [email](https://norcalbiostat.netlify.com/data/email.txt)
+* [Police Shootings](https://norcalbiostat.netlify.com/data/fatal-police-shootings-data.xlsx)
+
+`r emo::ji("books")` Notes :
+
+* lec05 - Getting data into R [[HTML]](notes/05_import.html) [[PDF]](notes/05_import.pdf) [[RMD]](notes/05_import_notes.Rmd) `r emo::ji("warning")`
+* lec06 - Introductory data management [[HTML]](notes/06_dm.html) [[PDF]](notes/06_dm.pdf)`r emo::ji("x")` [[RMD]](notes/06_dm_notes.Rmd)
+
+`r emo::ji("pencil2")` Assignment [[HW 2]](hw/hw2.Rmd).  `r emo::ji("x")`
 
 </div>
 
@@ -65,10 +74,10 @@ Click each weekly header below to expand and see the materials for that week.
 
 <div id="week3" class="collapse">
 
-`r emo::ji("notebook_with_decorative_cover")` Notes :
+`r emo::ji("books")` Notes :
 
-* Wrangling factors  [[HTML]](notes/05_factors.html) [[PDF]](notes/05_factors.pdf) [[RMD]](notes/05_factors_notes.Rmd) 
-* Basic Graphing     [[HTML]](notes/06_plots.html)   [[PDF]](notes/06_plots.pdf)   [[RMD]](notes/06_plots_notes.Rmd)
+* Wrangling factors  [[HTML]](notes/07_factors.html) [[PDF]](notes/07_factors.pdf) [[RMD]](notes/07_factors_notes.Rmd) `r emo::ji("x")`
+* Basic Graphing     [[HTML]](notes/08_plots.html)   [[PDF]](notes/08_plots.pdf)   [[RMD]](notes/08_plots_notes.Rmd)`r emo::ji("x")`
 * (not quite) [[All the graphing things]](https://norcalbiostat.github.io/AppliedStatistics_notes/data-viz.html) (optional)
 
 `r emo::ji("pencil2")` Assignment [[HW 3]](hw/hw3.Rmd).  
@@ -81,10 +90,10 @@ This assignment uses data from the `nycflights13` package. This data set is on a
 
 <div id="week4" class="collapse">
 
-`r emo::ji("notebook_with_decorative_cover")` Notes :
+`r emo::ji("books")` Notes :
 
-* More data management and aggregation `dplyr` [[HTML]](notes/07_dplyr.html)  [[PDF]](notes/07_dplyr.pdf) [[RMD]](notes/07_dplyr_notes.Rmd) 
-* Intermediate Graphing                        [[HTML]](notes/08_plots2.html) [[PDF]](notes/08_plots2.pdf) [[RMD]](notes/08_plots2_notes.Rmd)
+* More data management and aggregation `dplyr` [[HTML]](notes/09_dplyr.html)  [[PDF]](notes/09_dplyr.pdf)`r emo::ji("x")` [[RMD]](notes/07_dplyr_notes.Rmd) 
+* Intermediate Graphing                        [[HTML]](notes/10_plots2.html) [[PDF]](notes/10_plots2.pdf)`r emo::ji("x")` [[RMD]](notes/08_plots2_notes.Rmd)
 * (not quite) [[All the graphing things]](https://norcalbiostat.github.io/AppliedStatistics_notes/data-viz.html) (optional)
 
 `r emo::ji("pencil2")` Assignment [[HW 4]](hw/hw4.Rmd).  
@@ -97,13 +106,13 @@ This assignment uses data from the `nycflights13` package. This data set is on a
 
 Now it's time to put your new 1337 skillz to the test!
 
-Previous class projects can be seen [[here]](https://norcalbiostat.github.io/peer_review/math130_eda.html). 
+Previous class projects can be seen [[here]](https://norcalbiostat.github.io/peer_review/math130_eda.html). `r emo::ji("x")`
 
-`r emo::ji("pencil2")` Assignment: Exploratory Data Analysis Project [[HTML]](hw/EDA_instructions_withPR.html) [[PDF]](hw/EDA_instructions_withPR.pdf).  
+`r emo::ji("pencil2")` Assignment: Exploratory Data Analysis Project [[HTML]](hw/EDA_instructions_withPR.html) [[PDF]](hw/EDA_instructions_withPR.pdf).  `r emo::ji("x")`
 
 </div>
 
 ----
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This content was developed by <a href="www.norcalbiostat.com">Robin Donatello</a> and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
 

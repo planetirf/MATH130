@@ -22,9 +22,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
-<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
-<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -72,9 +71,7 @@ h6 {
 </style>
 
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -99,6 +96,9 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
@@ -113,7 +113,6 @@ body {
   padding-top: 56px;
   margin-top: -56px;
 }
-
 .section h2 {
   padding-top: 56px;
   margin-top: -56px;
@@ -133,6 +132,43 @@ body {
 .section h6 {
   padding-top: 56px;
   margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -154,19 +190,85 @@ $(document).ready(function () {
 });
 </script>
 
-
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
 });
 </script>
 
 <!-- code folding -->
 
 
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -184,14 +286,7 @@ $(document).ready(function () {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="http://www.datacamp.com">
-    <span class="fa fa-code"></span>
-     
-    Data Camp
-  </a>
-</li>
-<li>
-  <a href="mats.html">
+  <a href="materials.html">
     <span class="fa fa-book"></span>
      
     Materials
@@ -213,13 +308,6 @@ $(document).ready(function () {
     Syllabus
   </a>
 </li>
-<li>
-  <a href="http://www.norcalbiostat.com/">
-    <span class="fa fa-paw"></span>
-     
-    Dr. D's Website
-  </a>
-</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -233,8 +321,8 @@ $(document).ready(function () {
 </div>
 
 
-<div id="math-130-introduction-to-r---spring-19" class="section level1">
-<h1>Math 130: Introduction to R - Spring 19</h1>
+<div id="math-130-introduction-to-r---fall-19" class="section level1">
+<h1>Math 130: Introduction to R - Fall 19</h1>
 <p><a href="syllabus.pdf">[Download this syllabus as a PDF]</a></p>
 </div>
 <div id="course-description" class="section level1">
@@ -260,13 +348,13 @@ $(document).ready(function () {
 <tbody>
 <tr class="odd">
 <td align="left"><strong>Meeting Days</strong></td>
-<td align="center">1/22/19 - 2/22/19</td>
-<td align="center">2/25/19 - 4/5/19</td>
+<td align="center">8/26/19 - 9/23/19</td>
+<td align="center">8/26/19 - 9/23/19</td>
 </tr>
 <tr class="even">
 <td align="left"><strong>Meeting Times</strong></td>
-<td align="center">TR 9:30-10:45</td>
-<td align="center">TR 9:30-10:45</td>
+<td align="center">MWF 2:00-2:50</td>
+<td align="center">MWF 11-11:50</td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>Meeting Location</strong></td>
@@ -276,22 +364,22 @@ $(document).ready(function () {
 <tr class="even">
 <td align="left"><strong>Instructor</strong></td>
 <td align="center">Edward Roualdes</td>
-<td align="center">Robin Donatello</td>
+<td align="center">Katharine Gray</td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>Office Location</strong></td>
 <td align="center">Holt 204</td>
-<td align="center">Holt 202</td>
+<td align="center">Holt 108</td>
 </tr>
 <tr class="even">
 <td align="left"><strong>Office Phone</strong></td>
 <td align="center">898-5807</td>
-<td align="center">898-5767</td>
+<td align="center">898-6329</td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>E-mail</strong></td>
 <td align="center"><a href="mailto:eroualdes@csuchico.edu" class="email">eroualdes@csuchico.edu</a></td>
-<td align="center"><a href="mailto:rdonatello@csuchico.edu" class="email">rdonatello@csuchico.edu</a></td>
+<td align="center"><a href="mailto:klgray@csuchico.edu" class="email">klgray@csuchico.edu</a></td>
 </tr>
 </tbody>
 </table>
@@ -300,10 +388,10 @@ $(document).ready(function () {
 <ul>
 <li>The Data Science Initiative offers year-round training workshops and seminars on data-science related topics including R. See <a href="http://datascience.csuchico.edu" class="uri">http://datascience.csuchico.edu</a> for more information and a schedule of events.<br />
 </li>
-<li>Community Coding: TR 2-4pm, THMA 116 <a href="cc_flyer_s19.pdf">[flyer]</a>
+<li>Community Coding: TWR 2-4pm, YOLO 206 <a href="cc_flyer_f19.pdf">[flyer]</a>
 <ul>
 <li>Students, staff, faculty, and the public are invited to join our Community Coding sessions. Bring your computer, coding projects, and your questions to this open working environment.</li>
-<li>Commit to studying 1 hr. per week for your (not necessarily CS) programming course and earn credit. Enroll in MATH 290-02 (5854), a 1 unit credit/no-credit course. Credit is earned by attending at least 10 times.</li>
+<li>Commit to studying 1 hr. per week for your (not necessarily CS) programming course and earn credit. Enroll in MATH 290-02 (5837), a 1 unit credit/no-credit course. Credit is earned by attending at least 10 times.</li>
 </ul></li>
 </ul>
 </div>
@@ -326,15 +414,15 @@ $(document).ready(function () {
 <ul>
 <li>A reliable laptop, chromebook, tablet that can use a browser to access the internet.</li>
 <li>Reliable internet connection while on and off campus.</li>
-<li>A Data Camp account. This is an free online tool to learn R. www.datacamp.com</li>
 </ul>
 <div id="software" class="section level4">
 <h4>Software</h4>
 <p>During this class you will install R and R Studio on your personal computer (Mac/PC/*nix only). That way you can take what you’ve learned in this class and apply it to other classes. Both are free. Walk through installation instructions can be found here: <a href="https://norcalbiostat.netlify.com/post/software-overview/" class="uri">https://norcalbiostat.netlify.com/post/software-overview/</a></p>
 <ul>
 <li>R version 3.5.0 or later. Download from <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a></li>
-<li>R Studio version 1.1 or later. Download the desktop version from <a href="https://www.rstudio.com/products/rstudio/download/#download" class="uri">https://www.rstudio.com/products/rstudio/download/#download</a></li>
+<li>R Studio version 1.2 or later. Download the desktop version from <a href="https://www.rstudio.com/products/rstudio/download/#download" class="uri">https://www.rstudio.com/products/rstudio/download/#download</a></li>
 </ul>
+<p>If you are unable to obtain a laptop that has the ability to install program (i.e. a iPad or Chromebook) then a cloud version of R and R Studio is available to you at no charge. Learn more and make an account here: <a href="https://rstudio.cloud/" class="uri">https://rstudio.cloud/</a>.</p>
 </div>
 </div>
 <div id="time-commitment" class="section level1">
@@ -350,17 +438,16 @@ $(document).ready(function () {
 <p>Credit / No Credit. There are 100 points available in this course. You must earn 70 points to receive credit for the course.</p>
 <ul>
 <li>Daily attendance: (10 pts)</li>
-<li>Data Camp: (10 pts)</li>
 <li>Assignments:
 <ul>
-<li>HW 1 (10 pts)</li>
+<li>HW 1 (15 pts)</li>
 <li>HW 2 (15 pts)</li>
 <li>HW 3 (15 pts)</li>
 <li>HW 4 (15 pts)</li>
 </ul></li>
 <li>Project:
 <ul>
-<li>Exploratory Data Analysis (20 pts)</li>
+<li>Exploratory Data Analysis (25 pts)</li>
 <li>Peer Review (5 pts)</li>
 </ul></li>
 </ul>
@@ -380,25 +467,38 @@ $(document).ready(function () {
 </ul>
 <hr />
 </div>
-<div id="policies" class="section level1">
-<h1>Policies</h1>
-<div id="adding-and-dropping-the-course" class="section level2">
-<h2>Adding and Dropping the course</h2>
-<p>This course only runs for a few weeks and all materials are available on the course website. It will be difficult to get caught up if you add the class after the first week. The last day to add or drop classes without special permission by the instructor is 2/1/19. No adds or drops are allowed after 2/15/19 without a serious and compelling reason approved by the instructor, department chair, and college dean.</p>
+<div id="university-policies-and-campus-resources" class="section level1">
+<h1>University Policies and Campus Resources</h1>
+<div id="adding-and-dropping-the-course" class="section level3">
+<h3>Adding and Dropping the course</h3>
+<p>This course only runs for a few weeks and all materials are available on the course website. It will be difficult to get caught up if you add the class after the first week. The last day to add or drop classes without special permission by the instructor is 9/6/19. No adds or drops are allowed after 9/20/19 without a serious and compelling reason approved by the instructor, department chair, and college dean.</p>
 </div>
-<div id="americans-with-disabilities-act" class="section level2">
-<h2>Americans with Disabilities Act</h2>
+<div id="academic-integrity" class="section level3">
+<h3>Academic Integrity</h3>
+<p>Students are expected to be familiar with the University’s Academic Integrity Policy. Your own commitment to learning, as evidenced by your enrollment at California State University, Chico, and the University’s Academic Integrity Policy requires you to be honest in all your academic course work. Faculty members are required to report all infractions to the Office of Student Judicial Affairs. The policy on academic integrity and other resources related to student conduct can be found on the Student Judicial Affairs web site at <a href="http://www.csuchico.edu/sjd/integrity.shtml" class="uri">http://www.csuchico.edu/sjd/integrity.shtml</a>.</p>
+</div>
+<div id="it-support-services" class="section level3">
+<h3>IT Support Services</h3>
+<p>Computer labs for student use are located on the first and fourth floor of the Meriam Library, Room 116 and 450, Tehama Hall Room 131, and the Bell Memorial Union (BMU) basement. You can get help using your computer from IT Support Services; contact them through the ITSS web site at <a href="http://www.csuchico.edu/itss" class="uri">http://www.csuchico.edu/itss</a>. Additional labs may be available to students in your department or college.</p>
+</div>
+<div id="americans-with-disabilities-act" class="section level3">
+<h3>Americans with Disabilities Act</h3>
 <p>If you need course adaptations or accommodations because of a disability or chronic illness, or if you need to make special arrangements in case the building must be evacuated, please make an appointment with me as soon as possible, or see me during office hours. Please also contact Accessibility Resource Center (ARC) as they are the designated department responsible for approving and coordinating reasonable accommodations and services for students with disabilities. ARC will help you understand your rights and responsibilities under the Americans with Disabilities Act and provide you further assistance with requesting and arranging accommodations.</p>
 <p>Accessibility Resource Center<br />
 530-898-5959<br />
 Student Services Center 170<br />
-<a href="mailto:arcdept@csuchico.edu" class="email">arcdept@csuchico.edu</a></p>
+<a href="mailto:arcdept@csuchico.edu" class="email">arcdept@csuchico.edu</a><br />
+<a href="http://www.csuchico.edu/arc" class="uri">http://www.csuchico.edu/arc</a></p>
 </div>
-<div id="chico-state-basic-needs-project" class="section level2">
-<h2>Chico State Basic Needs Project</h2>
+<div id="chico-state-basic-needs-project" class="section level3">
+<h3>Chico State Basic Needs Project</h3>
 <p>The <strong>Hungry Wildcat Food Pantry</strong> provides supplemental food, fresh produce, CalFresh application assistance and basic needs referral services for students experiencing food and housing insecurity.</p>
 <p>All students are welcomed to visit the Pantry located in the Student Service Center 196, open Monday-Friday, 11am-4pm or call 530-898-4098.</p>
 <p>Please visit the Chico State Basic Needs website <a href="http://www.csuchico.edu/basic-needs" class="uri">http://www.csuchico.edu/basic-needs</a> for more information.</p>
+</div>
+<div id="confidentiality-and-mandatory-reoprting" class="section level3">
+<h3>Confidentiality and Mandatory Reoprting</h3>
+<p>As instructors, one of our responsibilities is to help create a safe learning environment on our campus. We also have a mandatory reporting responsibility related to our role. We are required to share information regarding sexual misconduct with the University. Students may speak to someone confidentially by contacting the Counseling and Wellness Center (898-6345) or Safe Place (898-3030). Information on campus reporting obligations and other Title IX related resources are available here: <a href="http://www.csuchico.edu/title-ix" class="uri">http://www.csuchico.edu/title-ix</a>.</p>
 </div>
 </div>
 

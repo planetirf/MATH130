@@ -66,7 +66,7 @@
 \usepackage{titling}
 
 % Create subtitle command for use in maketitle
-\newcommand{\subtitle}[1]{
+\providecommand{\subtitle}[1]{
   \posttitle{
     \begin{center}\large#1\end{center}
     }
@@ -88,6 +88,10 @@
 
 \begin{document}
 \maketitle
+
+\hypertarget{math-130-introduction-to-r---fall-19}{%
+\section{Math 130: Introduction to R - Fall
+19}\label{math-130-introduction-to-r---fall-19}}
 
 \href{syllabus.pdf}{{[}Download this syllabus as a PDF{]}}
 
@@ -122,17 +126,17 @@ pre-specified data set or your data set of choice.
 & Section 01 & Section 02\tabularnewline
 \midrule
 \endhead
-\textbf{Meeting Days} & 1/22/19 - 2/22/19 & 2/25/19 -
-4/5/19\tabularnewline
-\textbf{Meeting Times} & TR 9:30-10:45 & TR 9:30-10:45\tabularnewline
+\textbf{Meeting Days} & 8/26/19 - 9/23/19 & 8/26/19 -
+9/23/19\tabularnewline
+\textbf{Meeting Times} & MWF 2:00-2:50 & MWF 11-11:50\tabularnewline
 \textbf{Meeting Location} & Holt 155 & Holt 155\tabularnewline
-\textbf{Instructor} & Edward Roualdes & Robin Donatello\tabularnewline
-\textbf{Office Location} & Holt 204 & Holt 202\tabularnewline
-\textbf{Office Phone} & 898-5807 & 898-5767\tabularnewline
+\textbf{Instructor} & Edward Roualdes & Katharine Gray\tabularnewline
+\textbf{Office Location} & Holt 204 & Holt 108\tabularnewline
+\textbf{Office Phone} & 898-5807 & 898-6329\tabularnewline
 \textbf{E-mail} &
 \href{mailto:eroualdes@csuchico.edu}{\nolinkurl{eroualdes@csuchico.edu}}
 &
-\href{mailto:rdonatello@csuchico.edu}{\nolinkurl{rdonatello@csuchico.edu}}\tabularnewline
+\href{mailto:klgray@csuchico.edu}{\nolinkurl{klgray@csuchico.edu}}\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -147,8 +151,8 @@ pre-specified data set or your data set of choice.
   \url{http://datascience.csuchico.edu} for more information and a
   schedule of events.\\
 \item
-  Community Coding: TR 2-4pm, THMA 116
-  \href{cc_flyer_s19.pdf}{{[}flyer{]}}
+  Community Coding: TWR 2-4pm, YOLO 206
+  \href{cc_flyer_f19.pdf}{{[}flyer{]}}
 
   \begin{itemize}
   \tightlist
@@ -158,7 +162,7 @@ pre-specified data set or your data set of choice.
     your questions to this open working environment.
   \item
     Commit to studying 1 hr. per week for your (not necessarily CS)
-    programming course and earn credit. Enroll in MATH 290-02 (5854), a
+    programming course and earn credit. Enroll in MATH 290-02 (5837), a
     1 unit credit/no-credit course. Credit is earned by attending at
     least 10 times.
   \end{itemize}
@@ -199,9 +203,6 @@ By the end of the course, students will be able to
   the internet.
 \item
   Reliable internet connection while on and off campus.
-\item
-  A Data Camp account. This is an free online tool to learn R.
-  www.datacamp.com
 \end{itemize}
 
 \hypertarget{software}{%
@@ -219,9 +220,14 @@ installation instructions can be found here:
   R version 3.5.0 or later. Download from
   \url{https://cran.r-project.org/}
 \item
-  R Studio version 1.1 or later. Download the desktop version from
+  R Studio version 1.2 or later. Download the desktop version from
   \url{https://www.rstudio.com/products/rstudio/download/\#download}
 \end{itemize}
+
+If you are unable to obtain a laptop that has the ability to install
+program (i.e.~a iPad or Chromebook) then a cloud version of R and R
+Studio is available to you at no charge. Learn more and make an account
+here: \url{https://rstudio.cloud/}.
 
 \hypertarget{time-commitment}{%
 \section{Time Commitment}\label{time-commitment}}
@@ -257,14 +263,12 @@ must earn 70 points to receive credit for the course.
 \item
   Daily attendance: (10 pts)
 \item
-  Data Camp: (10 pts)
-\item
   Assignments:
 
   \begin{itemize}
   \tightlist
   \item
-    HW 1 (10 pts)
+    HW 1 (15 pts)
   \item
     HW 2 (15 pts)
   \item
@@ -278,7 +282,7 @@ must earn 70 points to receive credit for the course.
   \begin{itemize}
   \tightlist
   \item
-    Exploratory Data Analysis (20 pts)
+    Exploratory Data Analysis (25 pts)
   \item
     Peer Review (5 pts)
   \end{itemize}
@@ -340,22 +344,46 @@ date schedule can be found on the course website.
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\hypertarget{policies}{%
-\section{Policies}\label{policies}}
+\hypertarget{university-policies-and-campus-resources}{%
+\section{University Policies and Campus
+Resources}\label{university-policies-and-campus-resources}}
 
 \hypertarget{adding-and-dropping-the-course}{%
-\subsection{Adding and Dropping the
+\subsubsection{Adding and Dropping the
 course}\label{adding-and-dropping-the-course}}
 
 This course only runs for a few weeks and all materials are available on
 the course website. It will be difficult to get caught up if you add the
 class after the first week. The last day to add or drop classes without
-special permission by the instructor is 2/1/19. No adds or drops are
-allowed after 2/15/19 without a serious and compelling reason approved
+special permission by the instructor is 9/6/19. No adds or drops are
+allowed after 9/20/19 without a serious and compelling reason approved
 by the instructor, department chair, and college dean.
 
+\hypertarget{academic-integrity}{%
+\subsubsection{Academic Integrity}\label{academic-integrity}}
+
+Students are expected to be familiar with the University's Academic
+Integrity Policy. Your own commitment to learning, as evidenced by your
+enrollment at California State University, Chico, and the University's
+Academic Integrity Policy requires you to be honest in all your academic
+course work. Faculty members are required to report all infractions to
+the Office of Student Judicial Affairs. The policy on academic integrity
+and other resources related to student conduct can be found on the
+Student Judicial Affairs web site at
+\url{http://www.csuchico.edu/sjd/integrity.shtml}.
+
+\hypertarget{it-support-services}{%
+\subsubsection{IT Support Services}\label{it-support-services}}
+
+Computer labs for student use are located on the first and fourth floor
+of the Meriam Library, Room 116 and 450, Tehama Hall Room 131, and the
+Bell Memorial Union (BMU) basement. You can get help using your computer
+from IT Support Services; contact them through the ITSS web site at
+\url{http://www.csuchico.edu/itss}. Additional labs may be available to
+students in your department or college.
+
 \hypertarget{americans-with-disabilities-act}{%
-\subsection{Americans with Disabilities
+\subsubsection{Americans with Disabilities
 Act}\label{americans-with-disabilities-act}}
 
 If you need course adaptations or accommodations because of a disability
@@ -372,10 +400,11 @@ and arranging accommodations.
 Accessibility Resource Center\\
 530-898-5959\\
 Student Services Center 170\\
-\href{mailto:arcdept@csuchico.edu}{\nolinkurl{arcdept@csuchico.edu}}
+\href{mailto:arcdept@csuchico.edu}{\nolinkurl{arcdept@csuchico.edu}}\\
+\url{http://www.csuchico.edu/arc}
 
 \hypertarget{chico-state-basic-needs-project}{%
-\subsection{Chico State Basic Needs
+\subsubsection{Chico State Basic Needs
 Project}\label{chico-state-basic-needs-project}}
 
 The \textbf{Hungry Wildcat Food Pantry} provides supplemental food,
@@ -388,28 +417,43 @@ Service Center 196, open Monday-Friday, 11am-4pm or call 530-898-4098.
 Please visit the Chico State Basic Needs website
 \url{http://www.csuchico.edu/basic-needs} for more information.
 
-\hypertarget{it-support-services}{%
-\subsection{IT Support Services}\label{it-support-services}}
-
-Computer labs for student use are located on the first and fourth floor
-of the Meriam Library, Room 116 and 450, Tehama Hall Room 131, and the
-Bell Memorial Union (BMU) basement. You can get help using your computer
-from IT Support Services; contact them through their website,
-\url{http://www.csuchico.edu/itss}. Additional labs may be available to
-students in your department or college.
+\textless{}\textless{}\textless{}\textless{}\textless{}\textless{}\textless{}
+HEAD \#\# IT Support Services Computer labs for student use are located
+on the first and fourth floor of the Meriam Library, Room 116 and 450,
+Tehama Hall Room 131, and the Bell Memorial Union (BMU) basement. You
+can get help using your computer from IT Support Services; contact them
+through their website, \url{http://www.csuchico.edu/itss}. Additional
+labs may be available to students in your department or college.
 
 \hypertarget{confidentiality-and-mandatory-reoprting}{%
 \subsection{Confidentiality and Mandatory
 Reoprting}\label{confidentiality-and-mandatory-reoprting}}
 
-As an instructor, one of my responsibilities is to help create a safe
-learning environment on our campus. I also have a mandatory reporting
-responsibility related to my role as a your instructor. I am required to
-share information regarding sexual misconduct with the University.
-Students may speak to someone confidentially by contacting the
-Counseling and Wellness Center (898-6345) or Safe Place (898-3030).
+\hypertarget{as-an-instructor-one-of-my-responsibilities-is-to-help-create-a-safe-learning-environment-on-our-campus.-i-also-have-a-mandatory-reporting-responsibility-related-to-my-role-as-a-your-instructor.-i-am-required-to-share-information-regarding-sexual-misconduct-with-the-university.-students-may-speak-to-someone-confidentially-by-contacting-the-counseling-and-wellness-center-898-6345-or-safe-place-898-3030.-information-on-campus-reporting-obligations-and-other-title-ix-related-resources-are-available-here-www.csuchico.edutitle-ix.}{%
+\section{As an instructor, one of my responsibilities is to help create
+a safe learning environment on our campus. I also have a mandatory
+reporting responsibility related to my role as a your instructor. I am
+required to share information regarding sexual misconduct with the
+University. Students may speak to someone confidentially by contacting
+the Counseling and Wellness Center (898-6345) or Safe Place (898-3030).
 Information on campus reporting obligations and other Title IX related
-resources are available here: www.csuchico.edu/title-ix.
+resources are available here:
+www.csuchico.edu/title-ix.}\label{as-an-instructor-one-of-my-responsibilities-is-to-help-create-a-safe-learning-environment-on-our-campus.-i-also-have-a-mandatory-reporting-responsibility-related-to-my-role-as-a-your-instructor.-i-am-required-to-share-information-regarding-sexual-misconduct-with-the-university.-students-may-speak-to-someone-confidentially-by-contacting-the-counseling-and-wellness-center-898-6345-or-safe-place-898-3030.-information-on-campus-reporting-obligations-and-other-title-ix-related-resources-are-available-here-www.csuchico.edutitle-ix.}}
+
+\hypertarget{confidentiality-and-mandatory-reoprting-1}{%
+\subsubsection{Confidentiality and Mandatory
+Reoprting}\label{confidentiality-and-mandatory-reoprting-1}}
+
+As instructors, one of our responsibilities is to help create a safe
+learning environment on our campus. We also have a mandatory reporting
+responsibility related to our role. We are required to share information
+regarding sexual misconduct with the University. Students may speak to
+someone confidentially by contacting the Counseling and Wellness Center
+(898-6345) or Safe Place (898-3030). Information on campus reporting
+obligations and other Title IX related resources are available here:
+\url{http://www.csuchico.edu/title-ix}.
+\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}
+9d62d033b9d9a61813c0c6a79b705bfcddbdf8d0
 
 
 \end{document}

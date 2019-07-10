@@ -3,13 +3,9 @@ output_dir: "."
 navbar:
   title: "MATH 130 (R)"
   left:
-    - text: Data Camp
-      icon: fa-code
-      href: http://www.datacamp.com
-    - text: Materials 
-      icon: fa-book
-      href: mats.html
-
+  - text: Materials 
+    icon: fa-book
+    href: materials.html
       
   right:
     - text: "Help/FAQ"
@@ -18,14 +14,14 @@ navbar:
     - text: "Syllabus"
       icon: fa-info-circle
       href: syllabus.html
-    - text: "Dr. D's Website"
-      icon: fa-paw
-      href: http://www.norcalbiostat.com/
       
 output:
   html_document:
     theme: yeti
     highlight: tango
+    lib_dir: site_libs
+    self_contained: no
+    css: css/yeti.css
 
     
  

@@ -1,0 +1,63 @@
+---
+title: "Course materials"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(dplyr)
+library(stringr)
+library(pander)
+library(knitr); library(kableExtra)
+opts_chunk$set(echo = FALSE)
+```
+
+### Assignments
+
+```{r}
+f  <- list.files("hw", pattern='*.Rmd')
+f <- f[!grepl("solutions", f )]
+hw <- data.frame(filenames = paste0('hw/', f ))
+
+out.hw <- hw %>% mutate(name = gsub("hw/|.Rmd",  "", filenames), 
+                        link = sprintf("[%s](%s)",name, filenames))
+
+```
+
+```{r}
+pander(as.list(out.hw$link))
+```
+
+```{r}
+note.files <- list.files("notes", pattern='*.html')
+note.path  <- paste0("notes/", note.files)
+note.names <- gsub(".html",  "", note.files)
+
+nf.html <- sprintf("[%s](%s)",note.names, note.path)
+nf.pdf  <- sprintf("[%s](%s)",note.names, gsub(".html", ".pdf", note.path))
+
+note.rmd.files <- list.files("notes", pattern='notes')
+nf.rmd  <- sprintf("[%s](%s)", gsub(".Rmd",  "", note.rmd.files), 
+                               gsub(".html", ".Rmd", note.rmd.files))
+```
+
+### Notes in HTML format
+
+```{r}
+pander(as.list(nf.html))
+```
+
+
+### Notes in PDF format
+```{r}
+pander(as.list(nf.pdf))
+```
+
+### RMD "fill in the blank" notes
+To download RMD files, right click and "save as". Do not open in a browser then save. 
+
+```{r}
+pander(as.list(nf.rmd))
+```
+
+
+
