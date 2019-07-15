@@ -1,7 +1,7 @@
-name: "Robin Donatello"
+name: "Math 130"
 output_dir: "."
 navbar:
-  title: "MATH 130 (R)"
+  title: "Intro to R"
   left:
   - text: Materials 
     icon: fa-book
