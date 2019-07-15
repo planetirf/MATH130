@@ -1,0 +1,10 @@
+\documentclass{article}
+
+\begin{document}
+
+\title{Math 130: Introduction to R}
+
+stuff
+
+
+\end{document}

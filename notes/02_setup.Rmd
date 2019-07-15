@@ -1,5 +1,5 @@
 ---
-title: "Lesson 02 - Getting set up"
+title: "Lesson 02 - Introduction to your new tools"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
   pdf_document:
@@ -106,7 +106,7 @@ Your working directory should now look like this:
 
 <center><img src="../static/img/folder_org.png" width="350px"></center>
 
-Right click [[this link]](hw/hw1.Rmd) to download and save Assignment 1 into your `homework` folder now.  
+Right click [[this link]](../hw/hw1.Rmd) to download and save Assignment 1 into your `homework` folder now.  
 
 ----
 
