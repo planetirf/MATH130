@@ -64,7 +64,7 @@ Right click and save the following data sets **into the `data` subfolder in your
 `r emo::ji("books")` Notes :
 
 * lec05 - Getting data into R [[HTML]](notes/05_import.html) [[PDF]](notes/05_import.pdf) [[RMD]](notes/05_import_notes.Rmd) `r emo::ji("warning")`
-* lec06 - Introductory data management [[HTML]](notes/06_dm.html) [[PDF]](notes/06_dm.pdf)`r emo::ji("x")` [[RMD]](notes/06_dm_notes.Rmd)
+* lec06 - Working with data [[HTML]](notes/06_dm.html) [[PDF]](notes/06_dm.pdf)`r emo::ji("warning")` [[RMD]](notes/06_dm_notes.Rmd)
 
 `r emo::ji("pencil2")` Assignment [[HW 2]](hw/hw2.Rmd).  `r emo::ji("x")`
 

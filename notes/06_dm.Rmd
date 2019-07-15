@@ -1,5 +1,5 @@
 ---
-title: "Lesson 06 - Introductory data management"
+title: "Lesson 06 - Working with Data"
 author: "Robin Donatello"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
@@ -14,36 +14,35 @@ output:
 
 
 # Introduction
-In this lesson we will introduce how to use functions and their arguments, how to summarize data in a data frame, and to do basic data management tasks such as making new variables, recoding data and dealing with missing data. 
+In this lesson we will learn how to summarize data in a data frame, and to do basic data management tasks such as making new variables, recoding data and dealing with missing data. 
 
 
 ## Student Learning Objectives
 After completing this lesson students will be able to
 
-* Work with variables inside a data frame
-* Identify when data values are missing
-* Use function arguments to perform calculations in the presence of missing data. 
+* Summarize variables inside a data frame
 * Make new variables inside a data frame. 
 * Selectively edit (and recode) data elements. 
-
+* Identify when data values are missing
+* Summarize data in the presence of missing values.
 
 ## Preparation
 Prior to this lesson students should
 
-* Download the [[04_fun_dm_notes.Rmd]](04_fun_dm_notes.Rmd) R markdown file and save into your Math130 folder. 
-* Write the code to import the `NCbirths` data set into this notes file. Run it to make sure it works. 
+* Download the [[06_dm_notes.Rmd]](06_dm_notes.Rmd) R markdown file and save into your `scripts/Math130` folder. 
+* Edit the code to import the `NCbirths` data set into this notes file. Run it to make sure it works. 
 * Install the `dplyr` package. 
 
 ```{r, warning=FALSE, message=FALSE}
-library(dplyr)
-NCbirths <- read.csv("../data/NCbirths.csv", header=TRUE)
+NCbirths <- read.csv("../../../Box Sync/data/NCbirths.csv", header=TRUE)
 ```
 
------ 
-
+-----
 # Missing Data
 
-Let's look at the `NCbirths` data set, specifically the first column containing data on the father's age (`fage`).
+Missing data occurs when the value for a variable is missing. Think of it as a blank cell in an spreadsheet. Missing values can cause some problems during analysis, so let's see how to detect missing values and how to work around them. 
+
+Consider the `NCbirths` data set, specifically the first column containing data on the father's age (`fage`).
 ```{r}
 head(NCbirths)
 ```
@@ -70,15 +69,15 @@ ggplot(NCbirths, aes(premie))+geom_bar()
 
 ## Identifying missing values 
 
-1. Look at the raw data using `head()` or `str()`
-2. Look at data summaries using `table()` for categorical data and `summary()` for numerical data. 
+To find out how many values in a particular variable are missing we can use one of two approaches:  
+
+1. Look at the raw data using `head()` or `str()`. This may not be helpful if there is no missing values in the first 6 rows, or if there is a large number of variables to look through. 
+2. Look at data summaries using `table()` for categorical data and `summary()` for numerical data. These functions will be explained in greater detail in the next section, but in the examples below you can see that entries for "NA" are included in the output. 
 
 ```{r}
 table(NCbirths$habit, useNA="always")
 summary(NCbirths$fage)
 ```
-
-Later lessons will discuss how to work around these missing values.
 
 ### Is it NA?
 
@@ -100,7 +99,7 @@ There are 171 records in this data set where the age for the father is not prese
 
 # Summarizing data
 
-There are two main methods to summarize data. Both were introduced in the last lesson: `table()` for categorical factor variables, and `summary()` for numeric variables. 
+Two common methods used to summarize data are `table()` for categorical factor variables, and `summary()` for numeric variables. 
 
 ## Frequency Tables for categorical data
 Let's look at the variable for whether or not the baby was born underweight. R acknowledges it is a factor variable already. 
@@ -115,7 +114,7 @@ table(NCbirths$lowbirthweight, useNA="always")
 ```
 
 ## Summary statistics for numerical data
-Numerical variables can be summarized using statistics such as the min, max, mean and median. The function `summary()` prints out the five number summary, and includes the mean. 
+Numerical variables can be summarized using statistics such as the min, max, mean and median. The function `summary()` prints out the five number summary, and includes the mean. This function also displays the number of missing values for that variable. 
 
 ```{r}
 summary(NCbirths$visits)
@@ -129,7 +128,7 @@ Mothers included in this data set visited the doctor on average 12.1 times durin
 
 Sometimes we have a need to edit, or change data. We can change values of existing data by using logical statements.
 
-Recall the Data Camp lesson on Matricies. To choose all observations (rows) of a `data` set, where a `variable` is equal to some `value`, you would type
+To choose all observations (rows) of a `data` set, where a `variable` is equal to some `value`, you would type
 ```{r, eval=FALSE}
 data[data$variable==value]
 ```
@@ -236,9 +235,9 @@ Notice I snuck a new operator in on you - `%in%`. This is a way you can provide 
 
 # Chaining using the pipe %>%
 
-![](../pipe.png)
+![](../img/pipe.png)
 
-The pipe is technically part of the `magrittr` package, but quite often we will use it in conjunction with functions from the `dplyr` package introduced in lesson 07. In fact it's so commonly used with `dplyr` functions that it the `magrittr` package is loaded when you load `dplyr` (which is what we did here). However, the pipe operator is so useful in many other places that it deserves it's own introduction here. 
+The pipe is technically part of the `magrittr` package, but quite often we will use it in conjunction with functions from the `dplyr` package introduced in a later lesson. In fact it's so commonly used with `dplyr` functions that it the `magrittr` package is loaded when you load `dplyr` (which is what we do here). However, the pipe operator is so useful in many other places that it deserves it's own introduction here. 
 
 > "and then...."
 
@@ -254,6 +253,7 @@ table(NCbirths$mature)
 This is also accomplished by first stating the variable, then piping in the summary function. 
 
 ```{r}
+library(dplyr)
 NCbirths$mature %>% table()
 
 NCbirths$mage %>% mean()
@@ -272,9 +272,6 @@ This lesson was an introduction to typical basic data management tasks. In a lat
 
 There are always many ways to approach a problem in R. Our goal in this class is to provide you with a few ways to think of a problem. You will find what fits best for your coding style as you progress. 
 
-There are several other Data Camp courses that all have the first chapter free that you can use to get a start on learning more about how to import and clean up data. Here are a few. 
-
-* [Cleaning Data in R](https://www.datacamp.com/courses/cleaning-data-in-r)
 * Tidy Data - The [Journal](http://vita.had.co.nz/papers/tidy-data.pdf), and the 
   [tutorial](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html)
 

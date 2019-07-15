@@ -1,5 +1,5 @@
 ---
-title: "Lesson 04 - Functions and basic data management"
+title: "Lesson 06 - Working with Data (notes)"
 output: html_document
 ---
 
