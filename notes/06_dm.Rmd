@@ -34,7 +34,7 @@ Prior to this lesson students should
 * Install the `dplyr` package. 
 
 ```{r, warning=FALSE, message=FALSE}
-NCbirths <- read.csv("../../../Box Sync/data/NCbirths.csv", header=TRUE)
+NCbirths <- read.csv("../data/NCbirths.csv", header=TRUE)
 ```
 
 -----
@@ -235,7 +235,7 @@ Notice I snuck a new operator in on you - `%in%`. This is a way you can provide 
 
 # Chaining using the pipe %>%
 
-![](../img/pipe.png)
+![](img/pipe.png)
 
 The pipe is technically part of the `magrittr` package, but quite often we will use it in conjunction with functions from the `dplyr` package introduced in a later lesson. In fact it's so commonly used with `dplyr` functions that it the `magrittr` package is loaded when you load `dplyr` (which is what we do here). However, the pipe operator is so useful in many other places that it deserves it's own introduction here. 
 
