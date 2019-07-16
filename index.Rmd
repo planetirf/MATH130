@@ -57,7 +57,7 @@ Click each weekly header below to expand and see the materials for that week.
 `r emo::ji("memo")` Prepare :
 Right click and save the following data sets **into the `data` subfolder in your MATH130 folder**. 
 
-* `r emo::ji("sign")` **DO NOT RENAME ANYTHING** If you download multiple copies of the data, do not keep the versions that have a (1) or some number in the name. Do not leave these files in your downloads folder. 
+`r emo::ji("sign")` **DO NOT RENAME ANYTHING** If you download multiple copies of the data, do not keep the versions that have a (1) or some number in the name. Do not leave these files in your downloads folder. 
 
 
 * [NCBirths](https://norcalbiostat.netlify.com/data/NCbirths.csv)
