@@ -3,14 +3,14 @@ title: "Lesson 05 - Getting data into R"
 author: "Robin Donatello"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
+  pdf_document:
+    toc: no
   html_document:
     highlight: tango
     theme: yeti
     css: ../css/yeti.css
     toc: yes
     toc_float: yes
-  pdf_document:
-    toc: no
 ---
 
 
@@ -25,7 +25,15 @@ After completing this lesson learners will be able to
 * Use functions to examine data objects to ensure data was imported correctly. 
 
 
+##### Prior to this lesson learners should
 
+* Download the [[05_import_notes.Rmd]](06_dm_notes.Rmd) R markdown file and save into your `scripts/Math130` folder. 
+* Download the three data sets listed below. Right click each link and save the following data sets **into the `data` subfolder in your MATH130 folder**. **DO NOT RENAME ANYTHING** If you download multiple copies of the data, do not keep the versions that have a (1) or some number in the name. Do not leave these files in your downloads folder. 
+
+
+* [NCBirths](https://norcalbiostat.netlify.com/data/NCbirths.csv)
+* [email](https://norcalbiostat.netlify.com/data/email.txt)
+* [Police Shootings](https://norcalbiostat.netlify.com/data/fatal-police-shootings-data.xlsx)
 
 # File types
 In this lesson we are only going to explore reading files that exist on your computer into R from three most commonly used data sources: A tab-delimited text file, A CSV file and an Excel file. 

@@ -9,6 +9,7 @@ output: html_document
 
 ## Preparation
 * Change the path below to import the `NCbirths` data set. 
+* load the `dplyr` library in this same code chunk
 
 ```{r}
 NCbirths <- read.csv("../data/NCbirths.csv", header=TRUE)
@@ -18,26 +19,13 @@ NCbirths <- read.csv("../data/NCbirths.csv", header=TRUE)
 
 # Missing Data
 
+## Problems
 
 
 ## Identifying missing values 
 
 
 ----
-
-# Functions
-
-
-## Argument ordering
-
-Calculate the mean fathers age after removing the missing values. 
-
-```{r}
-
-```
-
------ 
-
 
 # Summarizing data
 

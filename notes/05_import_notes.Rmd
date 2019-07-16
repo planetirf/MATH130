@@ -1,5 +1,5 @@
 ---
-title: 'Lesson 03 - Getting data into R'
+title: 'Lesson 05 - Getting data into R'
 output: html_document
 ---
 

@@ -20,9 +20,11 @@ knitr::opts_chunk$set(warning=FALSE, message=FALSE, fig.height=4, fig.width=5, f
 
 You can use a combination of base and `ggplot2` graphics for this lab. Your answers can be for your eyes only (exploratory). They do not have to be pretty.  
 
+# Data Recoding
 
-## How many passengers can a plane hold before needing another engine? 
-This question uses the `planes` data set. Let's load that into our working environment so we can look at it.
+> How many engines to planes typically have? 
+
+This question uses the `planes` data set which is built into the `nycflights13` package. Let's load that into our working environment so we can look at it.
 ```{r}
 data(planes)
 ```
@@ -35,15 +37,14 @@ data(planes)
 ```
 
 
-2. There are too few planes with more than 2 engines. Recode all records with 4 engines to a value of 3. _Hint: Revisit lesson 04_. Create a `table` of this variable again to ensure that all 4's are now 3's. 
+2. There are too few planes with more than 2 engines. Recode all records with 4 engines to a value of 3. _Hint: Revisit the earlier lesson on recoding data_. Create a `table` of this variable again to ensure that all 4's are now 3's. 
 
 ```{r}
 
 ```
 
 
-3. Create a new factor variable `num_engines` from `engines` with labels "one", "two", "three+". 
-Make sure you create this new variable as part of the `planes` data set. (i.e. `planes$num_engines <-` )
+3. Create a new factor variable `num_engines` from `engines` with labels "one", "two", "three+". Make sure you create this new variable as part of the `planes` data set. (i.e. `planes$num_engines <-` )
 
 ```{r}
 

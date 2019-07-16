@@ -51,7 +51,7 @@ The target audience is anyone who wants to do their own data analysis. The cours
 * Effort in = satisfaction
 
 <br>
-<center><img src="../static/img/hard.jpg" width="350px"></center>
+<center><img src="../img/hard.jpg" width="350px"></center>
 _We've all been there. It will get easier_
 
 

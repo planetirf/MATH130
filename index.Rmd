@@ -55,7 +55,7 @@ Click each weekly header below to expand and see the materials for that week.
 <div id="week2" class="collapse">
 
 `r emo::ji("memo")` Prepare :
-Right click and save the following data sets **into the `data` subfolder in your MATH130 folder**. 
+Right click each link and save the following data sets **into the `data` subfolder in your MATH130 folder**. 
 
 `r emo::ji("sign")` **DO NOT RENAME ANYTHING** If you download multiple copies of the data, do not keep the versions that have a (1) or some number in the name. Do not leave these files in your downloads folder. 
 
@@ -79,9 +79,8 @@ Right click and save the following data sets **into the `data` subfolder in your
 
 `r emo::ji("books")` Notes :
 
-* Wrangling factors  [[HTML]](notes/07_factors.html) [[PDF]](notes/07_factors.pdf) [[RMD]](notes/07_factors_notes.Rmd) `r emo::ji("x")`
-* Basic Graphing     [[HTML]](notes/08_plots.html)   [[PDF]](notes/08_plots.pdf)   [[RMD]](notes/08_plots_notes.Rmd)`r emo::ji("x")`
-* (not quite) [[All the graphing things]](https://norcalbiostat.github.io/AppliedStatistics_notes/data-viz.html) (optional)
+* Wrangling factors  [[HTML]](notes/07_factors.html) [[PDF]](notes/07_factors.pdf) [[RMD]](notes/07_factors_notes.Rmd) `r emo::ji("warning")`
+* Basic Graphing     [[HTML]](notes/08_plots.html)   [[PDF]](notes/08_plots.pdf)   [[RMD]](notes/08_plots_notes.Rmd)`r emo::ji("warning")`
 
 `r emo::ji("pencil2")` Assignment [[HW 3]](hw/hw3.Rmd).  
 

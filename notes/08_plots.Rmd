@@ -1,13 +1,13 @@
 ---
-title: "Lesson 06 - Creating graphics"
+title: "Lesson 08 - Creating graphics"
 author: "Robin Donatello"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
-  pdf_document:
-    toc: no
   html_document:
     toc: yes
     toc_float: yes
+  pdf_document:
+    toc: no
 ---
 
 
@@ -32,11 +32,9 @@ After completing this lesson students will be able to
 
 * create basic data visualizations
 
-## Preparation
+##### Prior to this lesson learners should
 
-Prior to this lesson students should
-
-* Download the [[06_plots_notes.Rmd]] R markdown file and save into your Math130 folder. 
+* Download the [[08_plots_notes.Rmd]](08_plots_notes.Rmd) R markdown file and save into your `scripts/Math130` folder. 
 * Install the `ggplot2` package. 
 
 ## The syntax of `ggplot`
@@ -285,6 +283,7 @@ ggplot(dsmall, aes(x=color, y=carat, fill=color)) +
 
 For a **full** , and comprehensive reference guide on how to do nearly anything in ggplot -- this is by far my favorite reference http://www.cookbook-r.com/Graphs/ I reference things in there (like how to remove or change the title of a legend) constantly. 
 
+* [[The full set of lecture notes from which these notes were extracted.]](https://norcalbiostat.github.io/AppliedStatistics_notes/data-viz.html).
 * R Graphics: https://www.stat.auckland.ac.nz/~paul/RGraphics/rgraphics.html The best book about using base graphics
 * STHDA: Statisical tools for high-throughput data analysis. http://www.sthda.com/english/
 * Quick-R: [Basic Graphs](http://www.statmethods.net/graphs/index.html)

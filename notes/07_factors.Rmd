@@ -1,5 +1,5 @@
 ---
-title: "Lesson 05 - Controlling your factors"
+title: "Lesson 07 - Controlling your factors"
 author: "Robin Donatello"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
@@ -25,10 +25,10 @@ After completing this lesson students will be able to
 * Understand and control the ordering of the factor. 
 * Use functions from the `forcats` package. 
 
-## Preparation
-Prior to this lesson students should
 
-* Download the [[05_factors_notes.Rmd]](05_factors_notes.Rmd) R markdown file and save into your Math130 folder. 
+##### Prior to this lesson learners should
+
+* Download the [[07_factors_notes.Rmd]](07_factors_notes.Rmd) R markdown file and save into your `scripts/Math130` folder. 
 * Write the code to import the `email` data set into this notes file. Run it to make sure it works. 
 * Install the `forcats` package. 
 
@@ -37,7 +37,7 @@ library(forcats)
 email <- read.table("../data/email.txt", header=TRUE, sep="\t")
 ```
 
-![](../forcats.png)
+![](../static/img/forcats.png)
 
 The goal of the `forcats` package is to provide a suite of useful tools that solve common problems with factors.
 Often in R there are multiple ways to accomplish the same task. Some examples in this lesson will show how to 

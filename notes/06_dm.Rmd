@@ -8,6 +8,7 @@ output:
     theme: yeti
     toc: yes
     toc_float: yes
+    css: ../css/yeti.css
   pdf_document:
     toc: no
 ---
@@ -17,8 +18,8 @@ output:
 In this lesson we will learn how to summarize data in a data frame, and to do basic data management tasks such as making new variables, recoding data and dealing with missing data. 
 
 
-## Student Learning Objectives
-After completing this lesson students will be able to
+## Learning Objectives
+After completing this lesson learneres will be able to
 
 * Summarize variables inside a data frame
 * Make new variables inside a data frame. 
@@ -26,8 +27,7 @@ After completing this lesson students will be able to
 * Identify when data values are missing
 * Summarize data in the presence of missing values.
 
-## Preparation
-Prior to this lesson students should
+##### Prior to this lesson learners should
 
 * Download the [[06_dm_notes.Rmd]](06_dm_notes.Rmd) R markdown file and save into your `scripts/Math130` folder. 
 * Edit the code to import the `NCbirths` data set into this notes file. Run it to make sure it works. 
@@ -38,6 +38,7 @@ NCbirths <- read.csv("../data/NCbirths.csv", header=TRUE)
 ```
 
 -----
+
 # Missing Data
 
 Missing data occurs when the value for a variable is missing. Think of it as a blank cell in an spreadsheet. Missing values can cause some problems during analysis, so let's see how to detect missing values and how to work around them. 
@@ -61,7 +62,7 @@ mean(NCbirths$fage)
 **Problem 2**
 Some plots will show `NA` as it's own category, which is undesirable. 
 
-```{r, echo=FALSE}
+```{r}
 library(ggplot2)
 ggplot(NCbirths, aes(premie))+geom_bar()
 ```
@@ -180,7 +181,7 @@ The new variable you want to create goes on the left side of the assignment oper
 data$new_variable <- creation statement
 ```
 
-#### **Example: basic arithmetic on existing variables**
+#### **Example: Row-wise difference between two existing variables**
 
 As a pregnancy progresses, both the mother and the baby gain weight. The variable `gained` is the total amount of weight the mother gained in her pregnancy. The variable `weight` is how much the baby weighed at birth.
 
@@ -235,7 +236,8 @@ Notice I snuck a new operator in on you - `%in%`. This is a way you can provide 
 
 # Chaining using the pipe %>%
 
-![](img/pipe.png)
+![](../static/img/pipe.png)
+
 
 The pipe is technically part of the `magrittr` package, but quite often we will use it in conjunction with functions from the `dplyr` package introduced in a later lesson. In fact it's so commonly used with `dplyr` functions that it the `magrittr` package is loaded when you load `dplyr` (which is what we do here). However, the pipe operator is so useful in many other places that it deserves it's own introduction here. 
 
@@ -252,7 +254,7 @@ table(NCbirths$mature)
 
 This is also accomplished by first stating the variable, then piping in the summary function. 
 
-```{r}
+```{r, warning=FALSE, message=FALSE}
 library(dplyr)
 NCbirths$mature %>% table()
 
