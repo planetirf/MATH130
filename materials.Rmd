@@ -64,14 +64,6 @@ pander(as.list(nf.rmd))
 ```
 
 
-### Videos (You Tube)
-Subscribe to the full set of course videos at [this link on You Tube]( https://www.youtube.com/playlist?list=PLgjMQDcxQMF8jg0KlVw4FeGGQ-_Nd1ICy)
-
-* Lesson 02 - Introduction to your new tools 
-    - File organization: https://youtu.be/cIV02bNu48M
-    
-
-
 
 
 
