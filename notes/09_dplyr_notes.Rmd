@@ -1,5 +1,5 @@
 ---
-title: "Lesson 07 - Data management and aggregation using `dplyr`"
+title: "Lesson 09 - Data management and aggregation using `dplyr`"
 output: html_document
 ---
 

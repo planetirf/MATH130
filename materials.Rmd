@@ -1,6 +1,10 @@
 ---
 title: "Course materials"
-output: html_document
+output:   
+  html_document:
+    highlight: tango
+    css: ../css/yeti.css
+    theme: yeti
 ---
 
 ```{r setup, include=FALSE, message=FALSE, warning=FALSE}
@@ -52,7 +56,7 @@ pander(as.list(nf.html))
 pander(as.list(nf.pdf))
 ```
 
-### RMD "fill in the blank" notes
+### R Markdown "fill in the blank" notes
 To download RMD files, right click and "save as". Do not open in a browser then save. 
 
 ```{r}

@@ -1,15 +1,16 @@
 ---
-title: "Lesson 07 - Data management and aggregation using `dplyr`"
+title: "Lesson 09 - Data management and aggregation using `dplyr`"
 author: "Robin Donatello"
 date: "Last Updated `r format(Sys.Date(), '%m-%d-%Y')`"
 output:
-  pdf_document:
-    toc: no
   html_document:
     highlight: tango
+    css: ../css/yeti.css
     theme: yeti
     toc: yes
     toc_float: yes
+  pdf_document:
+    toc: no
 ---
 
 
@@ -46,7 +47,7 @@ After completing this lesson students will be able to
 
 Prior to this lesson students should
 
-* Download the [[07_dplyr_notes.Rmd]] R markdown file and save into your Math130 folder. 
+* Download the [[09_dplyr_notes.Rmd]] R markdown file and save into your Math130 folder. 
 * Ensure that the `dplyr` and `nyflights13` data sets are installed by running the first code chunk. 
 
 ```{r, warning=FALSE, message=FALSE}

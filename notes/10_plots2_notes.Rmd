@@ -1,5 +1,5 @@
 ---
-title: "Lesson 08 - Creating Intermediate graphics"
+title: "Lesson 10 - Creating Intermediate graphics"
 output: html_document
 ---
 

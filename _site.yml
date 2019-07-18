@@ -6,6 +6,7 @@ navbar:
   - text: Materials 
     icon: fa-book
     href: materials.html
+
       
   right:
     - text: "Help/FAQ"
