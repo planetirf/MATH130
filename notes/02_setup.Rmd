@@ -213,6 +213,18 @@ The correct package name is `ggplot2`, not `ggplot`.
 
 > Alternative Method of installing Packages: Use the Package tab in the lower right corner. 
 
+
+### Creating PDF files directly
+To create a PDF directly from your source code you will have to install a lightweight version of $LaTeX$ (a document processing program). This allows you to make professional looking reports. If you plan to enroll in any classes taught by Dr. Donatello, this is required. 
+
+Run the following code lines one at a time, waiting for the first one to finish before starting the next. This process can take up to 10 minutes. 
+```{r, eval=FALSE}
+install.packages("tinytex")
+tinytex::install_tinytex()
+```
+
+If at any time it asks you to update or install any other packages, say yes to all of them. 
+
 ----
 
 

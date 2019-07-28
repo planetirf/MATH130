@@ -1,14 +1,14 @@
 ---
 title: "Exploratory Data Analysis Project"
 output:
+  pdf_document:
+    toc: no
   html_document:
     highlight: tango
     css: ../css/yeti.css
     theme: yeti
     toc: yes
     toc_float: yes
-  pdf_document:
-    toc: no
 ---
 
 Time to put everything you learned in this class into action. In an exploratory data analysis (EDA) you are just looking at (exploring) the data and learning about the data and possible relationships between variables. This is not a formal statistical analysis, you cannot make any claims about groups being statistically different. This is just descriptive. You are allowed and encouraged to hypothesize why you observe certain relationships or data characteristics, just be sure not to draw any conclusions from the data.
@@ -49,11 +49,11 @@ Any other data sets require instructor approval. Data sets such as the 'plants' 
 # How to submit
 
 * To allow for adequate time for peer grading the submission deadline is a strict cutoff. Really late assignments won't be accepted.
-* Knit your file to HTML, WORD, or PDF, then upload to
-  [here](https://www.dropbox.com/request/LLbhFO1PXI4P2TOLd5rQ)
-  by the due date. 
-  - If you knit to HTML, you must open & save the resulting file as PDF so it can be commented on. 
-* Put your student username in the name of the file somewhere, so that your fellow students know which assignment they are to reveiw.
+* Knit your file to HTML, WORD, or PDF, then upload to Google Drive using the link below for your section the due date.
+    - [Section 01](https://drive.google.com/drive/folders/1rxiwc2ks4Kaxv2kt51XaaTTckrucqdF8?usp=sharing)
+    - [Section 02](https://drive.google.com/drive/folders/1jdyS9fbauBnMKhYNmrzfr9Vdu6fYu2zk?usp=sharing)
+    - If you knit to HTML, you must open & save the resulting file as PDF so it can be commented on. 
+* Put your student username in the name of the file somewhere, so that your fellow students know which assignment they are to review.
 
 
 # Peer Review
@@ -123,7 +123,7 @@ The criteria below is what you will be graded on. Below each criteria is an exam
     - (Proficient) The variables were compared using appropriate graphical methods and
              a short textual explanation of what the summaries showed.
 
-5. **Organization / Grammer**: How well does the report read? How well organized is it? Was it checked for grammar and spelling mistakes?
+5. **Organization / Grammar**: How well does the report read? How well organized is it? Was it checked for grammar and spelling mistakes?
     - (Novice) Only R code, output is present. There is no discussion of results.
              Tons of extra R code that is not relevant to the discussion is present.
              Markdown headers were not used.
