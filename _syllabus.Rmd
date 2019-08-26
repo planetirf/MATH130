@@ -2,7 +2,7 @@
 title: "Math 130: Introduction to R - Spring 19"
 fontsize: 11pt
 output:
-  pdf_document: 
+  pdf_document:
     keep_tex: yes
   html_document: default
 header-includes:
@@ -17,14 +17,14 @@ header-includes:
 [[Download this syllabus as a PDF]](syllabus.pdf)
 
 # Course Description
-This course is designed as a primer to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R in an environment that emphasizes reproducible research and literate programming for data analysis. The target audience is anyone who wants to do their own data analysis. The course will cumulate with an peer-evaluated exploratory data analysis on either a pre-specified data set or your data set of choice. 
+This course is designed as a primer to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R in an environment that emphasizes reproducible research and literate programming for data analysis. The target audience is anyone who wants to do their own data analysis. The course will cumulate with an peer-evaluated exploratory data analysis on either a pre-specified data set or your data set of choice.
 
 
 # Logistics
 
-* **Course Website:** https://norcalbiostat.github.io/MATH130/ 
-* **Prerequisites:** Basic computer literacy  
-* **Workshop style:** This workshop style class runs for 5 weeks only. See expectations for time commitment during these 5 weeks below. 
+* **Course Website:** https://norcalbiostat.github.io/MATH130/
+* **Prerequisites:** Basic computer literacy
+* **Workshop style:** This workshop style class runs for 5 weeks only. See expectations for time commitment during these 5 weeks below.
 
 |                        |        Section 01       |       Section 02        |
 |:-----------------------|:-----------------------:|:-----------------------:|
@@ -39,9 +39,9 @@ This course is designed as a primer to get the complete novice up and running wi
 
 ## Additional Support
 
-* The Data Science Initiative offers year-round training workshops and seminars on data-science related topics including R. See http://datascience.csuchico.edu for more information and a schedule of events.  
-* Community Coding: TWR 2-4pm, YOLO 206 [[flyer]](cc_flyer_f19.pdf)
-    - Students, staff, faculty, and the public are invited to join our Community Coding sessions. Bring your computer, coding projects, and your questions to this open working environment. 
+* The Data Science Initiative offers year-round training workshops and seminars on data-science related topics including R. See http://datascience.csuchico.edu for more information and a schedule of events.
+* Community Coding: TWR 2-4pm, YOLO 206 [[flyer]](cc_flyer.pdf)
+    - Students, staff, faculty, and the public are invited to join our Community Coding sessions. Bring your computer, coding projects, and your questions to this open working environment.
     - Commit to studying 1 hr. per week for your (not necessarily CS) programming course and earn credit. Enroll in MATH 290-02 (5837), a 1 unit credit/no-credit course.  Credit is earned by attending at least 10 times.
 
 
@@ -49,10 +49,10 @@ This course is designed as a primer to get the complete novice up and running wi
 # Learning Outcomes
 By the end of the course, students will be able to
 
-* Import data into R from external files such as text files and spreadsheets. 
+* Import data into R from external files such as text files and spreadsheets.
 * Calculate summary statistics.
-* Create new variables using different data types. 
-* Perform data management techniques such as subsetting, grouping, summarizing. 
+* Create new variables using different data types.
+* Perform data management techniques such as subsetting, grouping, summarizing.
 * Create informative data visualizations and tables.
 * Create a reproducible research document.
 * Conduct an exploratory data analysis in a reproducible manner.
@@ -63,23 +63,23 @@ By the end of the course, students will be able to
 * Reliable internet connection while on and off campus.
 
 #### Software
-During this class you will install R and R Studio on your personal computer (Mac/PC/*nix only). That way you can take what you've learned in this class and apply it to other classes. Both are free. Walk through installation instructions can be found here: https://norcalbiostat.netlify.com/post/software-overview/ 
+During this class you will install R and R Studio on your personal computer (Mac/PC/*nix only). That way you can take what you've learned in this class and apply it to other classes. Both are free. Walk through installation instructions can be found here: https://norcalbiostat.netlify.com/post/software-overview/
 
-* R version 3.5.0 or later. Download from https://cran.r-project.org/ 
+* R version 3.5.0 or later. Download from https://cran.r-project.org/
 * R Studio version 1.2 or later. Download the desktop version from https://www.rstudio.com/products/rstudio/download/#download
 
-If you are unable to obtain a laptop that has the ability to install program (i.e. a iPad or Chromebook) then a cloud version of R and R Studio is available to you at no charge. Learn more and make an account here: https://rstudio.cloud/. 
+If you are unable to obtain a laptop that has the ability to install program (i.e. a iPad or Chromebook) then a cloud version of R and R Studio is available to you at no charge. Learn more and make an account here: https://rstudio.cloud/.
 
 # Time Commitment
 
-> For all CSU degree programs and courses bearing academic credit, the "credit hour" is defined as ... not less than one hour of classroom or direct faculty instruction and a minimum of two hours of out-of-class student work each week for approximately fifteen weeks for one semester or trimester hour of credit. 
+> For all CSU degree programs and courses bearing academic credit, the "credit hour" is defined as ... not less than one hour of classroom or direct faculty instruction and a minimum of two hours of out-of-class student work each week for approximately fifteen weeks for one semester or trimester hour of credit.
 
-This adds up to 15 hours in class, and 30 hours outside of class during these 5 weeks. That's 3 hours in class, and 10 hours of homework per week. If you are new to programming and unfamiliar with computers, you may end up taking the entire time. Be sure to schedule sufficient time during week 5 to work on the project. 
+This adds up to 15 hours in class, and 30 hours outside of class during these 5 weeks. That's 3 hours in class, and 10 hours of homework per week. If you are new to programming and unfamiliar with computers, you may end up taking the entire time. Be sure to schedule sufficient time during week 5 to work on the project.
 
-You will get out of this class what you put into it. Recall this is just a co-curriculuar or supplemental basic introductory class. You will not learn everything there is to know about R, nor likely not feel proficient by the time you are done. But you will be solidly on the path where you can continue to learn and improve. 
+You will get out of this class what you put into it. Recall this is just a co-curriculuar or supplemental basic introductory class. You will not learn everything there is to know about R, nor likely not feel proficient by the time you are done. But you will be solidly on the path where you can continue to learn and improve.
 
 # Grading
-Credit / No Credit. There are 100 points available in this course. You must earn 70 points to receive credit for the course. 
+Credit / No Credit. There are 100 points available in this course. You must earn 70 points to receive credit for the course.
 
 * Daily attendance: (10 pts)
 * Assignments:
@@ -87,16 +87,16 @@ Credit / No Credit. There are 100 points available in this course. You must earn
     - HW 2 (15 pts)
     - HW 3 (15 pts)
     - HW 4 (15 pts)
-* Project: 
+* Project:
     - Exploratory Data Analysis (25 pts)
     - Peer Review (5 pts)
 
 
 # Schedule of Topics
-The general outline of topics is listed below. A detailed most up to date schedule can be found on the course website. 
+The general outline of topics is listed below. A detailed most up to date schedule can be found on the course website.
 
 * Week 1
-    - Intro to the R language and the R Studio Integrated Development Environment. 
+    - Intro to the R language and the R Studio Integrated Development Environment.
     - Conducting reproducible research with R Markdown
 * Week 2
     - Getting data into R
@@ -117,20 +117,20 @@ The general outline of topics is listed below. A detailed most up to date schedu
 This course only runs for a few weeks and all materials are available on the course website. It will be difficult to get caught up if you add the class after the first week. The last day to add or drop classes without special permission by the instructor is 9/6/19. No adds or drops are allowed after 9/20/19 without a serious and compelling reason approved by the instructor, department chair, and college dean.
 
 ### Academic Integrity
-Students are expected to be familiar with the University’s Academic Integrity Policy. Your own commitment to learning, as evidenced by your enrollment at California State University, Chico, and the University’s Academic Integrity Policy requires you to be honest in all your academic course work. Faculty members are required to report all infractions to the Office of Student Judicial Affairs. The policy on academic integrity and other resources related to student conduct can be found on the Student Judicial Affairs web site at http://www.csuchico.edu/sjd/integrity.shtml. 
+Students are expected to be familiar with the University’s Academic Integrity Policy. Your own commitment to learning, as evidenced by your enrollment at California State University, Chico, and the University’s Academic Integrity Policy requires you to be honest in all your academic course work. Faculty members are required to report all infractions to the Office of Student Judicial Affairs. The policy on academic integrity and other resources related to student conduct can be found on the Student Judicial Affairs web site at http://www.csuchico.edu/sjd/integrity.shtml.
 
 
 ### IT Support Services
-Computer labs for student use are located on the first and fourth floor of the Meriam Library, Room 116 and 450, Tehama Hall Room 131, and the Bell Memorial Union (BMU) basement. You can get help using your computer from IT Support Services; contact them through the ITSS web site at http://www.csuchico.edu/itss. Additional labs may be available to students in your department or college. 
+Computer labs for student use are located on the first and fourth floor of the Meriam Library, Room 116 and 450, Tehama Hall Room 131, and the Bell Memorial Union (BMU) basement. You can get help using your computer from IT Support Services; contact them through the ITSS web site at http://www.csuchico.edu/itss. Additional labs may be available to students in your department or college.
 
 
 ### Americans with Disabilities Act
 If you need course adaptations or accommodations because of a disability or chronic illness,  or if you need to make special arrangements in case the building must be evacuated, please make an appointment with me as soon as possible, or see me during office hours. Please also contact Accessibility Resource Center (ARC) as they are the designated department responsible for approving and coordinating reasonable accommodations and services for students with disabilities. ARC will help you understand your rights and responsibilities under the Americans with Disabilities Act and provide you further assistance with requesting and arranging accommodations.
 
-Accessibility Resource Center  
-530-898-5959   
-Student Services Center 170  
-arcdept@csuchico.edu  
+Accessibility Resource Center
+530-898-5959
+Student Services Center 170
+arcdept@csuchico.edu
 http://www.csuchico.edu/arc
 
 
@@ -138,23 +138,11 @@ http://www.csuchico.edu/arc
 ### Chico State Basic Needs Project
 The **Hungry Wildcat Food Pantry** provides supplemental food, fresh produce, CalFresh application assistance and basic needs referral services for students experiencing food and housing insecurity.
 
-All students are welcomed to visit the Pantry located in the Student Service Center 196, open Monday-Friday, 11am-4pm or call 530-898-4098. 
+All students are welcomed to visit the Pantry located in the Student Service Center 196, open Monday-Friday, 11am-4pm or call 530-898-4098.
 
 Please visit the Chico State Basic Needs website http://www.csuchico.edu/basic-needs for more information.
 
- 
-<<<<<<< HEAD
-## IT Support Services
-Computer labs for student use are located on the first and fourth floor of the Meriam Library, Room 116 and 450, Tehama Hall Room 131, and the Bell Memorial Union (BMU) basement. You can get help using your computer from IT Support Services; contact them through their website, http://www.csuchico.edu/itss. Additional labs may be available to students in your department or college. 
-
 ## Confidentiality and Mandatory Reoprting
 As an instructor, one of my responsibilities is to help create a safe learning environment on our campus. I also have a mandatory reporting responsibility related to my role as a your instructor. I am required to share information regarding sexual misconduct with the University. Students may speak to someone confidentially by contacting the Counseling and Wellness Center (898-6345) or Safe Place (898-3030). Information on campus reporting obligations and other Title IX related resources are available here: www.csuchico.edu/title-ix.
-=======
-### Confidentiality and Mandatory Reoprting
-
-As instructors, one of our responsibilities is to help create a safe learning environment on our campus. We also have a mandatory reporting responsibility related to our role. We are required to share information regarding sexual misconduct with the University. Students may speak to someone confidentially by contacting the Counseling and Wellness Center (898-6345) or Safe Place (898-3030). Information on campus reporting obligations and other Title IX related resources are available here: http://www.csuchico.edu/title-ix.
->>>>>>> 9d62d033b9d9a61813c0c6a79b705bfcddbdf8d0
-
-
 
 
