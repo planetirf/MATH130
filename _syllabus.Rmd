@@ -1,5 +1,5 @@
 ---
-title: "Math 130: Introduction to R - Spring 19"
+title: "Math 130: Introduction to R - Fall 19"
 fontsize: 11pt
 output:
   pdf_document:
@@ -10,9 +10,6 @@ header-includes:
   - \RequirePackage{pdfcomment}
   - \newcommand{\AccTool}[2]{\BeginAccSupp{method=pdfstringdef,unicode,Alt={{#1}}}\pdftooltip{{#2}}{{#1}}\EndAccSupp{}}
 ---
-
-
-# Math 130: Introduction to R - Fall 19
 
 [[Download this syllabus as a PDF]](syllabus.pdf)
 
