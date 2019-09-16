@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -69,7 +70,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -230,18 +230,6 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
@@ -321,7 +309,7 @@ $(document).ready(function () {
 </div>
 <div id="schedule" class="section level1">
 <h1>Schedule</h1>
-<p><em>Last Updated: 07/18/2019 </em></p>
+<p><em>Last Updated: 09/16/2019 </em></p>
 <p>Click each weekly header below to expand and see the materials for that week.</p>
 <div id="week-1-getting-started-with-r-and-r-studio" class="section level3">
 <h3><a href="#week1" data-toggle="collapse">Week 1: Getting started with R and R Studio</a></h3>
@@ -376,8 +364,8 @@ $(document).ready(function () {
 </ul>
 <p>📚 Notes:</p>
 <ul>
-<li>Wrangling factors <a href="notes/07_factors.html">[HTML]</a> <a href="notes/07_factors.pdf">[PDF]</a> <a href="notes/07_factors_notes.Rmd">[RMD]</a></li>
-<li>Basic Graphing <a href="notes/08_plots.html">[HTML]</a> <a href="notes/08_plots.pdf">[PDF]</a> <a href="notes/08_plots_notes.Rmd">[RMD]</a></li>
+<li>lec07 - Wrangling factors <a href="notes/07_factors.html">[HTML]</a> <a href="notes/07_factors.pdf">[PDF]</a> <a href="notes/07_factors_notes.Rmd">[RMD]</a></li>
+<li>lec08 - Basic Graphing <a href="notes/08_plots.html">[HTML]</a> <a href="notes/08_plots.pdf">[PDF]</a> <a href="notes/08_plots_notes.Rmd">[RMD]</a></li>
 </ul>
 <p>✏️ Assignment <a href="hw/hw3.Rmd">[HW 3]</a>.</p>
 </div>
@@ -387,8 +375,8 @@ $(document).ready(function () {
 <div id="week4" class="collapse">
 <p>📚 Notes:</p>
 <ul>
-<li>More data management and aggregation <code>dplyr</code> <a href="notes/09_dplyr.html">[HTML]</a> <a href="notes/09_dplyr.pdf">[PDF]</a> <a href="notes/07_dplyr_notes.Rmd">[RMD]</a></li>
-<li>Intermediate Graphing <a href="notes/10_plots2.html">[HTML]</a> <a href="notes/10_plots2.pdf">[PDF]</a> <a href="notes/08_plots2_notes.Rmd">[RMD]</a></li>
+<li>lec09 - More data management and aggregation <code>dplyr</code> <a href="notes/09_dplyr.html">[HTML]</a> <a href="notes/09_dplyr.pdf">[PDF]</a> <a href="notes/09_dplyr_notes.Rmd">[RMD]</a></li>
+<li>lec10 - Intermediate Graphing <a href="notes/10_plots2.html">[HTML]</a> <a href="notes/10_plots2.pdf">[PDF]</a> <a href="notes/10_plots2_notes.Rmd">[RMD]</a></li>
 <li>(not quite) <a href="https://norcalbiostat.github.io/AppliedStatistics_notes/data-viz.html">[All the graphing things]</a> (optional)</li>
 </ul>
 <p>✏️ Assignment <a href="hw/hw4.Rmd">[HW 4]</a>.</p>
@@ -423,6 +411,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

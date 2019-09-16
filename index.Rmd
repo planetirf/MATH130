@@ -98,8 +98,8 @@ Click each weekly header below to expand and see the materials for that week.
 
 `r emo::ji("books")` Notes:
 
-* lec09 - More data management and aggregation `dplyr` [[HTML]](notes/09_dplyr.html)  [[PDF]](notes/09_dplyr.pdf)  [[RMD]](notes/07_dplyr_notes.Rmd) 
-* lec10 - Intermediate Graphing                        [[HTML]](notes/10_plots2.html) [[PDF]](notes/10_plots2.pdf) [[RMD]](notes/08_plots2_notes.Rmd)
+* lec09 - More data management and aggregation `dplyr` [[HTML]](notes/09_dplyr.html)  [[PDF]](notes/09_dplyr.pdf)  [[RMD]](notes/09_dplyr_notes.Rmd) 
+* lec10 - Intermediate Graphing                        [[HTML]](notes/10_plots2.html) [[PDF]](notes/10_plots2.pdf) [[RMD]](notes/10_plots2_notes.Rmd)
 * (not quite) [[All the graphing things]](https://norcalbiostat.github.io/AppliedStatistics_notes/data-viz.html) (optional)
 
 `r emo::ji("pencil2")` Assignment [[HW 4]](hw/hw4.Rmd).  
