@@ -61,8 +61,10 @@ Any other data sets require instructor approval. Data sets such as the 'plants' 
 After the submission deadline, your analysis projects will be randomly assigned to two other projects to peer review and score. This means you will score and provide feedback on 2 reports. The instructor(s) will also score all projects for their class sections.
 
 * All submissions will be processed and posted to a [peer review](https://norcalbiostat.github.io/peer_review/math130_eda.html) website.
-* Your assignments will be posted on this [spreadsheet](https://docs.google.com/spreadsheets/d/1GItQRInVYfLgIT25RqNMQI9L1_lwqz19EkcClVrdrGk/edit?usp=sharing).
-    - If one or both of the people you are assigned to review do not submit a project, pick another person to review. You do not have to notify your instructor if this happens.
+* Your assignments will be posted here. If one or both of the people you are assigned to review do not submit a project, pick another person to review. You do not have to notify your instructor if this happens.
+
+  - [Section 01](https://docs.google.com/spreadsheets/d/1Fkm90SwmtmxPvcd4FmgQeU88HM490J5cnTa-uTeQ93A/edit?usp=sharing)
+
 * Download your assigned projects to review to your computer.
     - Using the commenting features of either WORD or a PDF reader, provide 4 comments for each project.
         - Two positive: What specific features did they include that you liked or found helpful?
