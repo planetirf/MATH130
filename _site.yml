@@ -1,7 +1,7 @@
 name: "Math 130"
 output_dir: "."
 navbar:
-  title: "Intro to R"
+  title: "Planet Irf's R Website"
   left:
   - text: Materials 
     icon: fa-book
@@ -12,9 +12,6 @@ navbar:
     - text: "Help/FAQ"
       icon: fa-question
       href: faq.html
-    - text: "Syllabus"
-      icon: fa-info-circle
-      href: syllabus.html
       
 output:
   html_document:
